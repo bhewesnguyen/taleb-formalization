@@ -123,6 +123,14 @@ theorem convexOn_rpow_neg_right {c : ℝ} (hc : 0 < c) :
 noncomputable def frechetFormula (ξ x : ℝ) : ℝ :=
   Real.exp (-(x ^ (-1 / ξ)))
 
+/-- Boundary diagnostic: Lean's totalized real power gives `0 ^ (-1/ξ) = 0` for
+`ξ ≠ 0`, so the raw formula evaluates to `exp 0 = 1` at `x = 0`, where a Fréchet
+distribution function must be `0` (book §9.1, printed p. 173: `G(x) = 0` for
+`x ≤ b_n`). This is why `frechetCDF` below is defined piecewise. -/
+theorem frechetFormula_zero {ξ : ℝ} (hξ : ξ ≠ 0) : frechetFormula ξ 0 = 1 := by
+  have h : (-1 / ξ : ℝ) ≠ 0 := div_ne_zero (by norm_num) hξ
+  simp [frechetFormula, Real.zero_rpow h]
+
 /-- A genuine global Fréchet CDF formula when `0 < ξ`. -/
 noncomputable def frechetCDF (ξ x : ℝ) : ℝ :=
   if 0 < x then frechetFormula ξ x else 0
@@ -185,6 +193,7 @@ end AuditTails
 #print axioms AuditTails.tail_log_ratio_of_ratio_tendsto
 #print axioms AuditTails.subexponential_ratio_tailExponent
 #print axioms AuditTails.convexOn_rpow_neg_right
+#print axioms AuditTails.frechetFormula_zero
 #print axioms AuditTails.frechet_formula_maxstable
 #print axioms AuditTails.frechet_cdf_maxstable
 #print axioms AuditTails.gumbel_maxstable

@@ -50,6 +50,16 @@ theorem isSlowlyVarying_const {c : ℝ} (hc : c ≠ 0) :
   simpa only [div_self hc] using
     (tendsto_const_nhds : Tendsto (fun _ : ℝ => (1 : ℝ)) atTop (𝓝 1))
 
+/-- Diagnostic for the ratio-only convention. The book defines a slowly varying
+function with codomain `(0, +∞)` (§2.2.1 printed p. 9, §E.1 printed p. 190,
+Definition 21.1 printed p. 380; PDF pages +14). `IsSlowlyVarying` only constrains
+ratios, so a negative constant satisfies it although it can never be the
+slowly varying factor of a survival function. Results proved from these
+predicates therefore need an explicit positivity hypothesis before they are
+read as statements about the book's class. -/
+theorem isSlowlyVarying_neg_one : IsSlowlyVarying (fun _ : ℝ => (-1 : ℝ)) :=
+  isSlowlyVarying_const (by norm_num)
+
 theorem IsSlowlyVarying.of_tendsto_const {L : ℝ → ℝ} {c : ℝ}
     (hc : c ≠ 0) (hL : Tendsto L atTop (𝓝 c)) : IsSlowlyVarying L := by
   intro b hb
@@ -114,6 +124,7 @@ end AuditRV
 
 #print axioms AuditRV.isSlowlyVarying_log
 #print axioms AuditRV.isSlowlyVarying_const
+#print axioms AuditRV.isSlowlyVarying_neg_one
 #print axioms AuditRV.IsSlowlyVarying.of_tendsto_const
 #print axioms AuditRV.IsRegularlyVarying.mul
 #print axioms AuditRV.IsRegularlyVarying.rpow

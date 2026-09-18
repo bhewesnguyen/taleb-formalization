@@ -1,6 +1,6 @@
 # Source gates before proof search
 
-These are targeted mathematical checks found while building the inventory, not a completed audit of every book theorem. Page numbers below are printed Arabic pages; add 14 for PDF viewer pages. The more complex backlog entries marked source-check need full derivations. The concrete checks below explain why literal transcription would fail. Except where explicitly named, these checks are mathematical arguments in this document, not additional Lean theorems delivered in the package.
+These are targeted mathematical checks found while building the inventory, not a completed audit of every book theorem. Page numbers below are printed Arabic pages; add 14 for PDF viewer pages. G01-G16 come from the handoff's inventory pass; G17-G18 were added by the independent Fable review (see `FABLE_REVIEW.md`). The more complex backlog entries marked source-check need full derivations. The concrete checks below explain why literal transcription would fail. Except where explicitly named, these checks are mathematical arguments in this document, not additional Lean theorems delivered in the package.
 
 ## G01. Slow variation is not convergence to a constant
 
@@ -65,6 +65,14 @@ Page 426, Lemma 25.3 and equation (25.13), visually checked. The point mass at 1
 ## G16. Absolute-moment constraint has a sign error
 
 Page 478, Section 30.4.2, visually checked. Under the chapter's K<0 setting, the left tail is negative, so its contribution to E|X| is -epsilon*nu_minus. The printed constraint uses +epsilon*nu_minus. Correct this sign before solving for the truncated-Laplace rate or proving maximum entropy.
+
+## G17. The S1 characteristic function in 15.2.1 is printed with misplaced parentheses
+
+Page 282 (PDF page 296), Section 15.2.1, visually checked during the Fable review. The displayed two-branch S1 characteristic function closes its parenthesis too early in both branches: `exp(-gamma^alpha |t|^alpha (1 - i beta sign(t)) tan(pi alpha/2) + i delta t)` for alpha != 1 and `exp(-gamma |t| (1 + i beta (2/pi) sign(t)) ln|t| + i delta t)` for alpha = 1. Read literally, the real part of the exponent is `-gamma^alpha |t|^alpha tan(pi alpha/2)` (positive for 1 < alpha < 2) and `-gamma |t| ln|t|` (positive for |t| < 1), so the modulus would exceed 1, which no characteristic function can do. The intended standard S1 form (Samorodnitsky and Taqqu 1994, Definition 1.1.6; Nolan) has the tangent and the logarithm inside the parenthesis: `exp(-gamma^alpha |t|^alpha (1 - i beta sign(t) tan(pi alpha/2)) + i delta t)` and `exp(-gamma |t| (1 + i beta (2/pi) sign(t) ln|t|) + i delta t)`. Equation (7.2) on page 140 prints the alpha != 1 branch correctly but states it only for alpha != 1; the alpha = 1 logarithmic branch appears in the book only in the misprinted display of 15.2.1. `StableAudit.stableS1Expr` implements the standard S1 form. The same section states alpha in (0, 2), whereas (7.2) and (2.6) state 0 < alpha <= 2; the project uses 0 < alpha <= 2 in `StableAudit.StableParameters`. No Lean statement depends on the misprinted reading.
+
+## G18. The displayed limit under Property 5.1 has the wrong sign
+
+Page 99 (PDF page 113), directly below Property 5.1, visually checked during the Fable review. The display reads `lim_{z -> infinity} log(w1 z^(-alpha1) + w2 z^(-alpha2)) / log(z) = alpha2` for `alpha2 <= alpha1` and `w2 > 0`. Since `w1 z^(-alpha1) + w2 z^(-alpha2)` tends to 0, its logarithm tends to minus infinity and the quotient tends to `-alpha2`. With the book's own convention on page 97 that `log P(X > x) / log x` converges to `-alpha`, the tail exponent of the two-term survival formula is `alpha2 = min(alpha1, alpha2)`, which is what Property 5.1 asserts; only the displayed equation drops the sign. The finite-exponent interface `AuditTails.HasFiniteTailExponent` (which uses `-log S(x) / log x`) is the right vehicle for a corrected formula-level lemma; the probabilistic statement about sums of random variables remains backlog family T029.
 
 ## Additional review gates
 

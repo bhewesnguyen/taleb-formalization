@@ -1,0 +1,10 @@
+# Harness negative tests (hardened scripts/verify.py must FAIL when its new invariants are violated)
+# Test 1: docs/replacement_map.json entry for Proof16 pointed at a wrong declaration.
+Alias targets differ from docs/replacement_map.json: {'Taleb.Proof16.repaired': ('AuditProbability.stableS1_convolutionPower_eq', 'AuditProbability.charFun_convolutionPower')}
+exit=1  (verification.json status=FAIL)
+# replacement_map.json restored; identical to HEAD afterwards.
+
+# Test 2: appended 'protected theorem AuditRV.regex_blind_spot : (1 : ℝ) = 1 := rfl' to AuditRepairs/RegularVariation.lean (regex discovery does not match 'protected theorem').
+Environment/regex inventory mismatch: ['AuditRV.regex_blind_spot']
+exit=0
+# RegularVariation.lean restored; identical to the repaired version afterwards.

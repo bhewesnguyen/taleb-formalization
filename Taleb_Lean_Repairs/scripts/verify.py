@@ -2,6 +2,15 @@
 """Build this project and check the printed axiom closure of every exported proof.
 Run after `lake exe cache get`. Requires Python 3.9+, git, elan/Lean and Lake.
 The axiom allowlist covers standard Lean/Mathlib foundations, not arbitrary axioms.
+
+Declaration discovery is a line regex over `AuditRepairs/*.lean` plus one alias per
+`Proofs/Proof*.lean`. Because a regex can silently miss declarations, the script
+also asks the Lean environment for every constant defined in the project modules
+(`scripts/FableInventory.lean`) and fails unless (a) the set of user-written
+theorem/instance constants equals the regex set, (b) every project constant,
+including `def`s and structure-generated constants, stays inside the axiom
+allowlist, and (c) each `Taleb.ProofNN.repaired` alias targets the declaration
+named in `docs/replacement_map.json`.
 """
 import hashlib,json,re,subprocess,sys,time
 from pathlib import Path
@@ -51,17 +60,37 @@ def main():
     assert set(found)=={d['name'] for d in ds}, 'Missing or unexpected axiom output'
     assert all(set(ax)<=allow for ax in found.values()), 'Unexpected axioms: '+str(found)
     assert not re.search(r'\bsorryAx\b|(?:error|warning):',output), 'Compiler diagnostics in axiom run'
+    # Independent cross-check from the Lean environment (see module docstring).
+    inv_out=run(['lake','env','lean','scripts/FableInventory.lean'],'inventory_environment.log')
+    inv=json.loads(inv_out[inv_out.index('{'):])
+    (OUT/'inventory_environment.json').write_text(json.dumps(inv,indent=2,ensure_ascii=False)+'\n')
+    rows=inv['declarations']
+    env_checked={r['name'] for r in rows if (r['kind']=='theorem' or r['isInstance']) and not r['generatedByInductive']}
+    regex_checked={d['name'] for d in ds}
+    assert env_checked==regex_checked, 'Environment/regex inventory mismatch: '+str(sorted(env_checked^regex_checked))
+    bad=[r['name'] for r in rows if not set(r['axioms'])<=allow]
+    assert not bad, 'Unexpected axioms in project constants: '+str(bad)
+    rmap={f"Taleb.Proof{m['proof']:02}.repaired":m['declaration'] for m in json.loads((ROOT/'docs/replacement_map.json').read_text())}
+    aliases={r['name']:r['aliasOf'] for r in rows if r['aliasOf']}
+    assert aliases==rmap, 'Alias targets differ from docs/replacement_map.json: '+str({k:(aliases.get(k),rmap.get(k)) for k in set(aliases)|set(rmap) if aliases.get(k)!=rmap.get(k)})
     source_hashes={str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest()
                    for f in sorted(ROOT.rglob('*.lean')) if '.lake' not in f.parts}
     report=dict(status='PASS',lean=version,dependency_commits=commits,
         theorem_count=sum(d['kind'] in ('theorem','lemma') for d in ds),
         instance_count=sum(d['kind']=='instance' for d in ds),alias_count=sum(d['kind']=='alias' for d in ds),
         checked_declarations=len(ds),allowed_axioms=sorted(allow),axioms=found,
+        environment_inventory=dict(project_constants_listed=inv['listed_count'],
+            internal_auxiliary=inv['internal_auxiliary_count'],
+            user_theorem_or_instance=len(env_checked),
+            generated_by_inductive=sum(r['generatedByInductive'] for r in rows),
+            defs=sum(r['kind']=='def' and not r['generatedByInductive'] for r in rows),
+            all_within_allowlist=True,alias_targets_match_replacement_map=True),
         source_sha256=source_hashes,elapsed_seconds=round(time.monotonic()-start,2),
         scope='Checks formal propositions and their axiom dependencies. Does not certify book coverage or numerical software.')
     (OUT/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
     (OUT/'declarations.json').write_text(json.dumps(ds,indent=2)+'\n')
-    print(f"PASS: {report['theorem_count']} theorems, {report['instance_count']} instance, {report['alias_count']} aliases; no extra axioms")
+    print(f"PASS: {report['theorem_count']} theorems, {report['instance_count']} instance, {report['alias_count']} aliases; no extra axioms; "
+          f"environment cross-check: {inv['listed_count']} project constants, {len(env_checked)} user theorem/instance, all within allowlist")
 
 if __name__=='__main__':
     try: main()

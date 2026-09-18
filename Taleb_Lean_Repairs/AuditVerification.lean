@@ -21,6 +21,7 @@ import AuditRepairs
 #print axioms AuditProbability.law_independent_sum
 #print axioms AuditRV.isSlowlyVarying_log
 #print axioms AuditRV.isSlowlyVarying_const
+#print axioms AuditRV.isSlowlyVarying_neg_one
 #print axioms AuditRV.IsSlowlyVarying.of_tendsto_const
 #print axioms AuditRV.IsRegularlyVarying.mul
 #print axioms AuditRV.IsRegularlyVarying.rpow
@@ -48,6 +49,7 @@ import AuditRepairs
 #print axioms AuditTails.tail_log_ratio_of_ratio_tendsto
 #print axioms AuditTails.subexponential_ratio_tailExponent
 #print axioms AuditTails.convexOn_rpow_neg_right
+#print axioms AuditTails.frechetFormula_zero
 #print axioms AuditTails.frechet_formula_maxstable
 #print axioms AuditTails.frechet_cdf_maxstable
 #print axioms AuditTails.gumbel_maxstable

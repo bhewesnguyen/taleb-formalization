@@ -1,6 +1,8 @@
-# Taleb Lean implementation handoff, v0.2.0
+# Taleb Lean implementation handoff, v0.2.1 (Fable-reviewed)
 
 This is an implemented and checked replacement project for the submitted `mathlib-proofs-16.zip`, plus a book-wide formalization inventory for Taleb's third edition. The previous audit ZIP already contained working repairs. This handoff retains that work and adds useful foundation lemmas, probability interfaces, sixteen importable replacement entry points, and repeatable verification.
+
+v0.2.1 is the received v0.2.0 package after an independent reproduction and audit pass. Read `FABLE_REVIEW.md` (findings, per-entry assessment, unresolved obligations) and `CHANGELOG_FABLE.md` (every change relative to v0.2.0). The received evidence is preserved unchanged under `evidence/fable/received_current/`; the review's own baseline and final runs are under `evidence/fable/baseline/` and `evidence/fable/final/`.
 
 ## Start here
 
@@ -14,7 +16,9 @@ python3 scripts/verify.py
 
 Use the included `lean-toolchain` and `lake-manifest.json`. Lean 4.24.0 is intentional. Mathlib is pinned to `f897ebcf72cd16f89ab4577d0c826cd14afaafc7`. Elan selects this project's version even if another project uses a newer Lean. Initial dependency/cache download requires network access. Do not delete the lockfile or update dependencies before reproducing the checks.
 
-The verification script checks installed dependency commits, rebuilds the aggregate project, reruns every axiom query, and writes `evidence/current/verification.json`. Expected result: 50 theorem declarations, one probability-measure instance, and 16 aliases. These are not 67 independent book theorems. Only `propext`, `Classical.choice`, and `Quot.sound` are permitted in their axiom closure. No `sorryAx` is accepted.
+The verification script checks installed dependency commits, rebuilds the aggregate project, reruns every axiom query, and writes `evidence/current/verification.json`. Expected result: 52 theorem declarations, one probability-measure instance, and 16 aliases (69 checked declarations; v0.2.0 had 50 theorems, and the two additions are boundary diagnostics, see `CHANGELOG_FABLE.md`). These are not 69 independent book theorems. Only `propext`, `Classical.choice`, and `Quot.sound` are permitted in their axiom closure. No `sorryAx` is accepted.
+
+Since v0.2.1 the script also runs `scripts/FableInventory.lean`, which lists every constant the Lean environment attributes to the project modules, and fails unless the user-written theorem/instance constants coincide with the regex-discovered set, every project constant (including `def`s and structure-generated constants) stays inside the axiom allowlist, and each `Taleb.ProofNN.repaired` alias targets the declaration named in `docs/replacement_map.json`. The result is written to `evidence/current/inventory_environment.json`.
 
 ## Using the proofs
 
@@ -36,6 +40,7 @@ Read `docs/REPLACEMENT_MAP.md` before porting call sites. Proof08 and Proof16 no
 - `AuditRepairs/ImplicitSetDiagnostic.lean`: deliberately reproduces original Proof09's implicit-variable trap and disproves the resulting claim. All production repair modules disable `autoImplicit`; this diagnostic deliberately retains it.
 - `Proofs/`: the sixteen named replacement entry points.
 - `AuditVerification.lean`: axiom queries for every exported proof declaration.
+- `scripts/FableInventory.lean`: environment-based declaration inventory used by `scripts/verify.py` as an independent cross-check of the regex discovery.
 
 ## What is still open
 
@@ -62,7 +67,7 @@ Original archive SHA-256:
 Source PDF SHA-256:
 `758e18b7337840104db93296144d67cf5514bf2de128fe557dc84bc32a0ad567`
 
-The prior original-file evidence remains in `evidence/`; fresh handoff checks are under `evidence/current/`. Original PASS/FAIL logs intentionally include failures. The book itself and dependency binaries are not redistributed in this package.
+The prior original-file evidence remains in `evidence/`; fresh handoff checks are under `evidence/current/`. Original PASS/FAIL logs intentionally include failures. The book itself and dependency binaries are not redistributed in this package. The Fable review re-ran the sixteen original files on the pinned environment and reproduced the 8 passed / 8 failed result with identical per-file diagnostics (`evidence/fable/baseline/originals_recheck/`).
 
 The new results are candidates for adaptation and review, not accepted Mathlib contributions. The dependency inventory describes the pinned snapshot and does not establish novelty relative to current Mathlib master. No external contribution or publication has been made.
 

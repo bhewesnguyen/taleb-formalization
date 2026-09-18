@@ -120,6 +120,12 @@ theorem stableExpr_power {α β μ σ : ℝ} (n : ℕ) (t : ℝ)
   ring
 
 -- Diagnostic: the submitted α = 1 formula loses every skewness parameter.
+-- This identity holds in Lean because `Real.tan (π / 2) = 0`
+-- (`Real.tan_pi_div_two`, a consequence of totalized division by `cos (π/2) = 0`).
+-- Mathematically `tan(π/2)` is undefined, so the tangent-only expression has no
+-- meaning at α = 1 at all; the book states its formula (7.2) only for α ≠ 1, and
+-- the S1 parameterization needs the separate logarithmic branch used in
+-- `stableS1Expr` below (book §15.2.1, printed p. 282; see docs/SOURCE_GATES.md G17).
 theorem submitted_alpha_one_ignores_skew {β μ σ t : ℝ} :
     stableExpr 1 β μ σ t = Complex.exp ⟨-|σ * t|, μ * t⟩ := by
   simp [stableExpr, Real.rpow_one]

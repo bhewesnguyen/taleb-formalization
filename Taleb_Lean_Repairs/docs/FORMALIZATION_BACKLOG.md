@@ -60,11 +60,11 @@ Hypotheses and gaps: Finite absolute first moment; nondegenerate dispersion; no 
 
 ### T007 - Stable law existence
 
-**P2 / missing / CF**. Printed pp. 12-13;139-140; PDF anchor p. 26; source: 2.2.9;7.2.1.
+**P2 / missing / CF**. Printed pp. 12-13;139-140;282; PDF anchor p. 26; source: 2.2.9;7.2.1;15.2.1.
 
 Construct the probability measure with the repaired S1 characteristic function.
 
-Hypotheses and gaps: 0<alpha<=2; -1<=beta<=1; scale>=0; include alpha=1 logarithmic branch and zero-scale Dirac case.
+Hypotheses and gaps: 0<alpha<=2; -1<=beta<=1; scale>=0; include alpha=1 logarithmic branch and zero-scale Dirac case. Source: (7.2) covers alpha != 1 only; the alpha = 1 branch is printed in 15.2.1 with misplaced parentheses (SOURCE_GATES G17), use the standard S1 form.
 
 ### T008 - Subexponential law API
 
@@ -242,11 +242,11 @@ Hypotheses and gaps: q>=0; nonnegative law with regularly varying tail of index 
 
 ### T029 - Tail of sums with unequal indices
 
-**P2 / missing / SUBEXP**. Printed pp. 98; PDF anchor p. 112; source: 5.2.1.
+**P2 / source-check / SUBEXP**. Printed pp. 98-99; PDF anchor p. 112; source: 5.2.1.
 
-Prove the heavier regularly varying tail dominates a sum under appropriate independence and support conditions.
+Prove the heavier regularly varying tail dominates a sum under appropriate independence and support conditions; first prove the formula-level two-term identity -log(w1 z^(-alpha1) + w2 z^(-alpha2))/log z -> min(alpha1, alpha2) with AuditTails.HasFiniteTailExponent.
 
-Hypotheses and gaps: Nonnegative independent variables; positive tails; account for cancellation for signed dependent laws.
+Hypotheses and gaps: Nonnegative independent variables; positive tails; account for cancellation for signed dependent laws. The displayed limit under Property 5.1 (p. 99) is printed without the minus sign (SOURCE_GATES G18); state the corrected version.
 
 ### T030 - Product of exact Pareto laws
 

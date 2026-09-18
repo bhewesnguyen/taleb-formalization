@@ -109,7 +109,7 @@
     "module": "Stable",
     "declaration": "StableAudit.stableS1Expr_cauchy",
     "source": "7.2.1",
-    "scope": "Correct location/scale; nonnegative scale; zero scale is degenerate."
+    "scope": "Correct location/scale; nonnegative scale; zero scale is degenerate. Equation (7.2) is stated only for alpha != 1; the Cauchy case uses the alpha = 1 branch, where beta = 0 makes the logarithmic term vanish."
   },
   {
     "proof": 15,
@@ -125,6 +125,6 @@
     "module": "ProbabilityBridge",
     "declaration": "AuditProbability.stableS1_convolutionPower_eq",
     "source": "7.2.1-7.2.2; 15.2.1",
-    "scope": "Conditional law theorem; existence of S1 laws remains open."
+    "scope": "Conditional law theorem; existence of S1 laws remains open. The alpha = 1 logarithmic branch follows the standard S1 form; the book prints it only in 15.2.1 with misplaced parentheses (SOURCE_GATES G17)."
   }
 ]

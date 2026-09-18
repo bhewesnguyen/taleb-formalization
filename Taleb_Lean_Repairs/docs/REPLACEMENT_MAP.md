@@ -17,6 +17,6 @@ These are importable project entry points, not standalone pasted files. Import `
 | 11 GumbelMaxstable | `AuditTails.gumbel_maxstable` | 9.1 | Correct original identity retained. |
 | 12 StableCharFnGaussian | `StableAudit.stableS1Expr_gaussian` | 7.2.1 | Correct location/scale and repaired S1 expression; scale maps to variance 2*scale^2. |
 | 13 GaussianStable | `StableAudit.gaussian_stable_real_short` | 7.2.1-7.2.2 | Exponential scaling identity; use Mathlib Gaussian law theorem for distributions. |
-| 14 StableCharFnCauchy | `StableAudit.stableS1Expr_cauchy` | 7.2.1 | Correct location/scale; nonnegative scale; zero scale is degenerate. |
+| 14 StableCharFnCauchy | `StableAudit.stableS1Expr_cauchy` | 7.2.1 | Correct location/scale; nonnegative scale; zero scale is degenerate. Equation (7.2) is stated only for alpha != 1; the Cauchy case uses the alpha = 1 branch, where beta = 0 makes the logarithmic term vanish. |
 | 15 CauchyStable | `StableAudit.cauchy_stable_short` | 7.2.1-7.2.2 | Exponential scaling identity. |
-| 16 StableCharFnStable | `AuditProbability.stableS1_convolutionPower_eq` | 7.2.1-7.2.2; 15.2.1 | Conditional law theorem; existence of S1 laws remains open. |
+| 16 StableCharFnStable | `AuditProbability.stableS1_convolutionPower_eq` | 7.2.1-7.2.2; 15.2.1 | Conditional law theorem; existence of S1 laws remains open. The alpha = 1 logarithmic branch follows the standard S1 form; the book prints it only in 15.2.1 with misplaced parentheses (SOURCE_GATES G17). |
