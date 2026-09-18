@@ -1,0 +1,8 @@
+/workspace/scratch/7ad75325de75/audit/probes/Proof05_HypothesisRepair.lean:53:30: error: Application type mismatch: The argument
+  hlim
+has type
+  Tendsto (fun t => (L (b * t) / L t) ^ p) atTop (𝓝 (b ^ (α * p)))
+but is expected to have type
+  Tendsto (fun x => (L (b * x) / L x) ^ p) atTop (𝓝 (b ^ (p * α)))
+in the application
+  Tendsto.congr' (EventuallyEq.symm e) hlim

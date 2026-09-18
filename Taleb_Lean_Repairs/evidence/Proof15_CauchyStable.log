@@ -1,0 +1,3 @@
+/workspace/scratch/7ad75325de75/audit/source/Proof15_CauchyStable.lean:27:2: warning: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

@@ -1,0 +1,2473 @@
+[
+  {
+    "depth": 1,
+    "title": "1 Prologue^*,\u2020",
+    "bookmark_pdf_page": 17,
+    "bookmark_printed_page": 3,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "2 Glossary, Definitions, and Notations",
+    "bookmark_pdf_page": 21,
+    "bookmark_printed_page": 7,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "2.1 General Notations and Frequently Used Symbols",
+    "bookmark_pdf_page": 21,
+    "bookmark_printed_page": 7,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "2.2 Catalogue Raisonn\u00e9 of General & Idiosyncratic concepts",
+    "bookmark_pdf_page": 23,
+    "bookmark_printed_page": 9,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.1 Power Law Class P ",
+    "bookmark_pdf_page": 23,
+    "bookmark_printed_page": 9,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.2 Law of Large Numbers (Weak)",
+    "bookmark_pdf_page": 23,
+    "bookmark_printed_page": 9,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.3 The Central Limit Theorem (CLT)",
+    "bookmark_pdf_page": 24,
+    "bookmark_printed_page": 10,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.4 Expected Excess Deviation Over a Threshold",
+    "bookmark_pdf_page": 24,
+    "bookmark_printed_page": 10,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.5 Law of Medium Numbers or Preasymptotics",
+    "bookmark_pdf_page": 25,
+    "bookmark_printed_page": 11,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.6 Kappa Metric",
+    "bookmark_pdf_page": 25,
+    "bookmark_printed_page": 11,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.7 Elliptical Distribution",
+    "bookmark_pdf_page": 26,
+    "bookmark_printed_page": 12,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.8 Statistical independence",
+    "bookmark_pdf_page": 26,
+    "bookmark_printed_page": 12,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.9 Stable (L\u00e9vy stable) Distribution",
+    "bookmark_pdf_page": 26,
+    "bookmark_printed_page": 12,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.10 Multivariate Stable Distribution",
+    "bookmark_pdf_page": 27,
+    "bookmark_printed_page": 13,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.11 Karamata Point",
+    "bookmark_pdf_page": 27,
+    "bookmark_printed_page": 13,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.12 Subexponentiality",
+    "bookmark_pdf_page": 27,
+    "bookmark_printed_page": 13,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.13 Student T as Proxy",
+    "bookmark_pdf_page": 28,
+    "bookmark_printed_page": 14,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.14 Citation Ring",
+    "bookmark_pdf_page": 28,
+    "bookmark_printed_page": 14,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.15 Rent seeking in academia",
+    "bookmark_pdf_page": 28,
+    "bookmark_printed_page": 14,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.16 Pseudo-empiricism or Pinker Problem",
+    "bookmark_pdf_page": 29,
+    "bookmark_printed_page": 15,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.17 Preasymptotics",
+    "bookmark_pdf_page": 29,
+    "bookmark_printed_page": 15,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.18 Stochasticizing",
+    "bookmark_pdf_page": 29,
+    "bookmark_printed_page": 15,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.19 Value at Risk, Conditional VaR",
+    "bookmark_pdf_page": 30,
+    "bookmark_printed_page": 16,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.20 Skin in the Game",
+    "bookmark_pdf_page": 30,
+    "bookmark_printed_page": 16,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.21 MS Plot",
+    "bookmark_pdf_page": 30,
+    "bookmark_printed_page": 16,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.22 Maximum Domain of Attraction, MDA",
+    "bookmark_pdf_page": 31,
+    "bookmark_printed_page": 17,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.23 Substitution of Integral in the psychology literature",
+    "bookmark_pdf_page": 31,
+    "bookmark_printed_page": 17,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.24 Inseparability of Probability (another common error)",
+    "bookmark_pdf_page": 31,
+    "bookmark_printed_page": 17,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.25 Wittgenstein's Ruler",
+    "bookmark_pdf_page": 32,
+    "bookmark_printed_page": 18,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.26 Black Swans",
+    "bookmark_pdf_page": 32,
+    "bookmark_printed_page": 18,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.27 The Empirical Distribution is Not Empirical",
+    "bookmark_pdf_page": 33,
+    "bookmark_printed_page": 19,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.28 The Hidden Tail",
+    "bookmark_pdf_page": 33,
+    "bookmark_printed_page": 19,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.29 Shadow Moment",
+    "bookmark_pdf_page": 34,
+    "bookmark_printed_page": 20,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.30 Tail Dependence",
+    "bookmark_pdf_page": 34,
+    "bookmark_printed_page": 20,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.31 Metaprobability",
+    "bookmark_pdf_page": 34,
+    "bookmark_printed_page": 20,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "2.2.32 Dynamic Hedging",
+    "bookmark_pdf_page": 34,
+    "bookmark_printed_page": 20,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "Fat Tails and Their Effects, An Introduction",
+    "bookmark_pdf_page": 35,
+    "bookmark_printed_page": 21,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "3 A Non-Technical Overview - The Darwin College Lecture ^*,\u2021",
+    "bookmark_pdf_page": 39,
+    "bookmark_printed_page": 25,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.1 On the Difference Between Thin and Thick Tails",
+    "bookmark_pdf_page": 39,
+    "bookmark_printed_page": 25,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.2 Tail Wagging Dogs: An Intuition",
+    "bookmark_pdf_page": 41,
+    "bookmark_printed_page": 27,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.3 A (More Advanced) Categorization and Its Consequences",
+    "bookmark_pdf_page": 44,
+    "bookmark_printed_page": 30,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.4 The Main Consequences and How They Link to the Book",
+    "bookmark_pdf_page": 46,
+    "bookmark_printed_page": 32,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "3.4.1 Forecasting",
+    "bookmark_pdf_page": 55,
+    "bookmark_printed_page": 41,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "3.4.2 The Law of Large Numbers",
+    "bookmark_pdf_page": 57,
+    "bookmark_printed_page": 43,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.5 Epistemology and Inferential Asymmetry",
+    "bookmark_pdf_page": 57,
+    "bookmark_printed_page": 43,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.6 Naive Empiricism",
+    "bookmark_pdf_page": 63,
+    "bookmark_printed_page": 49,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "3.6.1 How some multiplicative risks scale",
+    "bookmark_pdf_page": 66,
+    "bookmark_printed_page": 52,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.7 Primer on Power Laws (almost without mathematics)",
+    "bookmark_pdf_page": 67,
+    "bookmark_printed_page": 53,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.8 Where Are the Hidden Properties?",
+    "bookmark_pdf_page": 69,
+    "bookmark_printed_page": 55,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.9 Bayesian Schmayesian",
+    "bookmark_pdf_page": 74,
+    "bookmark_printed_page": 60,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.10 X vs F(X): exposures to X confused with knowledge about X ",
+    "bookmark_pdf_page": 74,
+    "bookmark_printed_page": 60,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.11 Ruin and Path Dependence",
+    "bookmark_pdf_page": 76,
+    "bookmark_printed_page": 62,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.12 What To Do?",
+    "bookmark_pdf_page": 80,
+    "bookmark_printed_page": 66,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "3.13 Kahneman's Parting Gift",
+    "bookmark_pdf_page": 81,
+    "bookmark_printed_page": 67,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "4 Univariate fat tails, Level 1, Finite Moments^\u2020",
+    "bookmark_pdf_page": 83,
+    "bookmark_printed_page": 69,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "4.1 A Simple Heuristic to Create Mildly Fat Tails",
+    "bookmark_pdf_page": 83,
+    "bookmark_printed_page": 69,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "4.1.1 A Variance-preserving heuristic",
+    "bookmark_pdf_page": 85,
+    "bookmark_printed_page": 71,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "4.1.2 Fattening of Tails With Skewed Variance",
+    "bookmark_pdf_page": 86,
+    "bookmark_printed_page": 72,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "4.2 Does Stochastic Volatility Generate Power Laws?",
+    "bookmark_pdf_page": 88,
+    "bookmark_printed_page": 74,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "4.3 The Body, The Shoulders, and The Tails",
+    "bookmark_pdf_page": 89,
+    "bookmark_printed_page": 75,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "4.3.1 The Crossovers and Tunnel Effect.",
+    "bookmark_pdf_page": 89,
+    "bookmark_printed_page": 75,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "4.4 Fat Tails, Mean Deviation and the Rising Norms",
+    "bookmark_pdf_page": 93,
+    "bookmark_printed_page": 79,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "4.4.1 The Common Errors",
+    "bookmark_pdf_page": 93,
+    "bookmark_printed_page": 79,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "4.4.2 Some Analytics",
+    "bookmark_pdf_page": 94,
+    "bookmark_printed_page": 80,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "4.4.3 Effect of Fatter Tails on the \"efficiency\" of STD vs MD",
+    "bookmark_pdf_page": 96,
+    "bookmark_printed_page": 82,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "4.4.4 Moments and The Power Mean Inequality",
+    "bookmark_pdf_page": 97,
+    "bookmark_printed_page": 83,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "4.4.5 Comment: Why we should retire standard deviation, now!",
+    "bookmark_pdf_page": 100,
+    "bookmark_printed_page": 86,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "4.5 Visualizing the Effect of Rising p on Iso-Norms",
+    "bookmark_pdf_page": 102,
+    "bookmark_printed_page": 88,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "5 Level 2: Subexponentials and Power Laws",
+    "bookmark_pdf_page": 105,
+    "bookmark_printed_page": 91,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "5.0.1 Revisiting the Rankings",
+    "bookmark_pdf_page": 105,
+    "bookmark_printed_page": 91,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "5.0.2 What is a Borderline Probability Distribution?",
+    "bookmark_pdf_page": 107,
+    "bookmark_printed_page": 93,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "5.0.3 Let Us Invent a Distribution",
+    "bookmark_pdf_page": 108,
+    "bookmark_printed_page": 94,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "5.1 Level 3: Scalability and Power Laws",
+    "bookmark_pdf_page": 109,
+    "bookmark_printed_page": 95,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "5.1.1 Scalable and Nonscalable, A Deeper View of Fat Tails",
+    "bookmark_pdf_page": 109,
+    "bookmark_printed_page": 95,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "5.1.2 Grey Swans",
+    "bookmark_pdf_page": 111,
+    "bookmark_printed_page": 97,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "5.2 Some Properties of Power Laws",
+    "bookmark_pdf_page": 112,
+    "bookmark_printed_page": 98,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "5.2.1 Sums of variables",
+    "bookmark_pdf_page": 112,
+    "bookmark_printed_page": 98,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "5.2.2 Product of variables",
+    "bookmark_pdf_page": 113,
+    "bookmark_printed_page": 99,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "5.2.3 Transformations",
+    "bookmark_pdf_page": 114,
+    "bookmark_printed_page": 100,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "5.3 Bell Shaped vs Non Bell Shaped Power Laws",
+    "bookmark_pdf_page": 114,
+    "bookmark_printed_page": 100,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "5.4 Interpolative powers of Power Laws: An Example",
+    "bookmark_pdf_page": 115,
+    "bookmark_printed_page": 101,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "5.5 Super-Fat Tails: The Log-Pareto Distribution",
+    "bookmark_pdf_page": 116,
+    "bookmark_printed_page": 102,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "5.6 Pseudo-Stochastic Volatility: An investigation",
+    "bookmark_pdf_page": 117,
+    "bookmark_printed_page": 103,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "6 Thick Tails in Higher Dimensions^\u2020",
+    "bookmark_pdf_page": 121,
+    "bookmark_printed_page": 107,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "6.1 Thick Tails in Higher Dimension, Finite Moments",
+    "bookmark_pdf_page": 121,
+    "bookmark_printed_page": 107,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "6.2 Joint Fat-Tailedness and Ellipticality of Distributions",
+    "bookmark_pdf_page": 122,
+    "bookmark_printed_page": 108,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "6.3 Multivariate Student T",
+    "bookmark_pdf_page": 126,
+    "bookmark_printed_page": 112,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "6.3.1 Ellipticality and Independence under Thick Tails",
+    "bookmark_pdf_page": 127,
+    "bookmark_printed_page": 113,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "6.4 Fat Tails and Mutual Information",
+    "bookmark_pdf_page": 128,
+    "bookmark_printed_page": 114,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "6.5 Fat Tails and Random Matrices, a Rapid Interlude",
+    "bookmark_pdf_page": 129,
+    "bookmark_printed_page": 115,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "6.6 Correlation and Undefined Variance",
+    "bookmark_pdf_page": 130,
+    "bookmark_printed_page": 116,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "6.7 Fat Tailed Residuals in Linear Regression Models",
+    "bookmark_pdf_page": 131,
+    "bookmark_printed_page": 117,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "A Special Cases of Thick Tails",
+    "bookmark_pdf_page": 135,
+    "bookmark_printed_page": 121,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "A.1 Multimodality and Thick Tails, or the War and Peace Model",
+    "bookmark_pdf_page": 135,
+    "bookmark_printed_page": 121,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "A.2 Transition Probabilities: What Can Break Will Break",
+    "bookmark_pdf_page": 138,
+    "bookmark_printed_page": 124,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "B Fat Tails From Maximum Entropy",
+    "bookmark_pdf_page": 141,
+    "bookmark_printed_page": 127,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "B.1 Shannon/Boltzman-Gibbs Entropy",
+    "bookmark_pdf_page": 141,
+    "bookmark_printed_page": 127,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "B.1.1 Constraining the Mean and Variance leads to the Gaussian",
+    "bookmark_pdf_page": 142,
+    "bookmark_printed_page": 128,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "B.1.2 Power Law Constraints",
+    "bookmark_pdf_page": 143,
+    "bookmark_printed_page": 129,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "B.1.3 A Good Epistemic Intuition",
+    "bookmark_pdf_page": 143,
+    "bookmark_printed_page": 129,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "B.2 Tsallis Entropy",
+    "bookmark_pdf_page": 143,
+    "bookmark_printed_page": 129,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "The Law of Medium Numbers",
+    "bookmark_pdf_page": 147,
+    "bookmark_printed_page": 133,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "7 Limit Distributions, A Consolidation^*,\u2020",
+    "bookmark_pdf_page": 151,
+    "bookmark_printed_page": 137,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "7.1 Refresher: The Weak and Strong LLN",
+    "bookmark_pdf_page": 151,
+    "bookmark_printed_page": 137,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "7.2 Central Limit in Action",
+    "bookmark_pdf_page": 153,
+    "bookmark_printed_page": 139,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "7.2.1 The Stable Distribution",
+    "bookmark_pdf_page": 153,
+    "bookmark_printed_page": 139,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "7.2.2 The Law of Large Numbers for the Stable Distribution",
+    "bookmark_pdf_page": 154,
+    "bookmark_printed_page": 140,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "7.3 Speed of Convergence of CLT: Visual Explorations",
+    "bookmark_pdf_page": 155,
+    "bookmark_printed_page": 141,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "7.3.1 Fast Convergence: the Uniform Dist.",
+    "bookmark_pdf_page": 155,
+    "bookmark_printed_page": 141,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "7.3.2 Semi-slow convergence: the exponential",
+    "bookmark_pdf_page": 156,
+    "bookmark_printed_page": 142,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "7.3.3 The slow Pareto",
+    "bookmark_pdf_page": 157,
+    "bookmark_printed_page": 143,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "7.3.4 The half-cubic Pareto and its basin of convergence",
+    "bookmark_pdf_page": 159,
+    "bookmark_printed_page": 145,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "7.4 Cumulants and Convergence",
+    "bookmark_pdf_page": 159,
+    "bookmark_printed_page": 145,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "7.5 Technical Refresher: Traditional Versions of CLT",
+    "bookmark_pdf_page": 160,
+    "bookmark_printed_page": 146,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "7.6 The Law of Large Numbers for Higher Moments",
+    "bookmark_pdf_page": 162,
+    "bookmark_printed_page": 148,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "7.6.1 Higher Moments",
+    "bookmark_pdf_page": 162,
+    "bookmark_printed_page": 148,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "7.7 Mean deviation for a Stable Distributions",
+    "bookmark_pdf_page": 164,
+    "bookmark_printed_page": 150,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "8 How Much Data Do You Need?",
+    "bookmark_pdf_page": 167,
+    "bookmark_printed_page": 153,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "8.1 Introduction and Definitions",
+    "bookmark_pdf_page": 168,
+    "bookmark_printed_page": 154,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "8.2 The Metric",
+    "bookmark_pdf_page": 170,
+    "bookmark_printed_page": 156,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "8.3 Stable Basin of Convergence as Benchmark",
+    "bookmark_pdf_page": 172,
+    "bookmark_printed_page": 158,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.3.1 Equivalence for Stable distributions",
+    "bookmark_pdf_page": 173,
+    "bookmark_printed_page": 159,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.3.2 Practical significance for sample sufficiency",
+    "bookmark_pdf_page": 173,
+    "bookmark_printed_page": 159,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "8.4 Technical Consequences",
+    "bookmark_pdf_page": 174,
+    "bookmark_printed_page": 160,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.4.1 Some Oddities With Asymmetric Distributions",
+    "bookmark_pdf_page": 174,
+    "bookmark_printed_page": 160,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.4.2 Rate of Convergence of a Student T Distribution to the Gaussian Basin",
+    "bookmark_pdf_page": 175,
+    "bookmark_printed_page": 161,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.4.3 The Lognormal is Neither Thin Nor Fat Tailed",
+    "bookmark_pdf_page": 175,
+    "bookmark_printed_page": 161,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.4.4 Can Kappa Be Negative?",
+    "bookmark_pdf_page": 176,
+    "bookmark_printed_page": 162,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "8.5 Conclusion and Consequences",
+    "bookmark_pdf_page": 176,
+    "bookmark_printed_page": 162,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.5.1 Portfolio Pseudo-Stabilization",
+    "bookmark_pdf_page": 176,
+    "bookmark_printed_page": 162,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.5.2 Other Aspects of Statistical Inference",
+    "bookmark_pdf_page": 177,
+    "bookmark_printed_page": 163,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.5.3 Final comment",
+    "bookmark_pdf_page": 178,
+    "bookmark_printed_page": 164,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "8.6 Appendix, Derivations, and Proofs",
+    "bookmark_pdf_page": 178,
+    "bookmark_printed_page": 164,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.6.1 Cubic Student T (Gaussian Basin)",
+    "bookmark_pdf_page": 178,
+    "bookmark_printed_page": 164,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.6.2 Lognormal Sums",
+    "bookmark_pdf_page": 180,
+    "bookmark_printed_page": 166,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.6.3 Exponential",
+    "bookmark_pdf_page": 182,
+    "bookmark_printed_page": 168,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "8.6.4 Negative Kappa, Negative Kurtosis",
+    "bookmark_pdf_page": 182,
+    "bookmark_printed_page": 168,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "9 Extreme Values and Hidden Tails ^*,\u2020 ",
+    "bookmark_pdf_page": 185,
+    "bookmark_printed_page": 171,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "9.1 Preliminary Introduction to EVT",
+    "bookmark_pdf_page": 185,
+    "bookmark_printed_page": 171,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "9.1.1 How Any Power Law Tail Leads to Fr\u00e9chet",
+    "bookmark_pdf_page": 187,
+    "bookmark_printed_page": 173,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "9.1.2 Gaussian Case",
+    "bookmark_pdf_page": 188,
+    "bookmark_printed_page": 174,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "9.1.3 The Picklands-Balkema-de Haan Theorem",
+    "bookmark_pdf_page": 190,
+    "bookmark_printed_page": 176,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "9.2 The Invisible Tail for a Power Law",
+    "bookmark_pdf_page": 191,
+    "bookmark_printed_page": 177,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "9.2.1 Comparison with the Normal Distribution",
+    "bookmark_pdf_page": 193,
+    "bookmark_printed_page": 179,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "9.3 Appendix: The Empirical Distribution is Not Empirical",
+    "bookmark_pdf_page": 194,
+    "bookmark_printed_page": 180,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "C Growth Rate & Outcome: not in the Same Distribution Class",
+    "bookmark_pdf_page": 197,
+    "bookmark_printed_page": 183,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "C.1 The Puzzle",
+    "bookmark_pdf_page": 197,
+    "bookmark_printed_page": 183,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "C.2 Pandemics are really Fat Tailed",
+    "bookmark_pdf_page": 199,
+    "bookmark_printed_page": 185,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "D The Large Deviation Principle, In Brief",
+    "bookmark_pdf_page": 201,
+    "bookmark_printed_page": 187,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "E Calibrating under Paretianity",
+    "bookmark_pdf_page": 203,
+    "bookmark_printed_page": 189,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "E.1 Distribution of the sample tail Exponent",
+    "bookmark_pdf_page": 204,
+    "bookmark_printed_page": 190,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "10 \"It is what it is\": Diagnosing the SP500^\u2020",
+    "bookmark_pdf_page": 207,
+    "bookmark_printed_page": 193,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "10.1 Paretianity and Moments",
+    "bookmark_pdf_page": 207,
+    "bookmark_printed_page": 193,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "10.2 Convergence Tests",
+    "bookmark_pdf_page": 209,
+    "bookmark_printed_page": 195,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "10.2.1 Test 1: Kurtosis under Aggregation",
+    "bookmark_pdf_page": 209,
+    "bookmark_printed_page": 195,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "10.2.2 Maximum Drawdowns",
+    "bookmark_pdf_page": 210,
+    "bookmark_printed_page": 196,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "10.2.3 Empirical Kappa",
+    "bookmark_pdf_page": 212,
+    "bookmark_printed_page": 198,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "10.2.4 Test 2: Excess Conditional Expectation",
+    "bookmark_pdf_page": 213,
+    "bookmark_printed_page": 199,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "10.2.5 Test 3- Instability of 4^th moment",
+    "bookmark_pdf_page": 214,
+    "bookmark_printed_page": 200,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "10.2.6 Test 4: MS Plot",
+    "bookmark_pdf_page": 214,
+    "bookmark_printed_page": 200,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "10.2.7 Records and Extrema",
+    "bookmark_pdf_page": 215,
+    "bookmark_printed_page": 201,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "10.2.8 Asymmetry right-left tail",
+    "bookmark_pdf_page": 217,
+    "bookmark_printed_page": 203,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "10.3 Conclusion: It is what it is",
+    "bookmark_pdf_page": 219,
+    "bookmark_printed_page": 205,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "F The Problem with Econometrics",
+    "bookmark_pdf_page": 221,
+    "bookmark_printed_page": 207,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "F.1 Performance of Standard Parametric Risk Estimators",
+    "bookmark_pdf_page": 222,
+    "bookmark_printed_page": 208,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "F.2 Performance of Standard NonParametric Risk Estimators",
+    "bookmark_pdf_page": 223,
+    "bookmark_printed_page": 209,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "G Machine Learning Considerations",
+    "bookmark_pdf_page": 227,
+    "bookmark_printed_page": 213,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "G.0.1 Calibration via Angles",
+    "bookmark_pdf_page": 229,
+    "bookmark_printed_page": 215,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "Predictions, Forecasting, and Uncertainty",
+    "bookmark_pdf_page": 230,
+    "bookmark_printed_page": 216,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "11 Probability Calibration Under Fat Tails ^\u2021",
+    "bookmark_pdf_page": 233,
+    "bookmark_printed_page": 219,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "11.1 Continuous vs. Discrete Payoffs: Definitions & Comments",
+    "bookmark_pdf_page": 233,
+    "bookmark_printed_page": 219,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.1.1 Away from the Verbalistic",
+    "bookmark_pdf_page": 234,
+    "bookmark_printed_page": 220,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.1.2 There is no defined \"collapse\", \"disaster\", or \"success\" under fat tails",
+    "bookmark_pdf_page": 238,
+    "bookmark_printed_page": 224,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "11.2 Spurious overestimation of tail probability in psychology",
+    "bookmark_pdf_page": 239,
+    "bookmark_printed_page": 225,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.2.1 Thin tails",
+    "bookmark_pdf_page": 240,
+    "bookmark_printed_page": 226,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.2.2 Fat tails",
+    "bookmark_pdf_page": 240,
+    "bookmark_printed_page": 226,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.2.3 Conflations",
+    "bookmark_pdf_page": 240,
+    "bookmark_printed_page": 226,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.2.4 Distributional Uncertainty",
+    "bookmark_pdf_page": 244,
+    "bookmark_printed_page": 230,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "11.3 Calibration and Miscalibration",
+    "bookmark_pdf_page": 244,
+    "bookmark_printed_page": 230,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "11.4 Scoring Metrics",
+    "bookmark_pdf_page": 245,
+    "bookmark_printed_page": 231,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.4.1 Deriving Distributions",
+    "bookmark_pdf_page": 247,
+    "bookmark_printed_page": 233,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "11.5 Non-Verbalistic Payoff Functions/Machine Learning",
+    "bookmark_pdf_page": 249,
+    "bookmark_printed_page": 235,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "11.6 Conclusion:",
+    "bookmark_pdf_page": 252,
+    "bookmark_printed_page": 238,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "11.7 Appendix: Proofs and Derivations",
+    "bookmark_pdf_page": 252,
+    "bookmark_printed_page": 238,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.7.1 Distribution of Binary Tally P^(p)(n)",
+    "bookmark_pdf_page": 252,
+    "bookmark_printed_page": 238,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "11.7.2 Distribution of the Brier Score",
+    "bookmark_pdf_page": 252,
+    "bookmark_printed_page": 238,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "12 On Single Point Forecasts for Fat-Tailed Variables",
+    "bookmark_pdf_page": 255,
+    "bookmark_printed_page": 241,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "12.1 Main Statements",
+    "bookmark_pdf_page": 255,
+    "bookmark_printed_page": 241,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "12.2 Commentary",
+    "bookmark_pdf_page": 255,
+    "bookmark_printed_page": 241,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "12.3 More Technical Commentary",
+    "bookmark_pdf_page": 257,
+    "bookmark_printed_page": 243,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "12.4 Further Commentary Specific to Pandemics",
+    "bookmark_pdf_page": 259,
+    "bookmark_printed_page": 245,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "13 The Probability Conflation",
+    "bookmark_pdf_page": 267,
+    "bookmark_printed_page": 253,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "13.1 Summary of the Criticism",
+    "bookmark_pdf_page": 267,
+    "bookmark_printed_page": 253,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "13.2 The Fat Tails Problem",
+    "bookmark_pdf_page": 267,
+    "bookmark_printed_page": 253,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "13.3 A New Result: Value at Risk fails Under Error Propagation",
+    "bookmark_pdf_page": 270,
+    "bookmark_printed_page": 256,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "13.4 A Rather Unscientific Challenge",
+    "bookmark_pdf_page": 272,
+    "bookmark_printed_page": 258,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "13.5 Conclusion: Some More Evidence Required",
+    "bookmark_pdf_page": 273,
+    "bookmark_printed_page": 259,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "13.6 Proofs",
+    "bookmark_pdf_page": 273,
+    "bookmark_printed_page": 259,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "14 Election Predictions as Martingales: An Arbitrage Approach^\u2021",
+    "bookmark_pdf_page": 275,
+    "bookmark_printed_page": 261,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "14.0.1 Main results",
+    "bookmark_pdf_page": 277,
+    "bookmark_printed_page": 263,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "14.0.2 Organization",
+    "bookmark_pdf_page": 278,
+    "bookmark_printed_page": 264,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "14.0.3 A Discussion on Risk Neutrality",
+    "bookmark_pdf_page": 280,
+    "bookmark_printed_page": 266,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "14.1 The Bachelier-Style valuation",
+    "bookmark_pdf_page": 280,
+    "bookmark_printed_page": 266,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "14.2 Bounded Dual Martingale Process",
+    "bookmark_pdf_page": 281,
+    "bookmark_printed_page": 267,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "14.3 Relation to De Finetti's Probability Assessor ",
+    "bookmark_pdf_page": 283,
+    "bookmark_printed_page": 269,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "14.4 Conclusion and Comments",
+    "bookmark_pdf_page": 285,
+    "bookmark_printed_page": 271,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "Inequality Estimators under Fat Tails",
+    "bookmark_pdf_page": 288,
+    "bookmark_printed_page": 274,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "15 Gini estimation under infinite variance ^\u2021",
+    "bookmark_pdf_page": 291,
+    "bookmark_printed_page": 277,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "15.1 Introduction",
+    "bookmark_pdf_page": 291,
+    "bookmark_printed_page": 277,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "15.2 Asymptotics under Infinite Variance",
+    "bookmark_pdf_page": 294,
+    "bookmark_printed_page": 280,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "15.2.1 A Quick Recap on -Stable Random Variables",
+    "bookmark_pdf_page": 296,
+    "bookmark_printed_page": 282,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "15.2.2 The -Stable Asymptotic Limit of the Gini Index",
+    "bookmark_pdf_page": 296,
+    "bookmark_printed_page": 282,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "15.3 The Maximum Likelihood Estimator",
+    "bookmark_pdf_page": 298,
+    "bookmark_printed_page": 284,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "15.4 A Paretian illustration",
+    "bookmark_pdf_page": 298,
+    "bookmark_printed_page": 284,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "15.5 Small Sample Correction",
+    "bookmark_pdf_page": 301,
+    "bookmark_printed_page": 287,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "15.6 Conclusions",
+    "bookmark_pdf_page": 304,
+    "bookmark_printed_page": 290,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "16 Biases of Quantile Contribution",
+    "bookmark_pdf_page": 311,
+    "bookmark_printed_page": 297,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "16.1 Introduction",
+    "bookmark_pdf_page": 311,
+    "bookmark_printed_page": 297,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "16.2 Estimation For Unmixed Pareto-Tailed Distributions",
+    "bookmark_pdf_page": 312,
+    "bookmark_printed_page": 298,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "16.2.1 Bias and Convergence",
+    "bookmark_pdf_page": 313,
+    "bookmark_printed_page": 299,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "16.3 An Inequality About Aggregating Inequality",
+    "bookmark_pdf_page": 316,
+    "bookmark_printed_page": 302,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "16.4 Mixed Distributions For The Tail Exponent",
+    "bookmark_pdf_page": 319,
+    "bookmark_printed_page": 305,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "16.5 A Larger Total Sum is Accompanied by Increases in \"0362_q",
+    "bookmark_pdf_page": 321,
+    "bookmark_printed_page": 307,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "16.6 Conclusion and Proper Estimation of Concentration",
+    "bookmark_pdf_page": 321,
+    "bookmark_printed_page": 307,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "16.6.1 Robust methods and use of exhaustive data",
+    "bookmark_pdf_page": 322,
+    "bookmark_printed_page": 308,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "16.6.2 How Should We Measure Concentration?",
+    "bookmark_pdf_page": 323,
+    "bookmark_printed_page": 309,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "Shadow Moments Papers",
+    "bookmark_pdf_page": 323,
+    "bookmark_printed_page": 309,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "17 Shadow Moments of Apparently Infinite-Mean Phenomena ^\u2021",
+    "bookmark_pdf_page": 327,
+    "bookmark_printed_page": 313,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "17.1 Introduction",
+    "bookmark_pdf_page": 327,
+    "bookmark_printed_page": 313,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "17.2 The dual Distribution",
+    "bookmark_pdf_page": 328,
+    "bookmark_printed_page": 314,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "17.3 Back to Y: the shadow mean (or population mean)",
+    "bookmark_pdf_page": 330,
+    "bookmark_printed_page": 316,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "17.4 Comparison to Other Methods",
+    "bookmark_pdf_page": 333,
+    "bookmark_printed_page": 319,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "17.5 Applications",
+    "bookmark_pdf_page": 334,
+    "bookmark_printed_page": 320,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "18 On the tail risk of violent conflict (with P. Cirillo)^\u2021",
+    "bookmark_pdf_page": 337,
+    "bookmark_printed_page": 323,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "18.1 Introduction/Summary",
+    "bookmark_pdf_page": 337,
+    "bookmark_printed_page": 323,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "18.2 Summary statistical discussion",
+    "bookmark_pdf_page": 340,
+    "bookmark_printed_page": 326,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.2.1 Results",
+    "bookmark_pdf_page": 340,
+    "bookmark_printed_page": 326,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.2.2 Conclusion",
+    "bookmark_pdf_page": 341,
+    "bookmark_printed_page": 327,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "18.3 Methodological Discussion",
+    "bookmark_pdf_page": 341,
+    "bookmark_printed_page": 327,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.3.1 Rescaling Method",
+    "bookmark_pdf_page": 342,
+    "bookmark_printed_page": 328,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.3.2 Expectation by Conditioning (less rigorous)",
+    "bookmark_pdf_page": 343,
+    "bookmark_printed_page": 329,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.3.3 Reliability of Data and Effect on Tail Estimates",
+    "bookmark_pdf_page": 343,
+    "bookmark_printed_page": 329,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.3.4 Definition of An \"Event\"",
+    "bookmark_pdf_page": 345,
+    "bookmark_printed_page": 331,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.3.5 Missing Events",
+    "bookmark_pdf_page": 345,
+    "bookmark_printed_page": 331,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.3.6 Survivorship Bias",
+    "bookmark_pdf_page": 346,
+    "bookmark_printed_page": 332,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "18.4 Data analysis",
+    "bookmark_pdf_page": 346,
+    "bookmark_printed_page": 332,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.4.1 Peaks Over Threshold",
+    "bookmark_pdf_page": 346,
+    "bookmark_printed_page": 332,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.4.2 Gaps in Series and Autocorrelation",
+    "bookmark_pdf_page": 347,
+    "bookmark_printed_page": 333,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.4.3 Tail Analysis",
+    "bookmark_pdf_page": 349,
+    "bookmark_printed_page": 335,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.4.4 An Alternative View on Maxima",
+    "bookmark_pdf_page": 350,
+    "bookmark_printed_page": 336,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.4.5 Full Data Analysis",
+    "bookmark_pdf_page": 351,
+    "bookmark_printed_page": 337,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "18.5 Additional robustness and reliability tests",
+    "bookmark_pdf_page": 352,
+    "bookmark_printed_page": 338,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.5.1 Bootstrap for the GPD",
+    "bookmark_pdf_page": 352,
+    "bookmark_printed_page": 338,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "18.5.2 Perturbation Across Bounds of Estimates",
+    "bookmark_pdf_page": 353,
+    "bookmark_printed_page": 339,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "18.6 Conclusion: is the world more unsafe than it seems?",
+    "bookmark_pdf_page": 353,
+    "bookmark_printed_page": 339,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "18.7 Acknowledgments",
+    "bookmark_pdf_page": 355,
+    "bookmark_printed_page": 341,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "H What are the chances of a third world war?^*,\u2020",
+    "bookmark_pdf_page": 357,
+    "bookmark_printed_page": 343,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "19 Tail Risk of Contagious Diseases",
+    "bookmark_pdf_page": 361,
+    "bookmark_printed_page": 347,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "19.1 Introduction and Policy Implications",
+    "bookmark_pdf_page": 361,
+    "bookmark_printed_page": 347,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "19.2 Data and descriptive statistics",
+    "bookmark_pdf_page": 363,
+    "bookmark_printed_page": 349,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "19.3 The dual tail via EVT and the shadow mean",
+    "bookmark_pdf_page": 369,
+    "bookmark_printed_page": 355,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "19.4 Data reliability issues",
+    "bookmark_pdf_page": 371,
+    "bookmark_printed_page": 357,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "Metaprobability Papers",
+    "bookmark_pdf_page": 376,
+    "bookmark_printed_page": 362,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "20 How Thick Tails Emerge From Recursive Epistemic Uncertainty^\u2020",
+    "bookmark_pdf_page": 381,
+    "bookmark_printed_page": 367,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "20.1 Methods and Derivations",
+    "bookmark_pdf_page": 381,
+    "bookmark_printed_page": 367,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "20.1.1 Layering Uncertainties",
+    "bookmark_pdf_page": 382,
+    "bookmark_printed_page": 368,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "20.1.2 Higher Order Integrals in the Standard Gaussian Case",
+    "bookmark_pdf_page": 382,
+    "bookmark_printed_page": 368,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "20.1.3 Effect on Small Probabilities",
+    "bookmark_pdf_page": 387,
+    "bookmark_printed_page": 373,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "20.2 Regime 2: Cases of decaying parameters  a( n)",
+    "bookmark_pdf_page": 388,
+    "bookmark_printed_page": 374,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "20.2.1 Regime 2-a;``Bleed'' of Higher Order Error",
+    "bookmark_pdf_page": 388,
+    "bookmark_printed_page": 374,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "20.2.2 Regime 2-b; Second Method, a Non Multiplicative Error Rate",
+    "bookmark_pdf_page": 389,
+    "bookmark_printed_page": 375,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "20.3 Limit Distribution",
+    "bookmark_pdf_page": 390,
+    "bookmark_printed_page": 376,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "21 Stochastic Tail Exponent For Asymmetric Power Laws^\u2020",
+    "bookmark_pdf_page": 393,
+    "bookmark_printed_page": 379,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.1 Background",
+    "bookmark_pdf_page": 393,
+    "bookmark_printed_page": 379,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.2 One Tailed Distributions with Stochastic Alpha",
+    "bookmark_pdf_page": 394,
+    "bookmark_printed_page": 380,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "21.2.1 General Cases",
+    "bookmark_pdf_page": 394,
+    "bookmark_printed_page": 380,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "21.2.2 Stochastic Alpha Inequality",
+    "bookmark_pdf_page": 395,
+    "bookmark_printed_page": 381,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "21.2.3 Approximations for the Class P",
+    "bookmark_pdf_page": 396,
+    "bookmark_printed_page": 382,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.3 Sums of Power Laws",
+    "bookmark_pdf_page": 397,
+    "bookmark_printed_page": 383,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.4 Asymmetric Stable Distributions",
+    "bookmark_pdf_page": 398,
+    "bookmark_printed_page": 384,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.5 Pareto Distribution with lognormally distributed ",
+    "bookmark_pdf_page": 398,
+    "bookmark_printed_page": 384,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.6 Pareto Distribution with Gamma distributed Alpha",
+    "bookmark_pdf_page": 399,
+    "bookmark_printed_page": 385,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.7 The Bounded Power Law in Cirillo and Taleb (2016)",
+    "bookmark_pdf_page": 400,
+    "bookmark_printed_page": 386,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.8 Additional Comments",
+    "bookmark_pdf_page": 401,
+    "bookmark_printed_page": 387,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "21.9 Acknowledgments",
+    "bookmark_pdf_page": 401,
+    "bookmark_printed_page": 387,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "22 Meta-Distribution of P-Values and P-Hacking^\u2021",
+    "bookmark_pdf_page": 403,
+    "bookmark_printed_page": 389,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "22.1 Proofs and derivations",
+    "bookmark_pdf_page": 405,
+    "bookmark_printed_page": 391,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "22.2 Inverse Power of Test",
+    "bookmark_pdf_page": 409,
+    "bookmark_printed_page": 395,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "22.3 Application and Conclusion",
+    "bookmark_pdf_page": 410,
+    "bookmark_printed_page": 396,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "I Some Confusions in Behavioral Economics",
+    "bookmark_pdf_page": 413,
+    "bookmark_printed_page": 399,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "I.1 Case Study: How the myopic loss aversion is misspecified",
+    "bookmark_pdf_page": 413,
+    "bookmark_printed_page": 399,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "23 Lindy as distance from an Absorbing Barrier",
+    "bookmark_pdf_page": 419,
+    "bookmark_printed_page": 405,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "23.1 Force of Mortality",
+    "bookmark_pdf_page": 419,
+    "bookmark_printed_page": 405,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "23.2 The Process",
+    "bookmark_pdf_page": 421,
+    "bookmark_printed_page": 407,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "23.2.1 Process without a drift",
+    "bookmark_pdf_page": 421,
+    "bookmark_printed_page": 407,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "23.2.2 Adding a drift via Girsanov's  theorem",
+    "bookmark_pdf_page": 425,
+    "bookmark_printed_page": 411,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "23.3 Some considerations on life expectancy and aging",
+    "bookmark_pdf_page": 426,
+    "bookmark_printed_page": 412,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "Quantitative Finance and Fat Tails",
+    "bookmark_pdf_page": 427,
+    "bookmark_printed_page": 413,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "24 Financial theory's failures with option pricing^\u2020",
+    "bookmark_pdf_page": 431,
+    "bookmark_printed_page": 417,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "24.1 Bachelier not Black-Scholes",
+    "bookmark_pdf_page": 431,
+    "bookmark_printed_page": 417,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "24.1.1 Distortion from Idealization",
+    "bookmark_pdf_page": 432,
+    "bookmark_printed_page": 418,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "24.1.2 The Actual Replication Process: ",
+    "bookmark_pdf_page": 433,
+    "bookmark_printed_page": 419,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "24.1.3 Failure: How Hedging Errors Can Be Prohibitive.",
+    "bookmark_pdf_page": 434,
+    "bookmark_printed_page": 420,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "25 Option Pricing w/o Dynamic Hedging",
+    "bookmark_pdf_page": 435,
+    "bookmark_printed_page": 421,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "25.1 Background",
+    "bookmark_pdf_page": 435,
+    "bookmark_printed_page": 421,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "25.2 Proof",
+    "bookmark_pdf_page": 437,
+    "bookmark_printed_page": 423,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "25.2.1 Case 1: Forward as risk-neutral measure",
+    "bookmark_pdf_page": 437,
+    "bookmark_printed_page": 423,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "25.2.2 Derivations",
+    "bookmark_pdf_page": 437,
+    "bookmark_printed_page": 423,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "25.3 Case where the Forward is not risk neutral",
+    "bookmark_pdf_page": 440,
+    "bookmark_printed_page": 426,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "25.4 comment",
+    "bookmark_pdf_page": 441,
+    "bookmark_printed_page": 427,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "26 Option traders never use the Black-Scholes formula^*,\u2021",
+    "bookmark_pdf_page": 443,
+    "bookmark_printed_page": 429,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "26.1 Breaking the Chain of Transmission",
+    "bookmark_pdf_page": 443,
+    "bookmark_printed_page": 429,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "26.2 Introduction/Summary",
+    "bookmark_pdf_page": 444,
+    "bookmark_printed_page": 430,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "26.2.1 Black-Scholes was an argument",
+    "bookmark_pdf_page": 444,
+    "bookmark_printed_page": 430,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "26.3 Myth 1: Traders did not price options before BSM",
+    "bookmark_pdf_page": 447,
+    "bookmark_printed_page": 433,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "26.4 Methods and Derivations",
+    "bookmark_pdf_page": 448,
+    "bookmark_printed_page": 434,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "26.4.1 Option formulas and Delta Hedging",
+    "bookmark_pdf_page": 451,
+    "bookmark_printed_page": 437,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "26.5 Myth 2: Traders Today use Black-Scholes",
+    "bookmark_pdf_page": 452,
+    "bookmark_printed_page": 438,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "26.5.1 When do we value?",
+    "bookmark_pdf_page": 453,
+    "bookmark_printed_page": 439,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "26.6 On the Mathematical Impossibility of Dynamic Hedging",
+    "bookmark_pdf_page": 453,
+    "bookmark_printed_page": 439,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "26.6.1 The (confusing) Robustness of the Gaussian",
+    "bookmark_pdf_page": 455,
+    "bookmark_printed_page": 441,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "26.6.2 Order Flow and Options",
+    "bookmark_pdf_page": 455,
+    "bookmark_printed_page": 441,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "26.6.3 Bachelier-Thorp",
+    "bookmark_pdf_page": 456,
+    "bookmark_printed_page": 442,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "27 Option Pricing Under Power Laws: A Robust Heuristic^*,\u2021",
+    "bookmark_pdf_page": 459,
+    "bookmark_printed_page": 445,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "27.1 Introduction",
+    "bookmark_pdf_page": 459,
+    "bookmark_printed_page": 445,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "27.2 Call Pricing beyond the Karamata constant",
+    "bookmark_pdf_page": 460,
+    "bookmark_printed_page": 446,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "27.2.1 First approach, S is in the regular variation class",
+    "bookmark_pdf_page": 460,
+    "bookmark_printed_page": 446,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "27.2.2 Second approach, S has geometric returns in the regular variation class",
+    "bookmark_pdf_page": 462,
+    "bookmark_printed_page": 448,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "27.3 Put Pricing",
+    "bookmark_pdf_page": 462,
+    "bookmark_printed_page": 448,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "27.4 Arbitrage Boundaries",
+    "bookmark_pdf_page": 465,
+    "bookmark_printed_page": 451,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "27.5 Comments",
+    "bookmark_pdf_page": 465,
+    "bookmark_printed_page": 451,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "28 Four Mistakes in Quantitative Finance^*,\u2021",
+    "bookmark_pdf_page": 467,
+    "bookmark_printed_page": 453,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "28.1 Conflation of Second and Fourth Moments",
+    "bookmark_pdf_page": 467,
+    "bookmark_printed_page": 453,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "28.2 Missing Jensen's Inequality in Analyzing Option Returns",
+    "bookmark_pdf_page": 468,
+    "bookmark_printed_page": 454,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "28.3 The Inseparability of Insurance and Insured",
+    "bookmark_pdf_page": 469,
+    "bookmark_printed_page": 455,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "28.4 The Necessity of a Num\u00e9raire in Finance",
+    "bookmark_pdf_page": 470,
+    "bookmark_printed_page": 456,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "28.5 Appendix (Betting on Tails of Distribution)",
+    "bookmark_pdf_page": 470,
+    "bookmark_printed_page": 456,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "29  Portfolios Should Never Rely on Correlation",
+    "bookmark_pdf_page": 473,
+    "bookmark_printed_page": 459,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 2,
+    "title": "30 Tail Risk Constraints and Maximum Entropy (w. D.& H. Geman)^\u2021",
+    "bookmark_pdf_page": 483,
+    "bookmark_printed_page": 469,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "30.1 Left Tail Risk as the Central Portfolio Constraint",
+    "bookmark_pdf_page": 483,
+    "bookmark_printed_page": 469,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "30.1.1 The Barbell as seen by E.T. Jaynes",
+    "bookmark_pdf_page": 486,
+    "bookmark_printed_page": 472,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "30.2 Revisiting the Mean Variance Setting",
+    "bookmark_pdf_page": 486,
+    "bookmark_printed_page": 472,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "30.2.1 Analyzing the Constraints",
+    "bookmark_pdf_page": 487,
+    "bookmark_printed_page": 473,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "30.3 Revisiting the Gaussian Case",
+    "bookmark_pdf_page": 487,
+    "bookmark_printed_page": 473,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "30.3.1 A Mixture of Two Normals",
+    "bookmark_pdf_page": 489,
+    "bookmark_printed_page": 475,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "30.4 Maximum Entropy",
+    "bookmark_pdf_page": 489,
+    "bookmark_printed_page": 475,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "30.4.1 Case A: Constraining the Global Mean",
+    "bookmark_pdf_page": 491,
+    "bookmark_printed_page": 477,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "30.4.2 Case B: Constraining the Absolute Mean",
+    "bookmark_pdf_page": 491,
+    "bookmark_printed_page": 477,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "30.4.3 Case C: Power Laws for the Right Tail",
+    "bookmark_pdf_page": 492,
+    "bookmark_printed_page": 478,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 4,
+    "title": "30.4.4 Extension to a Multi-Period Setting: A Comment",
+    "bookmark_pdf_page": 493,
+    "bookmark_printed_page": 479,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "30.5 Comments and Conclusion",
+    "bookmark_pdf_page": 494,
+    "bookmark_printed_page": 480,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 3,
+    "title": "30.6 Appendix/Proofs",
+    "bookmark_pdf_page": 495,
+    "bookmark_printed_page": 481,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  },
+  {
+    "depth": 1,
+    "title": "Bibliography and Index",
+    "bookmark_pdf_page": 495,
+    "bookmark_printed_page": 481,
+    "locator_status": "PDF bookmark; verify exact formula page before implementation"
+  }
+]

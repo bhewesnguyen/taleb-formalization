@@ -1,0 +1,10 @@
+{
+  "edition": "arXiv:2001.10488v4, third edition, 17 September 2025",
+  "pdf_pages": 523,
+  "source_sha256": "758e18b7337840104db93296144d67cf5514bf2de128fe557dc84bc32a0ad567",
+  "units": 39,
+  "bookmarks": 353,
+  "equation_locator_occurrences": 315,
+  "heading_candidates": 71,
+  "limits": "Indexes scan every source page through printed page 482. They do not infer a formal proposition from every equation. Unnumbered mathematics is represented by curated obligation families; no claim of an exhaustive atomic theorem count."
+}

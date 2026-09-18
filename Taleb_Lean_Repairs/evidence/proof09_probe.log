@@ -1,0 +1,9 @@
+@signature_probe : ∀ {univ : Set ℝ} {c : ℝ},
+  0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α)
+theorem Proof09Probe.signature_probe : ∀ {univ : Set ℝ} {c : ℝ},
+  0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α) :=
+fun {univ} {c} _hc h => h
+@statement : {univ : Set ℝ} → {c : ℝ} → 0 < c → Prop
+def Proof09Probe.statement : {univ : Set ℝ} → {c : ℝ} → 0 < c → Prop :=
+fun {univ} {c} _hc => ConvexOn ℝ univ fun α => c ^ (-α)
+'Proof09Probe.submitted_statement_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]

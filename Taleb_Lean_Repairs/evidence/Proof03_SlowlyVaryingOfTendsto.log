@@ -1,0 +1,6 @@
+/workspace/scratch/7ad75325de75/audit/source/Proof03_SlowlyVaryingOfTendsto.lean:33:56: error: Type mismatch
+  Tendsto.comp hmul ?m.57
+has type
+  Tendsto ((fun x => b * x) ∘ ?m.52) ?m.54 atTop
+but is expected to have type
+  Tendsto (fun x => L (b * x)) atTop (𝓝 c)

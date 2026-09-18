@@ -1,0 +1,10 @@
+--- Proof05_RegularlyVaryingRpow.lean
++++ Proof05_ImportOnly.lean
+@@ -10,6 +10,7 @@
+ import Mathlib.Analysis.SpecialFunctions.Log.Basic
+ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+ import Mathlib.Analysis.SpecialFunctions.Pow.Real
++import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
+ import Mathlib.Analysis.SpecialFunctions.Exp
+ import Mathlib.Analysis.Complex.Exponential
+ import Mathlib.Analysis.Convex.SpecificFunctions.Basic

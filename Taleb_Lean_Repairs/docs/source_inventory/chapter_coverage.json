@@ -1,0 +1,353 @@
+[
+  {
+    "unit": "1",
+    "title": "1 Prologue^*,\u2020",
+    "pdf_start": 17,
+    "pdf_end": 20,
+    "printed_start": 3,
+    "printed_end": 6,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "2",
+    "title": "2 Glossary, Definitions, and Notations",
+    "pdf_start": 21,
+    "pdf_end": 38,
+    "printed_start": 7,
+    "printed_end": 24,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "3",
+    "title": "3 A Non-Technical Overview - The Darwin College Lecture ^*,\u2021",
+    "pdf_start": 39,
+    "pdf_end": 82,
+    "printed_start": 25,
+    "printed_end": 68,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "4",
+    "title": "4 Univariate fat tails, Level 1, Finite Moments^\u2020",
+    "pdf_start": 83,
+    "pdf_end": 104,
+    "printed_start": 69,
+    "printed_end": 90,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "5",
+    "title": "5 Level 2: Subexponentials and Power Laws",
+    "pdf_start": 105,
+    "pdf_end": 120,
+    "printed_start": 91,
+    "printed_end": 106,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "6",
+    "title": "6 Thick Tails in Higher Dimensions^\u2020",
+    "pdf_start": 121,
+    "pdf_end": 134,
+    "printed_start": 107,
+    "printed_end": 120,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "A",
+    "title": "A Special Cases of Thick Tails",
+    "pdf_start": 135,
+    "pdf_end": 140,
+    "printed_start": 121,
+    "printed_end": 126,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "B",
+    "title": "B Fat Tails From Maximum Entropy",
+    "pdf_start": 141,
+    "pdf_end": 150,
+    "printed_start": 127,
+    "printed_end": 136,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "7",
+    "title": "7 Limit Distributions, A Consolidation^*,\u2020",
+    "pdf_start": 151,
+    "pdf_end": 166,
+    "printed_start": 137,
+    "printed_end": 152,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "8",
+    "title": "8 How Much Data Do You Need?",
+    "pdf_start": 167,
+    "pdf_end": 184,
+    "printed_start": 153,
+    "printed_end": 170,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "9",
+    "title": "9 Extreme Values and Hidden Tails ^*,\u2020 ",
+    "pdf_start": 185,
+    "pdf_end": 196,
+    "printed_start": 171,
+    "printed_end": 182,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "C",
+    "title": "C Growth Rate & Outcome: not in the Same Distribution Class",
+    "pdf_start": 197,
+    "pdf_end": 200,
+    "printed_start": 183,
+    "printed_end": 186,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "D",
+    "title": "D The Large Deviation Principle, In Brief",
+    "pdf_start": 201,
+    "pdf_end": 202,
+    "printed_start": 187,
+    "printed_end": 188,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "E",
+    "title": "E Calibrating under Paretianity",
+    "pdf_start": 203,
+    "pdf_end": 206,
+    "printed_start": 189,
+    "printed_end": 192,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "10",
+    "title": "10 \"It is what it is\": Diagnosing the SP500^\u2020",
+    "pdf_start": 207,
+    "pdf_end": 220,
+    "printed_start": 193,
+    "printed_end": 206,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "F",
+    "title": "F The Problem with Econometrics",
+    "pdf_start": 221,
+    "pdf_end": 226,
+    "printed_start": 207,
+    "printed_end": 212,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "G",
+    "title": "G Machine Learning Considerations",
+    "pdf_start": 227,
+    "pdf_end": 232,
+    "printed_start": 213,
+    "printed_end": 218,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "11",
+    "title": "11 Probability Calibration Under Fat Tails ^\u2021",
+    "pdf_start": 233,
+    "pdf_end": 254,
+    "printed_start": 219,
+    "printed_end": 240,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "12",
+    "title": "12 On Single Point Forecasts for Fat-Tailed Variables",
+    "pdf_start": 255,
+    "pdf_end": 266,
+    "printed_start": 241,
+    "printed_end": 252,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "13",
+    "title": "13 The Probability Conflation",
+    "pdf_start": 267,
+    "pdf_end": 274,
+    "printed_start": 253,
+    "printed_end": 260,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "14",
+    "title": "14 Election Predictions as Martingales: An Arbitrage Approach^\u2021",
+    "pdf_start": 275,
+    "pdf_end": 290,
+    "printed_start": 261,
+    "printed_end": 276,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "15",
+    "title": "15 Gini estimation under infinite variance ^\u2021",
+    "pdf_start": 291,
+    "pdf_end": 310,
+    "printed_start": 277,
+    "printed_end": 296,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "16",
+    "title": "16 Biases of Quantile Contribution",
+    "pdf_start": 311,
+    "pdf_end": 326,
+    "printed_start": 297,
+    "printed_end": 312,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "17",
+    "title": "17 Shadow Moments of Apparently Infinite-Mean Phenomena ^\u2021",
+    "pdf_start": 327,
+    "pdf_end": 336,
+    "printed_start": 313,
+    "printed_end": 322,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "18",
+    "title": "18 On the tail risk of violent conflict (with P. Cirillo)^\u2021",
+    "pdf_start": 337,
+    "pdf_end": 356,
+    "printed_start": 323,
+    "printed_end": 342,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "H",
+    "title": "H What are the chances of a third world war?^*,\u2020",
+    "pdf_start": 357,
+    "pdf_end": 360,
+    "printed_start": 343,
+    "printed_end": 346,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "19",
+    "title": "19 Tail Risk of Contagious Diseases",
+    "pdf_start": 361,
+    "pdf_end": 380,
+    "printed_start": 347,
+    "printed_end": 366,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "20",
+    "title": "20 How Thick Tails Emerge From Recursive Epistemic Uncertainty^\u2020",
+    "pdf_start": 381,
+    "pdf_end": 392,
+    "printed_start": 367,
+    "printed_end": 378,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "21",
+    "title": "21 Stochastic Tail Exponent For Asymmetric Power Laws^\u2020",
+    "pdf_start": 393,
+    "pdf_end": 402,
+    "printed_start": 379,
+    "printed_end": 388,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "22",
+    "title": "22 Meta-Distribution of P-Values and P-Hacking^\u2021",
+    "pdf_start": 403,
+    "pdf_end": 412,
+    "printed_start": 389,
+    "printed_end": 398,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "I",
+    "title": "I Some Confusions in Behavioral Economics",
+    "pdf_start": 413,
+    "pdf_end": 418,
+    "printed_start": 399,
+    "printed_end": 404,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "23",
+    "title": "23 Lindy as distance from an Absorbing Barrier",
+    "pdf_start": 419,
+    "pdf_end": 430,
+    "printed_start": 405,
+    "printed_end": 416,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "24",
+    "title": "24 Financial theory's failures with option pricing^\u2020",
+    "pdf_start": 431,
+    "pdf_end": 434,
+    "printed_start": 417,
+    "printed_end": 420,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "25",
+    "title": "25 Option Pricing w/o Dynamic Hedging",
+    "pdf_start": 435,
+    "pdf_end": 442,
+    "printed_start": 421,
+    "printed_end": 428,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "26",
+    "title": "26 Option traders never use the Black-Scholes formula^*,\u2021",
+    "pdf_start": 443,
+    "pdf_end": 458,
+    "printed_start": 429,
+    "printed_end": 444,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "27",
+    "title": "27 Option Pricing Under Power Laws: A Robust Heuristic^*,\u2021",
+    "pdf_start": 459,
+    "pdf_end": 466,
+    "printed_start": 445,
+    "printed_end": 452,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "28",
+    "title": "28 Four Mistakes in Quantitative Finance^*,\u2021",
+    "pdf_start": 467,
+    "pdf_end": 472,
+    "printed_start": 453,
+    "printed_end": 458,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "29",
+    "title": "29  Portfolios Should Never Rely on Correlation",
+    "pdf_start": 473,
+    "pdf_end": 482,
+    "printed_start": 459,
+    "printed_end": 468,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  },
+  {
+    "unit": "30",
+    "title": "30 Tail Risk Constraints and Maximum Entropy (w. D.& H. Geman)^\u2021",
+    "pdf_start": 483,
+    "pdf_end": 496,
+    "printed_start": 469,
+    "printed_end": 482,
+    "coverage": "Formalization inventory only; no whole-chapter correctness certificate."
+  }
+]

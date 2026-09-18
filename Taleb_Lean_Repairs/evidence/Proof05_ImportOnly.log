@@ -1,0 +1,21 @@
+/workspace/scratch/7ad75325de75/audit/probes/Proof05_ImportOnly.lean:51:43: error: Application type mismatch: The argument
+  hnn
+has type
+  ∀ᶠ (x : ℝ) in atTop, 0 ≤ L (b * x) / L x
+but is expected to have type
+  b ^ α ≠ 0 ∨ 0 < ?m.213
+in the application
+  Tendsto.rpow hL' tendsto_const_nhds hnn
+/workspace/scratch/7ad75325de75/audit/probes/Proof05_ImportOnly.lean:38:55: error: unsolved goals
+L : ℝ → ℝ
+α p : ℝ
+hL : IsRegularlyVarying L α
+hpos : ∀ᶠ (x : ℝ) in atTop, 0 < L x
+hmul : ∀ {b : ℝ}, 0 < b → Tendsto (fun x => b * x) atTop atTop
+b : ℝ
+hb : 0 < b
+hL' : Tendsto (fun x => L (b * x) / L x) atTop (𝓝 (b ^ α))
+hpos' : ∀ᶠ (x : ℝ) in atTop, 0 < L (b * x)
+e : (fun x => L (b * x) ^ p / L x ^ p) =ᶠ[atTop] fun x => (L (b * x) / L x) ^ p
+hnn : ∀ᶠ (x : ℝ) in atTop, 0 ≤ L (b * x) / L x
+⊢ Tendsto (fun x => (fun x => L x ^ p) (b * x) / (fun x => L x ^ p) x) atTop (𝓝 (b ^ (p * α)))

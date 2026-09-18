@@ -1,0 +1,44 @@
+ℹ [1920/1925] Built AuditRepairs.ImplicitSetDiagnostic (2.0s)
+info: AuditRepairs/ImplicitSetDiagnostic.lean:23:0: @signature_probe : ∀ {univ : Set ℝ} {c : ℝ},
+  0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α)
+info: AuditRepairs/ImplicitSetDiagnostic.lean:24:0: theorem Proof09Probe.signature_probe : ∀ {univ : Set ℝ} {c : ℝ},
+  0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α) :=
+fun {univ} {c} _hc h => h
+info: AuditRepairs/ImplicitSetDiagnostic.lean:30:0: @statement : {univ : Set ℝ} → {c : ℝ} → 0 < c → Prop
+info: AuditRepairs/ImplicitSetDiagnostic.lean:31:0: def Proof09Probe.statement : {univ : Set ℝ} → {c : ℝ} → 0 < c → Prop :=
+fun {univ} {c} _hc => ConvexOn ℝ univ fun α => c ^ (-α)
+info: AuditRepairs/ImplicitSetDiagnostic.lean:49:0: 'Proof09Probe.submitted_statement_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1921/1925] Built AuditRepairs.RegularVariation (5.0s)
+info: AuditRepairs/RegularVariation.lean:112:0: 'AuditRV.isSlowlyVarying_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/RegularVariation.lean:113:0: 'AuditRV.isSlowlyVarying_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/RegularVariation.lean:114:0: 'AuditRV.IsSlowlyVarying.of_tendsto_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/RegularVariation.lean:115:0: 'AuditRV.IsRegularlyVarying.mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/RegularVariation.lean:116:0: 'AuditRV.IsRegularlyVarying.rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/RegularVariation.lean:117:0: 'AuditRV.isRegularlyVarying_iff_slowlyVarying' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1922/1925] Built AuditRepairs.Tails (7.9s)
+info: AuditRepairs/Tails.lean:177:0: 'AuditTails.pareto_log_ratio_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:178:0: 'AuditTails.pareto_hasFiniteTailExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:179:0: 'AuditTails.tailExponentReal_pareto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:180:0: 'AuditTails.tailExponentReal_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:181:0: 'AuditTails.real_liminf_of_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:182:0: 'AuditTails.tail_log_ratio_of_ratio_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:183:0: 'AuditTails.subexponential_ratio_tailExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:184:0: 'AuditTails.convexOn_rpow_neg_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:185:0: 'AuditTails.frechet_formula_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:186:0: 'AuditTails.frechet_cdf_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Tails.lean:187:0: 'AuditTails.gumbel_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1923/1925] Built AuditRepairs.Stable (8.2s)
+info: AuditRepairs/Stable.lean:177:0: 'StableAudit.gaussian_specialization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:178:0: 'StableAudit.gaussian_specialization_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:179:0: 'StableAudit.submitted_gaussian_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:180:0: 'StableAudit.gaussian_stable_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:181:0: 'StableAudit.gaussian_stable_real_short' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:182:0: 'StableAudit.cauchy_specialization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:183:0: 'StableAudit.submitted_cauchy_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:184:0: 'StableAudit.cauchy_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:185:0: 'StableAudit.cauchy_stable_short' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:186:0: 'StableAudit.stableExpr_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:187:0: 'StableAudit.submitted_alpha_one_ignores_skew' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/Stable.lean:188:0: 'StableAudit.stableS1Expr_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [1924/1925] Built AuditRepairs (1.5s)
+Build completed successfully (1925 jobs).

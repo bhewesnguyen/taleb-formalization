@@ -1,0 +1,49 @@
+# Mathlib reuse and implementation order
+
+The checked baseline is Mathlib v4.24.0 at commit f897ebcf72cd16f89ab4577d0c826cd14afaafc7. Exact module/declaration evidence below comes from its local source. A broad filename/text search is not a proof that no equivalent theorem exists. Recheck current upstream before proposing a contribution; do not migrate the working baseline during the first reproduction.
+
+| Dependency group | Existing infrastructure in the pinned snapshot | Work that remains |
+|---|---|---|
+| RV | `Analysis/Asymptotics/AsymptoticEquivalent`, real-power continuity, filter limits | A coherent positive/measurable regular-variation API; uniform convergence, Potter bounds and Karamata. No dedicated named RV module was found in the scoped search. |
+| TAIL, MOM | `MeasureTheory/Integral/Layercake`: `lintegral_eq_lintegral_meas_lt`, `Integrable.integral_eq_integral_meas_lt`; `Analysis/SpecialFunctions/Pow/Integral` | Threshold excess corollaries; exact Pareto moment integrals; index boundary cases. Reuse layer cake. |
+| CF | `MeasureTheory/Measure/CharacteristicFunction`: `charFun_conv`, `Measure.ext_of_charFun`; `Probability/Independence/Basic`: `IndepFun.map_add_eq_map_conv_map₀` | Stable law existence and admissible parameter families. The new bridge already reuses the convolution and uniqueness results. |
+| Gaussian | `Probability/Distributions/Gaussian/Real`: `charFun_gaussianReal`, `gaussianReal_conv_gaussianReal` | Specialize or wrap these; do not submit another proof of Gaussian convolution closure as new infrastructure. |
+| CDF, QUANT | `Probability/CDF`: `cdf_eq_real`, `Measure.eq_of_cdf`; Stieltjes measures and independence | Maximum/minimum laws, support-correct EVT measures, quantile conventions and atom handling. |
+| Pareto | `Probability/Distributions/Pareto`: `paretoMeasure`, `isProbabilityMeasure_paretoMeasure`, density/CDF integral bridge | Integrate against this law; fill exact survival, moment and excess corollaries as needed. Do not create a duplicate distribution. |
+| CALC | `Analysis/Convex/Integral`: `ConvexOn.map_integral_le`; `Analysis/Convex/Jensen` | Prove parameter-domain convexity, then supply integrability and support for Jensen. |
+| LLN | `Probability/StrongLaw`: `strong_law_ae_real`, `strong_law_ae`, `strong_law_Lp` | Instantiate for powers, ratios and estimators; add maximum/sum facts rather than reprove SLLN. |
+| GAMMA, DENS | `Probability/Distributions/Gamma`, `Beta`; gamma/beta special functions | Inverse moments, lognormal/gamma mixture identities and change-of-variable bridges. |
+| CLT, EVT, SUBEXP | General measure/limit/Fourier foundations and convergence notions | Large theorem families; exact completeness in current upstream is unverified. Generalized CLT, domains of attraction and subexponential closure are substantial projects. |
+| EST, GINI, KAPPA | Integration, laws of large numbers, elementary limits | Estimator definitions; joint asymptotics; regular MLE assumptions; delta/Slutsky steps. |
+| MULTI, ENT | Inner product spaces, matrices, convexity, measure products | Elliptical distributions, differential entropy optimization, tail dependence; existence hypotheses matter. |
+| RUIN, SDE, FIN | Martingale/optional-stopping modules; stochastic-process foundations | Check exact Brownian/Ito/Girsanov coverage before sizing; pricing assumptions and admissible strategies first. |
+| APP | No theorem prover substitutes for data and a testable model | Reproducible calculations, model validation and software evidence. |
+
+## Suggested contribution slices
+
+1. Reproduce the handoff without edits. The verification JSON must say PASS and identify the pinned dependency commits.
+2. Review the ratio-only predicate design before building on it. Consider aligning with a more general asymptotic/filter interface upstream, then propose a small reviewable family of closure and example lemmas. The eleven new foundation results are building material, not evidence of upstream acceptance.
+3. Build exact Pareto survival, moment and threshold-excess results against `paretoMeasure`. Include both finite-moment results and divergence statements. This supplies many book applications without requiring generalized CLT.
+4. Prove iid maximum/minimum distribution identities using existing independence. Construct valid Gumbel/Frechet/reverse-Weibull laws through CDF/Stieltjes infrastructure; connect the already checked algebra.
+5. Add the genuine subexponential API and basic consequences. Do not confuse it with exponential-concentration classes. Proving regularly varying laws are subexponential is a larger step than declaring the predicate.
+6. Add positive/measurable RV, uniform convergence, Potter bounds and Karamata, after agreement on definitions. These unlock moment tests, asymptotic shortfalls, options and EVT.
+7. Treat stable-law existence, stable domains of attraction and generalized CLT as a substantial workstream. The new conditional bridge prevents algebraic formula manipulation from masquerading as existence.
+8. Only then formalize kappa, Gini/quantile estimation, mixtures and application-specific chapters. Resolve source-gate rows before choosing a proposition.
+
+## Priority and completion rules
+
+P0 means repair the mathematical statement before coding. P1 means a comparatively contained reusable lemma family, assuming prerequisites. P2 means a substantial theorem or dependency family. P3 means advanced application, empirical work, or a model that is not yet specified. These are dependency priorities, not promises measured in days. A source-check status is a blocking mathematical review regardless of its priority.
+
+A completed task needs: edition/page/anchor; exact quantified statement; all domain, integrability and independence assumptions; imports and dependency version; proof without placeholders; axiom closure; and a note identifying any difference from the book. A theorem that simply assumes the desired distributional conclusion as a hypothesis does not complete an existence task.
+
+## Weekend and Monday split
+
+A sensible near-term target is to reproduce this repaired package and select one small Pareto/tail API contribution. Formalizing the remaining book and obtaining upstream acceptance should not be a dependency of a Monday software demo. For the separate quantum/classical application, obtain the actual repository, runnable baseline, input schema, expected output examples and the particular paper claim being demonstrated. Then connect only the implemented, relevant mathematical contract to that software; keep simulation, classical computation and hardware execution explicitly identified. This handoff neither runs nor modifies that unseen application.
+
+## Primary references
+
+- [Versioned book](https://arxiv.org/abs/2001.10488v4)
+- [Pinned Mathlib source](https://github.com/leanprover-community/mathlib4/tree/f897ebcf72cd16f89ab4577d0c826cd14afaafc7/Mathlib)
+- [Mathlib contribution guide](https://leanprover-community.github.io/contribute/index.html)
+
+The first two are provenance anchors for this work. Consult the current contribution guide and upstream source before proposing a PR; no current-acceptance claim is made here.

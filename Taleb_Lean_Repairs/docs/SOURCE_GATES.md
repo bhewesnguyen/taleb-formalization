@@ -1,0 +1,71 @@
+# Source gates before proof search
+
+These are targeted mathematical checks found while building the inventory, not a completed audit of every book theorem. Page numbers below are printed Arabic pages; add 14 for PDF viewer pages. The more complex backlog entries marked source-check need full derivations. The concrete checks below explain why literal transcription would fail. Except where explicitly named, these checks are mathematical arguments in this document, not additional Lean theorems delivered in the package.
+
+## G01. Slow variation is not convergence to a constant
+
+Sections 2.2.1 and 21.2. The function log(x) is slowly varying and diverges. `AuditRV.isSlowlyVarying_log` is already checked. Eventual constant-tail approximations require an additional quantitative or asymptotic assumption.
+
+## G02. Exponential is a boundary, not a member of the heavy-tail subexponential class
+
+Pages 91-93. If X,Y are independent exponentials of rate r>0, P(X+Y>x)/P(X>x)=1+r*x for x>=0. It diverges instead of tending to 2. Use the convolution definition in `AuditProbability.IsSubexponential`. Gamma/Laplace exponential tails do not become heavy-tail subexponential merely because they are mentioned alongside a boundary case.
+
+## G03. The moment boundary of general regular variation is undecided by alpha alone
+
+Pages 91-98. For nonnegative moment order q and survival S(x)=x^(-alpha)L(x), q<alpha gives the usual finite-moment result, and q>alpha divergence. At q=alpha the deciding integral is proportional to integral L(x)/x dx. For example, a normalized eventual survival proportional to x^(-1)/(log x)^2 has index 1 and finite mean. Exact Pareto statements cannot be silently generalized at the boundary.
+
+## G04. Product tails need assumptions
+
+Page 100, Principle 5.2. Multiplication by the thin-tailed variable Y=0 yields zero, not a heavy tail. The useful replacement is a Breiman-type theorem for independent nonnegative variables with a finite (alpha+epsilon) moment of Y and a positive alpha moment. Dependence and cancellation need separate treatment.
+
+## G05. Stable absolute moment fails the Gaussian endpoint check
+
+Page 152, equation (7.9), visually checked. With alpha=2, beta=0 and location zero, the displayed formula gives scale/sqrt(pi). The chapter's characteristic function is exp(-scale^2*t^2), corresponding to Gaussian variance 2*scale^2 and E|X|=2*scale/sqrt(pi). Resolve this factor of two before formalizing the general stable moment derivation. The delivered S1 specializations fix the parameter-order errors in the original Lean files, but do not prove the corrected general absolute-moment integral.
+
+## G06. A hidden finite moment cannot have p>alpha for an exact Pareto tail
+
+Pages 177-178, Proposition 9.1 and equation (9.12), visually checked. The hidden moment is defined as integral_K^infinity x^p f(x) dx. For Pareto density alpha*L^alpha*x^(-alpha-1), this equals alpha*L^alpha*K^(p-alpha)/(alpha-p) only when p<alpha. It diverges for p>=alpha. The printed p>alpha domain cannot give a real-valued finite hidden-moment density. Re-derive the distribution in the valid finite-moment regime and distinguish exact Pareto from approximation.
+
+## G07. Full support does not force a Laplace log-growth law
+
+Page 184, Theorem 1, visually checked. The one-sided result log(X/L)~Exponential(alpha) follows from exact Pareto X. Allowing the log variable to range over all reals does not determine its negative side, symmetry, or mixing weights. An independent bilateral/symmetry model is required for a Laplace conclusion.
+
+## G08. Shortfall ratios have sign and normalization errors
+
+Page 200, Definition 10.1, and page 228, Definition 11.6, visually checked. For a Pareto law with alpha>1, E[X given X>K]/K=alpha/(alpha-1)>1 and E[X-K given X>K]/K=1/(alpha-1). A second division by K changes the limit. The printed alpha/(1-alpha) is negative and cannot be the ratio of positive tail payoffs. The adjusted payoff-equivalent factor may exceed one; it is then not a probability.
+
+## G09. The sigmoid martingale statement is false as written
+
+Page 268, Proposition 14.1, visually checked. Let X_t be constantly 1. Both X_t and logistic(X_t) are martingales, but logistic(1) is not 1/2, refuting the literal only-if statement. Even for nondegenerate Brownian motion started at zero, symmetry of the unconditional mean does not prove the sigmoid process is a martingale. For dX=b(X)dt+sigma(X)dW, the drift of f(X) is f'(X)b(X)+(1/2)f''(X)sigma(X)^2. A local drift condition over the reachable states, plus integrability, is the right target.
+
+## G10. Gini ratios require joint fluctuation analysis
+
+Pages 283-285 and 295, Theorem 2 and equation (15.42). The numerator and denominator share observations. At stable order, denominator fluctuations cannot be dropped as if they were smaller. The appendix itself introduces Xi*(2F(Xi)-1-g). Verify its tail constants and scaling before accepting the displayed limit parameter. This is a source-review gate, not a completed counterexample or repaired Gini theorem.
+
+## G11. Strict bias and monotonicity need stronger hypotheses
+
+Page 305, Theorem 5. If every observation lies above the fixed threshold h, the empirical and population threshold shares both equal 1; strict downward bias fails. Also, superadditivity of n*a_n alone does not imply that a_n increases: b_n=floor(n/2) is superadditive, while b_2/2=1/2>b_3/3=1/3. Consistency from an appropriate LLN is a separate, plausible claim and should be proved independently.
+
+## G12. Shifted-lognormal mixture mean has an invalid generalization
+
+Page 385, equations (21.11)-(21.13), visually checked and carried forward from the first audit. Set b=2, alpha0=3, log-variance=1 and scale=1. Every conditional Pareto mean for alpha=2+Z, Z>0, lies in (1,2). The printed closed form gives 1+e>2. The correct general expression is scale*(1+E[1/(b-1+Z)]). At b=1 and E[Z]=alpha0-1 it simplifies to scale*(1+exp(log-variance)/(alpha0-1)). Termwise integration of the proposed lognormal series needs an independent convergence argument.
+
+## G13. Shifted-gamma correction needs scale and a finite inverse moment
+
+Page 386, equations (21.14)-(21.16), visually checked and carried forward. Set m=alpha0-1 and let alpha-1 have gamma shape m^2/s^2 and scale s^2/m. For m^2>s^2, the mixture mean is scale*(1+m/(m^2-s^2)); its excess over the fixed-index mean is scale*s^2/(m*(m^2-s^2)). The displayed equation repeats the primed expectation and omits scale. If m^2<=s^2, the inverse moment diverges despite alpha>1 almost surely. `AuditMoments.gamma_mixture_excess` and `gamma_mixture_excess_pos` check the repaired algebra and sign. The gamma integral and its divergence threshold remain backlog items.
+
+## G14. The minimum-p-value expectation formula has the wrong sign and integrand
+
+Page 395 after Proposition 22.3, visually checked. The displayed integral is negative for a positive density; at m=1 it is -1. For m independent [0,1] values with CDF F, E[min]=integral_0^1 (1-F(p))^m dp, equivalently integral_0^1 p*m*f(p)*(1-F(p))^(m-1) dp when a density exists. Identical marginal distributions alone do not give the product survival law.
+
+## G15. A forward mean does not identify a probability measure
+
+Page 426, Lemma 25.3 and equation (25.13), visually checked. The point mass at 1 and the equal mixture of point masses at 0 and 2 have the same first moment and different laws. Equality of forward expectations cannot imply a Radon-Nikodym derivative of 1. The payoff identity is (x-K)_+-(K-x)_+=x-K. A full arbitrage-free option curve across strikes can determine a terminal marginal; a single mean cannot, and neither identifies an entire path law.
+
+## G16. Absolute-moment constraint has a sign error
+
+Page 478, Section 30.4.2, visually checked. Under the chapter's K<0 setting, the left tail is negative, so its contribution to E|X| is -epsilon*nu_minus. The printed constraint uses +epsilon*nu_minus. Correct this sign before solving for the truncated-Laplace rate or proving maximum entropy.
+
+## Additional review gates
+
+The backlog also flags the general Lp-ball volume factor, kappa's log(0) index and non-universal bounds, recursive moment explosion versus weak limits, source density normalization in Chapter 21, p-value sampling-model assumptions, real powers of negative bases in put pricing, and existence of entropy maximizers. These are not all certified errors; they identify precise definitions and derivations that must be checked before formalization.

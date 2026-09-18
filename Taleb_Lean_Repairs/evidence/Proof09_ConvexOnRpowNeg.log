@@ -1,0 +1,44 @@
+/workspace/scratch/7ad75325de75/audit/source/Proof09_ConvexOnRpowNeg.lean:33:59: error: Type mismatch
+  convexOn_exp
+has type
+  ConvexOn ℝ Set.univ Real.exp
+but is expected to have type
+  ConvexOn ℝ univ fun x => Real.exp x
+/workspace/scratch/7ad75325de75/audit/source/Proof09_ConvexOnRpowNeg.lean:37:6: error: Type mismatch
+  convex_univ
+has type
+  Convex ?m.90 Set.univ
+but is expected to have type
+  Convex ℝ univ
+Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/workspace/scratch/7ad75325de75/audit/source/Proof09_ConvexOnRpowNeg.lean:38:4: error: unsolved goals
+case right
+univ : Set ℝ
+c : ℝ
+hc : 0 < c
+e : (fun α => c ^ (-α)) = fun α => Real.exp (-Real.log c * α)
+hexp : ConvexOn ℝ univ fun x => Real.exp x
+x : ℝ
+a✝¹ : x ∈ univ
+y : ℝ
+a✝ : y ∈ univ
+a b : ℝ
+ha : 0 ≤ a
+hb : 0 ≤ b
+hab : a + b = 1
+⊢ -(Real.log c * a * x) - Real.log c * b * y ≤ -(Real.log c * a * x) - Real.log c * b * y
+/workspace/scratch/7ad75325de75/audit/source/Proof09_ConvexOnRpowNeg.lean:43:28: error: Application type mismatch: The argument
+  haff
+has type
+  ConvexOn ℝ univ fun α => -Real.log c * α
+of sort `Prop` but is expected to have type
+  ?m.170 →ᵃ[ℝ] ℝ
+of sort `Type (max ?u.5597 0)` in the application
+  @ConvexOn.comp_affineMap ℝ ?m.170 ℝ ℝ Real.instField Real.linearOrder ?m.175 Real.instAddCommGroup
+    Real.instAddCommMonoid Real.partialOrder ?m.179 NormedField.toNormedSpace.toModule (Algebra.id ℝ).toSMul
+    (fun x => Real.exp x) haff

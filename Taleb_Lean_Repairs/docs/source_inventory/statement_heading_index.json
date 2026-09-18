@@ -1,0 +1,428 @@
+[
+  {
+    "label": "Definition 3.1 (Asymmetry in distributions)",
+    "pdf_page": 57,
+    "printed_page": 43,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Principle 3.1: Epistemology: the invisibility of the generator.",
+    "pdf_page": 59,
+    "printed_page": 45,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Principle 3.2",
+    "pdf_page": 64,
+    "printed_page": 50,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Principle 3.3: Repetition of exposures",
+    "pdf_page": 79,
+    "printed_page": 65,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 5.1 (the class P)",
+    "pdf_page": 111,
+    "printed_page": 97,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Property 5.1: Tail exponent of a sum",
+    "pdf_page": 113,
+    "printed_page": 99,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Principle 5.1: Fat Tails + Thin Tails = Fat Tails",
+    "pdf_page": 113,
+    "printed_page": 99,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Principle 5.2: Fat Tails \u00d7 Thin Tails = Fat Tails",
+    "pdf_page": 114,
+    "printed_page": 100,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Property 5.2",
+    "pdf_page": 114,
+    "printed_page": 100,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Property 6.1",
+    "pdf_page": 133,
+    "printed_page": 119,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition B.1 (Escort Distribution)",
+    "pdf_page": 144,
+    "printed_page": 130,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition B.2 (Escort Mean (q-Expectation))",
+    "pdf_page": 144,
+    "printed_page": 130,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition B.3 (q-Exponential Function)",
+    "pdf_page": 146,
+    "printed_page": 132,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 7.1 (Excess p-cumulants)",
+    "pdf_page": 159,
+    "printed_page": 145,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem:",
+    "pdf_page": 169,
+    "printed_page": 155,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 8.1 (the \u03ba metric)",
+    "pdf_page": 170,
+    "printed_page": 156,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 8.2 (the class P)",
+    "pdf_page": 172,
+    "printed_page": 158,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 8.3",
+    "pdf_page": 173,
+    "printed_page": 159,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 8.1",
+    "pdf_page": 178,
+    "printed_page": 164,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem says the probability distribution of Zn = (Xn \u2212n)/\u221an approaches a",
+    "pdf_page": 179,
+    "printed_page": 165,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Property 9.1",
+    "pdf_page": 188,
+    "printed_page": 174,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Property 9.2",
+    "pdf_page": 188,
+    "printed_page": 174,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Property 9.3",
+    "pdf_page": 190,
+    "printed_page": 176,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 9.1",
+    "pdf_page": 192,
+    "printed_page": 178,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 1",
+    "pdf_page": 198,
+    "printed_page": 184,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition E.1 (Power Law Class P)",
+    "pdf_page": 203,
+    "printed_page": 189,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 10.1",
+    "pdf_page": 214,
+    "printed_page": 200,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 11.1 ( Event)",
+    "pdf_page": 235,
+    "printed_page": 221,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 11.2 (Binary forecast/payoff)",
+    "pdf_page": 235,
+    "printed_page": 221,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 11.3 (Real world open continuous payoff)",
+    "pdf_page": 236,
+    "printed_page": 222,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 11.4 (Characteristic scale)",
+    "pdf_page": 238,
+    "printed_page": 224,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 11.5 (Substitution of integral)",
+    "pdf_page": 239,
+    "printed_page": 225,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 2: Convergence of I1",
+    "pdf_page": 240,
+    "printed_page": 226,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 11.6 (Corrected probability in binarized experiments)",
+    "pdf_page": 242,
+    "printed_page": 228,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 11.7 (The M4 first moment forecasting scores)",
+    "pdf_page": 247,
+    "printed_page": 233,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 3",
+    "pdf_page": 248,
+    "printed_page": 234,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 14.1",
+    "pdf_page": 282,
+    "printed_page": 268,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Lemma 15.1 (proved in the Appendix) shows how to deal with the case of se-",
+    "pdf_page": 295,
+    "printed_page": 281,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Lemma 15.1",
+    "pdf_page": 295,
+    "printed_page": 281,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 1",
+    "pdf_page": 297,
+    "printed_page": 283,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 2",
+    "pdf_page": 297,
+    "printed_page": 283,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 1 and Q is a right-skewed \u03b1-stable random variable S(\u03b1, 1, 1",
+    "pdf_page": 297,
+    "printed_page": 283,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 2 indicates that the usual nonparametric estimator for the Gini index is",
+    "pdf_page": 298,
+    "printed_page": 284,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 3 shows how, once a parametric family for the data generating process",
+    "pdf_page": 298,
+    "printed_page": 284,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 3",
+    "pdf_page": 298,
+    "printed_page": 284,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Corollary 15.1",
+    "pdf_page": 299,
+    "printed_page": 285,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Corollary 15.2",
+    "pdf_page": 299,
+    "printed_page": 285,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 2 can be also used to provide a correction for the bias of the nonpara-",
+    "pdf_page": 301,
+    "printed_page": 287,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem.",
+    "pdf_page": 309,
+    "printed_page": 295,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 16.1",
+    "pdf_page": 315,
+    "printed_page": 301,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 4",
+    "pdf_page": 316,
+    "printed_page": 302,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 5",
+    "pdf_page": 319,
+    "printed_page": 305,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem [136]. This theorem allows us to focus on the right tail of a distribution,",
+    "pdf_page": 329,
+    "printed_page": 315,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Definition 21.1",
+    "pdf_page": 394,
+    "printed_page": 380,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 21.1",
+    "pdf_page": 395,
+    "printed_page": 381,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 21.2",
+    "pdf_page": 395,
+    "printed_page": 381,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 21.3",
+    "pdf_page": 399,
+    "printed_page": 385,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 21.4",
+    "pdf_page": 400,
+    "printed_page": 386,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 22.1",
+    "pdf_page": 405,
+    "printed_page": 391,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 22.2",
+    "pdf_page": 406,
+    "printed_page": 392,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 22.3",
+    "pdf_page": 409,
+    "printed_page": 395,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 22.4",
+    "pdf_page": 410,
+    "printed_page": 396,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 6",
+    "pdf_page": 439,
+    "printed_page": 425,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Lemma 25.1",
+    "pdf_page": 439,
+    "printed_page": 425,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Lemma 25.2",
+    "pdf_page": 440,
+    "printed_page": 426,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Lemma 25.3",
+    "pdf_page": 440,
+    "printed_page": 426,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Result 1: Relative Pricing under Distribution for S",
+    "pdf_page": 461,
+    "printed_page": 447,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Theorem 7: Log returns",
+    "pdf_page": 462,
+    "printed_page": 448,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Result 2: Relative Pricing under Distribution for S\u2212S0",
+    "pdf_page": 462,
+    "printed_page": 448,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Result 3: Put Pricing",
+    "pdf_page": 465,
+    "printed_page": 451,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  },
+  {
+    "label": "Proposition 30.1",
+    "pdf_page": 488,
+    "printed_page": 474,
+    "status": "Heading candidate; prose references and duplicates need filtering"
+  }
+]

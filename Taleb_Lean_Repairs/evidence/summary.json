@@ -1,0 +1,114 @@
+[
+  {
+    "file": "Proof01_SlowlyVaryingLog.lean",
+    "exit_code": 0,
+    "seconds": 2.61,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "Proof02_SlowlyVaryingConst.lean",
+    "exit_code": 1,
+    "seconds": 2.57,
+    "errors": 1,
+    "warnings": 0
+  },
+  {
+    "file": "Proof03_SlowlyVaryingOfTendsto.lean",
+    "exit_code": 1,
+    "seconds": 2.93,
+    "errors": 1,
+    "warnings": 0
+  },
+  {
+    "file": "Proof04_RegularlyVaryingMul.lean",
+    "exit_code": 0,
+    "seconds": 2.57,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "Proof05_RegularlyVaryingRpow.lean",
+    "exit_code": 1,
+    "seconds": 2.02,
+    "errors": 2,
+    "warnings": 0
+  },
+  {
+    "file": "Proof06_RVIffSlowlyVarying.lean",
+    "exit_code": 1,
+    "seconds": 3.11,
+    "errors": 2,
+    "warnings": 0
+  },
+  {
+    "file": "Proof07_TailExponentPareto.lean",
+    "exit_code": 0,
+    "seconds": 2.88,
+    "errors": 0,
+    "warnings": 1
+  },
+  {
+    "file": "Proof08_SubexponentialTailExponent.lean",
+    "exit_code": 1,
+    "seconds": 2.3,
+    "errors": 1,
+    "warnings": 0
+  },
+  {
+    "file": "Proof09_ConvexOnRpowNeg.lean",
+    "exit_code": 1,
+    "seconds": 2.58,
+    "errors": 4,
+    "warnings": 0
+  },
+  {
+    "file": "Proof10_FrechetMaxstable.lean",
+    "exit_code": 0,
+    "seconds": 2.35,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "Proof11_GumbelMaxstable.lean",
+    "exit_code": 0,
+    "seconds": 2.56,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "Proof12_StableCharFnGaussian.lean",
+    "exit_code": 1,
+    "seconds": 2.29,
+    "errors": 2,
+    "warnings": 2
+  },
+  {
+    "file": "Proof13_GaussianStable.lean",
+    "exit_code": 0,
+    "seconds": 2.96,
+    "errors": 0,
+    "warnings": 1
+  },
+  {
+    "file": "Proof14_StableCharFnCauchy.lean",
+    "exit_code": 1,
+    "seconds": 2.35,
+    "errors": 2,
+    "warnings": 2
+  },
+  {
+    "file": "Proof15_CauchyStable.lean",
+    "exit_code": 0,
+    "seconds": 2.31,
+    "errors": 0,
+    "warnings": 1
+  },
+  {
+    "file": "Proof16_StableCharFnStable.lean",
+    "exit_code": 0,
+    "seconds": 2.54,
+    "errors": 0,
+    "warnings": 1
+  }
+]

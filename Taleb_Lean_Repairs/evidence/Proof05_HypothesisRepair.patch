@@ -1,0 +1,18 @@
+--- Proof05_RegularlyVaryingRpow.lean
++++ Proof05_HypothesisRepair.lean
+@@ -10,6 +10,7 @@
+ import Mathlib.Analysis.SpecialFunctions.Log.Basic
+ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+ import Mathlib.Analysis.SpecialFunctions.Pow.Real
++import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
+ import Mathlib.Analysis.SpecialFunctions.Exp
+ import Mathlib.Analysis.Complex.Exponential
+ import Mathlib.Analysis.Convex.SpecificFunctions.Basic
+@@ -47,6 +48,6 @@
+   have hnn : ∀ᶠ x in atTop, 0 ≤ L (b * x) / L x := by
+     filter_upwards [hpos, hpos'] with x hx1 hx2
+     exact le_of_lt (div_pos hx2 hx1)
+-  have hlim := hL'.rpow tendsto_const_nhds hnn
++  have hlim := hL'.rpow (y := p) tendsto_const_nhds (Or.inl (ne_of_gt (Real.rpow_pos_of_pos hb α)))
+   rw [← Real.rpow_mul (le_of_lt hb)] at hlim
+   exact Tendsto.congr' e.symm hlim

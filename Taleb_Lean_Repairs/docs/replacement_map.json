@@ -1,0 +1,130 @@
+[
+  {
+    "proof": 1,
+    "title": "SlowlyVaryingLog",
+    "module": "RegularVariation",
+    "declaration": "AuditRV.isSlowlyVarying_log",
+    "source": "2.2.1; 21.2",
+    "scope": "Elementary analytic identity."
+  },
+  {
+    "proof": 2,
+    "title": "SlowlyVaryingConst",
+    "module": "RegularVariation",
+    "declaration": "AuditRV.isSlowlyVarying_const",
+    "source": "2.2.1; 21.2",
+    "scope": "Constant must be nonzero."
+  },
+  {
+    "proof": 3,
+    "title": "SlowlyVaryingOfTendsto",
+    "module": "RegularVariation",
+    "declaration": "AuditRV.IsSlowlyVarying.of_tendsto_const",
+    "source": "2.2.1; 21.2",
+    "scope": "Nonzero finite limit implies the ratio property."
+  },
+  {
+    "proof": 4,
+    "title": "RegularlyVaryingMul",
+    "module": "RegularVariation",
+    "declaration": "AuditRV.IsRegularlyVarying.mul",
+    "source": "5.1; 21.2",
+    "scope": "Product of functions, not of random variables."
+  },
+  {
+    "proof": 5,
+    "title": "RegularlyVaryingRpow",
+    "module": "RegularVariation",
+    "declaration": "AuditRV.IsRegularlyVarying.rpow",
+    "source": "5.1; 21.2",
+    "scope": "Eventually positive base function."
+  },
+  {
+    "proof": 6,
+    "title": "RVIffSlowlyVarying",
+    "module": "RegularVariation",
+    "declaration": "AuditRV.isRegularlyVarying_iff_slowlyVarying",
+    "source": "2.2.1; 21.2",
+    "scope": "Ratio-only representation; not Karamata integral representation."
+  },
+  {
+    "proof": 7,
+    "title": "TailExponentPareto",
+    "module": "Tails",
+    "declaration": "AuditTails.pareto_hasFiniteTailExponent",
+    "source": "5.1; E.1",
+    "scope": "Explicit finite exponent, not a general extended-real index."
+  },
+  {
+    "proof": 8,
+    "title": "SubexponentialTailExponent",
+    "module": "ProbabilityBridge",
+    "declaration": "AuditProbability.IsSubexponential.finiteTailExponent",
+    "source": "5, equation 5.1",
+    "scope": "Now connects a probability law to its self-convolution."
+  },
+  {
+    "proof": 9,
+    "title": "ConvexOnRpowNeg",
+    "module": "Tails",
+    "declaration": "AuditTails.convexOn_rpow_neg_right",
+    "source": "21.2",
+    "scope": "Correct domain Set.univ; Jensen integration remains separate."
+  },
+  {
+    "proof": 10,
+    "title": "FrechetMaxstable",
+    "module": "Tails",
+    "declaration": "AuditTails.frechet_cdf_maxstable",
+    "source": "9.1",
+    "scope": "Global piecewise formula and positive sample size; CDF realization remains open."
+  },
+  {
+    "proof": 11,
+    "title": "GumbelMaxstable",
+    "module": "Tails",
+    "declaration": "AuditTails.gumbel_maxstable",
+    "source": "9.1",
+    "scope": "Correct original identity retained."
+  },
+  {
+    "proof": 12,
+    "title": "StableCharFnGaussian",
+    "module": "Stable",
+    "declaration": "StableAudit.stableS1Expr_gaussian",
+    "source": "7.2.1",
+    "scope": "Correct location/scale and repaired S1 expression; scale maps to variance 2*scale^2."
+  },
+  {
+    "proof": 13,
+    "title": "GaussianStable",
+    "module": "Stable",
+    "declaration": "StableAudit.gaussian_stable_real_short",
+    "source": "7.2.1-7.2.2",
+    "scope": "Exponential scaling identity; use Mathlib Gaussian law theorem for distributions."
+  },
+  {
+    "proof": 14,
+    "title": "StableCharFnCauchy",
+    "module": "Stable",
+    "declaration": "StableAudit.stableS1Expr_cauchy",
+    "source": "7.2.1",
+    "scope": "Correct location/scale; nonnegative scale; zero scale is degenerate."
+  },
+  {
+    "proof": 15,
+    "title": "CauchyStable",
+    "module": "Stable",
+    "declaration": "StableAudit.cauchy_stable_short",
+    "source": "7.2.1-7.2.2",
+    "scope": "Exponential scaling identity."
+  },
+  {
+    "proof": 16,
+    "title": "StableCharFnStable",
+    "module": "ProbabilityBridge",
+    "declaration": "AuditProbability.stableS1_convolutionPower_eq",
+    "source": "7.2.1-7.2.2; 15.2.1",
+    "scope": "Conditional law theorem; existence of S1 laws remains open."
+  }
+]

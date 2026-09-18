@@ -1,0 +1,2207 @@
+[
+  {
+    "label": "(2.1)",
+    "pdf_page": 23,
+    "printed_page": 9,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.2)",
+    "pdf_page": 25,
+    "printed_page": 11,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.3)",
+    "pdf_page": 26,
+    "printed_page": 12,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.4)",
+    "pdf_page": 26,
+    "printed_page": 12,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.5)",
+    "pdf_page": 26,
+    "printed_page": 12,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.6)",
+    "pdf_page": 27,
+    "printed_page": 13,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.7)",
+    "pdf_page": 27,
+    "printed_page": 13,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.8)",
+    "pdf_page": 28,
+    "printed_page": 14,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.9)",
+    "pdf_page": 32,
+    "printed_page": 18,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.10)",
+    "pdf_page": 32,
+    "printed_page": 18,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.11)",
+    "pdf_page": 33,
+    "printed_page": 19,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.12)",
+    "pdf_page": 33,
+    "printed_page": 19,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.13)",
+    "pdf_page": 34,
+    "printed_page": 20,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(2.14)",
+    "pdf_page": 35,
+    "printed_page": 21,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(3.1)",
+    "pdf_page": 68,
+    "printed_page": 54,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.1)",
+    "pdf_page": 86,
+    "printed_page": 72,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.2)",
+    "pdf_page": 86,
+    "printed_page": 72,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.3)",
+    "pdf_page": 86,
+    "printed_page": 72,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.4)",
+    "pdf_page": 86,
+    "printed_page": 72,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.5)",
+    "pdf_page": 87,
+    "printed_page": 73,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.6)",
+    "pdf_page": 87,
+    "printed_page": 73,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.7)",
+    "pdf_page": 88,
+    "printed_page": 74,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.8)",
+    "pdf_page": 91,
+    "printed_page": 77,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.9)",
+    "pdf_page": 98,
+    "printed_page": 84,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.10)",
+    "pdf_page": 98,
+    "printed_page": 84,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.11)",
+    "pdf_page": 99,
+    "printed_page": 85,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.12)",
+    "pdf_page": 99,
+    "printed_page": 85,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.13)",
+    "pdf_page": 99,
+    "printed_page": 85,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.14)",
+    "pdf_page": 100,
+    "printed_page": 86,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(4.15)",
+    "pdf_page": 103,
+    "printed_page": 89,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.1)",
+    "pdf_page": 106,
+    "printed_page": 92,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.2)",
+    "pdf_page": 107,
+    "printed_page": 93,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.3)",
+    "pdf_page": 107,
+    "printed_page": 93,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.4)",
+    "pdf_page": 108,
+    "printed_page": 94,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.5)",
+    "pdf_page": 109,
+    "printed_page": 95,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.6)",
+    "pdf_page": 109,
+    "printed_page": 95,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.7)",
+    "pdf_page": 111,
+    "printed_page": 97,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.8)",
+    "pdf_page": 114,
+    "printed_page": 100,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(5.9)",
+    "pdf_page": 119,
+    "printed_page": 105,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.1)",
+    "pdf_page": 122,
+    "printed_page": 108,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.2)",
+    "pdf_page": 122,
+    "printed_page": 108,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.3)",
+    "pdf_page": 123,
+    "printed_page": 109,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.4)",
+    "pdf_page": 126,
+    "printed_page": 112,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.5)",
+    "pdf_page": 127,
+    "printed_page": 113,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.6)",
+    "pdf_page": 127,
+    "printed_page": 113,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.7)",
+    "pdf_page": 127,
+    "printed_page": 113,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.8)",
+    "pdf_page": 127,
+    "printed_page": 113,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.9)",
+    "pdf_page": 127,
+    "printed_page": 113,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.10)",
+    "pdf_page": 129,
+    "printed_page": 115,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.11)",
+    "pdf_page": 129,
+    "printed_page": 115,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.12)",
+    "pdf_page": 129,
+    "printed_page": 115,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.13)",
+    "pdf_page": 132,
+    "printed_page": 118,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(6.14)",
+    "pdf_page": 133,
+    "printed_page": 119,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(A.1)",
+    "pdf_page": 136,
+    "printed_page": 122,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.1)",
+    "pdf_page": 142,
+    "printed_page": 128,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.2)",
+    "pdf_page": 142,
+    "printed_page": 128,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.3)",
+    "pdf_page": 142,
+    "printed_page": 128,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.4)",
+    "pdf_page": 142,
+    "printed_page": 128,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.5)",
+    "pdf_page": 143,
+    "printed_page": 129,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.6)",
+    "pdf_page": 144,
+    "printed_page": 130,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.7)",
+    "pdf_page": 145,
+    "printed_page": 131,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.8)",
+    "pdf_page": 145,
+    "printed_page": 131,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.9)",
+    "pdf_page": 146,
+    "printed_page": 132,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.10)",
+    "pdf_page": 146,
+    "printed_page": 132,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(B.11)",
+    "pdf_page": 147,
+    "printed_page": 133,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.1)",
+    "pdf_page": 153,
+    "printed_page": 139,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.2)",
+    "pdf_page": 154,
+    "printed_page": 140,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.3)",
+    "pdf_page": 155,
+    "printed_page": 141,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.4)",
+    "pdf_page": 155,
+    "printed_page": 141,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.5)",
+    "pdf_page": 159,
+    "printed_page": 145,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.6)",
+    "pdf_page": 165,
+    "printed_page": 151,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.7)",
+    "pdf_page": 165,
+    "printed_page": 151,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.8)",
+    "pdf_page": 165,
+    "printed_page": 151,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(7.9)",
+    "pdf_page": 166,
+    "printed_page": 152,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.1)",
+    "pdf_page": 171,
+    "printed_page": 157,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.2)",
+    "pdf_page": 172,
+    "printed_page": 158,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.3)",
+    "pdf_page": 172,
+    "printed_page": 158,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.4)",
+    "pdf_page": 173,
+    "printed_page": 159,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.5)",
+    "pdf_page": 173,
+    "printed_page": 159,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.6)",
+    "pdf_page": 173,
+    "printed_page": 159,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.7)",
+    "pdf_page": 174,
+    "printed_page": 160,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.8)",
+    "pdf_page": 174,
+    "printed_page": 160,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.9)",
+    "pdf_page": 178,
+    "printed_page": 164,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.10)",
+    "pdf_page": 178,
+    "printed_page": 164,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.11)",
+    "pdf_page": 178,
+    "printed_page": 164,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.12)",
+    "pdf_page": 179,
+    "printed_page": 165,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.13)",
+    "pdf_page": 181,
+    "printed_page": 167,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.14)",
+    "pdf_page": 181,
+    "printed_page": 167,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.15)",
+    "pdf_page": 182,
+    "printed_page": 168,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.16)",
+    "pdf_page": 182,
+    "printed_page": 168,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.17)",
+    "pdf_page": 182,
+    "printed_page": 168,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(8.18)",
+    "pdf_page": 183,
+    "printed_page": 169,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.1)",
+    "pdf_page": 186,
+    "printed_page": 172,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.2)",
+    "pdf_page": 186,
+    "printed_page": 172,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.3)",
+    "pdf_page": 188,
+    "printed_page": 174,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.4)",
+    "pdf_page": 188,
+    "printed_page": 174,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.5)",
+    "pdf_page": 188,
+    "printed_page": 174,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.6)",
+    "pdf_page": 190,
+    "printed_page": 176,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.7)",
+    "pdf_page": 190,
+    "printed_page": 176,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.8)",
+    "pdf_page": 191,
+    "printed_page": 177,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.9)",
+    "pdf_page": 191,
+    "printed_page": 177,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.10)",
+    "pdf_page": 191,
+    "printed_page": 177,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.11)",
+    "pdf_page": 192,
+    "printed_page": 178,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.12)",
+    "pdf_page": 192,
+    "printed_page": 178,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.13)",
+    "pdf_page": 193,
+    "printed_page": 179,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(9.14)",
+    "pdf_page": 193,
+    "printed_page": 179,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(C.1)",
+    "pdf_page": 197,
+    "printed_page": 183,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(C.2)",
+    "pdf_page": 197,
+    "printed_page": 183,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(C.3)",
+    "pdf_page": 197,
+    "printed_page": 183,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(D.1)",
+    "pdf_page": 202,
+    "printed_page": 188,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(D.2)",
+    "pdf_page": 202,
+    "printed_page": 188,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(E.1)",
+    "pdf_page": 204,
+    "printed_page": 190,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(E.2)",
+    "pdf_page": 204,
+    "printed_page": 190,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(E.3)",
+    "pdf_page": 205,
+    "printed_page": 191,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(E.4)",
+    "pdf_page": 205,
+    "printed_page": 191,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(10.1)",
+    "pdf_page": 211,
+    "printed_page": 197,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(10.2)",
+    "pdf_page": 212,
+    "printed_page": 198,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(10.3)",
+    "pdf_page": 215,
+    "printed_page": 201,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(G.1)",
+    "pdf_page": 229,
+    "printed_page": 215,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.1)",
+    "pdf_page": 238,
+    "printed_page": 224,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.2)",
+    "pdf_page": 238,
+    "printed_page": 224,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.3)",
+    "pdf_page": 240,
+    "printed_page": 226,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.4)",
+    "pdf_page": 240,
+    "printed_page": 226,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.5)",
+    "pdf_page": 240,
+    "printed_page": 226,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.6)",
+    "pdf_page": 240,
+    "printed_page": 226,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.7)",
+    "pdf_page": 240,
+    "printed_page": 226,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.8)",
+    "pdf_page": 244,
+    "printed_page": 230,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.9)",
+    "pdf_page": 244,
+    "printed_page": 230,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.10)",
+    "pdf_page": 246,
+    "printed_page": 232,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.11)",
+    "pdf_page": 246,
+    "printed_page": 232,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.12)",
+    "pdf_page": 246,
+    "printed_page": 232,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.13)",
+    "pdf_page": 247,
+    "printed_page": 233,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.14)",
+    "pdf_page": 247,
+    "printed_page": 233,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.15)",
+    "pdf_page": 248,
+    "printed_page": 234,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.16)",
+    "pdf_page": 248,
+    "printed_page": 234,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.17)",
+    "pdf_page": 250,
+    "printed_page": 236,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.18)",
+    "pdf_page": 250,
+    "printed_page": 236,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.19)",
+    "pdf_page": 250,
+    "printed_page": 236,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.20)",
+    "pdf_page": 251,
+    "printed_page": 237,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.21)",
+    "pdf_page": 253,
+    "printed_page": 239,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.22)",
+    "pdf_page": 254,
+    "printed_page": 240,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.23)",
+    "pdf_page": 254,
+    "printed_page": 240,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(11.24)",
+    "pdf_page": 254,
+    "printed_page": 240,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(13.1)",
+    "pdf_page": 268,
+    "printed_page": 254,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(13.2)",
+    "pdf_page": 271,
+    "printed_page": 257,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(13.3)",
+    "pdf_page": 271,
+    "printed_page": 257,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(13.4)",
+    "pdf_page": 274,
+    "printed_page": 260,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(13.5)",
+    "pdf_page": 274,
+    "printed_page": 260,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(13.6)",
+    "pdf_page": 274,
+    "printed_page": 260,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(13.7)",
+    "pdf_page": 274,
+    "printed_page": 260,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(14.1)",
+    "pdf_page": 278,
+    "printed_page": 264,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(14.2)",
+    "pdf_page": 278,
+    "printed_page": 264,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(14.3)",
+    "pdf_page": 279,
+    "printed_page": 265,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(14.4)",
+    "pdf_page": 279,
+    "printed_page": 265,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(14.5)",
+    "pdf_page": 280,
+    "printed_page": 266,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(14.6)",
+    "pdf_page": 281,
+    "printed_page": 267,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(14.7)",
+    "pdf_page": 287,
+    "printed_page": 273,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.1)",
+    "pdf_page": 293,
+    "printed_page": 279,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.2)",
+    "pdf_page": 293,
+    "printed_page": 279,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.3)",
+    "pdf_page": 293,
+    "printed_page": 279,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.4)",
+    "pdf_page": 295,
+    "printed_page": 281,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.5)",
+    "pdf_page": 295,
+    "printed_page": 281,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.6)",
+    "pdf_page": 295,
+    "printed_page": 281,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.7)",
+    "pdf_page": 296,
+    "printed_page": 282,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.8)",
+    "pdf_page": 296,
+    "printed_page": 282,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.9)",
+    "pdf_page": 296,
+    "printed_page": 282,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.10)",
+    "pdf_page": 297,
+    "printed_page": 283,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.11)",
+    "pdf_page": 297,
+    "printed_page": 283,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.12)",
+    "pdf_page": 298,
+    "printed_page": 284,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.13)",
+    "pdf_page": 298,
+    "printed_page": 284,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.14)",
+    "pdf_page": 299,
+    "printed_page": 285,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.15)",
+    "pdf_page": 299,
+    "printed_page": 285,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.16)",
+    "pdf_page": 300,
+    "printed_page": 286,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.17)",
+    "pdf_page": 302,
+    "printed_page": 288,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.18)",
+    "pdf_page": 302,
+    "printed_page": 288,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.19)",
+    "pdf_page": 302,
+    "printed_page": 288,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.20)",
+    "pdf_page": 303,
+    "printed_page": 289,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.21)",
+    "pdf_page": 303,
+    "printed_page": 289,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.22)",
+    "pdf_page": 305,
+    "printed_page": 291,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.23)",
+    "pdf_page": 305,
+    "printed_page": 291,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.24)",
+    "pdf_page": 305,
+    "printed_page": 291,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.25)",
+    "pdf_page": 305,
+    "printed_page": 291,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.26)",
+    "pdf_page": 305,
+    "printed_page": 291,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.27)",
+    "pdf_page": 306,
+    "printed_page": 292,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.28)",
+    "pdf_page": 306,
+    "printed_page": 292,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.29)",
+    "pdf_page": 306,
+    "printed_page": 292,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.30)",
+    "pdf_page": 306,
+    "printed_page": 292,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.31)",
+    "pdf_page": 306,
+    "printed_page": 292,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.32)",
+    "pdf_page": 307,
+    "printed_page": 293,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.33)",
+    "pdf_page": 307,
+    "printed_page": 293,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.34)",
+    "pdf_page": 307,
+    "printed_page": 293,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.35)",
+    "pdf_page": 307,
+    "printed_page": 293,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.36)",
+    "pdf_page": 308,
+    "printed_page": 294,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.37)",
+    "pdf_page": 308,
+    "printed_page": 294,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.38)",
+    "pdf_page": 309,
+    "printed_page": 295,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.39)",
+    "pdf_page": 309,
+    "printed_page": 295,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.40)",
+    "pdf_page": 309,
+    "printed_page": 295,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.41)",
+    "pdf_page": 309,
+    "printed_page": 295,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.42)",
+    "pdf_page": 309,
+    "printed_page": 295,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.43)",
+    "pdf_page": 310,
+    "printed_page": 296,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(15.44)",
+    "pdf_page": 310,
+    "printed_page": 296,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(16.1)",
+    "pdf_page": 313,
+    "printed_page": 299,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(16.2)",
+    "pdf_page": 313,
+    "printed_page": 299,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(16.3)",
+    "pdf_page": 320,
+    "printed_page": 306,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.1)",
+    "pdf_page": 328,
+    "printed_page": 314,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.2)",
+    "pdf_page": 330,
+    "printed_page": 316,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.3)",
+    "pdf_page": 330,
+    "printed_page": 316,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.4)",
+    "pdf_page": 330,
+    "printed_page": 316,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.5)",
+    "pdf_page": 330,
+    "printed_page": 316,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.6)",
+    "pdf_page": 330,
+    "printed_page": 316,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.7)",
+    "pdf_page": 331,
+    "printed_page": 317,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.8)",
+    "pdf_page": 331,
+    "printed_page": 317,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.9)",
+    "pdf_page": 332,
+    "printed_page": 318,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.10)",
+    "pdf_page": 332,
+    "printed_page": 318,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.11)",
+    "pdf_page": 333,
+    "printed_page": 319,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(17.12)",
+    "pdf_page": 334,
+    "printed_page": 320,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(18.1)",
+    "pdf_page": 342,
+    "printed_page": 328,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(18.2)",
+    "pdf_page": 342,
+    "printed_page": 328,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(18.3)",
+    "pdf_page": 343,
+    "printed_page": 329,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(18.4)",
+    "pdf_page": 343,
+    "printed_page": 329,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(18.5)",
+    "pdf_page": 343,
+    "printed_page": 329,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(18.6)",
+    "pdf_page": 343,
+    "printed_page": 329,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(18.7)",
+    "pdf_page": 349,
+    "printed_page": 335,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(19.1)",
+    "pdf_page": 369,
+    "printed_page": 355,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(19.2)",
+    "pdf_page": 369,
+    "printed_page": 355,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(19.3)",
+    "pdf_page": 369,
+    "printed_page": 355,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(19.4)",
+    "pdf_page": 370,
+    "printed_page": 356,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(19.5)",
+    "pdf_page": 370,
+    "printed_page": 356,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(19.6)",
+    "pdf_page": 370,
+    "printed_page": 356,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(20.1)",
+    "pdf_page": 383,
+    "printed_page": 369,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(20.2)",
+    "pdf_page": 383,
+    "printed_page": 369,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(20.3)",
+    "pdf_page": 384,
+    "printed_page": 370,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(20.4)",
+    "pdf_page": 386,
+    "printed_page": 372,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(20.5)",
+    "pdf_page": 387,
+    "printed_page": 373,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(20.6)",
+    "pdf_page": 389,
+    "printed_page": 375,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(20.7)",
+    "pdf_page": 389,
+    "printed_page": 375,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(20.8)",
+    "pdf_page": 389,
+    "printed_page": 375,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.1)",
+    "pdf_page": 394,
+    "printed_page": 380,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.2)",
+    "pdf_page": 394,
+    "printed_page": 380,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.3)",
+    "pdf_page": 394,
+    "printed_page": 380,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.4)",
+    "pdf_page": 394,
+    "printed_page": 380,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.5)",
+    "pdf_page": 395,
+    "printed_page": 381,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.6)",
+    "pdf_page": 396,
+    "printed_page": 382,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.7)",
+    "pdf_page": 396,
+    "printed_page": 382,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.8)",
+    "pdf_page": 396,
+    "printed_page": 382,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.9)",
+    "pdf_page": 397,
+    "printed_page": 383,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.10)",
+    "pdf_page": 397,
+    "printed_page": 383,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.11)",
+    "pdf_page": 399,
+    "printed_page": 385,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.12)",
+    "pdf_page": 399,
+    "printed_page": 385,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.13)",
+    "pdf_page": 399,
+    "printed_page": 385,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.14)",
+    "pdf_page": 400,
+    "printed_page": 386,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.15)",
+    "pdf_page": 400,
+    "printed_page": 386,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.16)",
+    "pdf_page": 400,
+    "printed_page": 386,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(21.17)",
+    "pdf_page": 401,
+    "printed_page": 387,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(22.1)",
+    "pdf_page": 405,
+    "printed_page": 391,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(22.2)",
+    "pdf_page": 406,
+    "printed_page": 392,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(22.3)",
+    "pdf_page": 407,
+    "printed_page": 393,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(22.4)",
+    "pdf_page": 408,
+    "printed_page": 394,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(22.5)",
+    "pdf_page": 409,
+    "printed_page": 395,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(22.6)",
+    "pdf_page": 410,
+    "printed_page": 396,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(22.7)",
+    "pdf_page": 410,
+    "printed_page": 396,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(I.1)",
+    "pdf_page": 414,
+    "printed_page": 400,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(I.2)",
+    "pdf_page": 415,
+    "printed_page": 401,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(I.3)",
+    "pdf_page": 415,
+    "printed_page": 401,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.1)",
+    "pdf_page": 420,
+    "printed_page": 406,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.2)",
+    "pdf_page": 420,
+    "printed_page": 406,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.3)",
+    "pdf_page": 420,
+    "printed_page": 406,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.4)",
+    "pdf_page": 420,
+    "printed_page": 406,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.5)",
+    "pdf_page": 420,
+    "printed_page": 406,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.6)",
+    "pdf_page": 420,
+    "printed_page": 406,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.7)",
+    "pdf_page": 421,
+    "printed_page": 407,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.8)",
+    "pdf_page": 423,
+    "printed_page": 409,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.9)",
+    "pdf_page": 423,
+    "printed_page": 409,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.10)",
+    "pdf_page": 423,
+    "printed_page": 409,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.11)",
+    "pdf_page": 425,
+    "printed_page": 411,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.12)",
+    "pdf_page": 425,
+    "printed_page": 411,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.13)",
+    "pdf_page": 425,
+    "printed_page": 411,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.14)",
+    "pdf_page": 426,
+    "printed_page": 412,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(23.15)",
+    "pdf_page": 426,
+    "printed_page": 412,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(24.1)",
+    "pdf_page": 433,
+    "printed_page": 419,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(24.2)",
+    "pdf_page": 433,
+    "printed_page": 419,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(24.3)",
+    "pdf_page": 433,
+    "printed_page": 419,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(24.4)",
+    "pdf_page": 434,
+    "printed_page": 420,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.1)",
+    "pdf_page": 437,
+    "printed_page": 423,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.2)",
+    "pdf_page": 437,
+    "printed_page": 423,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.3)",
+    "pdf_page": 439,
+    "printed_page": 425,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.4)",
+    "pdf_page": 439,
+    "printed_page": 425,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.5)",
+    "pdf_page": 439,
+    "printed_page": 425,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.6)",
+    "pdf_page": 439,
+    "printed_page": 425,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.7)",
+    "pdf_page": 439,
+    "printed_page": 425,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.8)",
+    "pdf_page": 440,
+    "printed_page": 426,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.9)",
+    "pdf_page": 440,
+    "printed_page": 426,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.10)",
+    "pdf_page": 440,
+    "printed_page": 426,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.11)",
+    "pdf_page": 440,
+    "printed_page": 426,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.12)",
+    "pdf_page": 440,
+    "printed_page": 426,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(25.13)",
+    "pdf_page": 440,
+    "printed_page": 426,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(26.1)",
+    "pdf_page": 454,
+    "printed_page": 440,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.1)",
+    "pdf_page": 460,
+    "printed_page": 446,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.2)",
+    "pdf_page": 461,
+    "printed_page": 447,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.3)",
+    "pdf_page": 461,
+    "printed_page": 447,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.4)",
+    "pdf_page": 462,
+    "printed_page": 448,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.5)",
+    "pdf_page": 462,
+    "printed_page": 448,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.6)",
+    "pdf_page": 462,
+    "printed_page": 448,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.7)",
+    "pdf_page": 465,
+    "printed_page": 451,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.8)",
+    "pdf_page": 465,
+    "printed_page": 451,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.9)",
+    "pdf_page": 465,
+    "printed_page": 451,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(27.10)",
+    "pdf_page": 465,
+    "printed_page": 451,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(29.1)",
+    "pdf_page": 479,
+    "printed_page": 465,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(29.2)",
+    "pdf_page": 480,
+    "printed_page": 466,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(29.3)",
+    "pdf_page": 480,
+    "printed_page": 466,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(29.4)",
+    "pdf_page": 480,
+    "printed_page": 466,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(29.5)",
+    "pdf_page": 481,
+    "printed_page": 467,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(30.1)",
+    "pdf_page": 494,
+    "printed_page": 480,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(30.2)",
+    "pdf_page": 495,
+    "printed_page": 481,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  },
+  {
+    "label": "(30.3)",
+    "pdf_page": 495,
+    "printed_page": 481,
+    "kind": "Numbered equation locator; may be a repeated equation/reference",
+    "status": "Candidate locator, not an independent theorem"
+  }
+]
