@@ -1,0 +1,15 @@
+# H1 CLI probes (audit of v0.2.4): malformed --only selections must be rejected before any scratch directory is created
+
+## python3 scripts/harness_regression.py --only 'bogus_fixture'
+harness_regression.py: error: unknown fixture IDs in --only: bogus_fixture; known: valid, private_sorry_theorem, private_sorry_def, private_axiom, structure_namespace_theorem, protected_theorem, alias_map_mismatch, alias_map_mismatch_optimized, orphan_module, nested_orphan_module, nested_imported_module, dirty_dependency
+exit=2
+
+## python3 scripts/harness_regression.py --only 'valid,bogus'
+harness_regression.py: error: unknown fixture IDs in --only: bogus; known: valid, private_sorry_theorem, private_sorry_def, private_axiom, structure_namespace_theorem, protected_theorem, alias_map_mismatch, alias_map_mismatch_optimized, orphan_module, nested_orphan_module, nested_imported_module, dirty_dependency
+exit=2
+
+## python3 scripts/harness_regression.py --only 'valid,,'
+harness_regression.py: error: --only requires one or more nonempty, comma-separated fixture IDs
+exit=2
+
+scratch directories created: 0

@@ -1,0 +1,34 @@
+{
+  "all_fixtures_behaved_as_expected": true,
+  "fixture_count": 1,
+  "pristine_tree_sha256": "7cc24cb4187829e81f60df0ef9abc1da81fddf20b306f0571265b14f63a41b02",
+  "real_project_mutated": false,
+  "scratch_copy": "/tmp/h2probe/rel_scratch/Taleb_Lean_Repairs",
+  "results": [
+    {
+      "id": "valid",
+      "description": "Unmodified copy of the project (positive control).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/h2probe/rel_scratch/Taleb_Lean_Repairs",
+      "restored_tree_sha256": "7cc24cb4187829e81f60df0ef9abc1da81fddf20b306f0571265b14f63a41b02",
+      "restored_tree_matches_pristine": true,
+      "build_dir_reset_from_snapshot": true,
+      "verifier_exit_code": 0,
+      "seconds": 79.9,
+      "verification_status": "PASS",
+      "verification_error": "",
+      "expected_status": "PASS",
+      "expected_error_contains": "",
+      "note": "",
+      "stdout_tail": [
+        "PASS: 83 theorems, 1 instance, 16 aliases; no extra axioms; trust scan: 189 project constants (incl. 48 internal) all within allowlist; 100 public theorem/instance constants match the regex inventory"
+      ],
+      "stderr_tail": [],
+      "behaved_as_expected": true
+    }
+  ]
+}

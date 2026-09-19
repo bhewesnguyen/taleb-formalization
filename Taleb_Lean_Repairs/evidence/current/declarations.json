@@ -125,6 +125,116 @@
     "file": "AuditRepairs/ExtremeValueBridge.lean"
   },
   {
+    "name": "AuditEVTLaws.gumbelCDF_monotone",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.continuous_gumbelCDF",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.gumbelCDF_tendsto_atBot",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.gumbelCDF_tendsto_atTop",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.gumbelMeasure_isProbabilityMeasure",
+    "kind": "instance",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.cdf_gumbelMeasure",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.cdf_gumbelMeasure_apply",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.cdf_map_maxRV_gumbel",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.cdf_map_maxRV_pi_gumbel",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.frechetCDF_of_pos",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.frechetCDF_of_nonpos",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.frechetCDF_nonneg",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.neg_one_div_nonpos",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.frechetCDF_monotone",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.frechetCDF_continuousWithinAt_Ici",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.frechetCDF_tendsto_atBot",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.frechetCDF_tendsto_atTop",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.frechetMeasure_isProbabilityMeasure",
+    "kind": "instance",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.cdf_frechetMeasure",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.cdf_frechetMeasure_apply",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.cdf_map_maxRV_frechet",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
+    "name": "AuditEVTLaws.cdf_map_maxRV_pi_frechet",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueLaws.lean"
+  },
+  {
     "name": "AuditRV.regularlyVarying_zero_iff",
     "kind": "theorem",
     "file": "AuditRepairs/Foundations.lean"

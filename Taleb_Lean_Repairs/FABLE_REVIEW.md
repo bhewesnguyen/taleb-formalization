@@ -501,14 +501,19 @@ definition or pin was modified.
 Also in this release: received third-party artifacts moved to `audits/<round>/` (outside the shipped
 package, strict hash manifest), outgoing packages to `deliverables/vX.Y.Z/`, and
 `docs/AUDIT_HISTORY.md` added so the package lists the audit rounds without bundling them. A
-`git bundle` of the repository is shipped alongside the ZIP so that commit hashes and the
-clean-tree claims can be verified independently (the auditor noted these were previously
-Fable's report only).
+`git bundle` of the repository is shipped alongside the ZIP so that the committed history and its
+equality with the archive can be verified independently (the auditor noted these were previously
+Fable's report only). A bundle does not prove the author's worktree was clean or anything about a
+remote; those remain reported statements.
 
 ### 14.2 Mathematics: independent minima and the laws of `max` and `min` — `AuditRepairs/ExtremeValueBridge.lean`
 
 Nineteen theorems and five definitions added; every one depends only on
-`propext`, `Classical.choice`, `Quot.sound`. Book anchor: §9.1, printed p. 173 (PDF 187).
+`propext`, `Classical.choice`, `Quot.sound`. Book anchor: §9.1, equation (9.1), printed p. 172
+(PDF 186) for the maximum law `P(X_max ≤ x) = F(x)^n`; the three EVT distribution forms are on
+printed p. 173 (PDF 187). The minimum survival law is a proved companion of the book's "max (or
+minimum)" remark, not a displayed equation. (Anchor corrected in v0.2.5 on the auditor's remark;
+the v0.2.4 text cited p. 173 for both.)
 
 - `AuditExtremes.measure_iInter_preimage (hX : iIndepFun X P) (hB : MeasurableSet B) :
   P (⋂ i, X i ⁻¹' B) = ∏ i, P (X i ⁻¹' B)` — the general product formula; every threshold event
@@ -516,8 +521,9 @@ Nineteen theorems and five definitions added; every one depends only on
 - Events with explicit threshold conventions: `maxLeEvent` (`≤`, v0.2.3), `maxLtEvent` (`<`),
   `minGtEvent` (`>`, survival convention), `minGeEvent` (`≥`); their `⋂`-forms, product forms,
   and the `p ^ Fintype.card ι` / real `q ^ n` forms for the minimum (`measure_minGtEvent_of_forall_eq`,
-  `measureReal_minGtEvent_of_forall_eq`). Strict and non-strict versions differ exactly on atoms,
-  which are therefore handled, not excluded.
+  `measureReal_minGtEvent_of_forall_eq`). Strict and non-strict versions differ on the boundary
+  event `{∃ i, Xᵢ = x}`, so their probabilities differ by the boundary mass (zero for atomless
+  laws); atoms are therefore handled, not excluded.
 - Random variables `maxRV X := Finset.univ.sup' _ X`, `minRV X := Finset.univ.inf' _ X`
   (nonempty finite index), measurable when the coordinates are (`measurable_maxRV`,
   `measurable_minRV`; Mathlib has `Finset.measurable_sup'` but no `inf'` twin in the pinned
@@ -568,3 +574,89 @@ states are recorded per family in `docs/FORMALIZATION_BACKLOG.{json,md}`.
 3. **Exact Pareto slice against `paretoMeasure`** (T005/T021/T028/T032): survival, moments for
    `p < α`, divergence for `p ≥ α`, threshold excess, then the power pushforward. Unlocks many
    later moment, estimator and payoff families without generalized CLT.
+
+## 15. Addendum (v0.2.5): response to the independent audit of v0.2.4, and the Gumbel and Fréchet laws
+
+The third independent audit (`Taleb_Fable_v0.2.4_Independent_Audit.pdf`, SHA-256
+`5407c895…9b31f7`; ledger `Taleb_Proof_Progress_v0.2.4.md`, `c4a29b26…b12332`; evidence ZIP
+`b5117d9f…f9efe7`; kept under `audits/05_astra_on_v0.2.4/`) accepted T060 as the first discharged
+family on its unchanged scope, reproduced the build, verifier and 12-fixture suite, matched the
+release identity through the ZIP, manifest, bundle and both patch routes, and raised two
+low-priority runner defects and several documentation/ledger corrections. All are confirmed and
+repaired here. No pre-existing theorem, proof, definition or pin was modified.
+
+### 15.1 Audit findings and repairs
+
+| Finding | Confirmed | Repair |
+|---|---|---|
+| **H1** an unknown `--only` fixture ID selected nothing and the suite reported success with zero fixtures | Yes (`all([]) = True`) | IDs validated against the fixture table, empty IDs rejected, `all_ok` requires a nonempty result set (`harness_regression.py`). Probed: unknown, mixed and empty selections exit 2 before any scratch directory is created. |
+| **H2** a relative `--scratch` path broke build restoration (resolved from the fixture directory by `cp`) | Yes | `Path(a.scratch).resolve()`; probed end-to-end with `--only valid --scratch rel_scratch` (record in `evidence/fable/v0.2.5/cli_probes/`). |
+| Stale "67/69 checked declarations" in the `verify.py` docstring | Yes | Reworded. |
+| Source anchor: the maximum law is eq. (9.1), printed p. 172 / PDF 186; p. 173 holds the EVT forms | Yes (re-read) | §14.2, the `ExtremeValueBridge` module docstring and the `cdf_map_maxRV` docstring corrected; the minimum law described as a proved companion, not a displayed equation. |
+| "differ exactly on atoms" | Yes | Now: strict and non-strict events differ on the boundary event, probabilities by the boundary mass. |
+| "every finding is reproduced before repair" | Yes | `docs/AUDIT_HISTORY.md`: reproduced failures distinguished from preventive repairs (R1). |
+| What a git bundle proves | Yes | §14.1 and the audit brief: committed history and archive equality, not worktree cleanliness or push state. |
+| Stale backlog intro ("no row claims verification") | Yes | "Only rows marked discharged claim completion of their stated, reviewed scope; every other row is open." |
+| Ledger: add a `law_theorem` facet; give T118 and T047 prerequisite-only scope; add scope and remaining obligations per family | — | New state `law_theorem` (ordinary hypotheses, no unresolved realization/property premise; T060 carries it). Every supported family now records `delivery_scope` and `remaining_obligations` (JSON and Markdown); T118 and T047 say "prerequisite only". `verify.py` validates the ledger schema in its normal path and reports 83 citations over 82 distinct declarations (the Gaussian identification is rightly credited to both T007 and T046). |
+| Reproduction note: Lake locates the ProofWidgets release by tag | — | README setup note. |
+
+### 15.2 Mathematics: the Gumbel and Fréchet probability measures — new `AuditRepairs/ExtremeValueLaws.lean` (T061 children 1–2)
+
+Twenty theorems, two instances and four definitions, all with axiom closure
+`{propext, Classical.choice, Quot.sound}`. Route: the audit's `t061_api_note.md`
+(`StieltjesFunction` → `.measure` → `isProbabilityMeasure` from the endpoint limits →
+`cdf_measure_stieltjesFunction`).
+
+- **Gumbel.** `gumbelCDF_monotone`, `continuous_gumbelCDF`, `gumbelCDF_tendsto_atBot` (`→ 0`),
+  `gumbelCDF_tendsto_atTop` (`→ 1`); `gumbelStieltjes : StieltjesFunction`;
+  `gumbelMeasure := gumbelStieltjes.measure`; instance `IsProbabilityMeasure gumbelMeasure`;
+  `cdf_gumbelMeasure_apply : cdf gumbelMeasure x = gumbelCDF x`.
+- **Fréchet, `0 < ξ`.** `frechetCDF_of_pos`, `frechetCDF_of_nonpos`, `frechetCDF_nonneg`,
+  `frechetCDF_monotone` (via `Real.rpow_le_rpow_of_exponent_nonpos`),
+  `frechetCDF_continuousWithinAt_Ici` — right-continuity everywhere, with the support boundary
+  handled by `x^{−1/ξ} = exp((−1/ξ)·log x) → +∞` as `x → 0⁺` (`Real.tendsto_log_nhdsGT_zero`),
+  so the one-sided limit is `0 = frechetCDF ξ 0` — `frechetCDF_tendsto_atBot`,
+  `frechetCDF_tendsto_atTop`; `frechetStieltjes ξ hξ`; `frechetMeasure ξ hξ`; instance
+  `IsProbabilityMeasure (frechetMeasure ξ hξ)`; `cdf_frechetMeasure_apply`.
+- **Max-stability instantiated for the constructed laws.** `cdf_map_maxRV_gumbel`: for
+  independent measurable coordinates with law `gumbelMeasure`, `cdf (P.map (maxRV X)) x =
+  gumbelCDF (x − log n)`; `cdf_map_maxRV_frechet`: with law `frechetMeasure ξ hξ`,
+  `= frechetCDF ξ (n^{−ξ} x)`. These discharge the CDF-realization premise carried by
+  `measureReal_maxLeEvent_gumbel`/`_frechet` since v0.2.3; independence, measurability, common
+  law and `n > 0` remain as the ordinary hypotheses of the random-variable statements.
+- **iid realizations exist.** `cdf_map_maxRV_pi_gumbel`/`_pi_frechet`: on `ι → ℝ` with
+  `Measure.pi (fun _ => gumbelMeasure)` (resp. Fréchet) the coordinate projections are
+  independent (`iIndepFun_pi`) with the constructed law, so the maximum has the stated
+  distribution function for every finite nonempty `ι`.
+
+Source: §9.1 printed p. 173 (PDF 187), standardised (`b_n = 0`, `a_n = 1`, `ξ = 1/α`).
+**T061 remains partial**: the reverse-Weibull measure and the location/scale wrappers
+`x ↦ μ + σx` (`σ > 0`) for all three families are the remaining children; the ledger records
+`actual_law_constructed` for the Gumbel and Fréchet slices only.
+
+### 15.3 Verification of v0.2.5
+
+Clean `lake build` exit 0; `scripts/verify.py` exit 0 — `PASS: 103 theorems, 3 instance, 16
+aliases; no extra axioms; trust scan: 216 project constants (incl. 49 internal) all within
+allowlist; 122 public theorem/instance constants match the regex inventory`, ledger schema valid,
+83 cited declarations present; `scripts/harness_regression.py` exit 0, 12/12 fixtures; archive
+validated from a fresh extraction (`deliverables/v0.2.5/archive_validation_v0.2.5.log`).
+Evidence: `evidence/fable/v0.2.5/`.
+
+### 15.4 Ledger after v0.2.5
+
+158 families: 1 discharged (T060), 10 partial (T001, T007, T008, T029, T032, T046, T047, T061,
+T118, T124), 4 reuse, 91 missing, 34 source-check, 15 model-needed, 3 empirical — unchanged
+counts; T061's substance increased (two of its three named laws constructed) without a status
+change, which is exactly the situation the new scope/remaining fields are for.
+
+### 15.5 Recommended next tasks (dependency-ordered)
+
+1. **Finish T061.** Reverse-Weibull: `G(x) = exp(−(−x)^α)` for `x < 0`, `1` for `x ≥ 0`, `α > 0`
+   — monotone, continuous, limits `0`/`1`, Stieltjes measure, cdf identity, max-stability
+   `G(x)^n = G(n^{1/α} x)`; then location/scale pushforwards `Measure.map (fun x => μ + σ x)` with
+   `σ > 0` and their cdf rules for all three families. Then close T061.
+2. **T029, probabilistic half** (unchanged): nonnegative weighted sums via event inclusions and a
+   squeeze lemma for `HasFiniteTailExponent`.
+3. **Exact Pareto slice against `paretoMeasure`** (unchanged): survival, moments, divergence,
+   threshold excess, power pushforward (T005/T021/T028/T032).

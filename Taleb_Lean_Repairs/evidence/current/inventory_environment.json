@@ -5,10 +5,11 @@
     "AuditVerification"
   ],
   "lean_version": "4.24.0",
-  "internal_count": 48,
+  "internal_count": 49,
   "imported_project_modules": [
     "AuditRepairs",
     "AuditRepairs.ExtremeValueBridge",
+    "AuditRepairs.ExtremeValueLaws",
     "AuditRepairs.Foundations",
     "AuditRepairs.GaussianBridge",
     "AuditRepairs.ImplicitSetDiagnostic",
@@ -33,8 +34,467 @@
     "Proofs.Proof15_CauchyStable",
     "Proofs.Proof16_StableCharFnStable"
   ],
-  "generated_count": 67,
+  "generated_count": 68,
   "constants": [
+    {
+      "type": "∀ {ξ : ℝ} (hξ : 0 < ξ), ProbabilityTheory.cdf (AuditEVTLaws.frechetMeasure ξ hξ) = AuditEVTLaws.frechetStieltjes ξ hξ",
+      "name": "AuditEVTLaws.cdf_frechetMeasure",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ} (hξ : 0 < ξ) (x : ℝ),\n  ↑(ProbabilityTheory.cdf (AuditEVTLaws.frechetMeasure ξ hξ)) x = AuditTails.frechetCDF ξ x",
+      "name": "AuditEVTLaws.cdf_frechetMeasure_apply",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "ProbabilityTheory.cdf AuditEVTLaws.gumbelMeasure = AuditEVTLaws.gumbelStieltjes",
+      "name": "AuditEVTLaws.cdf_gumbelMeasure",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (x : ℝ), ↑(ProbabilityTheory.cdf AuditEVTLaws.gumbelMeasure) x = AuditTails.gumbelCDF x",
+      "name": "AuditEVTLaws.cdf_gumbelMeasure_apply",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ} {Ω : Type u_1} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure P]\n  {ι : Type u_2} [inst_2 : Fintype ι] [inst_3 : Nonempty ι] (hξ : 0 < ξ) (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι), Measurable (X i)) →\n      (∀ (i : ι), MeasureTheory.Measure.map (X i) P = AuditEVTLaws.frechetMeasure ξ hξ) →\n        ∀ (x : ℝ),\n          ↑(ProbabilityTheory.cdf (MeasureTheory.Measure.map (AuditExtremes.maxRV X) P)) x =\n            AuditTails.frechetCDF ξ (↑(Fintype.card ι) ^ (-ξ) * x)",
+      "name": "AuditEVTLaws.cdf_map_maxRV_frechet",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure P]\n  {ι : Type u_2} [inst_2 : Fintype ι] [inst_3 : Nonempty ι] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι), Measurable (X i)) →\n      (∀ (i : ι), MeasureTheory.Measure.map (X i) P = AuditEVTLaws.gumbelMeasure) →\n        ∀ (x : ℝ),\n          ↑(ProbabilityTheory.cdf (MeasureTheory.Measure.map (AuditExtremes.maxRV X) P)) x =\n            AuditTails.gumbelCDF (x - Real.log ↑(Fintype.card ι))",
+      "name": "AuditEVTLaws.cdf_map_maxRV_gumbel",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ} {ι : Type u_1} [inst : Fintype ι] [inst_1 : Nonempty ι] (hξ : 0 < ξ) (x : ℝ),\n  ↑(ProbabilityTheory.cdf\n          (MeasureTheory.Measure.map (AuditExtremes.maxRV fun i ω => ω i)\n            (MeasureTheory.Measure.pi fun x => AuditEVTLaws.frechetMeasure ξ hξ)))\n      x =\n    AuditTails.frechetCDF ξ (↑(Fintype.card ι) ^ (-ξ) * x)",
+      "name": "AuditEVTLaws.cdf_map_maxRV_pi_frechet",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : Nonempty ι] (x : ℝ),\n  ↑(ProbabilityTheory.cdf\n          (MeasureTheory.Measure.map (AuditExtremes.maxRV fun i ω => ω i)\n            (MeasureTheory.Measure.pi fun x => AuditEVTLaws.gumbelMeasure)))\n      x =\n    AuditTails.gumbelCDF (x - Real.log ↑(Fintype.card ι))",
+      "name": "AuditEVTLaws.cdf_map_maxRV_pi_gumbel",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "Continuous AuditTails.gumbelCDF",
+      "name": "AuditEVTLaws.continuous_gumbelCDF",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ}, 0 < ξ → ∀ (x₀ : ℝ), ContinuousWithinAt (AuditTails.frechetCDF ξ) (Set.Ici x₀) x₀",
+      "name": "AuditEVTLaws.frechetCDF_continuousWithinAt_Ici",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ}, 0 < ξ → Monotone (AuditTails.frechetCDF ξ)",
+      "name": "AuditEVTLaws.frechetCDF_monotone",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ} (x : ℝ), 0 ≤ AuditTails.frechetCDF ξ x",
+      "name": "AuditEVTLaws.frechetCDF_nonneg",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ x : ℝ}, x ≤ 0 → AuditTails.frechetCDF ξ x = 0",
+      "name": "AuditEVTLaws.frechetCDF_of_nonpos",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ x : ℝ}, 0 < x → AuditTails.frechetCDF ξ x = Real.exp (-x ^ (-1 / ξ))",
+      "name": "AuditEVTLaws.frechetCDF_of_pos",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ}, Filter.Tendsto (AuditTails.frechetCDF ξ) Filter.atBot (nhds 0)",
+      "name": "AuditEVTLaws.frechetCDF_tendsto_atBot",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ}, 0 < ξ → Filter.Tendsto (AuditTails.frechetCDF ξ) Filter.atTop (nhds 1)",
+      "name": "AuditEVTLaws.frechetCDF_tendsto_atTop",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(ξ : ℝ) → 0 < ξ → MeasureTheory.Measure ℝ",
+      "name": "AuditEVTLaws.frechetMeasure",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (ξ : ℝ) (hξ : 0 < ξ), MeasureTheory.IsProbabilityMeasure (AuditEVTLaws.frechetMeasure ξ hξ)",
+      "name": "AuditEVTLaws.frechetMeasure_isProbabilityMeasure",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": true,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(ξ : ℝ) → 0 < ξ → StieltjesFunction",
+      "name": "AuditEVTLaws.frechetStieltjes",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "Monotone AuditTails.gumbelCDF",
+      "name": "AuditEVTLaws.gumbelCDF_monotone",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "Filter.Tendsto AuditTails.gumbelCDF Filter.atBot (nhds 0)",
+      "name": "AuditEVTLaws.gumbelCDF_tendsto_atBot",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "Filter.Tendsto AuditTails.gumbelCDF Filter.atTop (nhds 1)",
+      "name": "AuditEVTLaws.gumbelCDF_tendsto_atTop",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "MeasureTheory.Measure ℝ",
+      "name": "AuditEVTLaws.gumbelMeasure",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "MeasureTheory.IsProbabilityMeasure AuditEVTLaws.gumbelMeasure",
+      "name": "AuditEVTLaws.gumbelMeasure_isProbabilityMeasure",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": true,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "StieltjesFunction",
+      "name": "AuditEVTLaws.gumbelStieltjes",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditEVTLaws.gumbelStieltjes._proof_1",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ}, 0 < ξ → -1 / ξ ≤ 0",
+      "name": "AuditEVTLaws.neg_one_div_nonpos",
+      "module": "AuditRepairs.ExtremeValueLaws",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
     {
       "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  {ν : MeasureTheory.Measure ℝ} [inst_2 : Nonempty ι] [MeasureTheory.IsProbabilityMeasure P] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι), Measurable (X i)) →\n      (∀ (i : ι), MeasureTheory.Measure.map (X i) P = ν) →\n        ∀ (x : ℝ),\n          ↑(ProbabilityTheory.cdf (MeasureTheory.Measure.map (AuditExtremes.maxRV X) P)) x =\n            ↑(ProbabilityTheory.cdf ν) x ^ Fintype.card ι",
       "name": "AuditExtremes.cdf_map_maxRV",
@@ -3207,6 +3667,6 @@
       "aliasOf": null
     }
   ],
-  "constant_count": 189,
+  "constant_count": 216,
   "axiom_kind_constants": []
 }

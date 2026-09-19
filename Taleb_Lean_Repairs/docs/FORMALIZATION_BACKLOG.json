@@ -32,6 +32,8 @@
       "AuditRV.IsSlowlyVarying.mul",
       "AuditRV.IsSlowlyVarying.rpow"
     ],
+    "delivery_scope": "Ratio-only slowly/regularly varying predicates with closure lemmas, examples (log, constants, real powers) and the RV-iff-normalised-SV equivalence. The negative-constant diagnostic shows that positivity is not implied.",
+    "remaining_obligations": "Positive measurable convention and its relationship to the ratio predicates. Uniform convergence, Potter bounds and Karamata are T026, T027 and T002.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -49,6 +51,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -66,6 +70,8 @@
     "status": "reuse",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -83,6 +89,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -100,6 +108,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -117,6 +127,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -141,6 +153,8 @@
       "AuditGaussian.gaussianParameters",
       "StableAudit.StableParameters"
     ],
+    "delivery_scope": "Gaussian slice only: Mathlib's gaussianReal mu (2 sigma^2) realizes stableS1Expr 2 beta mu sigma, zero scale included. This reuses Mathlib's law rather than constructing a new one.",
+    "remaining_obligations": "Existence of a probability law with the S1 characteristic function for every 0 < alpha < 2, including alpha = 1 with beta != 0, and the zero-scale Dirac case for those alpha.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -165,6 +179,8 @@
       "AuditProbability.IsSubexponential.finiteTailExponent",
       "AuditTails.subexponential_ratio_tailExponent"
     ],
+    "delivery_scope": "Definition of the nonnegative self-convolution class and preservation of a finite tail exponent under that hypothesis. Both subexponentiality and the finite exponent are hypotheses, not conclusions.",
+    "remaining_obligations": "Any concrete subexponential law, the equivalent n-fold tail characterizations, equivalence with the standard definition, and whether subexponential laws must have a finite exponent.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -182,6 +198,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -199,6 +217,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -216,6 +236,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -233,6 +255,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -250,6 +274,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -267,6 +293,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -284,6 +312,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -301,6 +331,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -318,6 +350,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -335,6 +369,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -352,6 +388,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -369,6 +407,8 @@
     "status": "reuse",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -386,6 +426,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -403,6 +445,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -420,6 +464,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -437,6 +483,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -454,6 +502,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -471,6 +521,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -488,6 +540,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -505,6 +559,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -528,6 +584,8 @@
       "AuditTails.two_power_tail",
       "AuditTails.two_power_tail_min"
     ],
+    "delivery_scope": "Formula-level two-term power tails: exponent min(alpha1, alpha2) in the finite log-ratio interface. Not a statement about random variables.",
+    "remaining_obligations": "Finite log tail exponent of nonnegative weighted sums via event inclusions and a squeeze lemma (no independence needed). Exact convolution asymptotics belong to the subexponential workstream.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -545,6 +603,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -562,6 +622,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -583,6 +645,8 @@
     "declarations": [
       "AuditTails.pareto_power_tail"
     ],
+    "delivery_scope": "Analytic power-transform tail formula with exponent alpha/p.",
+    "remaining_obligations": "Measurable pushforward under x -> x^p for nonnegative x and p > 0, the inverse-event identity and identification of the transformed law.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -600,6 +664,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -617,6 +683,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -634,6 +702,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -651,6 +721,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -668,6 +740,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -685,6 +759,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -702,6 +778,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -719,6 +797,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -736,6 +816,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -753,6 +835,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -770,6 +854,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -787,6 +873,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -804,6 +892,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -832,6 +922,8 @@
       "AuditGaussian.convolutionPower_gaussianReal_scale",
       "AuditGaussian.convolutionPower_gaussianReal"
     ],
+    "delivery_scope": "Gaussian half: gaussianReal realizes the S1 expression at alpha = 2 and the stable convolution bridge is instantiated with actual Gaussian laws. Cauchy: expression-level specialization only.",
+    "remaining_obligations": "A Cauchy probability law with its characteristic function (none in the pinned Mathlib), nonnegative scale including Dirac, and its instantiation of the bridge.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -858,6 +950,8 @@
       "AuditProbability.law_independent_sum",
       "StableAudit.stableS1Expr_power"
     ],
+    "delivery_scope": "Prerequisite only: convolution powers, their characteristic functions and the conditional stable sum/convolution bridge. No sample-average law is delivered.",
+    "remaining_obligations": "Pushforward under division by n, the average scale n^(1/alpha - 1), the alpha = 1 skew-location correction under rescaling, and finite-mean convergence.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -875,6 +969,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -892,6 +988,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -909,6 +1007,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -926,6 +1026,8 @@
     "status": "reuse",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -943,6 +1045,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -960,6 +1064,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -977,6 +1083,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -994,6 +1102,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1011,6 +1121,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1028,6 +1140,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1045,6 +1159,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1062,6 +1178,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1079,6 +1197,7 @@
     "status": "discharged",
     "states": [
       "formula_proved",
+      "law_theorem",
       "source_reviewed",
       "discharged"
     ],
@@ -1106,6 +1225,8 @@
       "AuditExtremes.measureReal_map_minRV_Ioi",
       "AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf"
     ],
+    "delivery_scope": "Generic probability-law theorems: the cdf of the maximum equals (cdf nu)^n and the survival of the minimum equals (nu(x, inf))^n = (1 - cdf nu x)^n for independent measurable coordinates with common law nu, plus event-level product and power identities for all four threshold conventions.",
+    "remaining_obligations": "None within the family. Named EVT laws are T061, the density derivative and domains of attraction are T062/T011.",
     "discharged": true,
     "completion": "All stated targets are met by the listed declarations (checked build, axiom closure within the allowlist, source correspondence reviewed, differences documented). Reopen if a child obligation is discovered."
   },
@@ -1123,7 +1244,9 @@
     "status": "partial",
     "states": [
       "formula_proved",
-      "conditional_law_theorem"
+      "conditional_law_theorem",
+      "actual_law_constructed",
+      "source_reviewed"
     ],
     "declarations": [
       "AuditTails.frechetFormula",
@@ -1134,8 +1257,22 @@
       "AuditTails.frechet_cdf_maxstable",
       "AuditTails.gumbel_maxstable",
       "AuditExtremes.measureReal_maxLeEvent_frechet",
-      "AuditExtremes.measureReal_maxLeEvent_gumbel"
+      "AuditExtremes.measureReal_maxLeEvent_gumbel",
+      "AuditEVTLaws.gumbelStieltjes",
+      "AuditEVTLaws.gumbelMeasure",
+      "AuditEVTLaws.gumbelMeasure_isProbabilityMeasure",
+      "AuditEVTLaws.cdf_gumbelMeasure_apply",
+      "AuditEVTLaws.cdf_map_maxRV_gumbel",
+      "AuditEVTLaws.cdf_map_maxRV_pi_gumbel",
+      "AuditEVTLaws.frechetStieltjes",
+      "AuditEVTLaws.frechetMeasure",
+      "AuditEVTLaws.frechetMeasure_isProbabilityMeasure",
+      "AuditEVTLaws.cdf_frechetMeasure_apply",
+      "AuditEVTLaws.cdf_map_maxRV_frechet",
+      "AuditEVTLaws.cdf_map_maxRV_pi_frechet"
     ],
+    "delivery_scope": "Gumbel and Frechet (xi > 0) probability measures constructed from their distribution functions via Stieltjes functions (v0.2.5), with IsProbabilityMeasure, exact cdf identities and max-stability instantiated for the constructed laws, including product-space iid realizations. The formula identities and the conditional maxima results of v0.2.3 remain available.",
+    "remaining_obligations": "Reverse-Weibull measure with the correct upper endpoint and shape convention, location/scale pushforwards x -> mu + sigma x with sigma > 0 for all three families and their cdf transformation rules. Do not close before all three named families and the location/scale scope are done.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1153,6 +1290,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1170,6 +1309,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1187,6 +1328,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1204,6 +1347,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1221,6 +1366,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1238,6 +1385,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1255,6 +1404,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1272,6 +1423,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1289,6 +1442,8 @@
     "status": "empirical",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1306,6 +1461,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1323,6 +1480,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1340,6 +1499,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1357,6 +1518,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1374,6 +1537,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1391,6 +1556,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1408,6 +1575,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1425,6 +1594,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1442,6 +1613,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1459,6 +1632,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1476,6 +1651,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1493,6 +1670,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1510,6 +1689,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1527,6 +1708,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1544,6 +1727,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1561,6 +1746,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1578,6 +1765,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1595,6 +1784,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1612,6 +1803,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1629,6 +1822,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1646,6 +1841,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1663,6 +1860,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1680,6 +1879,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1697,6 +1898,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1714,6 +1917,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1731,6 +1936,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1748,6 +1955,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1765,6 +1974,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1782,6 +1993,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1799,6 +2012,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1816,6 +2031,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1833,6 +2050,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1850,6 +2069,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1867,6 +2088,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1884,6 +2107,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1901,6 +2126,8 @@
     "status": "empirical",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1918,6 +2145,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1935,6 +2164,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1952,6 +2183,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1969,6 +2202,8 @@
     "status": "empirical",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1986,6 +2221,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2003,6 +2240,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2020,6 +2259,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2037,6 +2278,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2054,6 +2297,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2071,6 +2316,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2088,6 +2335,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2109,6 +2358,8 @@
     "declarations": [
       "AuditTails.convexOn_rpow_neg_right"
     ],
+    "delivery_scope": "Prerequisite only: convexity of alpha -> c^(-alpha), the tail kernel. Not the Pareto pth-moment formula, its convexity in alpha, or an integrated Jensen inequality.",
+    "remaining_obligations": "Identify E[X^p] = scale^p alpha/(alpha - p) for alpha > p, prove its convexity in alpha, and justify Jensen with the mixing support and integrability assumptions.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2126,6 +2377,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2143,6 +2396,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2160,6 +2415,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2177,6 +2434,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2194,6 +2453,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2217,6 +2478,8 @@
       "AuditMoments.gamma_mixture_excess",
       "AuditMoments.gamma_mixture_excess_pos"
     ],
+    "delivery_scope": "Corrected rational excess formula and its positivity in the finite-inverse-moment regime, as algebra.",
+    "remaining_obligations": "The inverse moment of the gamma law, its finiteness threshold, and the mixture expectation identity that produces the formula.",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2234,6 +2497,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2251,6 +2516,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2268,6 +2535,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2285,6 +2554,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2302,6 +2573,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2319,6 +2592,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2336,6 +2611,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2353,6 +2630,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2370,6 +2649,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2387,6 +2668,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2404,6 +2687,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2421,6 +2706,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2438,6 +2725,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2455,6 +2744,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2472,6 +2763,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2489,6 +2782,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2506,6 +2801,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2523,6 +2820,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2540,6 +2839,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2557,6 +2858,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2574,6 +2877,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2591,6 +2896,8 @@
     "status": "reuse",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2608,6 +2915,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2625,6 +2934,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2642,6 +2953,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2659,6 +2972,8 @@
     "status": "model-needed",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2676,6 +2991,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2693,6 +3010,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2710,6 +3029,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2727,6 +3048,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2744,6 +3067,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2761,6 +3086,8 @@
     "status": "source-check",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2778,6 +3105,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -2795,6 +3124,8 @@
     "status": "missing",
     "states": [],
     "declarations": [],
+    "delivery_scope": "",
+    "remaining_obligations": "",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   }

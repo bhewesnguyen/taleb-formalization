@@ -5,9 +5,9 @@ The axiom allowlist covers standard Lean/Mathlib foundations, not arbitrary axio
 
 Two layers of checking:
 
-1. Public API (the "67/69 checked declarations" of the handoff): declarations are
-   discovered by a line regex over `AuditRepairs/*.lean` plus one alias per
-   `Proofs/Proof*.lean`, `AuditVerification.lean` must be exactly the generated
+1. Public API (the "checked declarations" count reported for the current tree): declarations
+   are discovered by a line regex, recursively under `AuditRepairs/`, plus one alias per
+   `Proofs/Proof*.lean`; `AuditVerification.lean` must be exactly the generated
    `#print axioms` list for them, and the printed closures must stay within the
    allowlist. This layer is what the README counts refer to.
 2. Trust scan (independent of the regex): `scripts/FableInventory.lean` asks the Lean
@@ -117,9 +117,22 @@ def main():
     rmap={f"Taleb.Proof{m['proof']:02}.repaired":m['declaration'] for m in json.loads((ROOT/'docs/replacement_map.json').read_text())}
     aliases={r['name']:r['aliasOf'] for r in rows if r['aliasOf']}
     check(aliases==rmap, 'Alias targets differ from docs/replacement_map.json: '+str({k:(aliases.get(k),rmap.get(k)) for k in set(aliases)|set(rmap) if aliases.get(k)!=rmap.get(k)}))
-    # Every Lean declaration the backlog credits to a family must exist in the scanned environment.
+    # Backlog ledger: schema validity (mirrors scripts/rebuild_curated_inventory.py, audit of v0.2.4)
+    # and existence in the scanned environment of every credited Lean declaration.
     env_names={r['name'] for r in rows}
     backlog=json.loads((ROOT/'docs/FORMALIZATION_BACKLOG.json').read_text())
+    STATES={'formula_proved','conditional_law_theorem','law_theorem','actual_law_constructed','source_reviewed','discharged'}
+    STATUSES={'partial','reuse','missing','source-check','model-needed','empirical','discharged'}
+    schema=[]
+    for b in backlog:
+        st=set(b.get('states',[])); has=bool(b.get('declarations'))
+        if b['status'] not in STATUSES: schema.append(f"{b['id']}: unknown status {b['status']!r}")
+        if not st<=STATES: schema.append(f"{b['id']}: unknown states {sorted(st-STATES)}")
+        if (b['status']=='discharged')!=('discharged' in st): schema.append(f"{b['id']}: discharged status and state disagree")
+        if bool(st)!=has or bool(st)!=bool(b.get('delivery_scope')) or bool(st)!=bool(b.get('remaining_obligations')):
+            schema.append(f"{b['id']}: delivery states, declarations, delivery_scope and remaining_obligations must be present together")
+    check(not schema, 'docs/FORMALIZATION_BACKLOG.json schema violations: '+str(schema))
+    check(len(backlog)==158, f'docs/FORMALIZATION_BACKLOG.json has {len(backlog)} rows, expected 158')
     cited={(b['id'],d) for b in backlog for d in b.get('declarations',[])}
     dangling=sorted(f"{i}:{d}" for i,d in cited if d not in env_names)
     check(not dangling, 'docs/FORMALIZATION_BACKLOG.json cites declarations that do not exist in the environment: '+str(dangling))
@@ -139,7 +152,10 @@ def main():
             all_disk_modules_imported=(not missing_modules),
             public_inventory_matches_regex=(env_public==regex_checked),
             alias_targets_match_replacement_map=(aliases==rmap),
-            backlog_cited_declarations_exist=(not dangling),backlog_cited_declaration_count=len(cited)),
+            backlog_schema_valid=(not schema),backlog_families=len(backlog),
+            backlog_discharged=sum(b['status']=='discharged' for b in backlog),
+            backlog_cited_declarations_exist=(not dangling),backlog_cited_declaration_count=len(cited),
+            backlog_cited_distinct_declarations=len({d for _,d in cited})),
         build_diagnostics_clean=(not build_diag),dependency_worktrees_clean=True,
         python_optimize=(not __debug__),
         source_sha256=source_hashes,elapsed_seconds=round(time.monotonic()-start,2),

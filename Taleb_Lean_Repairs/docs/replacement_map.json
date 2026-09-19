@@ -77,7 +77,7 @@
     "module": "Tails",
     "declaration": "AuditTails.frechet_cdf_maxstable",
     "source": "9.1",
-    "scope": "Global piecewise formula and positive sample size; CDF realization remains open. iid maxima (v0.2.3): AuditExtremes.measureReal_maxLeEvent_frechet states the max-stability for independent coordinates with the Frechet distribution function; constructing that measure remains open (T061). Law level (v0.2.4): AuditExtremes.cdf_map_maxRV gives cdf(max) = F^n for measurable independent coordinates with a common law."
+    "scope": "Global piecewise formula and positive sample size; CDF realization remains open. iid maxima (v0.2.3): AuditExtremes.measureReal_maxLeEvent_frechet states the max-stability for independent coordinates with the Frechet distribution function; constructing that measure remains open (T061). Law level (v0.2.4): AuditExtremes.cdf_map_maxRV gives cdf(max) = F^n for measurable independent coordinates with a common law. Measure constructed (v0.2.5): AuditEVTLaws.frechetMeasure with cdf identity cdf_frechetMeasure_apply; max-stability instantiated for it in cdf_map_maxRV_frechet (product-space realization cdf_map_maxRV_pi_frechet)."
   },
   {
     "proof": 11,
@@ -85,7 +85,7 @@
     "module": "Tails",
     "declaration": "AuditTails.gumbel_maxstable",
     "source": "9.1",
-    "scope": "Correct original identity retained. iid maxima (v0.2.3): AuditExtremes.measureReal_maxLeEvent_gumbel; measure construction open (T061). Law level (v0.2.4): AuditExtremes.cdf_map_maxRV, and AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf for the minimum."
+    "scope": "Correct original identity retained. iid maxima (v0.2.3): AuditExtremes.measureReal_maxLeEvent_gumbel; measure construction open (T061). Law level (v0.2.4): AuditExtremes.cdf_map_maxRV, and AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf for the minimum. Measure constructed (v0.2.5): AuditEVTLaws.gumbelMeasure with cdf identity cdf_gumbelMeasure_apply; max-stability instantiated for it in cdf_map_maxRV_gumbel (product-space realization cdf_map_maxRV_pi_gumbel)."
   },
   {
     "proof": 12,

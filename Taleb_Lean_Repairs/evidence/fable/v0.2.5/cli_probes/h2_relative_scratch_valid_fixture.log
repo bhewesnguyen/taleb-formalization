@@ -1,0 +1,12 @@
+# verify.py regression suite; started 2026-09-19T17:42:49Z; scratch copy /tmp/h2probe/rel_scratch/Taleb_Lean_Repairs
+# pristine source tree sha256 (all non-.lake files, path+content): 7cc24cb4187829e81f60df0ef9abc1da81fddf20b306f0571265b14f63a41b02
+# per fixture: sources re-extracted, .lake/build restored from the pristine snapshot, tree hash re-checked, then the mutation is applied
+
+## fixture valid: Unmodified copy of the project (positive control).
+restored tree sha256 before mutation: 7cc24cb4187829e81f60df0ef9abc1da81fddf20b306f0571265b14f63a41b02 (matches pristine: True; .lake/build reset from snapshot: True)
+command: python3 scripts/verify.py  (cwd=/tmp/h2probe/rel_scratch/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 0  (expected: 0); wall time 79.9s
+verification.json: status=PASS error=''  (expected status PASS)
+regression verdict: OK, behaved as expected
+
+# summary: 1 fixtures; all behaved as expected: True. The real project was not mutated.

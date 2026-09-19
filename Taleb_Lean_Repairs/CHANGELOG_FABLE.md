@@ -1,5 +1,82 @@
 # Changelog: Fable review
 
+## v0.2.4 → v0.2.5 (third corrective pass; Gumbel and Fréchet laws constructed)
+
+Trigger: the independent audit of v0.2.4 (`Taleb_Fable_v0.2.4_Independent_Audit.pdf`, SHA-256
+`5407c895a153229f861f8a078831c877c5b73041bbc95963142f9eedca9b31f7`; ledger `Taleb_Proof_Progress_v0.2.4.md`,
+`c4a29b2636a9198afa56db3af32971fd74bc69706a3e453b4eac5b3ce4b12332`; evidence ZIP
+`b5117d9f2aef8846c758da613e91380d96b2ba35c85c247e0c4ec86e00f9efe7`). Details: `FABLE_REVIEW.md` §15.
+
+### Mathematical statement changes
+
+No pre-existing theorem, definition, instance, alias or proof was modified. **Added** in the new
+module `AuditRepairs/ExtremeValueLaws.lean` (all with closure `{propext, Classical.choice, Quot.sound}`):
+
+| Declaration | Kind | Content |
+|---|---|---|
+| `AuditEVTLaws.gumbelCDF_monotone`, `continuous_gumbelCDF`, `gumbelCDF_tendsto_atBot`, `gumbelCDF_tendsto_atTop` | theorems | analytic properties of `AuditTails.gumbelCDF`. |
+| `AuditEVTLaws.gumbelStieltjes`, `gumbelMeasure` | defs | the Gumbel distribution function as a `StieltjesFunction` and its measure. |
+| `AuditEVTLaws.gumbelMeasure_isProbabilityMeasure` | instance | total mass one from the endpoint limits. |
+| `AuditEVTLaws.cdf_gumbelMeasure`, `cdf_gumbelMeasure_apply` | theorems | `cdf gumbelMeasure = gumbelStieltjes`; pointwise `cdf gumbelMeasure x = gumbelCDF x`. |
+| `AuditEVTLaws.cdf_map_maxRV_gumbel`, `cdf_map_maxRV_pi_gumbel` | theorems | maximum of independent `gumbelMeasure` coordinates has cdf `gumbelCDF (x − log n)`; product-space realization. |
+| `AuditEVTLaws.frechetCDF_of_pos`, `frechetCDF_of_nonpos`, `frechetCDF_nonneg`, `neg_one_div_nonpos`, `frechetCDF_monotone`, `frechetCDF_continuousWithinAt_Ici`, `frechetCDF_tendsto_atBot`, `frechetCDF_tendsto_atTop` | theorems | analytic properties of `AuditTails.frechetCDF ξ` for `0 < ξ`, including right-continuity at the support boundary. |
+| `AuditEVTLaws.frechetStieltjes ξ hξ`, `frechetMeasure ξ hξ` | defs | Stieltjes function and measure. |
+| `AuditEVTLaws.frechetMeasure_isProbabilityMeasure` | instance | total mass one. |
+| `AuditEVTLaws.cdf_frechetMeasure`, `cdf_frechetMeasure_apply` | theorems | cdf identities. |
+| `AuditEVTLaws.cdf_map_maxRV_frechet`, `cdf_map_maxRV_pi_frechet` | theorems | maximum of independent `frechetMeasure` coordinates has cdf `frechetCDF ξ (n^{−ξ} x)`; product-space realization. |
+
+Counts: 83 → **103 theorems**, 1 → **3 instances**, 16 aliases (**122** checked); trust scan 189 → **216**
+constants (49 internal). Backlog statuses unchanged (T061 stays partial: reverse-Weibull and
+location/scale open); T061 gains `actual_law_constructed` and `source_reviewed`, T060 gains `law_theorem`.
+
+### Changed files
+
+| File | Change |
+|---|---|
+| `AuditRepairs/ExtremeValueLaws.lean` | **New** (imports `AuditRepairs.ExtremeValueBridge`, `Mathlib.MeasureTheory.Measure.Stieltjes`, `Mathlib.Probability.CDF`). |
+| `AuditRepairs/ExtremeValueBridge.lean` | Docstrings only: module heading no longer says "part"; the maximum-law anchor is eq. (9.1) printed p. 172 / PDF 186 (the EVT forms are p. 173); strict/non-strict events differ on the boundary event and their probabilities by the boundary mass (not "on atoms"). |
+| `AuditRepairs.lean` | Imports `AuditRepairs.ExtremeValueLaws`. |
+| `AuditVerification.lean` | Regenerated: 122 `#print axioms` lines. |
+| `scripts/harness_regression.py` | Audit H1: `--only` IDs validated (unknown or empty IDs rejected with exit 2 before any filesystem action), `all_ok` requires a nonempty result set. Audit H2: `--scratch` and `--out` resolved to absolute paths. |
+| `scripts/verify.py` | Stale "67/69" docstring reworded. Ledger schema validation added to the normal path (statuses and states from the fixed vocabularies incl. `law_theorem`; discharged ⇔ state; states, declarations, `delivery_scope`, `remaining_obligations` present together; 158 rows); report gains `backlog_schema_valid`, `backlog_families`, `backlog_discharged`, `backlog_cited_distinct_declarations`. |
+| `scripts/rebuild_curated_inventory.py` | Delivery field gains `scope=` and `remaining=` sub-fields and the `law_theorem` state; validation that states, declarations, scope and remaining occur together. All eleven supported rows annotated (T118, T047 "prerequisite only"); T060 `law_theorem`; T061 new declarations and states. |
+| `docs/FORMALIZATION_BACKLOG.json`, `.md` | Regenerated / synced (158/158): rows gain `delivery_scope`, `remaining_obligations`; legend explains the facets (nonexclusive, not a ladder), `law_theorem`, and that state counts overlap; intro sentence corrected ("only discharged rows claim completion"). |
+| `docs/REPLACEMENT_MAP.md`, `docs/replacement_map.json` | Rows 10, 11: measure constructed, max-stability instantiated. |
+| `docs/MATHLIB_AND_WORK_ORDER.md` | CDF row and slice 4 updated. |
+| `docs/AUDIT_HISTORY.md` | Round 4 (audit of v0.2.4) added; the "rules" paragraph distinguishes reproduced failures from preventive repairs. |
+| `README.md` | Version, counts (103/3/16, 122; 216 constants), module list, verifier/regression description, ProofWidgets tag note, "What is still open". |
+| `FABLE_REVIEW.md` | §14: source anchor, boundary-mass wording and bundle wording corrected; + §15. |
+| `lakefile.toml` | `version = "0.2.5"`. |
+| `SHA256SUMS`, `evidence/current/*`, `evidence/fable/v0.2.5/` | Regenerated / new evidence layer (includes the H1/H2 CLI probe records). |
+
+Repository (outside the package): `audits/05_astra_on_v0.2.4/` holds the received audit; a `git bundle`
+accompanies the v0.2.5 ZIP.
+
+Pins unchanged: `lean-toolchain`, `lake-manifest.json`, Mathlib `rev`.
+
+### Compatibility implications
+
+- Client code: none for existing declarations. `import AuditRepairs` now also brings in
+  `Mathlib.MeasureTheory.Measure.Stieltjes`.
+- Verification: `verify.py` ≈ 2 min; `harness_regression.py` ≈ 20–30 min. `--only` now rejects
+  unknown IDs (previously silently ignored).
+- Backlog JSON schema: rows gain `delivery_scope`, `remaining_obligations`; state vocabulary gains
+  `law_theorem`.
+
+### Validation performed (v0.2.5)
+
+- `rm -rf .lake/build; lake build`: exit 0, no warnings.
+- `python3 scripts/verify.py`: exit 0, `PASS: 103 theorems, 3 instance, 16 aliases; … trust scan:
+  216 project constants (incl. 49 internal) all within allowlist; 122 public theorem/instance
+  constants match the regex inventory`; ledger schema valid; 83 cited declarations present.
+- `python3 scripts/harness_regression.py`: exit 0, 12/12 fixtures as expected.
+- CLI probes: unknown / mixed / empty `--only` → exit 2 with no scratch directory created;
+  `--only valid --scratch rel_scratch` → PASS with the build snapshot restored from an absolute path.
+- Documentation consistency: replacement map 16/16, backlog 158/158 including scope/remaining lines.
+- Final ZIP validated from a fresh extraction (`deliverables/v0.2.5/archive_validation_v0.2.5.log`).
+
+---
+
 ## v0.2.3 → v0.2.4 (second corrective pass; first discharged family)
 
 Trigger: the independent audit of v0.2.3 (`Taleb_Fable_v0.2.3_Independent_Audit.pdf`, SHA-256

@@ -1,5 +1,5 @@
 name = "taleb_lean_repairs"
-version = "0.2.4"
+version = "0.2.5"
 defaultTargets = ["AuditRepairs", "AuditVerification"]
 
 [[lean_lib]]

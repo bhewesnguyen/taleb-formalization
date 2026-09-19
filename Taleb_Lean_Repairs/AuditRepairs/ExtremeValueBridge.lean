@@ -4,7 +4,7 @@ import Mathlib.Probability.CDF
 import Mathlib.Probability.Independence.Basic
 
 /-!
-# Independent maxima and the EVT formulas at the probability level (backlog family T060, part)
+# Independent extrema at the probability level (backlog family T060; EVT formulas connected)
 
 The Proof10/Proof11 replacements (`AuditTails.frechet_cdf_maxstable`,
 `AuditTails.gumbel_maxstable`) are identities between real-valued *formulas*:
@@ -45,8 +45,9 @@ theorem maxLeEvent_eq_iInter (X : ι → Ω → ℝ) (x : ℝ) :
 `P(X > x)`, matching `AuditProbability.survival`). -/
 def minGtEvent (X : ι → Ω → ℝ) (x : ℝ) : Set Ω := {ω | ∀ i, x < X i ω}
 
-/-- Every coordinate is at least `x`: the minimum is `≥ x` (non-strict variant; the two
-differ exactly on atoms). -/
+/-- Every coordinate is at least `x`: the minimum is `≥ x` (non-strict variant). The strict
+and non-strict events differ on the boundary event `{∃ i, Xᵢ = x}`; their probabilities differ
+by the boundary mass, which is zero for atomless laws. -/
 def minGeEvent (X : ι → Ω → ℝ) (x : ℝ) : Set Ω := {ω | ∀ i, x ≤ X i ω}
 
 /-- Every coordinate is below `x` strictly: the maximum is `< x`. -/
@@ -135,10 +136,13 @@ theorem measureReal_maxLeEvent_gumbel [IsFiniteMeasure P] [Nonempty ι]
 
 /-! ### General product formula, minima, and the laws of `max` and `min` (v0.2.4)
 
-Book §9.1, printed p. 173 (PDF p. 187): the maximum of `n` iid variables with distribution
-function `F` has distribution function `F^n`; the survival analogue for the minimum is
-`P(min > x) = S(x)^n` with `S = 1 − F`. Threshold conventions are stated explicitly
-(`Iic`/`Iio` for maxima, `Ioi`/`Ici` for minima) so that atoms are handled exactly. -/
+Book §9.1, equation (9.1), printed p. 172 (PDF p. 186): `P(X_max ≤ x) = F(x)^n` for `n`
+independent variables with common distribution function `F`. The survival analogue for the
+minimum, `P(min > x) = S(x)^n` with `S = 1 − F`, is a proved companion of the book's "max (or
+minimum)" remark, not a displayed equation. Threshold conventions are stated explicitly
+(`Iic`/`Iio` for maxima, `Ioi`/`Ici` for minima); atoms are permitted, and strict/non-strict
+probabilities differ exactly by the boundary mass. The three EVT distribution forms are on
+printed p. 173 (PDF p. 187). -/
 
 /-- Independent coordinates and any measurable `B ⊆ ℝ`: the probability that every
 coordinate lies in `B` is the product of the coordinate probabilities. Every threshold
@@ -214,8 +218,8 @@ theorem measurable_minRV [Nonempty ι] {X : ι → Ω → ℝ} (hm : ∀ i, Meas
   -- this is the same induction.
   Finset.inf'_induction Finset.univ_nonempty X (fun _f hf _g hg => hf.inf hg) fun i _ => hm i
 
-/-- **Distribution function of the maximum** (book §9.1): for independent measurable
-coordinates with common law `ν`, the law of `max_i Xᵢ` has distribution function
+/-- **Distribution function of the maximum** (book eq. (9.1), printed p. 172): for independent
+measurable coordinates with common law `ν`, the law of `max_i Xᵢ` has distribution function
 `(cdf ν x) ^ n`. Atoms are permitted; `n = |ι| > 0`. -/
 theorem cdf_map_maxRV [Nonempty ι] [IsProbabilityMeasure P] (X : ι → Ω → ℝ)
     (hX : iIndepFun X P) (hm : ∀ i, Measurable (X i)) (hν : ∀ i, P.map (X i) = ν) (x : ℝ) :

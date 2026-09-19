@@ -137,18 +137,27 @@ def restore(copy,src_tar,pristine_build,pristine_hash):
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('--scratch',default='',help='scratch directory (default: a fresh unique directory under $TMPDIR)')
+    ap.add_argument('--scratch',default='',help='scratch directory (default: a fresh unique directory under $TMPDIR); resolved to an absolute path')
     ap.add_argument('--out',default=str(ROOT/'evidence/current'))
-    ap.add_argument('--only',default='')
+    ap.add_argument('--only',default=None,help='comma-separated fixture IDs to run (default: all); unknown or empty IDs are rejected')
     a=ap.parse_args()
-    out=Path(a.out); out.mkdir(parents=True,exist_ok=True)
+    # Audit of v0.2.4, H1: an unknown --only ID used to select nothing and report success.
+    only=None
+    if a.only is not None:
+        requested=[fid.strip() for fid in a.only.split(',')]
+        if any(not fid for fid in requested): ap.error('--only requires one or more nonempty, comma-separated fixture IDs')
+        unknown=sorted(set(requested)-{f[0] for f in FIXTURES})
+        if unknown: ap.error('unknown fixture IDs in --only: '+', '.join(unknown)+'; known: '+', '.join(f[0] for f in FIXTURES))
+        only=set(requested)
+    out=Path(a.out).resolve(); out.mkdir(parents=True,exist_ok=True)
+    # Audit of v0.2.4, H2: a relative --scratch path was later resolved from the fixture directory.
     if a.scratch:
-        scratch=Path(a.scratch)
+        scratch=Path(a.scratch).resolve()
         if scratch.exists(): raise SystemExit(f'scratch directory {scratch} already exists; refusing to reuse it')
         scratch.mkdir(parents=True)
     else:
         scratch=Path(tempfile.mkdtemp(prefix='taleb_harness_regression_'))
-    copy=scratch/'Taleb_Lean_Repairs'; only=set(a.only.split(',')) if a.only else None
+    copy=scratch/'Taleb_Lean_Repairs'
     src_tar=scratch/'sources.tar'; snapshot_sources(src_tar)
     pristine_build=scratch/'pristine_build'
     copy.mkdir(); (copy/'.lake').mkdir()
@@ -201,7 +210,7 @@ def main():
         log.append(f"regression verdict: {'OK, behaved as expected' if ok else 'UNEXPECTED BEHAVIOUR'}")
         print(f"{fid:<32} exit={rc} status={status} -> {'ok' if ok else 'UNEXPECTED'}",flush=True)
     restore(copy,src_tar,pristine_build,pristine_hash)
-    all_ok=all(r['behaved_as_expected'] for r in results)
+    all_ok=bool(results) and all(r['behaved_as_expected'] for r in results)   # an empty run is not a pass
     summary=dict(all_fixtures_behaved_as_expected=all_ok,fixture_count=len(results),pristine_tree_sha256=pristine_hash,
         real_project_mutated=False,scratch_copy=str(copy),results=results)
     (out/'harness_regression.json').write_text(json.dumps(summary,indent=2,ensure_ascii=False)+'\n')

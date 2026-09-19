@@ -2,11 +2,11 @@
 
 Source: arXiv:2001.10488v4, third edition, 17 September 2025. 523 PDF pages. Original proof pack covers elementary pieces of a small subset; it does not cover half the book.
 
-This inventory contains 158 obligation families. A family can require many Lean declarations. No row is a claim that its book statement is already verified. All 30 numbered chapters and nine lettered chapters have a coverage entry; Chapter 1 is introductory exposition. The section and equation indexes are locator catalogs, not independent theorem counts.
+This inventory contains 158 obligation families. A family can require many Lean declarations. Only rows marked discharged claim completion of their stated, reviewed scope; every other row is open, whatever partial support it records. All 30 numbered chapters and nine lettered chapters have a coverage entry; Chapter 1 is introductory exposition. The section and equation indexes are locator catalogs, not independent theorem counts.
 
 Statuses: partial = some supplied lemmas exist but the family is incomplete; reuse = an existing Mathlib result should be instantiated; missing = implement after prerequisites; source-check = resolve mathematical statement first; empirical/model-needed = specify a model or reproduce data.; discharged = every stated target of the family is met by checked Lean declarations, with source correspondence reviewed and differences documented (reopened if a child obligation is discovered).
 
-Delivery states (since v0.2.4, per family, listed with the credited Lean declarations): formula_proved = an analytic/formula-level statement is checked; conditional_law_theorem = a probability-level theorem is checked under existence, distribution-function or characteristic-function premises; actual_law_constructed = a concrete probability measure realizes the object; source_reviewed = the source correspondence has been reviewed at page level; discharged = as above. Families without delivery states have no Lean support yet.
+Delivery states (since v0.2.4, per family, listed with the credited Lean declarations) are nonexclusive facets describing scoped components, not rungs of a completion ladder: formula_proved = an analytic/formula-level statement is checked; conditional_law_theorem = a probability-level theorem is checked whose hypotheses include an unresolved realization or property premise (existence of a law with a given characteristic/distribution function, or an assumed property such as subexponentiality or a finite exponent); law_theorem = a probability-law theorem under ordinary hypotheses only (independence, measurability, a common law), with no such premise; actual_law_constructed = a concrete probability measure realizes the object (reuse of a Mathlib law counts as realization, not novelty); source_reviewed = the source correspondence has been reviewed at page level; discharged = the whole-family judgment above. Since v0.2.5 each supported family also carries a delivery scope (what the credited work covers) and its remaining obligations. Families without delivery states have no Lean support yet. State counts overlap across families and must not be added as completed work; one declaration may support several families.
 
 Priority: P0 statement repair; P1 contained reusable family; P2 substantial dependency; P3 advanced application/model/data. Every source-check row has a statement-review gate regardless of priority.
 
@@ -21,6 +21,10 @@ Separate ratio limits from eventual positivity and measurability; connect the po
 Hypotheses and gaps: Measurable functions; eventual positive values; positive scaling argument.
 
 Delivered (formula_proved, source_reviewed): `AuditRV.IsSlowlyVarying`, `AuditRV.IsRegularlyVarying`, `AuditRV.isSlowlyVarying_log`, `AuditRV.isSlowlyVarying_const`, `AuditRV.isSlowlyVarying_neg_one`, `AuditRV.IsSlowlyVarying.of_tendsto_const`, `AuditRV.IsRegularlyVarying.mul`, `AuditRV.IsRegularlyVarying.rpow`, `AuditRV.isRegularlyVarying_iff_slowlyVarying`, `AuditRV.regularlyVarying_zero_iff`, `AuditRV.regularlyVarying_power`, `AuditRV.IsRegularlyVarying.congr`, `AuditRV.IsRegularlyVarying.const_mul`, `AuditRV.IsSlowlyVarying.mul`, `AuditRV.IsSlowlyVarying.rpow`.
+
+Delivery scope: Ratio-only slowly/regularly varying predicates with closure lemmas, examples (log, constants, real powers) and the RV-iff-normalised-SV equivalence. The negative-constant diagnostic shows that positivity is not implied.
+
+Remaining obligations: Positive measurable convention and its relationship to the ratio predicates. Uniform convergence, Potter bounds and Karamata are T026, T027 and T002.
 
 ### T002 - Karamata representation
 
@@ -72,6 +76,10 @@ Hypotheses and gaps: 0<alpha<=2; -1<=beta<=1; scale>=0; include alpha=1 logarith
 
 Delivered (actual_law_constructed, source_reviewed): `AuditGaussian.charFun_gaussianReal_eq_stableS1Expr`, `AuditGaussian.gaussianParameters`, `StableAudit.StableParameters`.
 
+Delivery scope: Gaussian slice only: Mathlib's gaussianReal mu (2 sigma^2) realizes stableS1Expr 2 beta mu sigma, zero scale included. This reuses Mathlib's law rather than constructing a new one.
+
+Remaining obligations: Existence of a probability law with the S1 characteristic function for every 0 < alpha < 2, including alpha = 1 with beta != 0, and the zero-scale Dirac case for those alpha.
+
 ### T008 - Subexponential law API
 
 **P2 / partial / SUBEXP**. Printed pp. 13;91-93; PDF anchor p. 27; source: 2.2.12;5.1.
@@ -81,6 +89,10 @@ Extend the new nonnegative self-convolution definition to the standard equivalen
 Hypotheses and gaps: Probability law supported on nonnegative reals; unbounded right support; fixed positive integer n.
 
 Delivered (conditional_law_theorem): `AuditProbability.IsSubexponential`, `AuditProbability.survival`, `AuditProbability.IsSubexponential.finiteTailExponent`, `AuditTails.subexponential_ratio_tailExponent`.
+
+Delivery scope: Definition of the nonnegative self-convolution class and preservation of a finite tail exponent under that hypothesis. Both subexponentiality and the finite exponent are hypotheses, not conclusions.
+
+Remaining obligations: Any concrete subexponential law, the equivalent n-fold tail characterizations, equivalence with the standard definition, and whether subexponential laws must have a finite exponent.
 
 ### T009 - Quantiles and expected shortfall
 
@@ -258,6 +270,10 @@ Hypotheses and gaps: Nonnegative variables and positive weights are required: wi
 
 Delivered (formula_proved, source_reviewed): `AuditTails.two_power_tail`, `AuditTails.two_power_tail_min`.
 
+Delivery scope: Formula-level two-term power tails: exponent min(alpha1, alpha2) in the finite log-ratio interface. Not a statement about random variables.
+
+Remaining obligations: Finite log tail exponent of nonnegative weighted sums via event inclusions and a squeeze lemma (no independence needed). Exact convolution asymptotics belong to the subexponential workstream.
+
 ### T030 - Product of exact Pareto laws
 
 **P1 / missing / DENS**. Printed pp. 99-100; PDF anchor p. 113; source: 5.2.2.
@@ -283,6 +299,10 @@ Bridge the checked analytic exponent alpha/p to the pushforward law of X^p.
 Hypotheses and gaps: X>=0; p>0; measurability; monotonic inverse; do not apply to arbitrary negative p or signed X.
 
 Delivered (formula_proved): `AuditTails.pareto_power_tail`.
+
+Delivery scope: Analytic power-transform tail formula with exponent alpha/p.
+
+Remaining obligations: Measurable pushforward under x -> x^p for nonnegative x and p > 0, the inverse-event identity and identification of the transformed law.
 
 ### T033 - Bell shape, interpolation, and log-Pareto
 
@@ -406,6 +426,10 @@ Hypotheses and gaps: Scale convention: Gaussian variance=2*scale^2; Cauchy nonne
 
 Delivered (formula_proved, actual_law_constructed, source_reviewed): `StableAudit.stableS1Expr_gaussian`, `StableAudit.stableS1Expr_cauchy`, `StableAudit.stableS1Expr_at_zero`, `AuditGaussian.charFun_gaussianReal_eq_stableS1Expr`, `AuditGaussian.convolutionPower_gaussianReal_scale`, `AuditGaussian.convolutionPower_gaussianReal`.
 
+Delivery scope: Gaussian half: gaussianReal realizes the S1 expression at alpha = 2 and the stable convolution bridge is instantiated with actual Gaussian laws. Cauchy: expression-level specialization only.
+
+Remaining obligations: A Cauchy probability law with its characteristic function (none in the pinned Mathlib), nonnegative scale including Dirac, and its instantiation of the bridge.
+
 ### T047 - Stable sample averages
 
 **P2 / partial / CF**. Printed pp. 140; PDF anchor p. 154; source: 7.2.2.
@@ -415,6 +439,10 @@ Derive the average scale n^(1/alpha-1), location rules, and finite-mean converge
 Hypotheses and gaps: Existence of stable laws; iid summands; alpha>1 for mean; alpha=1 skew location under rescaling needs logarithmic correction.
 
 Delivered (conditional_law_theorem): `AuditProbability.convolutionPower`, `AuditProbability.convolutionPower_probability`, `AuditProbability.charFun_convolutionPower`, `AuditProbability.stableS1_convolutionPower_eq`, `AuditProbability.law_independent_sum`, `StableAudit.stableS1Expr_power`.
+
+Delivery scope: Prerequisite only: convolution powers, their characteristic functions and the conditional stable sum/convolution bridge. No sample-average law is delivered.
+
+Remaining obligations: Pushforward under division by n, the average scale n^(1/alpha - 1), the alpha = 1 skew-location correction under rescaling, and finite-mean convergence.
 
 ### T048 - Explicit finite-sum laws
 
@@ -524,7 +552,11 @@ Prove CDF(max_i X_i)(x)=F(x)^n and minima survival analog. Delivered: independen
 
 Hypotheses and gaps: Independent variables (iIndepFun), measurable coordinates, common law stated as equality of pushforward measures, n = card iota > 0 (Nonempty, Fintype), atoms permitted (strict/non-strict thresholds stated explicitly). Constructing specific EVT laws is T061, not part of this family.
 
-Delivered (formula_proved, source_reviewed, discharged): `AuditExtremes.maxLeEvent`, `AuditExtremes.minGtEvent`, `AuditExtremes.minGeEvent`, `AuditExtremes.maxLtEvent`, `AuditExtremes.maxRV`, `AuditExtremes.minRV`, `AuditExtremes.measure_iInter_preimage`, `AuditExtremes.measure_maxLeEvent`, `AuditExtremes.measure_minGtEvent`, `AuditExtremes.measure_minGeEvent`, `AuditExtremes.measure_maxLtEvent`, `AuditExtremes.measure_maxLeEvent_of_forall_eq`, `AuditExtremes.measure_minGtEvent_of_forall_eq`, `AuditExtremes.measureReal_maxLeEvent_of_forall_eq`, `AuditExtremes.measureReal_minGtEvent_of_forall_eq`, `AuditExtremes.measure_maxLeEvent_of_map_eq`, `AuditExtremes.measure_minGtEvent_of_map_eq`, `AuditExtremes.measurable_maxRV`, `AuditExtremes.measurable_minRV`, `AuditExtremes.cdf_map_maxRV`, `AuditExtremes.measureReal_map_minRV_Ioi`, `AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf`.
+Delivered (formula_proved, law_theorem, source_reviewed, discharged): `AuditExtremes.maxLeEvent`, `AuditExtremes.minGtEvent`, `AuditExtremes.minGeEvent`, `AuditExtremes.maxLtEvent`, `AuditExtremes.maxRV`, `AuditExtremes.minRV`, `AuditExtremes.measure_iInter_preimage`, `AuditExtremes.measure_maxLeEvent`, `AuditExtremes.measure_minGtEvent`, `AuditExtremes.measure_minGeEvent`, `AuditExtremes.measure_maxLtEvent`, `AuditExtremes.measure_maxLeEvent_of_forall_eq`, `AuditExtremes.measure_minGtEvent_of_forall_eq`, `AuditExtremes.measureReal_maxLeEvent_of_forall_eq`, `AuditExtremes.measureReal_minGtEvent_of_forall_eq`, `AuditExtremes.measure_maxLeEvent_of_map_eq`, `AuditExtremes.measure_minGtEvent_of_map_eq`, `AuditExtremes.measurable_maxRV`, `AuditExtremes.measurable_minRV`, `AuditExtremes.cdf_map_maxRV`, `AuditExtremes.measureReal_map_minRV_Ioi`, `AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf`.
+
+Delivery scope: Generic probability-law theorems: the cdf of the maximum equals (cdf nu)^n and the survival of the minimum equals (nu(x, inf))^n = (1 - cdf nu x)^n for independent measurable coordinates with common law nu, plus event-level product and power identities for all four threshold conventions.
+
+Remaining obligations: None within the family. Named EVT laws are T061, the density derivative and domains of attraction are T062/T011.
 
 ### T061 - GEV families as probability measures
 
@@ -534,7 +566,11 @@ Construct global Gumbel, Frechet and reverse-Weibull CDFs and prove validity.
 
 Hypotheses and gaps: Correct piecewise support; scale>0; shape domains; right continuity and endpoint limits.
 
-Delivered (formula_proved, conditional_law_theorem): `AuditTails.frechetFormula`, `AuditTails.frechetCDF`, `AuditTails.gumbelCDF`, `AuditTails.frechetFormula_zero`, `AuditTails.frechet_formula_maxstable`, `AuditTails.frechet_cdf_maxstable`, `AuditTails.gumbel_maxstable`, `AuditExtremes.measureReal_maxLeEvent_frechet`, `AuditExtremes.measureReal_maxLeEvent_gumbel`.
+Delivered (formula_proved, conditional_law_theorem, actual_law_constructed, source_reviewed): `AuditTails.frechetFormula`, `AuditTails.frechetCDF`, `AuditTails.gumbelCDF`, `AuditTails.frechetFormula_zero`, `AuditTails.frechet_formula_maxstable`, `AuditTails.frechet_cdf_maxstable`, `AuditTails.gumbel_maxstable`, `AuditExtremes.measureReal_maxLeEvent_frechet`, `AuditExtremes.measureReal_maxLeEvent_gumbel`, `AuditEVTLaws.gumbelStieltjes`, `AuditEVTLaws.gumbelMeasure`, `AuditEVTLaws.gumbelMeasure_isProbabilityMeasure`, `AuditEVTLaws.cdf_gumbelMeasure_apply`, `AuditEVTLaws.cdf_map_maxRV_gumbel`, `AuditEVTLaws.cdf_map_maxRV_pi_gumbel`, `AuditEVTLaws.frechetStieltjes`, `AuditEVTLaws.frechetMeasure`, `AuditEVTLaws.frechetMeasure_isProbabilityMeasure`, `AuditEVTLaws.cdf_frechetMeasure_apply`, `AuditEVTLaws.cdf_map_maxRV_frechet`, `AuditEVTLaws.cdf_map_maxRV_pi_frechet`.
+
+Delivery scope: Gumbel and Frechet (xi > 0) probability measures constructed from their distribution functions via Stieltjes functions (v0.2.5), with IsProbabilityMeasure, exact cdf identities and max-stability instantiated for the constructed laws, including product-space iid realizations. The formula identities and the conditional maxima results of v0.2.3 remain available.
+
+Remaining obligations: Reverse-Weibull measure with the correct upper endpoint and shape convention, location/scale pushforwards x -> mu + sigma x with sigma > 0 for all three families and their cdf transformation rules. Do not close before all three named families and the location/scale scope are done.
 
 ### T062 - Frechet and Gaussian maximum domains
 
@@ -1030,6 +1066,10 @@ Hypotheses and gaps: p>0; common positive scale; random alpha>p; integrable mixi
 
 Delivered (formula_proved): `AuditTails.convexOn_rpow_neg_right`.
 
+Delivery scope: Prerequisite only: convexity of alpha -> c^(-alpha), the tail kernel. Not the Pareto pth-moment formula, its convexity in alpha, or an integrated Jensen inequality.
+
+Remaining obligations: Identify E[X^p] = scale^p alpha/(alpha - p) for alpha > p, prove its convexity in alpha, and justify Jensen with the mixing support and integrability assumptions.
+
 ### T119 - Mixed expected shortfall
 
 **P0 / source-check / TAIL**. Printed pp. 381-383; PDF anchor p. 395; source: Proposition 21.2;21.5-21.8.
@@ -1079,6 +1119,10 @@ Prove inverse gamma moment and corrected excess scale*s^2/(m*(m^2-s^2)).
 Hypotheses and gaps: m=alpha0-1>0; s>0; m^2>s^2 for finite mean; algebraic excess already checked.
 
 Delivered (formula_proved, source_reviewed): `AuditMoments.gamma_mixture_excess`, `AuditMoments.gamma_mixture_excess_pos`.
+
+Delivery scope: Corrected rational excess formula and its positivity in the finite-inverse-moment regime, as algebra.
+
+Remaining obligations: The inverse moment of the gamma law, its finiteness threshold, and the mixture expectation identity that produces the formula.
 
 ### T125 - Mixed bounded power law
 
