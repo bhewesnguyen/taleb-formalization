@@ -1,0 +1,502 @@
+[
+  {
+    "name": "AuditExtremes.maxLeEvent_eq_iInter",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.minGtEvent_eq_iInter",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.minGeEvent_eq_iInter",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.maxLtEvent_eq_iInter",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.maxRV_preimage_Iic",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.minRV_preimage_Ioi",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_maxLeEvent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_maxLeEvent_of_forall_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_maxLeEvent_of_forall_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_maxLeEvent_frechet",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_maxLeEvent_gumbel",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_iInter_preimage",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_minGtEvent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_minGeEvent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_maxLtEvent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_minGtEvent_of_forall_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_minGtEvent_of_forall_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_preimage_of_map_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_maxLeEvent_of_map_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_minGtEvent_of_map_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measurable_maxRV",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measurable_minRV",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.cdf_map_maxRV",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_map_minRV_Ioi",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditRV.regularlyVarying_zero_iff",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditRV.regularlyVarying_power",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditRV.IsRegularlyVarying.congr",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditRV.IsRegularlyVarying.const_mul",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditRV.IsSlowlyVarying.mul",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditRV.IsSlowlyVarying.rpow",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditTails.HasFiniteTailExponent.unique",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditTails.HasFiniteTailExponent.liminf_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditTails.pareto_power_tail",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditTails.two_power_tail",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditTails.two_power_tail_min",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditMoments.gamma_mixture_excess",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditMoments.gamma_mixture_excess_pos",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditGaussian.coe_varianceOfScale",
+    "kind": "theorem",
+    "file": "AuditRepairs/GaussianBridge.lean"
+  },
+  {
+    "name": "AuditGaussian.charFun_gaussianReal_eq_stableS1Expr",
+    "kind": "theorem",
+    "file": "AuditRepairs/GaussianBridge.lean"
+  },
+  {
+    "name": "AuditGaussian.convolutionPower_gaussianReal_scale",
+    "kind": "theorem",
+    "file": "AuditRepairs/GaussianBridge.lean"
+  },
+  {
+    "name": "AuditGaussian.convolutionPower_gaussianReal",
+    "kind": "theorem",
+    "file": "AuditRepairs/GaussianBridge.lean"
+  },
+  {
+    "name": "Proof09Probe.signature_probe",
+    "kind": "theorem",
+    "file": "AuditRepairs/ImplicitSetDiagnostic.lean"
+  },
+  {
+    "name": "Proof09Probe.pair_not_convex",
+    "kind": "theorem",
+    "file": "AuditRepairs/ImplicitSetDiagnostic.lean"
+  },
+  {
+    "name": "Proof09Probe.submitted_statement_counterexample",
+    "kind": "theorem",
+    "file": "AuditRepairs/ImplicitSetDiagnostic.lean"
+  },
+  {
+    "name": "AuditProbability.IsSubexponential.finiteTailExponent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ProbabilityBridge.lean"
+  },
+  {
+    "name": "AuditProbability.convolutionPower_probability",
+    "kind": "instance",
+    "file": "AuditRepairs/ProbabilityBridge.lean"
+  },
+  {
+    "name": "AuditProbability.charFun_convolutionPower",
+    "kind": "theorem",
+    "file": "AuditRepairs/ProbabilityBridge.lean"
+  },
+  {
+    "name": "AuditProbability.stableS1_convolutionPower_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ProbabilityBridge.lean"
+  },
+  {
+    "name": "AuditProbability.law_independent_sum",
+    "kind": "theorem",
+    "file": "AuditRepairs/ProbabilityBridge.lean"
+  },
+  {
+    "name": "AuditRV.isSlowlyVarying_log",
+    "kind": "theorem",
+    "file": "AuditRepairs/RegularVariation.lean"
+  },
+  {
+    "name": "AuditRV.isSlowlyVarying_const",
+    "kind": "theorem",
+    "file": "AuditRepairs/RegularVariation.lean"
+  },
+  {
+    "name": "AuditRV.isSlowlyVarying_neg_one",
+    "kind": "theorem",
+    "file": "AuditRepairs/RegularVariation.lean"
+  },
+  {
+    "name": "AuditRV.IsSlowlyVarying.of_tendsto_const",
+    "kind": "theorem",
+    "file": "AuditRepairs/RegularVariation.lean"
+  },
+  {
+    "name": "AuditRV.IsRegularlyVarying.mul",
+    "kind": "theorem",
+    "file": "AuditRepairs/RegularVariation.lean"
+  },
+  {
+    "name": "AuditRV.IsRegularlyVarying.rpow",
+    "kind": "theorem",
+    "file": "AuditRepairs/RegularVariation.lean"
+  },
+  {
+    "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying",
+    "kind": "theorem",
+    "file": "AuditRepairs/RegularVariation.lean"
+  },
+  {
+    "name": "StableAudit.gaussian_specialization",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.gaussian_specialization_general",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.submitted_gaussian_counterexample",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.gaussian_stable_real",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.gaussian_stable_real_short",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.cauchy_specialization",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.submitted_cauchy_counterexample",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.cauchy_stable",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.cauchy_stable_short",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.stableExpr_power",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.submitted_alpha_one_ignores_skew",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.stableS1Expr_power",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.stableS1Expr_gaussian",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.stableS1Expr_cauchy",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "StableAudit.stableS1Expr_at_zero",
+    "kind": "theorem",
+    "file": "AuditRepairs/Stable.lean"
+  },
+  {
+    "name": "AuditTails.pareto_log_ratio_tendsto",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.pareto_hasFiniteTailExponent",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.tailExponentReal_pareto",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.tailExponentReal_zero",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.real_liminf_of_tendsto_atTop",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.tail_log_ratio_of_ratio_tendsto",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.subexponential_ratio_tailExponent",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.convexOn_rpow_neg_right",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.frechetFormula_zero",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.frechet_formula_maxstable",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.frechet_cdf_maxstable",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "AuditTails.gumbel_maxstable",
+    "kind": "theorem",
+    "file": "AuditRepairs/Tails.lean"
+  },
+  {
+    "name": "Taleb.Proof01.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof01_SlowlyVaryingLog.lean"
+  },
+  {
+    "name": "Taleb.Proof02.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof02_SlowlyVaryingConst.lean"
+  },
+  {
+    "name": "Taleb.Proof03.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof03_SlowlyVaryingOfTendsto.lean"
+  },
+  {
+    "name": "Taleb.Proof04.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof04_RegularlyVaryingMul.lean"
+  },
+  {
+    "name": "Taleb.Proof05.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof05_RegularlyVaryingRpow.lean"
+  },
+  {
+    "name": "Taleb.Proof06.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof06_RVIffSlowlyVarying.lean"
+  },
+  {
+    "name": "Taleb.Proof07.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof07_TailExponentPareto.lean"
+  },
+  {
+    "name": "Taleb.Proof08.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof08_SubexponentialTailExponent.lean"
+  },
+  {
+    "name": "Taleb.Proof09.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof09_ConvexOnRpowNeg.lean"
+  },
+  {
+    "name": "Taleb.Proof10.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof10_FrechetMaxstable.lean"
+  },
+  {
+    "name": "Taleb.Proof11.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof11_GumbelMaxstable.lean"
+  },
+  {
+    "name": "Taleb.Proof12.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof12_StableCharFnGaussian.lean"
+  },
+  {
+    "name": "Taleb.Proof13.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof13_GaussianStable.lean"
+  },
+  {
+    "name": "Taleb.Proof14.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof14_StableCharFnCauchy.lean"
+  },
+  {
+    "name": "Taleb.Proof15.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof15_CauchyStable.lean"
+  },
+  {
+    "name": "Taleb.Proof16.repaired",
+    "kind": "alias",
+    "file": "Proofs/Proof16_StableCharFnStable.lean"
+  }
+]
