@@ -385,3 +385,95 @@ theorem/instance constants match the regex inventory`; `scripts/harness_regressi
 exit 0 with all 10 fixtures behaving as expected; the archive re-validated from a fresh
 extraction. The statuses of §0 stand, with "axiom checks" strengthened from 102 to all 137
 project constants.
+
+## 13. Addendum (v0.2.3): first mathematics increment
+
+Both the v0.2.1 review (§11) and the independent audit recommended the same three
+contained tasks. v0.2.3 delivers them. No pre-existing theorem, proof, definition or pin was
+modified; twelve theorems and two `def`s were added in one existing and two new modules.
+Every new declaration depends only on `propext`, `Classical.choice`, `Quot.sound`.
+
+### 13.1 Two-term power tails — `AuditRepairs/Foundations.lean` (closes G18 at formula level; T029 → partial)
+
+- `AuditTails.two_power_tail {w₁ w₂ α₁ α₂} (hw₁ : 0 ≤ w₁) (hw₂ : 0 < w₂) (h : α₂ ≤ α₁) :
+  HasFiniteTailExponent (fun z => w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) α₂`.
+- `AuditTails.two_power_tail_min (hw₁ : 0 < w₁) (hw₂ : 0 < w₂) :
+  HasFiniteTailExponent (fun z => w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) (min α₁ α₂)`.
+
+Source: the display under Property 5.1, printed p. 99 (PDF 113), whose printed value `α₂`
+should be `−α₂`; in the project's `−log S / log z` convention the exponent is `α₂ = min`.
+Proof: the ratio to the dominant term `w₂ z^{−α₂}` tends to `1` (`tendsto_rpow_neg_atTop`)
+when `α₂ < α₁`, and the formula collapses to a single Pareto term when `α₂ = α₁`; then
+`tail_log_ratio_of_ratio_tendsto`. Scope: statements about survival-function *formulas*,
+exactly as G18 says; the probabilistic statement for sums of nonnegative variables remains
+the open part of T029, and the unrestricted printed statement remains false by
+cancellation.
+
+### 13.2 Gaussian instantiation of the stable bridge — new `AuditRepairs/GaussianBridge.lean` (T046 Gaussian half)
+
+- `AuditGaussian.varianceOfScale (σ : ℝ) : ℝ≥0 := 2σ²`; `coe_varianceOfScale`.
+- `AuditGaussian.charFun_gaussianReal_eq_stableS1Expr {v : ℝ≥0} {μ σ β} (hv : (v : ℝ) = 2 * σ ^ 2)
+  (t) : charFun (gaussianReal μ v) t = StableAudit.stableS1Expr 2 β μ σ t` — from Mathlib's
+  `charFun_gaussianReal` and `stableS1Expr_gaussian`; `σ = 0`/`v = 0` (Dirac) included, any `β`.
+- `AuditGaussian.gaussianParameters μ σ (hσ : 0 ≤ σ) : StableParameters` (α = 2, β = 0).
+- `AuditGaussian.convolutionPower_gaussianReal_scale (m σ) (hσ) (n) :
+  convolutionPower (gaussianReal m (varianceOfScale σ)) n
+  = gaussianReal (n * m) (varianceOfScale (n ^ (1/2) * σ))` — **by applying
+  `stableS1_convolutionPower_eq`**, i.e. both premises of the Proof16 replacement are
+  discharged with genuine probability measures.
+- `AuditGaussian.convolutionPower_gaussianReal (m) (v : ℝ≥0) (n) :
+  convolutionPower (gaussianReal m v) n = gaussianReal (n * m) (n * v)` (σ = √(v/2)).
+
+Source: printed p. 140 (PDF 154), "Gaussian … α = 2" and "µ → nµ, σ → n^{1/α}σ". The
+variance convention `v = 2σ²` (G05) is now a checked identity rather than a remark. This
+establishes that the conditional stable-law theorem is not vacuous; existence for `α < 2`
+(T007) and the Cauchy identification (the pinned Mathlib has no Cauchy law with a
+characteristic-function lemma) remain open, so T046 stays `partial`.
+
+### 13.3 Independent maxima and the EVT formulas — new `AuditRepairs/ExtremeValueBridge.lean` (T060 → partial)
+
+- `AuditExtremes.maxLeEvent (X : ι → Ω → ℝ) (x) : Set Ω := {ω | ∀ i, X i ω ≤ x}`;
+  `maxLeEvent_eq_iInter`.
+- `AuditExtremes.measure_maxLeEvent (hX : iIndepFun X P) (x) :
+  P (maxLeEvent X x) = ∏ i, P (X i ⁻¹' Set.Iic x)` — Mathlib's `iIndepFun.meas_iInter`; no
+  identical-distribution or measurability hypothesis beyond independence.
+- `measure_maxLeEvent_of_forall_eq` (`= p ^ Fintype.card ι` in `ℝ≥0∞`) and
+  `measureReal_maxLeEvent_of_forall_eq` (`= q ^ Fintype.card ι` in `ℝ`, finite measure,
+  nonempty index).
+- `measureReal_maxLeEvent_frechet (hξ : 0 < ξ) (hF : ∀ i x, P.real (X i ⁻¹' Iic x) = frechetCDF ξ x) (x) :
+  P.real (maxLeEvent X x) = frechetCDF ξ ((Fintype.card ι : ℝ) ^ (-ξ) * x)` and
+  `measureReal_maxLeEvent_gumbel (… = gumbelCDF x) : … = gumbelCDF (x − log (Fintype.card ι))`.
+
+Source: §9.1 printed p. 173 (PDF 187). Proof10/Proof11 are thereby upgraded from
+identities between formulas to statements about the maximum of independent random
+variables, *conditional on the coordinates having the Fréchet/Gumbel distribution
+function at every point*. Not done: constructing a measure with `frechetCDF ξ` or
+`gumbelCDF` as distribution function (T061), the minimum/survival analogue, and any
+domain-of-attraction statement (T011).
+
+### 13.4 Verification of v0.2.3
+
+`lake build` exit 0 (clean); `scripts/verify.py` exit 0 — `PASS: 64 theorems, 1 instance,
+16 aliases; no extra axioms; trust scan: 158 project constants (incl. 41 internal) all within
+allowlist; 81 public theorem/instance constants match the regex inventory`;
+`scripts/harness_regression.py` exit 0, 10/10 fixtures as expected; archive validated from a
+fresh extraction (`deliverables/archive_validation_v0.2.3.log`). Evidence:
+`evidence/fable/v0.2.3/`.
+
+### 13.5 Recommended next tasks (dependency-ordered)
+
+1. **Fréchet and Gumbel measures (T061).** Build `StieltjesFunction`s from `frechetCDF ξ`
+   (`0 < ξ`) and `gumbelCDF`: monotone, right-continuous, limits `0` at `−∞` and `1` at `+∞`;
+   take `StieltjesFunction.measure`, prove `IsProbabilityMeasure`, and
+   `cdf (·) = frechetCDF ξ`. Then `measureReal_maxLeEvent_frechet` applies to coordinates with
+   law `frechetMeasure ξ`. Blockers: continuity and limits of `x ↦ exp(−x^{−1/ξ})` at `0⁺` and
+   `+∞` with Lean's real powers; the `ProbabilityTheory.cdf` API of the pinned snapshot.
+2. **Nonnegative sums (T029, probabilistic half).** For `X i ≥ 0` and positive weights,
+   `max_i P(w_i X_i > x) ≤ P(∑ w_i X_i > x) ≤ ∑ P(w_i X_i > x/n)` by event inclusion, then the
+   minimum finite tail exponent from the coordinates' `HasFiniteTailExponent` hypotheses via
+   `two_power_tail`-style squeezing. Blockers: a squeeze lemma for `HasFiniteTailExponent`
+   (lower and upper bounds with the same exponent).
+3. **Exact Pareto against `paretoMeasure` (T005/T021 slice).** Survival `(L/x)^α`, moments for
+   `p < α` and divergence for `p ≥ α`, threshold excess; connects `pareto_hasFiniteTailExponent`
+   to an actual law. Blockers: the layer-cake API (`lintegral_eq_lintegral_meas_lt`) and rpow
+   integrals in the pinned snapshot.

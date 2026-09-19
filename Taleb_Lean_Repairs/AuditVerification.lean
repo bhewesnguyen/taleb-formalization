@@ -1,5 +1,11 @@
 import AuditRepairs
 
+#print axioms AuditExtremes.maxLeEvent_eq_iInter
+#print axioms AuditExtremes.measure_maxLeEvent
+#print axioms AuditExtremes.measure_maxLeEvent_of_forall_eq
+#print axioms AuditExtremes.measureReal_maxLeEvent_of_forall_eq
+#print axioms AuditExtremes.measureReal_maxLeEvent_frechet
+#print axioms AuditExtremes.measureReal_maxLeEvent_gumbel
 #print axioms AuditRV.regularlyVarying_zero_iff
 #print axioms AuditRV.regularlyVarying_power
 #print axioms AuditRV.IsRegularlyVarying.congr
@@ -9,8 +15,14 @@ import AuditRepairs
 #print axioms AuditTails.HasFiniteTailExponent.unique
 #print axioms AuditTails.HasFiniteTailExponent.liminf_eq
 #print axioms AuditTails.pareto_power_tail
+#print axioms AuditTails.two_power_tail
+#print axioms AuditTails.two_power_tail_min
 #print axioms AuditMoments.gamma_mixture_excess
 #print axioms AuditMoments.gamma_mixture_excess_pos
+#print axioms AuditGaussian.coe_varianceOfScale
+#print axioms AuditGaussian.charFun_gaussianReal_eq_stableS1Expr
+#print axioms AuditGaussian.convolutionPower_gaussianReal_scale
+#print axioms AuditGaussian.convolutionPower_gaussianReal
 #print axioms Proof09Probe.signature_probe
 #print axioms Proof09Probe.pair_not_convex
 #print axioms Proof09Probe.submitted_statement_counterexample

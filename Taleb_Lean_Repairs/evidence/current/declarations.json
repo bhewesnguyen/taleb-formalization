@@ -1,5 +1,35 @@
 [
   {
+    "name": "AuditExtremes.maxLeEvent_eq_iInter",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_maxLeEvent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_maxLeEvent_of_forall_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_maxLeEvent_of_forall_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_maxLeEvent_frechet",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_maxLeEvent_gumbel",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
     "name": "AuditRV.regularlyVarying_zero_iff",
     "kind": "theorem",
     "file": "AuditRepairs/Foundations.lean"
@@ -45,6 +75,16 @@
     "file": "AuditRepairs/Foundations.lean"
   },
   {
+    "name": "AuditTails.two_power_tail",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditTails.two_power_tail_min",
+    "kind": "theorem",
+    "file": "AuditRepairs/Foundations.lean"
+  },
+  {
     "name": "AuditMoments.gamma_mixture_excess",
     "kind": "theorem",
     "file": "AuditRepairs/Foundations.lean"
@@ -53,6 +93,26 @@
     "name": "AuditMoments.gamma_mixture_excess_pos",
     "kind": "theorem",
     "file": "AuditRepairs/Foundations.lean"
+  },
+  {
+    "name": "AuditGaussian.coe_varianceOfScale",
+    "kind": "theorem",
+    "file": "AuditRepairs/GaussianBridge.lean"
+  },
+  {
+    "name": "AuditGaussian.charFun_gaussianReal_eq_stableS1Expr",
+    "kind": "theorem",
+    "file": "AuditRepairs/GaussianBridge.lean"
+  },
+  {
+    "name": "AuditGaussian.convolutionPower_gaussianReal_scale",
+    "kind": "theorem",
+    "file": "AuditRepairs/GaussianBridge.lean"
+  },
+  {
+    "name": "AuditGaussian.convolutionPower_gaussianReal",
+    "kind": "theorem",
+    "file": "AuditRepairs/GaussianBridge.lean"
   },
   {
     "name": "Proof09Probe.signature_probe",

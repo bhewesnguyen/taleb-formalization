@@ -12,16 +12,46 @@
     "batteries": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
     "Cli": "91c18fa62838ad0ab7384c03c9684d99d306e1da"
   },
-  "theorem_count": 52,
+  "theorem_count": 64,
   "instance_count": 1,
   "alias_count": 16,
-  "checked_declarations": 69,
+  "checked_declarations": 81,
   "allowed_axioms": [
     "Classical.choice",
     "Quot.sound",
     "propext"
   ],
   "axioms": {
+    "AuditExtremes.maxLeEvent_eq_iInter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditExtremes.measure_maxLeEvent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditExtremes.measure_maxLeEvent_of_forall_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditExtremes.measureReal_maxLeEvent_of_forall_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditExtremes.measureReal_maxLeEvent_frechet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditExtremes.measureReal_maxLeEvent_gumbel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "AuditRV.regularlyVarying_zero_iff": [
       "propext",
       "Classical.choice",
@@ -67,12 +97,42 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "AuditTails.two_power_tail": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditTails.two_power_tail_min": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "AuditMoments.gamma_mixture_excess": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "AuditMoments.gamma_mixture_excess_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditGaussian.coe_varianceOfScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditGaussian.charFun_gaussianReal_eq_stableS1Expr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditGaussian.convolutionPower_gaussianReal_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AuditGaussian.convolutionPower_gaussianReal": [
       "propext",
       "Classical.choice",
       "Quot.sound"
@@ -369,12 +429,12 @@
     ]
   },
   "environment_inventory": {
-    "constants_scanned": 137,
-    "internal": 35,
-    "generated": 54,
-    "user_theorem_or_instance": 69,
-    "defs": 13,
-    "imported_project_modules": 23,
+    "constants_scanned": 158,
+    "internal": 41,
+    "generated": 60,
+    "user_theorem_or_instance": 81,
+    "defs": 16,
+    "imported_project_modules": 25,
     "all_within_allowlist": true,
     "no_project_axioms": true,
     "all_disk_modules_imported": true,
@@ -385,14 +445,16 @@
   "dependency_worktrees_clean": true,
   "python_optimize": false,
   "source_sha256": {
-    "AuditRepairs/Foundations.lean": "33430da9a37dce493d1ce0ce5746943bc22c9a9a5fcb82f0922a96e27e87143d",
+    "AuditRepairs/ExtremeValueBridge.lean": "894c116afc34cc39e37a7abf9fd38a6a1b1064aea0c787ff9f3a6226cbb53fa8",
+    "AuditRepairs/Foundations.lean": "5ecb7943038eae5e36fe6189aa1731c7abf2a7d8315af06f2caa8feaab8bb959",
+    "AuditRepairs/GaussianBridge.lean": "2bd9c425c7913d72c44e2cc036fe8082f035fab8cc88af40e76deda571919cf1",
     "AuditRepairs/ImplicitSetDiagnostic.lean": "d9f0af52cd5c0ed208de09bf920ad13634125119c4fc6cb2f96ef949018c12a5",
     "AuditRepairs/ProbabilityBridge.lean": "48bd0a051d8ec0869ac0173b76a332ed6396e034c36bc33b246a4cf0c3ecd68f",
     "AuditRepairs/RegularVariation.lean": "82028bbce0f3a33c11524d5e8ebec42911a92418ccc63df921ec2eab33565ed3",
     "AuditRepairs/Stable.lean": "041bd6c14490eb1c14b3d484a38b5d6e94d7d47b122ce1c74b709cea159ab942",
     "AuditRepairs/Tails.lean": "5fa7b09d5158e7b970c870a33622a94490c4d016f898cf286308242a4d786329",
-    "AuditRepairs.lean": "7e9e29752681e7de931013b65a433f83258e336dce744390ae9dea481795f1c2",
-    "AuditVerification.lean": "0bbf79d61ca9b284d12f5a12f7446821d7e5e300a76a1a39b17ae5c52b5a3b82",
+    "AuditRepairs.lean": "ff5a055be5309e2315ce3cbc2de3963d01f6e83514fd1f0c8dc13ce6eb47f6be",
+    "AuditVerification.lean": "4b22f683610a8aba9825f289612408baa076d8c80047ddf3b70cfe9fa775088d",
     "Proofs/Proof01_SlowlyVaryingLog.lean": "b6efa20176b1edc74417a06660b651eb406772fe03b71ad89a817c2e31c4473a",
     "Proofs/Proof02_SlowlyVaryingConst.lean": "392e254c39dfa418a607e1a5847f8d8b3583e5b6ea56b34341435e67f1ee5d4b",
     "Proofs/Proof03_SlowlyVaryingOfTendsto.lean": "bd87bec95a6f58a70f988498d6d2f5ec3d00edb45c0681613816cad1d0a84054",
@@ -411,6 +473,6 @@
     "Proofs/Proof16_StableCharFnStable.lean": "c35b181b49cad8dd239280f08ceca0ac6af58d5879517aad6ca6b33644604532",
     "scripts/FableInventory.lean": "2b4be85a8d667b26a773066de6a7f286a92d543e3513b77545fce9accfc87349"
   },
-  "elapsed_seconds": 59.18,
+  "elapsed_seconds": 100.25,
   "scope": "Checks formal propositions and their axiom dependencies. Does not certify book coverage or numerical software."
 }

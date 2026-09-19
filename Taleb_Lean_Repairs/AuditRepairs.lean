@@ -3,6 +3,8 @@ import AuditRepairs.Tails
 import AuditRepairs.Stable
 import AuditRepairs.Foundations
 import AuditRepairs.ProbabilityBridge
+import AuditRepairs.GaussianBridge
+import AuditRepairs.ExtremeValueBridge
 import AuditRepairs.ImplicitSetDiagnostic
 import Proofs.Proof01_SlowlyVaryingLog
 import Proofs.Proof02_SlowlyVaryingConst

@@ -1,5 +1,73 @@
 # Changelog: Fable review
 
+## v0.2.2 → v0.2.3 (first mathematics increment)
+
+Delivers the three contained tasks recommended by the v0.2.1 review (§11) and by the
+independent audit ("Recommended next pass", item 3). Details and exact statements:
+`FABLE_REVIEW.md` §13.
+
+### Mathematical statement changes
+
+No pre-existing theorem, definition, instance, alias or proof was modified. **Added**
+(all with axiom closure `{propext, Classical.choice, Quot.sound}`):
+
+| Declaration | Kind | Content |
+|---|---|---|
+| `AuditTails.two_power_tail` (`AuditRepairs/Foundations.lean`) | theorem | `0 ≤ w₁ → 0 < w₂ → α₂ ≤ α₁ → HasFiniteTailExponent (fun z => w₁ z^{−α₁} + w₂ z^{−α₂}) α₂` — corrected content of the display under book Property 5.1 (G18). |
+| `AuditTails.two_power_tail_min` | theorem | positive weights → exponent `min α₁ α₂`. |
+| `AuditGaussian.varianceOfScale`, `coe_varianceOfScale` (`AuditRepairs/GaussianBridge.lean`, new) | def, theorem | `v = 2σ²` as an `ℝ≥0`. |
+| `AuditGaussian.charFun_gaussianReal_eq_stableS1Expr` | theorem | `(v : ℝ) = 2σ² → charFun (gaussianReal μ v) t = stableS1Expr 2 β μ σ t` (zero scale included). |
+| `AuditGaussian.gaussianParameters` | def | the admissible S1 tuple `(2, 0, μ, σ)`. |
+| `AuditGaussian.convolutionPower_gaussianReal_scale` | theorem | `convolutionPower (gaussianReal m (2σ²)) n = gaussianReal (n m) (2 (n^{1/2} σ)²)`, proved **through** `stableS1_convolutionPower_eq` (non-vacuity of Proof16's premises at α = 2). |
+| `AuditGaussian.convolutionPower_gaussianReal` | theorem | `convolutionPower (gaussianReal m v) n = gaussianReal (n m) (n v)`. |
+| `AuditExtremes.maxLeEvent`, `maxLeEvent_eq_iInter` (`AuditRepairs/ExtremeValueBridge.lean`, new) | def, theorem | the event `∀ i, Xᵢ ≤ x` and its `⋂` form. |
+| `AuditExtremes.measure_maxLeEvent` | theorem | `iIndepFun X P → P (maxLeEvent X x) = ∏ i, P (Xᵢ ⁻¹' Iic x)`. |
+| `AuditExtremes.measure_maxLeEvent_of_forall_eq`, `measureReal_maxLeEvent_of_forall_eq` | theorems | the `p ^ card ι` forms in `ℝ≥0∞` and `ℝ`. |
+| `AuditExtremes.measureReal_maxLeEvent_frechet`, `measureReal_maxLeEvent_gumbel` | theorems | max-stability for independent maxima whose coordinates have the Fréchet(ξ) resp. Gumbel distribution function. |
+
+Counts: 52 → **64 theorems**, 1 instance, 16 aliases (**81** checked); trust scan 137 → **158**
+constants (41 internal).
+
+### Changed files
+
+| File | Change |
+|---|---|
+| `AuditRepairs/Foundations.lean` | + section "Two-term power tails" with the two theorems above. |
+| `AuditRepairs/GaussianBridge.lean` | **New** module (imports `AuditRepairs.ProbabilityBridge`, `Mathlib.Probability.Distributions.Gaussian.Real`). |
+| `AuditRepairs/ExtremeValueBridge.lean` | **New** module (imports `AuditRepairs.Tails`, `Mathlib.MeasureTheory.Measure.Real`, `Mathlib.Probability.Independence.Basic`). |
+| `AuditRepairs.lean` | Imports the two new modules. |
+| `AuditVerification.lean` | Regenerated (+12 `#print axioms` lines, 81 total). |
+| `docs/FORMALIZATION_BACKLOG.{json,md}`, `scripts/rebuild_curated_inventory.py` | T029 `source-check → partial`, T046 text (Gaussian half delivered; Cauchy open), T060 `missing → partial`; regenerated and synced (158/158). Statuses now 92 missing / 34 source-check / 10 partial. |
+| `docs/REPLACEMENT_MAP.md`, `docs/replacement_map.json` | Rows 10, 11, 16: pointers to the new iid-maximum and Gaussian-instantiation theorems. |
+| `docs/SOURCE_GATES.md` | G18: names the delivered lemmas. |
+| `docs/MATHLIB_AND_WORK_ORDER.md` | CF, Gaussian, CDF rows and slice 4 updated with what is now done and what remains. |
+| `README.md` | Version, counts (64/1/16, 81; 158 constants), module list, "What is still open". |
+| `FABLE_REVIEW.md` | + §13 (statements, sources, scope, verification, next tasks). |
+| `lakefile.toml` | `version = "0.2.3"`. |
+| `SHA256SUMS`, `evidence/current/*`, `evidence/fable/v0.2.3/` | Regenerated / new evidence layer. |
+
+Pins unchanged: `lean-toolchain`, `lake-manifest.json`, Mathlib `rev`.
+
+### Compatibility implications
+
+- Client code: none for existing declarations. `import AuditRepairs` now also brings in
+  `Mathlib.Probability.Distributions.Gaussian.Real` and `Mathlib.Probability.Independence.Basic`
+  (both were already transitively available through Mathlib; build time is unchanged in
+  practice, +2 project modules).
+- Verification: `verify.py` runtime ≈ 100 s (the trust scan now covers 158 constants).
+
+### Validation performed (v0.2.3)
+
+- `rm -rf .lake/build; lake build`: exit 0, no warnings.
+- `python3 scripts/verify.py`: exit 0, `PASS: 64 theorems, 1 instance, 16 aliases; … trust scan:
+  158 project constants (incl. 41 internal) all within allowlist; 81 public theorem/instance
+  constants match the regex inventory`.
+- `python3 scripts/harness_regression.py`: exit 0, 10/10 fixtures as expected.
+- Documentation consistency: replacement map 16/16, backlog 158/158.
+- Final ZIP validated from a fresh extraction (`deliverables/archive_validation_v0.2.3.log`).
+
+---
+
 ## v0.2.1 → v0.2.2 (corrective pass after the independent audit of v0.2.1)
 
 Trigger: `Taleb_Fable_v0.2.1_Independent_Audit.md` (SHA-256 `3f71049c08fdcaf6b4c73b8b91ab63447de2164b2a89787169683b8a7461f809`)

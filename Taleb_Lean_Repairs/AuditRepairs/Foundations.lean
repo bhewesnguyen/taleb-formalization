@@ -97,6 +97,65 @@ theorem pareto_power_tail {C α p : ℝ} (hC : 0 < C) (_hp : 0 < p) :
   filter_upwards [eventually_gt_atTop (0 : ℝ)] with y hy
   exact mul_pos hC (Real.rpow_pos_of_pos (Real.rpow_pos_of_pos hy _) _)
 
+/-! ### Two-term power tails (book Property 5.1, printed p. 99; docs/SOURCE_GATES.md G18)
+
+The display under Property 5.1 reads `lim log(w₁ z^(-α₁) + w₂ z^(-α₂)) / log z = α₂`
+for `α₂ ≤ α₁`; the left side actually tends to `-α₂`. The lemmas below state the
+corrected content in the project's finite-exponent interface (`-log S / log z`): the
+two-term survival *formula* has tail exponent `min α₁ α₂` when both weights are
+positive (and still `α₂` when the weight of the lighter term is only nonnegative).
+These are statements about formulas, not about sums of random variables; for the
+probabilistic statement and its cancellation counterexample see G18 and backlog T029. -/
+
+/-- Ordered form: the heavier term (smaller exponent `α₂`) decides the exponent. -/
+theorem two_power_tail {w₁ w₂ α₁ α₂ : ℝ} (hw₁ : 0 ≤ w₁) (hw₂ : 0 < w₂) (h : α₂ ≤ α₁) :
+    HasFiniteTailExponent (fun z : ℝ => w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) α₂ := by
+  have hpos : ∀ᶠ z in atTop, 0 < w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂) := by
+    filter_upwards [eventually_gt_atTop (0 : ℝ)] with z hz
+    exact add_pos_of_nonneg_of_pos (mul_nonneg hw₁ (Real.rpow_nonneg hz.le _))
+      (mul_pos hw₂ (Real.rpow_pos_of_pos hz _))
+  refine ⟨hpos, ?_⟩
+  rcases lt_or_eq_of_le h with hlt | heq
+  · -- Strictly lighter first term: the ratio to the dominant Pareto term tends to `1`.
+    have hratio : Tendsto
+        (fun z : ℝ => (w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) / (w₂ * z ^ (-α₂))) atTop (𝓝 1) := by
+      have e : (fun z : ℝ => (w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) / (w₂ * z ^ (-α₂))) =ᶠ[atTop]
+          (fun z : ℝ => (w₁ / w₂) * z ^ (-(α₁ - α₂)) + 1) := by
+        filter_upwards [eventually_gt_atTop (0 : ℝ)] with z hz
+        have h1 : z ^ (-α₂) ≠ 0 := ne_of_gt (Real.rpow_pos_of_pos hz _)
+        have h2 : z ^ (-(α₁ - α₂)) = z ^ (-α₁) / z ^ (-α₂) := by
+          rw [← Real.rpow_sub hz]; congr 1; ring
+        rw [h2]
+        field_simp
+      have hlim : Tendsto (fun z : ℝ => (w₁ / w₂) * z ^ (-(α₁ - α₂)) + 1) atTop (𝓝 ((w₁ / w₂) * 0 + 1)) :=
+        ((tendsto_rpow_neg_atTop (sub_pos.mpr hlt)).const_mul _).add tendsto_const_nhds
+      rw [mul_zero, zero_add] at hlim
+      exact Tendsto.congr' e.symm hlim
+    exact tail_log_ratio_of_ratio_tendsto one_ne_zero hratio (pareto_log_ratio_tendsto hw₂)
+      (hpos.mono fun _ hz => ne_of_gt hz)
+      ((eventually_gt_atTop (0 : ℝ)).mono fun z hz =>
+        ne_of_gt (mul_pos hw₂ (Real.rpow_pos_of_pos hz _)))
+  · -- Equal exponents: the formula is a single Pareto term with weight `w₁ + w₂`.
+    subst heq
+    have e : (fun z : ℝ => w₁ * z ^ (-α₂) + w₂ * z ^ (-α₂)) = fun z : ℝ => (w₁ + w₂) * z ^ (-α₂) := by
+      funext z; ring
+    rw [e]
+    exact pareto_log_ratio_tendsto (add_pos_of_nonneg_of_pos hw₁ hw₂)
+
+/-- Symmetric form, as the book states Property 5.1 ("all weights strictly positive"):
+the two-term power-tail formula has tail exponent `min α₁ α₂`. -/
+theorem two_power_tail_min {w₁ w₂ α₁ α₂ : ℝ} (hw₁ : 0 < w₁) (hw₂ : 0 < w₂) :
+    HasFiniteTailExponent (fun z : ℝ => w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) (min α₁ α₂) := by
+  rcases le_total α₂ α₁ with h | h
+  · rw [min_eq_right h]
+    exact two_power_tail hw₁.le hw₂ h
+  · rw [min_eq_left h]
+    have e : (fun z : ℝ => w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) =
+        fun z : ℝ => w₂ * z ^ (-α₂) + w₁ * z ^ (-α₁) := by
+      funext z; ring
+    rw [e]
+    exact two_power_tail hw₂.le hw₁ h
+
 end AuditTails
 
 namespace AuditMoments

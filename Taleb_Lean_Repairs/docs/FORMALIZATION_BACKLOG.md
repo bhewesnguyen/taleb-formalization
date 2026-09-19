@@ -242,11 +242,11 @@ Hypotheses and gaps: q>=0; nonnegative law with regularly varying tail of index 
 
 ### T029 - Tail of sums with unequal indices
 
-**P2 / source-check / SUBEXP**. Printed pp. 98-99; PDF anchor p. 112; source: 5.2.1.
+**P2 / partial / SUBEXP**. Printed pp. 98-99; PDF anchor p. 112; source: 5.2.1.
 
-Prove the heavier regularly varying tail dominates a sum of nonnegative variables with positive weights (event-inclusion bounds, no independence needed); first prove the formula-level two-term identity -log(w1 z^(-alpha1) + w2 z^(-alpha2))/log z -> min(alpha1, alpha2) with AuditTails.HasFiniteTailExponent.
+Prove the heavier regularly varying tail dominates a sum of nonnegative variables with positive weights (event-inclusion bounds, no independence needed). Delivered (v0.2.3): the formula-level two-term identity AuditTails.two_power_tail and its symmetric form AuditTails.two_power_tail_min (exponent min(alpha1, alpha2)) in AuditRepairs/Foundations.lean.
 
-Hypotheses and gaps: Nonnegative variables and positive weights are required: with signed dependent summands, X = E Z and Y = -2 E Z give 2X + Y = 0, so the unrestricted printed Property 5.1 is false (SOURCE_GATES G18). The displayed limit under Property 5.1 (p. 99) is printed without the minus sign; state the corrected version.
+Hypotheses and gaps: Nonnegative variables and positive weights are required: with signed dependent summands, X = E Z and Y = -2 E Z give 2X + Y = 0, so the unrestricted printed Property 5.1 is false (SOURCE_GATES G18). The displayed limit under Property 5.1 (p. 99) is printed without the minus sign; the delivered lemmas state the corrected version. The probabilistic statement about sums of random variables remains open.
 
 ### T030 - Product of exact Pareto laws
 
@@ -388,9 +388,9 @@ Hypotheses and gaps: Domination to exchange limit/integral; q-dependent normaliz
 
 **P1 / partial / CF**. Printed pp. 139-140; PDF anchor p. 153; source: 7.2.1.
 
-Connect repaired expressions to actual Gaussian and Cauchy probability laws.
+Connect repaired expressions to actual Gaussian and Cauchy probability laws. Delivered (v0.2.3): AuditGaussian.charFun_gaussianReal_eq_stableS1Expr identifies Mathlib's gaussianReal mu v with stableS1Expr 2 beta mu sigma when v = 2 sigma^2 (zero scale included), and AuditGaussian.convolutionPower_gaussianReal(_scale) instantiates the conditional stable convolution theorem at alpha = 2.
 
-Hypotheses and gaps: Scale convention: Gaussian variance=2*scale^2; Cauchy nonnegative scale; use existing Gaussian theorem.
+Hypotheses and gaps: Scale convention: Gaussian variance=2*scale^2; Cauchy nonnegative scale. The Cauchy law identification remains open: the pinned Mathlib has no Cauchy distribution with a characteristic-function lemma.
 
 ### T047 - Stable sample averages
 
@@ -502,11 +502,11 @@ Hypotheses and gaps: Exact distribution and MAD calculation; positive denominato
 
 ### T060 - Distribution of iid maxima
 
-**P1 / missing / CDF**. Printed pp. 171-173; PDF anchor p. 185; source: 9.1.
+**P1 / partial / CDF**. Printed pp. 171-173; PDF anchor p. 185; source: 9.1.
 
-Prove CDF(max_i X_i)(x)=F(x)^n and minima survival analog.
+Prove CDF(max_i X_i)(x)=F(x)^n and minima survival analog. Delivered (v0.2.3): AuditExtremes.measure_maxLeEvent (product form for independent coordinates), measure(Real)_maxLeEvent_of_forall_eq (p^n form), and the Frechet/Gumbel max-stability statements for independent maxima measureReal_maxLeEvent_frechet / _gumbel in AuditRepairs/ExtremeValueBridge.lean.
 
-Hypotheses and gaps: Independent measurable variables with common law; n>0; atoms permitted.
+Hypotheses and gaps: Independent variables (iIndepFun) with a common value P(X_i <= x); n>0; atoms permitted. The minima/survival analog and the construction of measures with the Frechet/Gumbel distribution functions (T061) remain open.
 
 ### T061 - GEV families as probability measures
 

@@ -5,10 +5,12 @@
     "AuditVerification"
   ],
   "lean_version": "4.24.0",
-  "internal_count": 35,
+  "internal_count": 41,
   "imported_project_modules": [
     "AuditRepairs",
+    "AuditRepairs.ExtremeValueBridge",
     "AuditRepairs.Foundations",
+    "AuditRepairs.GaussianBridge",
     "AuditRepairs.ImplicitSetDiagnostic",
     "AuditRepairs.ProbabilityBridge",
     "AuditRepairs.RegularVariation",
@@ -31,8 +33,331 @@
     "Proofs.Proof15_CauchyStable",
     "Proofs.Proof16_StableCharFnStable"
   ],
-  "generated_count": 54,
+  "generated_count": 60,
   "constants": [
+    {
+      "type": "{Ω : Type u_1} → {ι : Type u_2} → (ι → Ω → ℝ) → ℝ → Set Ω",
+      "name": "AuditExtremes.maxLeEvent",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditExtremes.maxLeEvent.eq_1",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} (X : ι → Ω → ℝ) (x : ℝ), AuditExtremes.maxLeEvent X x = ⋂ i, X i ⁻¹' Set.Iic x",
+      "name": "AuditExtremes.maxLeEvent_eq_iInter",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  [MeasureTheory.IsFiniteMeasure P] [Nonempty ι] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    ∀ {ξ : ℝ},\n      0 < ξ →\n        (∀ (i : ι) (x : ℝ), P.real (X i ⁻¹' Set.Iic x) = AuditTails.frechetCDF ξ x) →\n          ∀ (x : ℝ), P.real (AuditExtremes.maxLeEvent X x) = AuditTails.frechetCDF ξ (↑(Fintype.card ι) ^ (-ξ) * x)",
+      "name": "AuditExtremes.measureReal_maxLeEvent_frechet",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  [MeasureTheory.IsFiniteMeasure P] [Nonempty ι] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι) (x : ℝ), P.real (X i ⁻¹' Set.Iic x) = AuditTails.gumbelCDF x) →\n      ∀ (x : ℝ), P.real (AuditExtremes.maxLeEvent X x) = AuditTails.gumbelCDF (x - Real.log ↑(Fintype.card ι))",
+      "name": "AuditExtremes.measureReal_maxLeEvent_gumbel",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  [MeasureTheory.IsFiniteMeasure P] [Nonempty ι] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    ∀ (x : ℝ) {q : ℝ},\n      (∀ (i : ι), P.real (X i ⁻¹' Set.Iic x) = q) → P.real (AuditExtremes.maxLeEvent X x) = q ^ Fintype.card ι",
+      "name": "AuditExtremes.measureReal_maxLeEvent_of_forall_eq",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P → ∀ (x : ℝ), P (AuditExtremes.maxLeEvent X x) = ∏ i, P (X i ⁻¹' Set.Iic x)",
+      "name": "AuditExtremes.measure_maxLeEvent",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    ∀ (x : ℝ) {p : ENNReal},\n      (∀ (i : ι), P (X i ⁻¹' Set.Iic x) = p) → P (AuditExtremes.maxLeEvent X x) = p ^ Fintype.card ι",
+      "name": "AuditExtremes.measure_maxLeEvent_of_forall_eq",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {v : NNReal} {μ σ β : ℝ},\n  ↑v = 2 * σ ^ 2 →\n    ∀ (t : ℝ), MeasureTheory.charFun (ProbabilityTheory.gaussianReal μ v) t = StableAudit.stableS1Expr 2 β μ σ t",
+      "name": "AuditGaussian.charFun_gaussianReal_eq_stableS1Expr",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (σ : ℝ), ↑(AuditGaussian.varianceOfScale σ) = 2 * σ ^ 2",
+      "name": "AuditGaussian.coe_varianceOfScale",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (m : ℝ) (v : NNReal) (n : ℕ),\n  AuditProbability.convolutionPower (ProbabilityTheory.gaussianReal m v) n =\n    ProbabilityTheory.gaussianReal (↑n * m) (↑n * v)",
+      "name": "AuditGaussian.convolutionPower_gaussianReal",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (m σ : ℝ),\n  0 ≤ σ →\n    ∀ (n : ℕ),\n      AuditProbability.convolutionPower (ProbabilityTheory.gaussianReal m (AuditGaussian.varianceOfScale σ)) n =\n        ProbabilityTheory.gaussianReal (↑n * m) (AuditGaussian.varianceOfScale (↑n ^ (1 / 2) * σ))",
+      "name": "AuditGaussian.convolutionPower_gaussianReal_scale",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "ℝ → (σ : ℝ) → 0 ≤ σ → StableAudit.StableParameters",
+      "name": "AuditGaussian.gaussianParameters",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditGaussian.gaussianParameters._proof_1",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditGaussian.gaussianParameters._proof_2",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditGaussian.gaussianParameters._proof_3",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "ℝ → NNReal",
+      "name": "AuditGaussian.varianceOfScale",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditGaussian.varianceOfScale._proof_1",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditGaussian.varianceOfScale._proof_2",
+      "module": "AuditRepairs.GaussianBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
     {
       "type": "∀ (scale m s : ℝ),\n  m ≠ 0 →\n    m ^ 2 - s ^ 2 ≠ 0 → scale * (1 + m / (m ^ 2 - s ^ 2)) - scale * (1 + 1 / m) = scale * s ^ 2 / (m * (m ^ 2 - s ^ 2))",
       "name": "AuditMoments.gamma_mixture_excess",
@@ -1211,6 +1536,40 @@
       "aliasOf": null
     },
     {
+      "type": "∀ {w₁ w₂ α₁ α₂ : ℝ},\n  0 ≤ w₁ → 0 < w₂ → α₂ ≤ α₁ → AuditTails.HasFiniteTailExponent (fun z => w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) α₂",
+      "name": "AuditTails.two_power_tail",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {w₁ w₂ α₁ α₂ : ℝ},\n  0 < w₁ → 0 < w₂ → AuditTails.HasFiniteTailExponent (fun z => w₁ * z ^ (-α₁) + w₂ * z ^ (-α₂)) (Min.min α₁ α₂)",
+      "name": "AuditTails.two_power_tail_min",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
       "type": "¬Convex ℝ {0, 2}",
       "name": "Proof09Probe.pair_not_convex",
       "module": "AuditRepairs.ImplicitSetDiagnostic",
@@ -2321,6 +2680,6 @@
       "aliasOf": null
     }
   ],
-  "constant_count": 137,
+  "constant_count": 158,
   "axiom_kind_constants": []
 }

@@ -77,7 +77,7 @@
     "module": "Tails",
     "declaration": "AuditTails.frechet_cdf_maxstable",
     "source": "9.1",
-    "scope": "Global piecewise formula and positive sample size; CDF realization remains open."
+    "scope": "Global piecewise formula and positive sample size; CDF realization remains open. iid maxima (v0.2.3): AuditExtremes.measureReal_maxLeEvent_frechet states the max-stability for independent coordinates with the Frechet distribution function; constructing that measure remains open (T061)."
   },
   {
     "proof": 11,
@@ -85,7 +85,7 @@
     "module": "Tails",
     "declaration": "AuditTails.gumbel_maxstable",
     "source": "9.1",
-    "scope": "Correct original identity retained."
+    "scope": "Correct original identity retained. iid maxima (v0.2.3): AuditExtremes.measureReal_maxLeEvent_gumbel; measure construction open (T061)."
   },
   {
     "proof": 12,
@@ -125,6 +125,6 @@
     "module": "ProbabilityBridge",
     "declaration": "AuditProbability.stableS1_convolutionPower_eq",
     "source": "7.2.1-7.2.2; 15.2.1",
-    "scope": "Conditional law theorem; existence of S1 laws remains open. The alpha = 1 logarithmic branch follows the standard S1 form; the book prints it only in 15.2.1 with misplaced parentheses (SOURCE_GATES G17)."
+    "scope": "Conditional law theorem; existence of S1 laws remains open. The alpha = 1 logarithmic branch follows the standard S1 form; the book prints it only in 15.2.1 with misplaced parentheses (SOURCE_GATES G17). Non-vacuity (v0.2.3): AuditGaussian.convolutionPower_gaussianReal_scale instantiates both premises with Mathlib's gaussianReal at alpha = 2 (variance 2*scale^2)."
   }
 ]
