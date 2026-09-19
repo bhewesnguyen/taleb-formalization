@@ -11,3 +11,6 @@
 
 # Scratch extraction used to validate the final archive.
 deliverables/_fresh_extract/
+
+# Python bytecode caches.
+__pycache__/
