@@ -20,7 +20,7 @@ fixture behaved as expected. For the two `sorry` fixtures the suite additionally
 constant is listed with `sorryAx`, showing that the trust scan would report it even if
 the build-diagnostic gate were absent.
 """
-import argparse,json,os,shutil,subprocess,sys,tarfile,time
+import argparse,json,os,shutil,subprocess,sys,tarfile,tempfile,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -92,15 +92,19 @@ def restore_sources(copy,src_tar):
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('--scratch',default='/tmp/taleb_harness_regression')
+    ap.add_argument('--scratch',default='',help='scratch directory (default: a fresh unique directory under $TMPDIR, so concurrent runs cannot collide)')
     ap.add_argument('--out',default=str(ROOT/'evidence/current'))
     ap.add_argument('--only',default='')
     a=ap.parse_args()
     out=Path(a.out); out.mkdir(parents=True,exist_ok=True)
-    scratch=Path(a.scratch); copy=scratch/'Taleb_Lean_Repairs'
+    if a.scratch:
+        scratch=Path(a.scratch)
+        if scratch.exists(): raise SystemExit(f'scratch directory {scratch} already exists; refusing to reuse it')
+        scratch.mkdir(parents=True)
+    else:
+        scratch=Path(tempfile.mkdtemp(prefix='taleb_harness_regression_'))
+    copy=scratch/'Taleb_Lean_Repairs'
     only=set(a.only.split(',')) if a.only else None
-    if scratch.exists(): shutil.rmtree(scratch)
-    scratch.mkdir(parents=True)
     src_tar=scratch/'sources.tar'; snapshot_sources(src_tar)
     copy.mkdir(); (copy/'.lake').mkdir()
     # `cp -a` is much faster than shutil for the multi-GB dependency tree (reflinks where available).
