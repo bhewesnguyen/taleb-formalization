@@ -1,30 +1,51 @@
 #!/usr/bin/env python3
-"""Build this project and check the printed axiom closure of every exported proof.
+"""Build this project and check the axiom closure of every project constant.
 Run after `lake exe cache get`. Requires Python 3.9+, git, elan/Lean and Lake.
 The axiom allowlist covers standard Lean/Mathlib foundations, not arbitrary axioms.
 
-Declaration discovery is a line regex over `AuditRepairs/*.lean` plus one alias per
-`Proofs/Proof*.lean`. Because a regex can silently miss declarations, the script
-also asks the Lean environment for every constant defined in the project modules
-(`scripts/FableInventory.lean`) and fails unless (a) the set of user-written
-theorem/instance constants equals the regex set, (b) every project constant,
-including `def`s and structure-generated constants, stays inside the axiom
-allowlist, and (c) each `Taleb.ProofNN.repaired` alias targets the declaration
-named in `docs/replacement_map.json`.
+Two layers of checking:
+
+1. Public API (the "67/69 checked declarations" of the handoff): declarations are
+   discovered by a line regex over `AuditRepairs/*.lean` plus one alias per
+   `Proofs/Proof*.lean`, `AuditVerification.lean` must be exactly the generated
+   `#print axioms` list for them, and the printed closures must stay within the
+   allowlist. This layer is what the README counts refer to.
+2. Trust scan (independent of the regex): `scripts/FableInventory.lean` asks the Lean
+   environment for every constant defined in the project modules, including private
+   and otherwise internally named ones, and collects each closure before any
+   filtering. The script fails unless every constant is within the allowlist, no
+   project constant is an `axiom`, every project module on disk is imported into the
+   environment, the user-written public theorem/instance constants (provenance decided
+   by Lean's own bookkeeping, not by namespace) equal the regex set, and each
+   `Taleb.ProofNN.repaired` alias targets the declaration named in
+   `docs/replacement_map.json`.
+
+Additional gates: the Lake build log must contain no `warning:`/`error:` line and no
+`sorry`; dependency checkouts must be at the manifest revisions with clean working
+trees. All acceptance conditions are explicit checks that raise `VerificationError`;
+none is a Python `assert`, so `python3 -O` / `PYTHONOPTIMIZE` cannot disable them.
 """
 import hashlib,json,re,subprocess,sys,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'evidence/current'; OUT.mkdir(parents=True,exist_ok=True)
+ALLOW={'propext','Classical.choice','Quot.sound'}
+DIAG=re.compile(r"(^|\s)(warning|error):|\bsorryAx\b|declaration uses 'sorry'")
+
+class VerificationError(Exception): pass
+
+def check(cond,message):
+    if not cond: raise VerificationError(message)
 
 def run(args,log=None):
     p=subprocess.run(args,cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
     if log: (OUT/log).write_text(p.stdout)
     if p.returncode:
-        print(p.stdout); raise RuntimeError('Command failed: '+' '.join(args))
+        print(p.stdout); raise VerificationError('Command failed: '+' '.join(args))
     return p.stdout.strip()
 
 def declarations():
+    """Public-API discovery (regex). Deliberately narrow; see the trust scan for coverage."""
     result=[]
     for path in sorted((ROOT/'AuditRepairs').glob('*.lean')):
         namespaces=[]
@@ -37,60 +58,80 @@ def declarations():
                for i,f in enumerate(sorted((ROOT/'Proofs').glob('Proof*.lean')),1)]
     return result
 
+def modules_on_disk():
+    mods={'AuditRepairs'}
+    mods|={'AuditRepairs.'+f.stem for f in (ROOT/'AuditRepairs').glob('*.lean')}
+    mods|={'Proofs.'+f.stem for f in (ROOT/'Proofs').glob('*.lean')}
+    return mods
+
 def main():
     start=time.monotonic()
     version=run(['lake','env','lean','--version'])
-    assert 'version 4.24.0' in version, version
+    check('version 4.24.0' in version, 'Unexpected Lean version: '+version)
     deps=json.loads((ROOT/'lake-manifest.json').read_text())['packages']
     commits={}
     for d in deps:
-        actual=run(['git','-C',str(ROOT/'.lake/packages'/d['name']),'rev-parse','HEAD'])
-        assert actual==d['rev'], f"Dependency {d['name']}: {actual} != {d['rev']}"
+        pkg=str(ROOT/'.lake/packages'/d['name'])
+        actual=run(['git','-C',pkg,'rev-parse','HEAD'])
+        check(actual==d['rev'], f"Dependency {d['name']}: {actual} != {d['rev']}")
+        dirty=run(['git','-C',pkg,'status','--porcelain'])
+        check(dirty=='', f"Dependency {d['name']} has working-tree modifications:\n{dirty}")
         commits[d['name']]=actual
     ds=declarations()
+    regex_checked={d['name'] for d in ds}
     expected=['import AuditRepairs','']+['#print axioms '+d['name'] for d in ds]
-    assert (ROOT/'AuditVerification.lean').read_text()=='\n'.join(expected)+'\n', 'Verification inventory is stale'
+    check((ROOT/'AuditVerification.lean').read_text()=='\n'.join(expected)+'\n', 'Verification inventory is stale')
     build=run(['lake','build'],'build.log')
+    build_diag=[l for l in build.splitlines() if DIAG.search(l)]
+    check(not build_diag, 'Compiler diagnostics in lake build:\n'+'\n'.join(build_diag))
     output=run(['lake','env','lean','AuditVerification.lean'],'axioms.log')
     found={}
     for n, ax in re.findall(r"'([^']+)' depends on axioms: \[([^]]*)\]",output):
         found[n]=[a.strip() for a in ax.replace('\n',' ').split(',') if a.strip()]
     for n in re.findall(r"'([^']+)' does not depend on any axioms",output): found[n]=[]
-    allow={'propext','Classical.choice','Quot.sound'}
-    assert set(found)=={d['name'] for d in ds}, 'Missing or unexpected axiom output'
-    assert all(set(ax)<=allow for ax in found.values()), 'Unexpected axioms: '+str(found)
-    assert not re.search(r'\bsorryAx\b|(?:error|warning):',output), 'Compiler diagnostics in axiom run'
-    # Independent cross-check from the Lean environment (see module docstring).
+    check(set(found)==regex_checked, 'Missing or unexpected axiom output: '+str(sorted(set(found)^regex_checked)))
+    check(all(set(ax)<=ALLOW for ax in found.values()), 'Unexpected axioms: '+str({n:a for n,a in found.items() if not set(a)<=ALLOW}))
+    check(not DIAG.search(output), 'Compiler diagnostics in axiom run')
+    # Trust scan from the Lean environment (see module docstring).
     inv_out=run(['lake','env','lean','scripts/FableInventory.lean'],'inventory_environment.log')
     inv=json.loads(inv_out[inv_out.index('{'):])
     (OUT/'inventory_environment.json').write_text(json.dumps(inv,indent=2,ensure_ascii=False)+'\n')
-    rows=inv['declarations']
-    env_checked={r['name'] for r in rows if (r['kind']=='theorem' or r['isInstance']) and not r['generatedByInductive']}
-    regex_checked={d['name'] for d in ds}
-    assert env_checked==regex_checked, 'Environment/regex inventory mismatch: '+str(sorted(env_checked^regex_checked))
-    bad=[r['name'] for r in rows if not set(r['axioms'])<=allow]
-    assert not bad, 'Unexpected axioms in project constants: '+str(bad)
+    rows=inv['constants']
+    bad={r['name']:r['axioms'] for r in rows if not set(r['axioms'])<=ALLOW}
+    check(not bad, 'Constants outside the axiom allowlist (all project constants, including private/internal ones, are scanned): '+str(bad))
+    check(not inv['axiom_kind_constants'], 'Project declares axioms: '+str(inv['axiom_kind_constants']))
+    missing_modules=sorted(modules_on_disk()-set(inv['imported_project_modules']))
+    check(not missing_modules, 'Project modules on disk that are not imported into the environment (unscanned): '+str(missing_modules))
+    env_public={r['name'] for r in rows if not r['isInternal'] and not r['generated'] and (r['kind']=='theorem' or r['isInstance'])}
+    check(env_public==regex_checked, 'Environment/regex inventory mismatch: '+str(sorted(env_public^regex_checked)))
     rmap={f"Taleb.Proof{m['proof']:02}.repaired":m['declaration'] for m in json.loads((ROOT/'docs/replacement_map.json').read_text())}
     aliases={r['name']:r['aliasOf'] for r in rows if r['aliasOf']}
-    assert aliases==rmap, 'Alias targets differ from docs/replacement_map.json: '+str({k:(aliases.get(k),rmap.get(k)) for k in set(aliases)|set(rmap) if aliases.get(k)!=rmap.get(k)})
+    check(aliases==rmap, 'Alias targets differ from docs/replacement_map.json: '+str({k:(aliases.get(k),rmap.get(k)) for k in set(aliases)|set(rmap) if aliases.get(k)!=rmap.get(k)}))
     source_hashes={str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest()
                    for f in sorted(ROOT.rglob('*.lean')) if '.lake' not in f.parts}
+    # Report values are the actual validated conditions, not constants.
     report=dict(status='PASS',lean=version,dependency_commits=commits,
         theorem_count=sum(d['kind'] in ('theorem','lemma') for d in ds),
         instance_count=sum(d['kind']=='instance' for d in ds),alias_count=sum(d['kind']=='alias' for d in ds),
-        checked_declarations=len(ds),allowed_axioms=sorted(allow),axioms=found,
-        environment_inventory=dict(project_constants_listed=inv['listed_count'],
-            internal_auxiliary=inv['internal_auxiliary_count'],
-            user_theorem_or_instance=len(env_checked),
-            generated_by_inductive=sum(r['generatedByInductive'] for r in rows),
-            defs=sum(r['kind']=='def' and not r['generatedByInductive'] for r in rows),
-            all_within_allowlist=True,alias_targets_match_replacement_map=True),
+        checked_declarations=len(ds),allowed_axioms=sorted(ALLOW),axioms=found,
+        environment_inventory=dict(
+            constants_scanned=len(rows),internal=inv['internal_count'],generated=inv['generated_count'],
+            user_theorem_or_instance=len(env_public),
+            defs=sum(r['kind']=='def' and not r['generated'] and not r['isInternal'] for r in rows),
+            imported_project_modules=len(inv['imported_project_modules']),
+            all_within_allowlist=(not bad),no_project_axioms=(not inv['axiom_kind_constants']),
+            all_disk_modules_imported=(not missing_modules),
+            public_inventory_matches_regex=(env_public==regex_checked),
+            alias_targets_match_replacement_map=(aliases==rmap)),
+        build_diagnostics_clean=(not build_diag),dependency_worktrees_clean=True,
+        python_optimize=(not __debug__),
         source_sha256=source_hashes,elapsed_seconds=round(time.monotonic()-start,2),
         scope='Checks formal propositions and their axiom dependencies. Does not certify book coverage or numerical software.')
     (OUT/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
     (OUT/'declarations.json').write_text(json.dumps(ds,indent=2)+'\n')
     print(f"PASS: {report['theorem_count']} theorems, {report['instance_count']} instance, {report['alias_count']} aliases; no extra axioms; "
-          f"environment cross-check: {inv['listed_count']} project constants, {len(env_checked)} user theorem/instance, all within allowlist")
+          f"trust scan: {len(rows)} project constants (incl. {inv['internal_count']} internal) all within allowlist; "
+          f"{len(env_public)} public theorem/instance constants match the regex inventory")
 
 if __name__=='__main__':
     try: main()

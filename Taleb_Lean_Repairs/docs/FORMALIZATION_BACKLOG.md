@@ -244,9 +244,9 @@ Hypotheses and gaps: q>=0; nonnegative law with regularly varying tail of index 
 
 **P2 / source-check / SUBEXP**. Printed pp. 98-99; PDF anchor p. 112; source: 5.2.1.
 
-Prove the heavier regularly varying tail dominates a sum under appropriate independence and support conditions; first prove the formula-level two-term identity -log(w1 z^(-alpha1) + w2 z^(-alpha2))/log z -> min(alpha1, alpha2) with AuditTails.HasFiniteTailExponent.
+Prove the heavier regularly varying tail dominates a sum of nonnegative variables with positive weights (event-inclusion bounds, no independence needed); first prove the formula-level two-term identity -log(w1 z^(-alpha1) + w2 z^(-alpha2))/log z -> min(alpha1, alpha2) with AuditTails.HasFiniteTailExponent.
 
-Hypotheses and gaps: Nonnegative independent variables; positive tails; account for cancellation for signed dependent laws. The displayed limit under Property 5.1 (p. 99) is printed without the minus sign (SOURCE_GATES G18); state the corrected version.
+Hypotheses and gaps: Nonnegative variables and positive weights are required: with signed dependent summands, X = E Z and Y = -2 E Z give 2X + Y = 0, so the unrestricted printed Property 5.1 is false (SOURCE_GATES G18). The displayed limit under Property 5.1 (p. 99) is printed without the minus sign; state the corrected version.
 
 ### T030 - Product of exact Pareto laws
 
@@ -788,11 +788,11 @@ Hypotheses and gaps: iid positive integrable samples; quantile conventions; unif
 
 ### T093 - Stable domain of attraction
 
-**P2 / missing / CLT**. Printed pp. 282-283; PDF anchor p. 296; source: 15.9;15.2.1.
+**P2 / source-check / CLT**. Printed pp. 282-283; PDF anchor p. 296; source: 15.9;15.2.1.
 
 Formalize two-sided tail balance and normalization for alpha-stable convergence.
 
-Hypotheses and gaps: 1<alpha<2; slowly varying norming; specified S1/S0 convention.
+Hypotheses and gaps: 1<alpha<2; slowly varying norming; specified S1/S0 convention. Source p. 282 identifies a regularly varying variable with an alpha-stable one; that identification is false (a Pareto law is not stable), only the domain-of-attraction statement holds (SOURCE_GATES G19).
 
 ### T094 - Gini mean-deviation stable limit
 

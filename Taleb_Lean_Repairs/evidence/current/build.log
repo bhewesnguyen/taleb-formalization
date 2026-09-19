@@ -1,4 +1,4 @@
-ℹ [1919/2362] Replayed AuditRepairs.RegularVariation
+ℹ [1919/2032] Replayed AuditRepairs.RegularVariation
 info: AuditRepairs/RegularVariation.lean:125:0: 'AuditRV.isSlowlyVarying_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/RegularVariation.lean:126:0: 'AuditRV.isSlowlyVarying_const' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/RegularVariation.lean:127:0: 'AuditRV.isSlowlyVarying_neg_one' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -6,7 +6,7 @@ info: AuditRepairs/RegularVariation.lean:128:0: 'AuditRV.IsSlowlyVarying.of_tend
 info: AuditRepairs/RegularVariation.lean:129:0: 'AuditRV.IsRegularlyVarying.mul' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/RegularVariation.lean:130:0: 'AuditRV.IsRegularlyVarying.rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/RegularVariation.lean:131:0: 'AuditRV.isRegularlyVarying_iff_slowlyVarying' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1920/2362] Replayed AuditRepairs.Tails
+ℹ [1920/2032] Replayed AuditRepairs.Tails
 info: AuditRepairs/Tails.lean:188:0: 'AuditTails.pareto_log_ratio_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Tails.lean:189:0: 'AuditTails.pareto_hasFiniteTailExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Tails.lean:190:0: 'AuditTails.tailExponentReal_pareto' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -19,7 +19,7 @@ info: AuditRepairs/Tails.lean:196:0: 'AuditTails.frechetFormula_zero' depends on
 info: AuditRepairs/Tails.lean:197:0: 'AuditTails.frechet_formula_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Tails.lean:198:0: 'AuditTails.frechet_cdf_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Tails.lean:199:0: 'AuditTails.gumbel_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1921/2362] Replayed AuditRepairs.Stable
+ℹ [1921/2032] Replayed AuditRepairs.Stable
 info: AuditRepairs/Stable.lean:203:0: 'StableAudit.gaussian_specialization' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Stable.lean:204:0: 'StableAudit.gaussian_specialization_general' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Stable.lean:205:0: 'StableAudit.submitted_gaussian_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -369,14 +369,21 @@
     ]
   },
   "environment_inventory": {
-    "project_constants_listed": 102,
-    "internal_auxiliary": 35,
+    "constants_scanned": 137,
+    "internal": 35,
+    "generated": 54,
     "user_theorem_or_instance": 69,
-    "generated_by_inductive": 19,
     "defs": 13,
+    "imported_project_modules": 23,
     "all_within_allowlist": true,
+    "no_project_axioms": true,
+    "all_disk_modules_imported": true,
+    "public_inventory_matches_regex": true,
     "alias_targets_match_replacement_map": true
   },
+  "build_diagnostics_clean": true,
+  "dependency_worktrees_clean": true,
+  "python_optimize": false,
   "source_sha256": {
     "AuditRepairs/Foundations.lean": "33430da9a37dce493d1ce0ce5746943bc22c9a9a5fcb82f0922a96e27e87143d",
     "AuditRepairs/ImplicitSetDiagnostic.lean": "d9f0af52cd5c0ed208de09bf920ad13634125119c4fc6cb2f96ef949018c12a5",
@@ -402,8 +409,8 @@
     "Proofs/Proof14_StableCharFnCauchy.lean": "e02bfc33e05b239fa21aaf773fedb390bedfe3c11c4718a292af5ea832be87cc",
     "Proofs/Proof15_CauchyStable.lean": "bd7a9a584fb02cb8bcfbecb45450df4d381ae5e9f362108b67cda343ba2be6ce",
     "Proofs/Proof16_StableCharFnStable.lean": "c35b181b49cad8dd239280f08ceca0ac6af58d5879517aad6ca6b33644604532",
-    "scripts/FableInventory.lean": "9f67522c8e2722efd3b3429cc255fde0e1eeb744c2df2ae475c1b4a3bbb40bc0"
+    "scripts/FableInventory.lean": "2b4be85a8d667b26a773066de6a7f286a92d543e3513b77545fce9accfc87349"
   },
-  "elapsed_seconds": 57.74,
+  "elapsed_seconds": 60.04,
   "scope": "Checks formal propositions and their axiom dependencies. Does not certify book coverage or numerical software."
 }

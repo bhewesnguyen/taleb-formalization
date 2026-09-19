@@ -1,8 +1,8 @@
-# Taleb Lean implementation handoff, v0.2.1 (Fable-reviewed)
+# Taleb Lean implementation handoff, v0.2.2 (Fable-reviewed, audited)
 
 This is an implemented and checked replacement project for the submitted `mathlib-proofs-16.zip`, plus a book-wide formalization inventory for Taleb's third edition. The previous audit ZIP already contained working repairs. This handoff retains that work and adds useful foundation lemmas, probability interfaces, sixteen importable replacement entry points, and repeatable verification.
 
-v0.2.1 is the received v0.2.0 package after an independent reproduction and audit pass. Read `FABLE_REVIEW.md` (findings, per-entry assessment, unresolved obligations) and `CHANGELOG_FABLE.md` (every change relative to v0.2.0). The received evidence is preserved unchanged under `evidence/fable/received_current/`; the review's own baseline and final runs are under `evidence/fable/baseline/` and `evidence/fable/final/`.
+v0.2.1 is the received v0.2.0 package after an independent reproduction and audit pass; v0.2.2 is v0.2.1 after a corrective pass requested by a second independent audit (harness and documentation only; no theorem, proof, definition or pin changed). Read `FABLE_REVIEW.md` (findings, per-entry assessment, unresolved obligations, §12 addendum) and `CHANGELOG_FABLE.md` (every change relative to v0.2.0 and v0.2.1). The received evidence is preserved unchanged under `evidence/fable/received_current/`; the review's runs are under `evidence/fable/baseline/`, `evidence/fable/final/` (v0.2.1) and `evidence/fable/v0.2.2/`.
 
 ## Start here
 
@@ -18,7 +18,9 @@ Use the included `lean-toolchain` and `lake-manifest.json`. Lean 4.24.0 is inten
 
 The verification script checks installed dependency commits, rebuilds the aggregate project, reruns every axiom query, and writes `evidence/current/verification.json`. Expected result: 52 theorem declarations, one probability-measure instance, and 16 aliases (69 checked declarations; v0.2.0 had 50 theorems, and the two additions are boundary diagnostics, see `CHANGELOG_FABLE.md`). These are not 69 independent book theorems. Only `propext`, `Classical.choice`, and `Quot.sound` are permitted in their axiom closure. No `sorryAx` is accepted.
 
-Since v0.2.1 the script also runs `scripts/FableInventory.lean`, which lists every constant the Lean environment attributes to the project modules, and fails unless the user-written theorem/instance constants coincide with the regex-discovered set, every project constant (including `def`s and structure-generated constants) stays inside the axiom allowlist, and each `Taleb.ProofNN.repaired` alias targets the declaration named in `docs/replacement_map.json`. The result is written to `evidence/current/inventory_environment.json`.
+Since v0.2.1 the script also runs `scripts/FableInventory.lean`, which asks the Lean environment for every constant defined in the project modules. Since v0.2.2 this trust scan covers **all** such constants — 137 at present, including 35 internally named ones (`private`, `match_`, `_proof_`, equation lemmas) — and collects each axiom closure before any filtering; the script fails unless every one stays inside the allowlist, no project constant is an `axiom`, every project module on disk is imported into the scanned environment, the user-written public theorem/instance constants (provenance decided by Lean's own bookkeeping, not by namespace) coincide with the regex-discovered set, and each `Taleb.ProofNN.repaired` alias targets the declaration named in `docs/replacement_map.json`. It also fails on any `warning:`/`error:`/`sorry` line in the Lake build log and on any dependency checkout with a modified working tree. All acceptance conditions are explicit checks, not Python `assert`s, so `python3 -O` cannot disable them. Results: `evidence/current/inventory_environment.json`, `verification.json`.
+
+`python3 scripts/harness_regression.py` (about 11 minutes; uses a disposable copy under `/tmp`) runs ten deliberately defective fixtures — private `sorry` theorem and def, private axiom, user theorem inside a structure namespace, `protected` theorem, wrong alias target in ordinary and `PYTHONOPTIMIZE=1` mode, un-imported module, dirty dependency — plus the valid package, and records the verifier's exact command and subprocess exit code for each (`evidence/current/harness_regression.{json,log}`). It must report `ALL FIXTURES BEHAVED AS EXPECTED` after any change to the verification scripts.
 
 ## Using the proofs
 
@@ -40,7 +42,8 @@ Read `docs/REPLACEMENT_MAP.md` before porting call sites. Proof08 and Proof16 no
 - `AuditRepairs/ImplicitSetDiagnostic.lean`: deliberately reproduces original Proof09's implicit-variable trap and disproves the resulting claim. All production repair modules disable `autoImplicit`; this diagnostic deliberately retains it.
 - `Proofs/`: the sixteen named replacement entry points.
 - `AuditVerification.lean`: axiom queries for every exported proof declaration.
-- `scripts/FableInventory.lean`: environment-based declaration inventory used by `scripts/verify.py` as an independent cross-check of the regex discovery.
+- `scripts/FableInventory.lean`: environment-based inventory of every project constant with axiom closures and Lean-derived provenance, used by `scripts/verify.py` as the trust scan and as an independent cross-check of the regex discovery.
+- `scripts/harness_regression.py`: fixture-based regression suite for the verifier itself.
 
 ## What is still open
 

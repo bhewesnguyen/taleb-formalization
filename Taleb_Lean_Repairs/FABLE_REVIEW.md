@@ -194,9 +194,12 @@ byte-identically afterwards (hashes in the log).
   on the misprinted reading.
 - **G18 — the displayed limit under Property 5.1 has the wrong sign** (printed p. 99,
   PDF 113; visually checked): `lim log(w₁z^{−α₁}+w₂z^{−α₂})/log z = α₂` is printed, but the
-  left side tends to `−α₂` (the argument of the log tends to 0). Property 5.1 itself
-  (`α_s = min α_i`) is unaffected. Backlog T029 is now `source-check` with the corrected
-  formula-level statement as its first target.
+  left side tends to `−α₂` (the argument of the log tends to 0). The corrected two-term
+  limit is a statement about survival-function *formulas*; it does not establish Property
+  5.1 in its printed scope, which admits dependent, signed summands and is then false by
+  cancellation (`X = EZ`, `Y = −2EZ`, `2X + Y = 0`; see G18 and the addendum below). Backlog
+  T029 is `source-check` with the corrected formula-level statement as its first target and
+  nonnegative summands as the valid probabilistic scope.
 
 ### 6.3 Correspondence classification
 
@@ -223,7 +226,7 @@ compile and have the permitted axiom closure.
 
 | # | Checked declaration | Original file | Statement and assumptions (as encoded) | Source | Remaining gap |
 |---|---|---|---|---|---|
-| 01 | `AuditRV.isSlowlyVarying_log` | passed | `IsSlowlyVarying Real.log`, no hypotheses. | §2.2.1 p. 9, §5.1 p. 96 (definition); `log` not displayed as an example. | Ratio-only predicate; `log` is negative on (0,1) but eventually positive, so it is in the book's class on `[x_min ≥ 1, ∞)`. |
+| 01 | `AuditRV.isSlowlyVarying_log` | passed | `IsSlowlyVarying Real.log`, no hypotheses. | §2.2.1 p. 9, §5.1 p. 96 (definition); `log` not displayed as an example. | Ratio-only predicate; `log` is non-positive on (0,1] and strictly positive only for `x > 1`, so it is in the book's positive class on `[x_min, ∞)` for any `x_min > 1` (eventual positivity). |
 | 02 | `AuditRV.isSlowlyVarying_const` | failed (`simp` no progress) | `c ≠ 0 → IsSlowlyVarying (fun _ => c)`. | P1 class "L constant", p. 381. | Book needs `c > 0`; `c < 0` is admitted here (`isSlowlyVarying_neg_one`). |
 | 03 | `AuditRV.IsSlowlyVarying.of_tendsto_const` | failed (wrong composition) | `c ≠ 0 → Tendsto L atTop (𝓝 c) → IsSlowlyVarying L`. | "Karamata constant", p. 9. | Converse false (G01, `log`); book's limit is positive. |
 | 04 | `AuditRV.IsRegularlyVarying.mul` | passed | `IsRegularlyVarying L₁ α₁ → IsRegularlyVarying L₂ α₂ → IsRegularlyVarying (L₁·L₂) (α₁+α₂)`. | not displayed; cf. 5.2.2 p. 99 (variables, `min`). | Function-level only. |
@@ -354,3 +357,31 @@ Retained from the handoff, confirmed by this review, with backlog ids:
    snapshot.
 
 This review stops here so that the package can undergo the next independent audit.
+
+## 12. Addendum (v0.2.2): response to the independent audit of v0.2.1
+
+An independent audit of the v0.2.1 archive (`Taleb_Fable_v0.2.1_Independent_Audit.md`,
+SHA-256 `3f71049c…7461f809`, with evidence ZIP `a5553019…3e90f04`, 19 September 2026)
+accepted the encoded mathematics and requested a corrective pass on the verification
+harness and two documentation points. Every claim in it was reproduced here before acting;
+all were confirmed. Nothing in this addendum changes a theorem, a proof, a definition, or a
+pin.
+
+| Audit finding | Reproduced? | Repair in v0.2.2 | Regression fixture |
+|---|---|---|---|
+| **A1** private `sorry` declarations escape the verifier (internal names were counted but not axiom-checked; regex skips `private`; build warnings ignored) | Yes: `private theorem … : False := by sorry` gave PASS/exit 0 with `[sorryAx]` visible only in `build.log`. | `FableInventory.lean` now collects the axiom closure of **every** project constant before any filtering (137 constants: 102 public/generated + 35 internal); `verify.py` fails on any constant outside the allowlist, on any project `axiom`, and on any `warning:`/`error:`/`sorry` line in the Lake build log. | `private_sorry_theorem`, `private_sorry_def` (rejected by the build gate; the trust scan alone is also shown to list them with `sorryAx`), `private_axiom` (no compiler warning; rejected by the trust scan). |
+| **A2** namespace prefix mistaken for generated provenance | Yes: `protected theorem StableAudit.StableParameters.audit_user_theorem` was flagged generated and exempted from reconciliation. | Provenance now uses Lean's own bookkeeping: constructor/recursor kinds, `Environment.isProjectionFn`, `isAuxRecursor`, `isNoConfusion`, and absence of a declaration range (which every user-written declaration has). Namespace is not consulted. | `structure_namespace_theorem` (rejected: environment/regex mismatch). |
+| **A3** `python3 -O` strips the `assert`-based acceptance checks | Yes: wrong alias target passed under `-O` with `alias_targets_match_replacement_map=true`. | All acceptance conditions are explicit `check(...)` calls raising `VerificationError`; report booleans are the validated conditions; `python_optimize` is recorded. | `alias_map_mismatch` and `alias_map_mismatch_optimized` (`PYTHONOPTIMIZE=1`), both rejected. |
+| **A4** negative-test log recorded `exit=0` for Test 2 | Yes: the wrapper read a stale `PIPESTATUS`; the verifier had exited 1 (the live output showed it). | The v0.2.1 log is preserved unchanged with a note (`evidence/fable/final/harness_negative_tests.NOTE.md`); `scripts/harness_regression.py` now records, per fixture, the exact command, the verifier's own subprocess exit code, its output tail and the resulting `verification.json` (`evidence/current/harness_regression.{json,log}`). | `protected_theorem` (rejected, exit 1). |
+| Hardening: dependency working trees not checked; module import coverage | — | `verify.py` fails on `git status --porcelain` output in any dependency checkout, and on any project module on disk that is not imported into the scanned environment. | `dirty_dependency`, `orphan_module`, both rejected. |
+| **M1** "Property 5.1 unaffected" is too strong | Confirmed: `X = EZ`, `Y = −2EZ` (fair sign `E`, Pareto `Z`) have tails of exponent `a` but `2X + Y = 0`. | G18 qualified; §6.2 above corrected; T029 target restricted to nonnegative summands with positive weights (event-inclusion bounds), the unrestricted printed statement classified source-check. | — (documentation). |
+| **M2** p. 282 identifies regularly varying with α-stable | Confirmed on the rendered page (the sentence follows the S1 display). Pareto(3/2) is regularly varying with support `[1, ∞)` but no nondegenerate 3/2-stable law has bounded-below support (Nolan, Lemma 1.10). | New gate **G19**; T093 → source-check with the note; no delivered theorem makes the identification. | — (documentation). |
+| Proof01 row: `x_min ≥ 1` | Confirmed (`log 1 = 0`). | Row corrected to `x_min > 1`. | — |
+
+Final state of v0.2.2 (details in `CHANGELOG_FABLE.md` and `evidence/fable/v0.2.2/`): clean
+`lake build` exit 0; `scripts/verify.py` exit 0 — `PASS: 52 theorems, 1 instance, 16 aliases;
+… trust scan: 137 project constants (incl. 35 internal) all within allowlist; 69 public
+theorem/instance constants match the regex inventory`; `scripts/harness_regression.py`
+exit 0 with all 10 fixtures behaving as expected; the archive re-validated from a fresh
+extraction. The statuses of §0 stand, with "axiom checks" strengthened from 102 to all 137
+project constants.

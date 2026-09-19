@@ -1,0 +1,233 @@
+{
+  "all_fixtures_behaved_as_expected": true,
+  "fixture_count": 10,
+  "real_project_mutated": false,
+  "scratch_copy": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+  "results": [
+    {
+      "id": "valid",
+      "description": "Unmodified copy of the project.",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 0,
+      "seconds": 60.4,
+      "verification_status": "PASS",
+      "verification_error": "",
+      "expected_status": "PASS",
+      "expected_error_contains": "",
+      "trust_scan_note": "",
+      "stdout_tail": [
+        "PASS: 52 theorems, 1 instance, 16 aliases; no extra axioms; trust scan: 137 project constants (incl. 35 internal) all within allowlist; 69 public theorem/instance constants match the regex inventory"
+      ],
+      "stderr_tail": [],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "private_sorry_theorem",
+      "description": "private theorem ... : False := by sorry appended to RegularVariation.lean (audit finding A1).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 23.0,
+      "verification_status": "FAIL",
+      "verification_error": "Compiler diagnostics in lake build:\nwarning: AuditRepairs/RegularVariation.lean:133:16: declaration uses 'sorry'",
+      "expected_status": "FAIL",
+      "expected_error_contains": "Compiler diagnostics in lake build",
+      "trust_scan_note": "trust scan alone lists _private.AuditRepairs.RegularVariation.0.audit_private_gap with axioms ['sorryAx'] -> reported",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Compiler diagnostics in lake build:",
+        "warning: AuditRepairs/RegularVariation.lean:133:16: declaration uses 'sorry'"
+      ],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "private_sorry_def",
+      "description": "private noncomputable def ... : ℝ := sorry appended to Tails.lean (audit finding A1).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 25.6,
+      "verification_status": "FAIL",
+      "verification_error": "Compiler diagnostics in lake build:\nwarning: AuditRepairs/Tails.lean:201:26: declaration uses 'sorry'",
+      "expected_status": "FAIL",
+      "expected_error_contains": "Compiler diagnostics in lake build",
+      "trust_scan_note": "trust scan alone lists _private.AuditRepairs.Tails.0.audit_gap_def with axioms ['Classical.choice', 'Quot.sound', 'propext', 'sorryAx'] -> reported",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Compiler diagnostics in lake build:",
+        "warning: AuditRepairs/Tails.lean:201:26: declaration uses 'sorry'"
+      ],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "private_axiom",
+      "description": "private axiom (no sorry, no compiler warning) plus a private theorem using it, appended to Foundations.lean (audit finding A1).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 84.3,
+      "verification_status": "FAIL",
+      "verification_error": "Constants outside the axiom allowlist (all project constants, including private/internal ones, are scanned): {'_private.AuditRepairs.Foundations.0.audit_private_axiom': ['Classical.choice', 'Quot.sound', '_private.AuditRepairs.Foundations.0.audit_private_axiom', 'propext'], '_private.AuditRepairs.Foundations.0.audit_uses_private_axiom': ['Classical.choice', 'Quot.sound', '_private.AuditRepairs.Foundations.0.audit_private_axiom', 'propext']}",
+      "expected_status": "FAIL",
+      "expected_error_contains": "outside the axiom allowlist",
+      "trust_scan_note": "",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Constants outside the axiom allowlist (all project constants, including private/internal ones, are scanned): {'_private.AuditRepairs.Foundations.0.audit_private_axiom': ['Classical.choice', 'Quot.sound', '_private.AuditRepairs.Foundations.0.audit_private_axiom', 'propext'], '_private.AuditRepairs.Foundations.0.audit_uses_private_axiom': ['Classical.choice', 'Quot.sound', '_private.AuditRepairs.Foundations.0.audit_private_axiom', 'propext']}"
+      ],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "structure_namespace_theorem",
+      "description": "User-written protected theorem inside the StableParameters namespace, appended to Stable.lean (audit finding A2).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 84.4,
+      "verification_status": "FAIL",
+      "verification_error": "Environment/regex inventory mismatch: ['StableAudit.StableParameters.audit_user_theorem']",
+      "expected_status": "FAIL",
+      "expected_error_contains": "Environment/regex inventory mismatch",
+      "trust_scan_note": "",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Environment/regex inventory mismatch: ['StableAudit.StableParameters.audit_user_theorem']"
+      ],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "protected_theorem",
+      "description": "protected theorem AuditRV.regex_blind_spot appended to RegularVariation.lean (regex-invisible declaration; audit finding A4 record).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 84.9,
+      "verification_status": "FAIL",
+      "verification_error": "Environment/regex inventory mismatch: ['AuditRV.regex_blind_spot']",
+      "expected_status": "FAIL",
+      "expected_error_contains": "Environment/regex inventory mismatch",
+      "trust_scan_note": "",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Environment/regex inventory mismatch: ['AuditRV.regex_blind_spot']"
+      ],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "alias_map_mismatch",
+      "description": "docs/replacement_map.json entry for Proof16 points at a wrong declaration (audit finding A3, ordinary mode).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 82.5,
+      "verification_status": "FAIL",
+      "verification_error": "Alias targets differ from docs/replacement_map.json: {'Taleb.Proof16.repaired': ('AuditProbability.stableS1_convolutionPower_eq', 'AuditProbability.charFun_convolutionPower')}",
+      "expected_status": "FAIL",
+      "expected_error_contains": "Alias targets differ",
+      "trust_scan_note": "",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Alias targets differ from docs/replacement_map.json: {'Taleb.Proof16.repaired': ('AuditProbability.stableS1_convolutionPower_eq', 'AuditProbability.charFun_convolutionPower')}"
+      ],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "alias_map_mismatch_optimized",
+      "description": "Same mutation as alias_map_mismatch, verifier run with PYTHONOPTIMIZE=1 (audit finding A3, optimized mode).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {
+        "PYTHONOPTIMIZE": "1"
+      },
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 60.7,
+      "verification_status": "FAIL",
+      "verification_error": "Alias targets differ from docs/replacement_map.json: {'Taleb.Proof16.repaired': ('AuditProbability.stableS1_convolutionPower_eq', 'AuditProbability.charFun_convolutionPower')}",
+      "expected_status": "FAIL",
+      "expected_error_contains": "Alias targets differ",
+      "trust_scan_note": "",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Alias targets differ from docs/replacement_map.json: {'Taleb.Proof16.repaired': ('AuditProbability.stableS1_convolutionPower_eq', 'AuditProbability.charFun_convolutionPower')}"
+      ],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "orphan_module",
+      "description": "New module AuditRepairs/Orphan.lean (a def, no theorem) that no project file imports; it is neither built nor scanned unless the import-coverage check fires.",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 60.4,
+      "verification_status": "FAIL",
+      "verification_error": "Project modules on disk that are not imported into the environment (unscanned): ['AuditRepairs.Orphan']",
+      "expected_status": "FAIL",
+      "expected_error_contains": "not imported into the environment",
+      "trust_scan_note": "",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Project modules on disk that are not imported into the environment (unscanned): ['AuditRepairs.Orphan']"
+      ],
+      "behaved_as_expected": true
+    },
+    {
+      "id": "dirty_dependency",
+      "description": "Tracked file modified inside .lake/packages/Cli (dependency working tree not clean).",
+      "command": [
+        "python3",
+        "scripts/verify.py"
+      ],
+      "env_overrides": {},
+      "cwd": "/tmp/taleb_harness_regression/Taleb_Lean_Repairs",
+      "verifier_exit_code": 1,
+      "seconds": 0.4,
+      "verification_status": "FAIL",
+      "verification_error": "Dependency Cli has working-tree modifications:\nM README.md",
+      "expected_status": "FAIL",
+      "expected_error_contains": "working-tree modifications",
+      "trust_scan_note": "",
+      "stdout_tail": [],
+      "stderr_tail": [
+        "Dependency Cli has working-tree modifications:",
+        "M README.md"
+      ],
+      "behaved_as_expected": true
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+# verify.py regression suite; started 2026-09-19T01:09:11Z; scratch copy /tmp/taleb_harness_regression/Taleb_Lean_Repairs
+
+## fixture valid: Unmodified copy of the project.
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 0  (expected: 0); wall time 60.4s
+verification.json: status=PASS error=''  (expected status PASS)
+regression verdict: OK, behaved as expected
+
+## fixture private_sorry_theorem: private theorem ... : False := by sorry appended to RegularVariation.lean (audit finding A1).
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 1  (expected: nonzero); wall time 23.0s
+verification.json: status=FAIL error="Compiler diagnostics in lake build:\nwarning: AuditRepairs/RegularVariation.lean:133:16: declaration uses 'sorry'"  (expected status FAIL, error containing 'Compiler diagnostics in lake build')
+trust scan alone lists _private.AuditRepairs.RegularVariation.0.audit_private_gap with axioms ['sorryAx'] -> reported
+regression verdict: OK, behaved as expected
+
+## fixture private_sorry_def: private noncomputable def ... : ℝ := sorry appended to Tails.lean (audit finding A1).
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 1  (expected: nonzero); wall time 25.6s
+verification.json: status=FAIL error="Compiler diagnostics in lake build:\nwarning: AuditRepairs/Tails.lean:201:26: declaration uses 'sorry'"  (expected status FAIL, error containing 'Compiler diagnostics in lake build')
+trust scan alone lists _private.AuditRepairs.Tails.0.audit_gap_def with axioms ['Classical.choice', 'Quot.sound', 'propext', 'sorryAx'] -> reported
+regression verdict: OK, behaved as expected
+
+## fixture private_axiom: private axiom (no sorry, no compiler warning) plus a private theorem using it, appended to Foundations.lean (audit finding A1).
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 1  (expected: nonzero); wall time 84.3s
+verification.json: status=FAIL error="Constants outside the axiom allowlist (all project constants, including private/internal ones, are scanned): {'_private.AuditRepairs.Foundations.0.audit_private_axiom': ['Classical.choice', 'Quot.sound', '_private.AuditRepairs.Foundations.0.audit_private_axiom', 'propext'], '_private.AuditRepairs.Foundations.0.audit_uses_private_axiom': ['Classical.choice', 'Quot.sound', '_private.AuditRepairs.Foundations.0.audit_private_axiom', 'propext']}"  (expected status FAIL, error containing 'outside the axiom allowlist')
+regression verdict: OK, behaved as expected
+
+## fixture structure_namespace_theorem: User-written protected theorem inside the StableParameters namespace, appended to Stable.lean (audit finding A2).
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 1  (expected: nonzero); wall time 84.4s
+verification.json: status=FAIL error="Environment/regex inventory mismatch: ['StableAudit.StableParameters.audit_user_theorem']"  (expected status FAIL, error containing 'Environment/regex inventory mismatch')
+regression verdict: OK, behaved as expected
+
+## fixture protected_theorem: protected theorem AuditRV.regex_blind_spot appended to RegularVariation.lean (regex-invisible declaration; audit finding A4 record).
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 1  (expected: nonzero); wall time 84.9s
+verification.json: status=FAIL error="Environment/regex inventory mismatch: ['AuditRV.regex_blind_spot']"  (expected status FAIL, error containing 'Environment/regex inventory mismatch')
+regression verdict: OK, behaved as expected
+
+## fixture alias_map_mismatch: docs/replacement_map.json entry for Proof16 points at a wrong declaration (audit finding A3, ordinary mode).
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 1  (expected: nonzero); wall time 82.5s
+verification.json: status=FAIL error="Alias targets differ from docs/replacement_map.json: {'Taleb.Proof16.repaired': ('AuditProbability.stableS1_convolutionPower_eq', 'AuditProbability.charFun_convolutionPower')}"  (expected status FAIL, error containing 'Alias targets differ')
+regression verdict: OK, behaved as expected
+
+## fixture alias_map_mismatch_optimized: Same mutation as alias_map_mismatch, verifier run with PYTHONOPTIMIZE=1 (audit finding A3, optimized mode).
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides={'PYTHONOPTIMIZE': '1'})
+verifier subprocess exit code: 1  (expected: nonzero); wall time 60.7s
+verification.json: status=FAIL error="Alias targets differ from docs/replacement_map.json: {'Taleb.Proof16.repaired': ('AuditProbability.stableS1_convolutionPower_eq', 'AuditProbability.charFun_convolutionPower')}"  (expected status FAIL, error containing 'Alias targets differ')
+regression verdict: OK, behaved as expected
+
+## fixture orphan_module: New module AuditRepairs/Orphan.lean (a def, no theorem) that no project file imports; it is neither built nor scanned unless the import-coverage check fires.
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 1  (expected: nonzero); wall time 60.4s
+verification.json: status=FAIL error="Project modules on disk that are not imported into the environment (unscanned): ['AuditRepairs.Orphan']"  (expected status FAIL, error containing 'not imported into the environment')
+regression verdict: OK, behaved as expected
+
+## fixture dirty_dependency: Tracked file modified inside .lake/packages/Cli (dependency working tree not clean).
+command: python3 scripts/verify.py  (cwd=/tmp/taleb_harness_regression/Taleb_Lean_Repairs; env overrides=none)
+verifier subprocess exit code: 1  (expected: nonzero); wall time 0.4s
+verification.json: status=FAIL error='Dependency Cli has working-tree modifications:\nM README.md'  (expected status FAIL, error containing 'working-tree modifications')
+regression verdict: OK, behaved as expected
+
+# summary: 10 fixtures; all behaved as expected: True. The real project was not mutated.

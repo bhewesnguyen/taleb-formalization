@@ -398,8 +398,8 @@
     "pdf_anchor_page": 112,
     "source_anchor": "5.2.1",
     "title": "Tail of sums with unequal indices",
-    "target": "Prove the heavier regularly varying tail dominates a sum under appropriate independence and support conditions; first prove the formula-level two-term identity -log(w1 z^(-alpha1) + w2 z^(-alpha2))/log z -> min(alpha1, alpha2) with AuditTails.HasFiniteTailExponent.",
-    "hypotheses_and_gaps": "Nonnegative independent variables; positive tails; account for cancellation for signed dependent laws. The displayed limit under Property 5.1 (p. 99) is printed without the minus sign (SOURCE_GATES G18); state the corrected version.",
+    "target": "Prove the heavier regularly varying tail dominates a sum of nonnegative variables with positive weights (event-inclusion bounds, no independence needed); first prove the formula-level two-term identity -log(w1 z^(-alpha1) + w2 z^(-alpha2))/log z -> min(alpha1, alpha2) with AuditTails.HasFiniteTailExponent.",
+    "hypotheses_and_gaps": "Nonnegative variables and positive weights are required: with signed dependent summands, X = E Z and Y = -2 E Z give 2X + Y = 0, so the unrestricted printed Property 5.1 is false (SOURCE_GATES G18). The displayed limit under Property 5.1 (p. 99) is printed without the minus sign; state the corrected version.",
     "dependency_group": "SUBEXP",
     "priority": "P2",
     "status": "source-check",
@@ -1295,10 +1295,10 @@
     "source_anchor": "15.9;15.2.1",
     "title": "Stable domain of attraction",
     "target": "Formalize two-sided tail balance and normalization for alpha-stable convergence.",
-    "hypotheses_and_gaps": "1<alpha<2; slowly varying norming; specified S1/S0 convention.",
+    "hypotheses_and_gaps": "1<alpha<2; slowly varying norming; specified S1/S0 convention. Source p. 282 identifies a regularly varying variable with an alpha-stable one; that identification is false (a Pareto law is not stable), only the domain-of-attraction statement holds (SOURCE_GATES G19).",
     "dependency_group": "CLT",
     "priority": "P2",
-    "status": "missing",
+    "status": "source-check",
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
