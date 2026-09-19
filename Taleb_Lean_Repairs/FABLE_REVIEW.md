@@ -390,7 +390,7 @@ project constants.
 
 Both the v0.2.1 review (§11) and the independent audit recommended the same three
 contained tasks. v0.2.3 delivers them. No pre-existing theorem, proof, definition or pin was
-modified; twelve theorems and two `def`s were added in one existing and two new modules.
+modified; twelve theorems and three `def`s were added in one existing and two new modules.
 Every new declaration depends only on `propext`, `Classical.choice`, `Quot.sound`.
 
 ### 13.1 Two-term power tails — `AuditRepairs/Foundations.lean` (closes G18 at formula level; T029 → partial)
