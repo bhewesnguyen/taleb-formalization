@@ -1,0 +1,3 @@
+/tmp/fable_originals/Proof13_GaussianStable.lean:37:2: warning: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

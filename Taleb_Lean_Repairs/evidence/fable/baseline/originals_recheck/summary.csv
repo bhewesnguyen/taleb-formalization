@@ -1,0 +1,17 @@
+file,exit,errors,warnings,seconds
+Proof01_SlowlyVaryingLog,0,0,0,1.50
+Proof02_SlowlyVaryingConst,1,1,0,1.41
+Proof03_SlowlyVaryingOfTendsto,1,1,0,1.59
+Proof04_RegularlyVaryingMul,0,0,0,1.44
+Proof05_RegularlyVaryingRpow,1,2,0,1.47
+Proof06_RVIffSlowlyVarying,1,2,0,1.56
+Proof07_TailExponentPareto,0,0,1,1.55
+Proof08_SubexponentialTailExponent,1,1,0,1.54
+Proof09_ConvexOnRpowNeg,1,4,0,1.54
+Proof10_FrechetMaxstable,0,0,0,1.46
+Proof11_GumbelMaxstable,0,0,0,1.46
+Proof12_StableCharFnGaussian,1,2,2,1.46
+Proof13_GaussianStable,0,0,1,1.48
+Proof14_StableCharFnCauchy,1,2,2,1.46
+Proof15_CauchyStable,0,0,1,1.42
+Proof16_StableCharFnStable,0,0,1,1.55

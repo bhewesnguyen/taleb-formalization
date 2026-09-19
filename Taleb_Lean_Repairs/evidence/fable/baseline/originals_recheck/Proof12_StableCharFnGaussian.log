@@ -1,0 +1,22 @@
+/tmp/fable_originals/Proof12_StableCharFnGaussian.lean:39:2: error: unsolved goals
+case e_z.a
+σ t : ℝ
+⊢ σ = 0 ∨ t = 0
+/tmp/fable_originals/Proof12_StableCharFnGaussian.lean:40:2: error: unsolved goals
+case e_z.a
+σ t : ℝ
+⊢ σ = 0 ∨ t = 0
+/tmp/fable_originals/Proof12_StableCharFnGaussian.lean:39:10: warning: This simp argument is unused:
+  Real.rpow_two
+
+Hint: Omit it from the simp argument list.
+  simp [R̵e̵a̵l̵.̵r̵p̵o̵w̵_̵t̵w̵o̵,̵ ̵sq_abs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/tmp/fable_originals/Proof12_StableCharFnGaussian.lean:39:25: warning: This simp argument is unused:
+  sq_abs
+
+Hint: Omit it from the simp argument list.
+  simp [Real.rpow_two,̵ ̵s̵q̵_̵a̵b̵s̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

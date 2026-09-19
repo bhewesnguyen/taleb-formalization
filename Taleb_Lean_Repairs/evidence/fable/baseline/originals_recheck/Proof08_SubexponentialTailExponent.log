@@ -1,0 +1,10 @@
+/tmp/fable_originals/Proof08_SubexponentialTailExponent.lean:66:46: error: Application type mismatch: The argument
+  esplit
+has type
+  (fun x => (-Real.log (S₂ x / S x) - Real.log (S x)) / Real.log x) =ᶠ[atTop] fun x =>
+    -Real.log (S₂ x / S x) / Real.log x + -Real.log (S x) / Real.log x
+but is expected to have type
+  (fun x => -Real.log (S₂ x / S x) / Real.log x + -Real.log (S x) / Real.log x) =ᶠ[atTop] fun x =>
+    (-Real.log (S₂ x / S x) - Real.log (S x)) / Real.log x
+in the application
+  Tendsto.congr' esplit

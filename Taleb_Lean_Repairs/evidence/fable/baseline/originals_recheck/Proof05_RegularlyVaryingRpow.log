@@ -1,0 +1,17 @@
+/tmp/fable_originals/Proof05_RegularlyVaryingRpow.lean:50:15: error: Invalid field `rpow`: The environment does not contain `Function.rpow`
+  hL'
+has type
+  ?m.204 ∈ 𝓝 (b ^ α) → ?m.204 ∈ map (fun x => L (b * x) / L x) atTop
+/tmp/fable_originals/Proof05_RegularlyVaryingRpow.lean:37:55: error: unsolved goals
+L : ℝ → ℝ
+α p : ℝ
+hL : IsRegularlyVarying L α
+hpos : ∀ᶠ (x : ℝ) in atTop, 0 < L x
+hmul : ∀ {b : ℝ}, 0 < b → Tendsto (fun x => b * x) atTop atTop
+b : ℝ
+hb : 0 < b
+hL' : Tendsto (fun x => L (b * x) / L x) atTop (𝓝 (b ^ α))
+hpos' : ∀ᶠ (x : ℝ) in atTop, 0 < L (b * x)
+e : (fun x => L (b * x) ^ p / L x ^ p) =ᶠ[atTop] fun x => (L (b * x) / L x) ^ p
+hnn : ∀ᶠ (x : ℝ) in atTop, 0 ≤ L (b * x) / L x
+⊢ Tendsto (fun x => (fun x => L x ^ p) (b * x) / (fun x => L x ^ p) x) atTop (𝓝 (b ^ (p * α)))

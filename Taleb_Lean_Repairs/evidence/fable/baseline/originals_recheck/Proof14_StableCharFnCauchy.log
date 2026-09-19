@@ -1,0 +1,24 @@
+/tmp/fable_originals/Proof14_StableCharFnCauchy.lean:38:2: error: unsolved goals
+case e_z.a
+σ t : ℝ
+hσ : 0 < σ
+⊢ σ = 0 ∨ t = 0
+/tmp/fable_originals/Proof14_StableCharFnCauchy.lean:39:2: error: unsolved goals
+case e_z.a
+σ t : ℝ
+hσ : 0 < σ
+⊢ σ = 0 ∨ t = 0
+/tmp/fable_originals/Proof14_StableCharFnCauchy.lean:38:25: warning: This simp argument is unused:
+  abs_mul
+
+Hint: Omit it from the simp argument list.
+  simp [Real.rpow_one, abs_m̵u̵l̵,̵ ̵a̵b̵s̵_̵of_pos hσ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/tmp/fable_originals/Proof14_StableCharFnCauchy.lean:38:34: warning: This simp argument is unused:
+  abs_of_pos hσ
+
+Hint: Omit it from the simp argument list.
+  simp [Real.rpow_one, abs_mul,̵ ̵a̵b̵s̵_̵o̵f̵_̵p̵o̵s̵ ̵h̵σ̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
