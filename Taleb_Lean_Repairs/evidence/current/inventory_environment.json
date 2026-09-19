@@ -5,7 +5,7 @@
     "AuditVerification"
   ],
   "lean_version": "4.24.0",
-  "internal_count": 41,
+  "internal_count": 48,
   "imported_project_modules": [
     "AuditRepairs",
     "AuditRepairs.ExtremeValueBridge",
@@ -33,8 +33,25 @@
     "Proofs.Proof15_CauchyStable",
     "Proofs.Proof16_StableCharFnStable"
   ],
-  "generated_count": 60,
+  "generated_count": 67,
   "constants": [
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  {ν : MeasureTheory.Measure ℝ} [inst_2 : Nonempty ι] [MeasureTheory.IsProbabilityMeasure P] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι), Measurable (X i)) →\n      (∀ (i : ι), MeasureTheory.Measure.map (X i) P = ν) →\n        ∀ (x : ℝ),\n          ↑(ProbabilityTheory.cdf (MeasureTheory.Measure.map (AuditExtremes.maxRV X) P)) x =\n            ↑(ProbabilityTheory.cdf ν) x ^ Fintype.card ι",
+      "name": "AuditExtremes.cdf_map_maxRV",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
     {
       "type": "{Ω : Type u_1} → {ι : Type u_2} → (ι → Ω → ℝ) → ℝ → Set Ω",
       "name": "AuditExtremes.maxLeEvent",
@@ -72,6 +89,193 @@
     {
       "type": "∀ {Ω : Type u_1} {ι : Type u_2} (X : ι → Ω → ℝ) (x : ℝ), AuditExtremes.maxLeEvent X x = ⋂ i, X i ⁻¹' Set.Iic x",
       "name": "AuditExtremes.maxLeEvent_eq_iInter",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{Ω : Type u_1} → {ι : Type u_2} → (ι → Ω → ℝ) → ℝ → Set Ω",
+      "name": "AuditExtremes.maxLtEvent",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditExtremes.maxLtEvent.eq_1",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} (X : ι → Ω → ℝ) (x : ℝ), AuditExtremes.maxLtEvent X x = ⋂ i, X i ⁻¹' Set.Iio x",
+      "name": "AuditExtremes.maxLtEvent_eq_iInter",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{Ω : Type u_1} → {ι : Type u_2} → [Fintype ι] → [Nonempty ι] → (ι → Ω → ℝ) → Ω → ℝ",
+      "name": "AuditExtremes.maxRV",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditExtremes.maxRV.eq_1",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : Fintype ι] [inst_1 : Nonempty ι] (X : ι → Ω → ℝ) (x : ℝ),\n  AuditExtremes.maxRV X ⁻¹' Set.Iic x = AuditExtremes.maxLeEvent X x",
+      "name": "AuditExtremes.maxRV_preimage_Iic",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditExtremes.maxRV_preimage_Iic._simp_1_3",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] [inst_1 : Fintype ι] [inst_2 : Nonempty ι] {X : ι → Ω → ℝ},\n  (∀ (i : ι), Measurable (X i)) → Measurable (AuditExtremes.maxRV X)",
+      "name": "AuditExtremes.measurable_maxRV",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] [inst_1 : Fintype ι] [inst_2 : Nonempty ι] {X : ι → Ω → ℝ},\n  (∀ (i : ι), Measurable (X i)) → Measurable (AuditExtremes.minRV X)",
+      "name": "AuditExtremes.measurable_minRV",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  {ν : MeasureTheory.Measure ℝ} [inst_2 : Nonempty ι] [MeasureTheory.IsProbabilityMeasure P] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι), Measurable (X i)) →\n      (∀ (i : ι), MeasureTheory.Measure.map (X i) P = ν) →\n        ∀ (x : ℝ),\n          (MeasureTheory.Measure.map (AuditExtremes.minRV X) P).real (Set.Ioi x) = ν.real (Set.Ioi x) ^ Fintype.card ι",
+      "name": "AuditExtremes.measureReal_map_minRV_Ioi",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  {ν : MeasureTheory.Measure ℝ} [inst_2 : Nonempty ι] [MeasureTheory.IsProbabilityMeasure P] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι), Measurable (X i)) →\n      (∀ (i : ι), MeasureTheory.Measure.map (X i) P = ν) →\n        ∀ (x : ℝ),\n          (MeasureTheory.Measure.map (AuditExtremes.minRV X) P).real (Set.Ioi x) =\n            (1 - ↑(ProbabilityTheory.cdf ν) x) ^ Fintype.card ι",
+      "name": "AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf",
       "module": "AuditRepairs.ExtremeValueBridge",
       "kind": "theorem",
       "isInternal": false,
@@ -138,6 +342,40 @@
       "aliasOf": null
     },
     {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  [MeasureTheory.IsFiniteMeasure P] [Nonempty ι] (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    ∀ (x : ℝ) {q : ℝ},\n      (∀ (i : ι), P.real (X i ⁻¹' Set.Ioi x) = q) → P.real (AuditExtremes.minGtEvent X x) = q ^ Fintype.card ι",
+      "name": "AuditExtremes.measureReal_minGtEvent_of_forall_eq",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P → ∀ {B : Set ℝ}, MeasurableSet B → P (⋂ i, X i ⁻¹' B) = ∏ i, P (X i ⁻¹' B)",
+      "name": "AuditExtremes.measure_iInter_preimage",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
       "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P → ∀ (x : ℝ), P (AuditExtremes.maxLeEvent X x) = ∏ i, P (X i ⁻¹' Set.Iic x)",
       "name": "AuditExtremes.measure_maxLeEvent",
       "module": "AuditRepairs.ExtremeValueBridge",
@@ -164,6 +402,295 @@
       "hasDeclarationRange": true,
       "generatedBy": "",
       "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  {ν : MeasureTheory.Measure ℝ} (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι), Measurable (X i)) →\n      (∀ (i : ι), MeasureTheory.Measure.map (X i) P = ν) →\n        ∀ (x : ℝ), P (AuditExtremes.maxLeEvent X x) = ν (Set.Iic x) ^ Fintype.card ι",
+      "name": "AuditExtremes.measure_maxLeEvent_of_map_eq",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P → ∀ (x : ℝ), P (AuditExtremes.maxLtEvent X x) = ∏ i, P (X i ⁻¹' Set.Iio x)",
+      "name": "AuditExtremes.measure_maxLtEvent",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P → ∀ (x : ℝ), P (AuditExtremes.minGeEvent X x) = ∏ i, P (X i ⁻¹' Set.Ici x)",
+      "name": "AuditExtremes.measure_minGeEvent",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P → ∀ (x : ℝ), P (AuditExtremes.minGtEvent X x) = ∏ i, P (X i ⁻¹' Set.Ioi x)",
+      "name": "AuditExtremes.measure_minGtEvent",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    ∀ (x : ℝ) {p : ENNReal},\n      (∀ (i : ι), P (X i ⁻¹' Set.Ioi x) = p) → P (AuditExtremes.minGtEvent X x) = p ^ Fintype.card ι",
+      "name": "AuditExtremes.measure_minGtEvent_of_forall_eq",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [inst_1 : Fintype ι]\n  {ν : MeasureTheory.Measure ℝ} (X : ι → Ω → ℝ),\n  ProbabilityTheory.iIndepFun X P →\n    (∀ (i : ι), Measurable (X i)) →\n      (∀ (i : ι), MeasureTheory.Measure.map (X i) P = ν) →\n        ∀ (x : ℝ), P (AuditExtremes.minGtEvent X x) = ν (Set.Ioi x) ^ Fintype.card ι",
+      "name": "AuditExtremes.measure_minGtEvent_of_map_eq",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} {ν : MeasureTheory.Measure ℝ}\n  {X : ι → Ω → ℝ},\n  (∀ (i : ι), Measurable (X i)) →\n    (∀ (i : ι), MeasureTheory.Measure.map (X i) P = ν) → ∀ {B : Set ℝ}, MeasurableSet B → ∀ (i : ι), P (X i ⁻¹' B) = ν B",
+      "name": "AuditExtremes.measure_preimage_of_map_eq",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{Ω : Type u_1} → {ι : Type u_2} → (ι → Ω → ℝ) → ℝ → Set Ω",
+      "name": "AuditExtremes.minGeEvent",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditExtremes.minGeEvent.eq_1",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} (X : ι → Ω → ℝ) (x : ℝ), AuditExtremes.minGeEvent X x = ⋂ i, X i ⁻¹' Set.Ici x",
+      "name": "AuditExtremes.minGeEvent_eq_iInter",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{Ω : Type u_1} → {ι : Type u_2} → (ι → Ω → ℝ) → ℝ → Set Ω",
+      "name": "AuditExtremes.minGtEvent",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditExtremes.minGtEvent.eq_1",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} (X : ι → Ω → ℝ) (x : ℝ), AuditExtremes.minGtEvent X x = ⋂ i, X i ⁻¹' Set.Ioi x",
+      "name": "AuditExtremes.minGtEvent_eq_iInter",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{Ω : Type u_1} → {ι : Type u_2} → [Fintype ι] → [Nonempty ι] → (ι → Ω → ℝ) → Ω → ℝ",
+      "name": "AuditExtremes.minRV",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditExtremes.minRV.eq_1",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : Fintype ι] [inst_1 : Nonempty ι] (X : ι → Ω → ℝ) (x : ℝ),\n  AuditExtremes.minRV X ⁻¹' Set.Ioi x = AuditExtremes.minGtEvent X x",
+      "name": "AuditExtremes.minRV_preimage_Ioi",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditExtremes.minRV_preimage_Ioi._simp_1_3",
+      "module": "AuditRepairs.ExtremeValueBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
       "axioms": [
         "Classical.choice",
         "Quot.sound",
@@ -2680,6 +3207,6 @@
       "aliasOf": null
     }
   ],
-  "constant_count": 158,
+  "constant_count": 189,
   "axiom_kind_constants": []
 }

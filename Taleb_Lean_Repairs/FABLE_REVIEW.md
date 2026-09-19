@@ -460,7 +460,7 @@ allowlist; 81 public theorem/instance constants match the regex inventory`;
 fresh extraction (`deliverables/v0.2.3/archive_validation_v0.2.3.log`). Evidence:
 `evidence/fable/v0.2.3/`.
 
-### 13.5 Recommended next tasks (dependency-ordered)
+### 13.5 Recommended next tasks (dependency-ordered, as of v0.2.3; superseded by §14.5)
 
 1. **Fréchet and Gumbel measures (T061).** Build `StieltjesFunction`s from `frechetCDF ξ`
    (`0 < ξ`) and `gumbelCDF`: monotone, right-continuous, limits `0` at `−∞` and `1` at `+∞`;
@@ -477,3 +477,94 @@ fresh extraction (`deliverables/v0.2.3/archive_validation_v0.2.3.log`). Evidence
    `p < α` and divergence for `p ≥ α`, threshold excess; connects `pareto_hasFiniteTailExponent`
    to an actual law. Blockers: the layer-cake API (`lintegral_eq_lintegral_meas_lt`) and rpow
    integrals in the pinned snapshot.
+
+## 14. Addendum (v0.2.4): response to the independent audit of v0.2.3, and the first discharged family
+
+The second independent audit (`Taleb_Fable_v0.2.3_Independent_Audit.pdf`, SHA-256
+`c5674a7b…91dfa70`, with the 158-family ledger `Taleb_Proof_Progress_v0.2.3.md`,
+`532c3c8a…583bd45`; kept under `audits/04_astra_on_v0.2.3/` in the repository) accepted the
+v0.2.3 mathematics and raised one verifier correction, one regression-isolation issue and two
+documentation items. All were confirmed and are repaired here. No pre-existing theorem, proof,
+definition or pin was modified.
+
+### 14.1 Audit findings and repairs
+
+| Finding | Confirmed | Repair | Regression fixture |
+|---|---|---|---|
+| **V1** nested un-imported modules evade the coverage check (`modules_on_disk` used a shallow glob; a `sorry` in `AuditRepairs/Nested/Orphan.lean` was hashed but never built or scanned) | Yes, by reading the code | `verify.py`: recursive walks for both the public-API regex and module coverage; module names derived from the relative path (`AuditRepairs/Nested/Orphan.lean → AuditRepairs.Nested.Orphan`). | `nested_orphan_module` (must FAIL naming `AuditRepairs.Nested.Orphan`), `nested_imported_module` (positive control: a nested module with a public theorem, imported, must PASS and appear in the inventory). |
+| **R1** sequential regression run not isolated in the auditor's environment (a private axiom from fixture 4 reappeared in fixtures 6–9; root cause unresolved) | Not reproduced here (two clean 10/10 runs), but the design relied on Lake's rebuild logic | `harness_regression.py`: before every fixture the copy's `.lake/build` is deleted and restored from a pristine snapshot, sources are re-extracted, and the restored source-tree hash must equal the pristine hash (recorded per fixture) before the mutation is applied. Each run uses a fresh scratch directory. | all fixtures (the per-fixture record now carries `restored_tree_sha256`, `restored_tree_matches_pristine`, `build_dir_reset_from_snapshot`). |
+| **M1** "exactly when"/"iff" in `GaussianBridge.lean` for a one-directional theorem | Yes | Wording changed to "when"; the docstring notes that a pointwise converse would be false at `t = 0`. | — |
+| **L1** T007 understates its delivered Gaussian slice | Yes | T007 `missing → partial` with the slice recorded. | — |
+| Ledger recommendation: separate delivery states per family | — | Backlog rows carry `states` ⊆ {`formula_proved`, `conditional_law_theorem`, `actual_law_constructed`, `source_reviewed`, `discharged`} and the credited `declarations`; `verify.py` fails if a cited declaration does not exist in the scanned environment (71 cited). New status value `discharged`. | — (checked by `verify.py`). |
+| Ledger recommendation: close T060 via the independent minimum | — | §14.2. | — |
+
+Also in this release: received third-party artifacts moved to `audits/<round>/` (outside the shipped
+package, strict hash manifest), outgoing packages to `deliverables/vX.Y.Z/`, and
+`docs/AUDIT_HISTORY.md` added so the package lists the audit rounds without bundling them. A
+`git bundle` of the repository is shipped alongside the ZIP so that commit hashes and the
+clean-tree claims can be verified independently (the auditor noted these were previously
+Fable's report only).
+
+### 14.2 Mathematics: independent minima and the laws of `max` and `min` — `AuditRepairs/ExtremeValueBridge.lean`
+
+Nineteen theorems and five definitions added; every one depends only on
+`propext`, `Classical.choice`, `Quot.sound`. Book anchor: §9.1, printed p. 173 (PDF 187).
+
+- `AuditExtremes.measure_iInter_preimage (hX : iIndepFun X P) (hB : MeasurableSet B) :
+  P (⋂ i, X i ⁻¹' B) = ∏ i, P (X i ⁻¹' B)` — the general product formula; every threshold event
+  below is an instance.
+- Events with explicit threshold conventions: `maxLeEvent` (`≤`, v0.2.3), `maxLtEvent` (`<`),
+  `minGtEvent` (`>`, survival convention), `minGeEvent` (`≥`); their `⋂`-forms, product forms,
+  and the `p ^ Fintype.card ι` / real `q ^ n` forms for the minimum (`measure_minGtEvent_of_forall_eq`,
+  `measureReal_minGtEvent_of_forall_eq`). Strict and non-strict versions differ exactly on atoms,
+  which are therefore handled, not excluded.
+- Random variables `maxRV X := Finset.univ.sup' _ X`, `minRV X := Finset.univ.inf' _ X`
+  (nonempty finite index), measurable when the coordinates are (`measurable_maxRV`,
+  `measurable_minRV`; Mathlib has `Finset.measurable_sup'` but no `inf'` twin in the pinned
+  snapshot, so the same induction is spelled out), with `maxRV X ⁻¹' Iic x = maxLeEvent X x`
+  and `minRV X ⁻¹' Ioi x = minGtEvent X x`.
+- **Law level, common law `ν`** (`hm : ∀ i, Measurable (X i)`, `hν : ∀ i, P.map (X i) = ν`,
+  `iIndepFun X P`, `IsProbabilityMeasure P`, `Nonempty ι`):
+  `cdf_map_maxRV : cdf (P.map (maxRV X)) x = (cdf ν x) ^ Fintype.card ι` — the book's `F(x)^n`;
+  `measureReal_map_minRV_Ioi : (P.map (minRV X)).real (Ioi x) = (ν.real (Ioi x)) ^ Fintype.card ι`
+  and `measureReal_map_minRV_Ioi_eq_one_sub_cdf : … = (1 − cdf ν x) ^ Fintype.card ι` — the
+  minimum's survival function.
+
+**T060 ("Distribution of iid maxima": `CDF(max_i X_i)(x) = F(x)^n` and the minima survival
+analogue; independent measurable variables with common law; `n > 0`; atoms permitted) is
+therefore discharged** — the first backlog family to reach that status. Its scope note is
+explicit that constructing specific EVT laws is T061, not part of T060. The identical-law
+hypothesis is stated as equality of pushforward measures, which is the strongest of the usual
+formulations and implies `IdentDistrib` pairwise.
+
+### 14.3 Verification of v0.2.4
+
+Clean `lake build` exit 0; `scripts/verify.py` exit 0 — `PASS: 83 theorems, 1 instance, 16
+aliases; no extra axioms; trust scan: 189 project constants (incl. 48 internal) all within
+allowlist; 100 public theorem/instance constants match the regex inventory`, with all 71
+backlog-cited declarations present; `scripts/harness_regression.py` exit 0, 12/12 fixtures as
+expected with per-fixture pristine-hash checks; archive validated from a fresh extraction
+(`deliverables/v0.2.4/archive_validation_v0.2.4.log`). Evidence: `evidence/fable/v0.2.4/`.
+
+### 14.4 Ledger after v0.2.4
+
+158 families: **1 discharged (T060)**, 10 partial (T001, T007, T008, T029, T032, T046, T047,
+T061, T118, T124), 4 reuse, 91 missing, 34 source-check, 15 model-needed, 3 empirical. Delivery
+states are recorded per family in `docs/FORMALIZATION_BACKLOG.{json,md}`.
+
+### 14.5 Recommended next tasks (dependency-ordered)
+
+1. **EVT measures as child tasks of T061** — Gumbel first (`gumbelCDF` is continuous, strictly
+   increasing, with limits 0 and 1: build the `StieltjesFunction`, its measure, prove
+   `IsProbabilityMeasure` and `cdf = gumbelCDF`), then Fréchet (`frechetCDF ξ`, `0 < ξ`;
+   right-continuity at `0` needs `x^{−1/ξ} → +∞` as `x → 0⁺`), then reverse-Weibull and the
+   location/scale wrappers. Instantiate `cdf_map_maxRV` with those laws to turn
+   `measureReal_maxLeEvent_frechet`/`_gumbel` into unconditional statements. Do not close T061
+   before all three named families exist.
+2. **T029, probabilistic half.** For nonnegative coordinates and positive weights:
+   `max_i P(w_i X_i > x) ≤ P(∑ w_i X_i > x) ≤ ∑ P(w_i X_i > x/n)`, then a squeeze lemma for
+   `HasFiniteTailExponent` giving the minimum finite exponent. No independence needed. Keep
+   exact convolution asymptotics in the subexponential workstream (T008/T024).
+3. **Exact Pareto slice against `paretoMeasure`** (T005/T021/T028/T032): survival, moments for
+   `p < α`, divergence for `p ≥ α`, threshold excess, then the power pushforward. Unlocks many
+   later moment, estimator and payoff families without generalized CLT.

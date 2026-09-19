@@ -5,6 +5,31 @@
     "file": "AuditRepairs/ExtremeValueBridge.lean"
   },
   {
+    "name": "AuditExtremes.minGtEvent_eq_iInter",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.minGeEvent_eq_iInter",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.maxLtEvent_eq_iInter",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.maxRV_preimage_Iic",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.minRV_preimage_Ioi",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
     "name": "AuditExtremes.measure_maxLeEvent",
     "kind": "theorem",
     "file": "AuditRepairs/ExtremeValueBridge.lean"
@@ -26,6 +51,76 @@
   },
   {
     "name": "AuditExtremes.measureReal_maxLeEvent_gumbel",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_iInter_preimage",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_minGtEvent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_minGeEvent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_maxLtEvent",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_minGtEvent_of_forall_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_minGtEvent_of_forall_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_preimage_of_map_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_maxLeEvent_of_map_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measure_minGtEvent_of_map_eq",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measurable_maxRV",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measurable_minRV",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.cdf_map_maxRV",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_map_minRV_Ioi",
+    "kind": "theorem",
+    "file": "AuditRepairs/ExtremeValueBridge.lean"
+  },
+  {
+    "name": "AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf",
     "kind": "theorem",
     "file": "AuditRepairs/ExtremeValueBridge.lean"
   },

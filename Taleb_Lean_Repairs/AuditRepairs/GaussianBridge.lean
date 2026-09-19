@@ -9,9 +9,11 @@ conditional: it takes two probability measures together with the identities
 between their characteristic functions and the S1 expression as premises. This
 module shows that those premises are satisfiable, using Mathlib's Gaussian law:
 
-* `charFun_gaussianReal_eq_stableS1Expr`: `N(μ, v)` has characteristic function
-  `stableS1Expr 2 β μ σ` exactly when `v = 2σ²` (any `β`; the skewness parameter
-  is irrelevant at `α = 2`). The zero-scale case `σ = 0`, `v = 0` (Dirac mass at
+* `charFun_gaussianReal_eq_stableS1Expr`: when `v = 2σ²`, `N(μ, v)` has characteristic
+  function `stableS1Expr 2 β μ σ` (any `β`; the skewness parameter is irrelevant at
+  `α = 2`). Only this direction is proved; a pointwise converse would be false (all
+  these functions equal `1` at `t = 0`), and a converse quantified over all `t` is
+  not needed here. The zero-scale case `σ = 0`, `v = 0` (Dirac mass at
   `μ`) is included because Mathlib's `charFun_gaussianReal` needs no `v ≠ 0`.
 * `convolutionPower_gaussianReal_scale`: the bridge theorem applied to
   `N(m, 2σ²)` identifies its `n`-fold convolution power as `N(n m, 2 (n^{1/2} σ)²)`.
@@ -42,8 +44,8 @@ noncomputable def varianceOfScale (σ : ℝ) : ℝ≥0 := ⟨2 * σ ^ 2, by posi
 @[simp]
 theorem coe_varianceOfScale (σ : ℝ) : ((varianceOfScale σ : ℝ≥0) : ℝ) = 2 * σ ^ 2 := rfl
 
-/-- `N(μ, v)` has the S1 characteristic function at `α = 2` with scale `σ` iff `v = 2σ²`
-(stated in the useful direction). Any skewness `β` is allowed since `tan π = 0`. -/
+/-- When `v = 2σ²`, `N(μ, v)` has the S1 characteristic function at `α = 2` with scale `σ`
+(one direction only). Any skewness `β` is allowed since `tan π = 0`. -/
 theorem charFun_gaussianReal_eq_stableS1Expr {v : ℝ≥0} {μ σ β : ℝ}
     (hv : (v : ℝ) = 2 * σ ^ 2) (t : ℝ) :
     charFun (gaussianReal μ v) t = StableAudit.stableS1Expr 2 β μ σ t := by

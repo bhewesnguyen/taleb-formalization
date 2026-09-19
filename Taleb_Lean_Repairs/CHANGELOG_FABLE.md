@@ -1,5 +1,81 @@
 # Changelog: Fable review
 
+## v0.2.3 → v0.2.4 (second corrective pass; first discharged family)
+
+Trigger: the independent audit of v0.2.3 (`Taleb_Fable_v0.2.3_Independent_Audit.pdf`, SHA-256
+`c5674a7b6ba7300d414d2de5fd2a21d7f792533b1b1f1f27c4d65628391dfa70`; ledger
+`Taleb_Proof_Progress_v0.2.3.md`, `532c3c8a427997fc43bd37620d13c0ccecbb96cdb6613fed498d1dd4b583bd45`).
+Details: `FABLE_REVIEW.md` §14.
+
+### Mathematical statement changes
+
+No pre-existing theorem, definition, instance, alias or proof was modified. **Added** in
+`AuditRepairs/ExtremeValueBridge.lean` (all with closure `{propext, Classical.choice, Quot.sound}`):
+
+| Declaration | Kind | Content |
+|---|---|---|
+| `AuditExtremes.minGtEvent`, `minGeEvent`, `maxLtEvent` | defs | `∀ i, x < Xᵢ`, `∀ i, x ≤ Xᵢ`, `∀ i, Xᵢ < x`. |
+| `minGtEvent_eq_iInter`, `minGeEvent_eq_iInter`, `maxLtEvent_eq_iInter` | theorems | `⋂`-forms. |
+| `AuditExtremes.maxRV`, `minRV` | defs | `Finset.univ.sup' _ X`, `Finset.univ.inf' _ X` (nonempty finite index). |
+| `maxRV_preimage_Iic`, `minRV_preimage_Ioi` | theorems | preimages are the threshold events. |
+| `measure_iInter_preimage` | theorem | `iIndepFun X P → MeasurableSet B → P (⋂ i, Xᵢ ⁻¹' B) = ∏ P (Xᵢ ⁻¹' B)`. |
+| `measure_minGtEvent`, `measure_minGeEvent`, `measure_maxLtEvent` | theorems | product forms. |
+| `measure_minGtEvent_of_forall_eq`, `measureReal_minGtEvent_of_forall_eq` | theorems | `p ^ card ι` forms for the minimum (`ℝ≥0∞` and `ℝ`). |
+| `measure_preimage_of_map_eq`, `measure_maxLeEvent_of_map_eq`, `measure_minGtEvent_of_map_eq` | theorems | common law `ν` via `P.map (Xᵢ) = ν`. |
+| `measurable_maxRV`, `measurable_minRV` | theorems | measurability of the extrema. |
+| `cdf_map_maxRV` | theorem | `cdf (P.map (maxRV X)) x = (cdf ν x) ^ card ι`. |
+| `measureReal_map_minRV_Ioi`, `measureReal_map_minRV_Ioi_eq_one_sub_cdf` | theorems | `P(min > x) = (ν(x,∞))^n = (1 − cdf ν x)^n`. |
+
+Counts: 64 → **83 theorems**, 1 instance, 16 aliases (**100** checked); trust scan 158 → **189**
+constants (48 internal). Backlog: **T060 discharged** (first), T007 `missing → partial`.
+
+### Changed files
+
+| File | Change |
+|---|---|
+| `AuditRepairs/ExtremeValueBridge.lean` | + section "General product formula, minima, and the laws of `max` and `min`"; + `import Mathlib.Probability.CDF`; event definitions and set identities placed in the first (measure-free) block. Existing declarations untouched. |
+| `AuditRepairs/GaussianBridge.lean` | Wording only (audit M1): "exactly when"/"iff" → "when"; docstring notes the one-directional statement and why a pointwise converse would be false. |
+| `AuditRepairs.lean` | unchanged (both bridge modules already imported). |
+| `AuditVerification.lean` | Regenerated: 100 `#print axioms` lines. |
+| `scripts/verify.py` | Audit V1: `declarations()` and `modules_on_disk()` walk subdirectories; module names derived from relative paths (`module_name`). New gate: every declaration cited in `docs/FORMALIZATION_BACKLOG.json` (`declarations` field) must exist in the scanned environment; reported as `backlog_cited_declarations_exist` / `backlog_cited_declaration_count`. Docstring updated. |
+| `scripts/harness_regression.py` | Audit R1: per fixture, sources re-extracted **and** `.lake/build` restored from a pristine snapshot; restored source-tree SHA-256 asserted equal to the pristine hash before mutation and recorded (`restored_tree_sha256`, `restored_tree_matches_pristine`, `build_dir_reset_from_snapshot`); fresh scratch directory per run. Two fixtures added: `nested_orphan_module` (un-imported `AuditRepairs/Nested/Orphan.lean` with a `sorry`, must FAIL) and `nested_imported_module` (imported nested module with a public theorem, `AuditVerification.lean` regenerated inside the fixture, must PASS and appear in the inventory). Twelve fixtures total. |
+| `scripts/rebuild_curated_inventory.py` | Optional 10th column `states=…;decls=…` per row; new status `discharged`; row validation (`STATES`, `STATUSES`, discharged ⇔ state); JSON rows gain `states`, `declarations`, `discharged`; `completion` text for discharged rows. Rows annotated: T001, T007 (→ partial, Gaussian slice), T008, T029, T032, T046, T047, T060 (→ discharged, target/hypotheses rewritten to what was delivered), T061, T118, T124. |
+| `docs/FORMALIZATION_BACKLOG.json`, `.md` | Regenerated / synced (158/158): legend extended with `discharged` and the delivery states; "Delivered (…): …" lines for the eleven families with Lean support. |
+| `docs/REPLACEMENT_MAP.md`, `docs/replacement_map.json` | Rows 10, 11: law-level pointers (`cdf_map_maxRV`, `measureReal_map_minRV_Ioi_eq_one_sub_cdf`). |
+| `docs/MATHLIB_AND_WORK_ORDER.md` | CDF row and slice 4 updated (T060 discharged; T061 open). |
+| `docs/AUDIT_HISTORY.md` | **New**: the audit rounds, hashes and responses (the third-party documents themselves live in the repository's `audits/`, outside this package). |
+| `README.md` | Version, counts (83/1/16, 100; 189 constants), module description, verifier/regression description, "What is still open". |
+| `FABLE_REVIEW.md` | + §14; §13.5 marked superseded; deliverable paths updated to `deliverables/vX.Y.Z/`. |
+| `lakefile.toml` | `version = "0.2.4"`. |
+| `SHA256SUMS`, `evidence/current/*`, `evidence/fable/v0.2.4/` | Regenerated / new evidence layer. |
+
+Repository (outside the package): received artifacts moved to `audits/<round>/` with a strict
+manifest and README; deliverables to `deliverables/vX.Y.Z/`; a `git bundle` accompanies the
+v0.2.4 ZIP.
+
+Pins unchanged: `lean-toolchain`, `lake-manifest.json`, Mathlib `rev`.
+
+### Compatibility implications
+
+- Client code: none for existing declarations.
+- Verification: `verify.py` ≈ 2 min (189 constants); `harness_regression.py` ≈ 25 min (twelve
+  fixtures, each with a full project rebuild from the pristine build snapshot).
+- Backlog JSON schema: rows gain `states`, `declarations`, `discharged`; status vocabulary gains
+  `discharged`.
+
+### Validation performed (v0.2.4)
+
+- `rm -rf .lake/build; lake build`: exit 0, no warnings.
+- `python3 scripts/verify.py`: exit 0, `PASS: 83 theorems, 1 instance, 16 aliases; … trust scan:
+  189 project constants (incl. 48 internal) all within allowlist; 100 public theorem/instance
+  constants match the regex inventory`; 71 backlog-cited declarations present.
+- `python3 scripts/harness_regression.py`: exit 0, 12/12 fixtures as expected, per-fixture
+  pristine-hash checks recorded.
+- Documentation consistency: replacement map 16/16, backlog 158/158 (including the Delivered lines).
+- Final ZIP validated from a fresh extraction (`deliverables/v0.2.4/archive_validation_v0.2.4.log`).
+
+---
+
 ## v0.2.2 → v0.2.3 (first mathematics increment)
 
 Delivers the three contained tasks recommended by the v0.2.1 review (§11) and by the

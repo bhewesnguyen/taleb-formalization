@@ -14,11 +14,12 @@ Two layers of checking:
    environment for every constant defined in the project modules, including private
    and otherwise internally named ones, and collects each closure before any
    filtering. The script fails unless every constant is within the allowlist, no
-   project constant is an `axiom`, every project module on disk is imported into the
-   environment, the user-written public theorem/instance constants (provenance decided
-   by Lean's own bookkeeping, not by namespace) equal the regex set, and each
-   `Taleb.ProofNN.repaired` alias targets the declaration named in
-   `docs/replacement_map.json`.
+   project constant is an `axiom`, every project module on disk (walking
+   subdirectories) is imported into the environment, the user-written public
+   theorem/instance constants (provenance decided by Lean's own bookkeeping, not by
+   namespace) equal the regex set, each `Taleb.ProofNN.repaired` alias targets the
+   declaration named in `docs/replacement_map.json`, and every Lean declaration that
+   `docs/FORMALIZATION_BACKLOG.json` credits to a family exists in the environment.
 
 Additional gates: the Lake build log must contain no `warning:`/`error:` line and no
 `sorry`; dependency checkouts must be at the manifest revisions with clean working
@@ -44,10 +45,17 @@ def run(args,log=None):
         print(p.stdout); raise VerificationError('Command failed: '+' '.join(args))
     return p.stdout.strip()
 
+def module_name(path):
+    """Lean module name of a source file from its path relative to the project root
+    (`AuditRepairs/Nested/Orphan.lean` -> `AuditRepairs.Nested.Orphan`)."""
+    return '.'.join(path.relative_to(ROOT).with_suffix('').parts)
+
 def declarations():
-    """Public-API discovery (regex). Deliberately narrow; see the trust scan for coverage."""
+    """Public-API discovery (regex), recursive over `AuditRepairs/`. Deliberately narrow in the
+    syntax it recognises (column-0 `theorem`/`lemma`/`instance`); the trust scan fails closed on
+    anything it misses."""
     result=[]
-    for path in sorted((ROOT/'AuditRepairs').glob('*.lean')):
+    for path in sorted((ROOT/'AuditRepairs').rglob('*.lean')):
         namespaces=[]
         for line in path.read_text().splitlines():
             if re.match(r'^namespace ',line): namespaces.append(line.split()[1])
@@ -59,9 +67,11 @@ def declarations():
     return result
 
 def modules_on_disk():
+    """Every Lean module of the project, walking subdirectories (audit finding V1: a shallow
+    glob let an unimported nested module escape the coverage check)."""
     mods={'AuditRepairs'}
-    mods|={'AuditRepairs.'+f.stem for f in (ROOT/'AuditRepairs').glob('*.lean')}
-    mods|={'Proofs.'+f.stem for f in (ROOT/'Proofs').glob('*.lean')}
+    for root in ('AuditRepairs','Proofs'):
+        mods|={module_name(f) for f in (ROOT/root).rglob('*.lean')}
     return mods
 
 def main():
@@ -107,6 +117,12 @@ def main():
     rmap={f"Taleb.Proof{m['proof']:02}.repaired":m['declaration'] for m in json.loads((ROOT/'docs/replacement_map.json').read_text())}
     aliases={r['name']:r['aliasOf'] for r in rows if r['aliasOf']}
     check(aliases==rmap, 'Alias targets differ from docs/replacement_map.json: '+str({k:(aliases.get(k),rmap.get(k)) for k in set(aliases)|set(rmap) if aliases.get(k)!=rmap.get(k)}))
+    # Every Lean declaration the backlog credits to a family must exist in the scanned environment.
+    env_names={r['name'] for r in rows}
+    backlog=json.loads((ROOT/'docs/FORMALIZATION_BACKLOG.json').read_text())
+    cited={(b['id'],d) for b in backlog for d in b.get('declarations',[])}
+    dangling=sorted(f"{i}:{d}" for i,d in cited if d not in env_names)
+    check(not dangling, 'docs/FORMALIZATION_BACKLOG.json cites declarations that do not exist in the environment: '+str(dangling))
     source_hashes={str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest()
                    for f in sorted(ROOT.rglob('*.lean')) if '.lake' not in f.parts}
     # Report values are the actual validated conditions, not constants.
@@ -122,7 +138,8 @@ def main():
             all_within_allowlist=(not bad),no_project_axioms=(not inv['axiom_kind_constants']),
             all_disk_modules_imported=(not missing_modules),
             public_inventory_matches_regex=(env_public==regex_checked),
-            alias_targets_match_replacement_map=(aliases==rmap)),
+            alias_targets_match_replacement_map=(aliases==rmap),
+            backlog_cited_declarations_exist=(not dangling),backlog_cited_declaration_count=len(cited)),
         build_diagnostics_clean=(not build_diag),dependency_worktrees_clean=True,
         python_optimize=(not __debug__),
         source_sha256=source_hashes,elapsed_seconds=round(time.monotonic()-start,2),

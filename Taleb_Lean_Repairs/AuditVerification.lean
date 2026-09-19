@@ -1,11 +1,30 @@
 import AuditRepairs
 
 #print axioms AuditExtremes.maxLeEvent_eq_iInter
+#print axioms AuditExtremes.minGtEvent_eq_iInter
+#print axioms AuditExtremes.minGeEvent_eq_iInter
+#print axioms AuditExtremes.maxLtEvent_eq_iInter
+#print axioms AuditExtremes.maxRV_preimage_Iic
+#print axioms AuditExtremes.minRV_preimage_Ioi
 #print axioms AuditExtremes.measure_maxLeEvent
 #print axioms AuditExtremes.measure_maxLeEvent_of_forall_eq
 #print axioms AuditExtremes.measureReal_maxLeEvent_of_forall_eq
 #print axioms AuditExtremes.measureReal_maxLeEvent_frechet
 #print axioms AuditExtremes.measureReal_maxLeEvent_gumbel
+#print axioms AuditExtremes.measure_iInter_preimage
+#print axioms AuditExtremes.measure_minGtEvent
+#print axioms AuditExtremes.measure_minGeEvent
+#print axioms AuditExtremes.measure_maxLtEvent
+#print axioms AuditExtremes.measure_minGtEvent_of_forall_eq
+#print axioms AuditExtremes.measureReal_minGtEvent_of_forall_eq
+#print axioms AuditExtremes.measure_preimage_of_map_eq
+#print axioms AuditExtremes.measure_maxLeEvent_of_map_eq
+#print axioms AuditExtremes.measure_minGtEvent_of_map_eq
+#print axioms AuditExtremes.measurable_maxRV
+#print axioms AuditExtremes.measurable_minRV
+#print axioms AuditExtremes.cdf_map_maxRV
+#print axioms AuditExtremes.measureReal_map_minRV_Ioi
+#print axioms AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf
 #print axioms AuditRV.regularlyVarying_zero_iff
 #print axioms AuditRV.regularlyVarying_power
 #print axioms AuditRV.IsRegularlyVarying.congr

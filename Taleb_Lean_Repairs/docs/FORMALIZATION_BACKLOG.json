@@ -11,6 +11,28 @@
     "dependency_group": "RV",
     "priority": "P1",
     "status": "partial",
+    "states": [
+      "formula_proved",
+      "source_reviewed"
+    ],
+    "declarations": [
+      "AuditRV.IsSlowlyVarying",
+      "AuditRV.IsRegularlyVarying",
+      "AuditRV.isSlowlyVarying_log",
+      "AuditRV.isSlowlyVarying_const",
+      "AuditRV.isSlowlyVarying_neg_one",
+      "AuditRV.IsSlowlyVarying.of_tendsto_const",
+      "AuditRV.IsRegularlyVarying.mul",
+      "AuditRV.IsRegularlyVarying.rpow",
+      "AuditRV.isRegularlyVarying_iff_slowlyVarying",
+      "AuditRV.regularlyVarying_zero_iff",
+      "AuditRV.regularlyVarying_power",
+      "AuditRV.IsRegularlyVarying.congr",
+      "AuditRV.IsRegularlyVarying.const_mul",
+      "AuditRV.IsSlowlyVarying.mul",
+      "AuditRV.IsSlowlyVarying.rpow"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -25,6 +47,9 @@
     "dependency_group": "RV",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -39,6 +64,9 @@
     "dependency_group": "LLN",
     "priority": "P1",
     "status": "reuse",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -53,6 +81,9 @@
     "dependency_group": "CLT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -67,6 +98,9 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -81,6 +115,9 @@
     "dependency_group": "KAPPA",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -91,10 +128,20 @@
     "source_anchor": "2.2.9;7.2.1;15.2.1",
     "title": "Stable law existence",
     "target": "Construct the probability measure with the repaired S1 characteristic function.",
-    "hypotheses_and_gaps": "0<alpha<=2; -1<=beta<=1; scale>=0; include alpha=1 logarithmic branch and zero-scale Dirac case. Source: (7.2) covers alpha != 1 only; the alpha = 1 branch is printed in 15.2.1 with misplaced parentheses (SOURCE_GATES G17), use the standard S1 form.",
+    "hypotheses_and_gaps": "0<alpha<=2; -1<=beta<=1; scale>=0; include alpha=1 logarithmic branch and zero-scale Dirac case. Source: (7.2) covers alpha != 1 only; the alpha = 1 branch is printed in 15.2.1 with misplaced parentheses (SOURCE_GATES G17), use the standard S1 form. Delivered (v0.2.3, recorded v0.2.4 on audit advice): the Gaussian slice alpha = 2 is realized by Mathlib's gaussianReal mu (2 sigma^2), zero scale included (AuditGaussian.charFun_gaussianReal_eq_stableS1Expr); every alpha < 2 remains open.",
     "dependency_group": "CF",
     "priority": "P2",
-    "status": "missing",
+    "status": "partial",
+    "states": [
+      "actual_law_constructed",
+      "source_reviewed"
+    ],
+    "declarations": [
+      "AuditGaussian.charFun_gaussianReal_eq_stableS1Expr",
+      "AuditGaussian.gaussianParameters",
+      "StableAudit.StableParameters"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -109,6 +156,16 @@
     "dependency_group": "SUBEXP",
     "priority": "P2",
     "status": "partial",
+    "states": [
+      "conditional_law_theorem"
+    ],
+    "declarations": [
+      "AuditProbability.IsSubexponential",
+      "AuditProbability.survival",
+      "AuditProbability.IsSubexponential.finiteTailExponent",
+      "AuditTails.subexponential_ratio_tailExponent"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -123,6 +180,9 @@
     "dependency_group": "QUANT",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -137,6 +197,9 @@
     "dependency_group": "LLN",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -151,6 +214,9 @@
     "dependency_group": "EVT",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -165,6 +231,9 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -179,6 +248,9 @@
     "dependency_group": "APP",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -193,6 +265,9 @@
     "dependency_group": "RUIN",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -207,6 +282,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -221,6 +299,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -235,6 +316,9 @@
     "dependency_group": "DENS",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -249,6 +333,9 @@
     "dependency_group": "DENS",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -263,6 +350,9 @@
     "dependency_group": "CALC",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -277,6 +367,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "reuse",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -291,6 +384,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -305,6 +401,9 @@
     "dependency_group": "EST",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -319,6 +418,9 @@
     "dependency_group": "GAMMA",
     "priority": "P2",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -333,6 +435,9 @@
     "dependency_group": "SUBEXP",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -347,6 +452,9 @@
     "dependency_group": "SUBEXP",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -361,6 +469,9 @@
     "dependency_group": "RV",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -375,6 +486,9 @@
     "dependency_group": "RV",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -389,6 +503,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -403,6 +520,15 @@
     "dependency_group": "SUBEXP",
     "priority": "P2",
     "status": "partial",
+    "states": [
+      "formula_proved",
+      "source_reviewed"
+    ],
+    "declarations": [
+      "AuditTails.two_power_tail",
+      "AuditTails.two_power_tail_min"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -417,6 +543,9 @@
     "dependency_group": "DENS",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -431,6 +560,9 @@
     "dependency_group": "RV",
     "priority": "P2",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -445,6 +577,13 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "partial",
+    "states": [
+      "formula_proved"
+    ],
+    "declarations": [
+      "AuditTails.pareto_power_tail"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -459,6 +598,9 @@
     "dependency_group": "DENS",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -473,6 +615,9 @@
     "dependency_group": "APP",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -487,6 +632,9 @@
     "dependency_group": "MULTI",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -501,6 +649,9 @@
     "dependency_group": "MULTI",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -515,6 +666,9 @@
     "dependency_group": "ENT",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -529,6 +683,9 @@
     "dependency_group": "MULTI",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -543,6 +700,9 @@
     "dependency_group": "EST",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -557,6 +717,9 @@
     "dependency_group": "DENS",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -571,6 +734,9 @@
     "dependency_group": "RUIN",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -585,6 +751,9 @@
     "dependency_group": "ENT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -599,6 +768,9 @@
     "dependency_group": "ENT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -613,6 +785,9 @@
     "dependency_group": "CDF",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -627,6 +802,9 @@
     "dependency_group": "ENT",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -641,6 +819,20 @@
     "dependency_group": "CF",
     "priority": "P1",
     "status": "partial",
+    "states": [
+      "formula_proved",
+      "actual_law_constructed",
+      "source_reviewed"
+    ],
+    "declarations": [
+      "StableAudit.stableS1Expr_gaussian",
+      "StableAudit.stableS1Expr_cauchy",
+      "StableAudit.stableS1Expr_at_zero",
+      "AuditGaussian.charFun_gaussianReal_eq_stableS1Expr",
+      "AuditGaussian.convolutionPower_gaussianReal_scale",
+      "AuditGaussian.convolutionPower_gaussianReal"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -655,6 +847,18 @@
     "dependency_group": "CF",
     "priority": "P2",
     "status": "partial",
+    "states": [
+      "conditional_law_theorem"
+    ],
+    "declarations": [
+      "AuditProbability.convolutionPower",
+      "AuditProbability.convolutionPower_probability",
+      "AuditProbability.charFun_convolutionPower",
+      "AuditProbability.stableS1_convolutionPower_eq",
+      "AuditProbability.law_independent_sum",
+      "StableAudit.stableS1Expr_power"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -669,6 +873,9 @@
     "dependency_group": "DENS",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -683,6 +890,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -697,6 +907,9 @@
     "dependency_group": "CLT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -711,6 +924,9 @@
     "dependency_group": "LLN",
     "priority": "P1",
     "status": "reuse",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -725,6 +941,9 @@
     "dependency_group": "CF",
     "priority": "P2",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -739,6 +958,9 @@
     "dependency_group": "KAPPA",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -753,6 +975,9 @@
     "dependency_group": "KAPPA",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -767,6 +992,9 @@
     "dependency_group": "KAPPA",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -781,6 +1009,9 @@
     "dependency_group": "KAPPA",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -795,6 +1026,9 @@
     "dependency_group": "KAPPA",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -809,6 +1043,9 @@
     "dependency_group": "KAPPA",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -823,6 +1060,9 @@
     "dependency_group": "KAPPA",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -832,12 +1072,42 @@
     "pdf_anchor_page": 185,
     "source_anchor": "9.1",
     "title": "Distribution of iid maxima",
-    "target": "Prove CDF(max_i X_i)(x)=F(x)^n and minima survival analog. Delivered (v0.2.3): AuditExtremes.measure_maxLeEvent (product form for independent coordinates), measure(Real)_maxLeEvent_of_forall_eq (p^n form), and the Frechet/Gumbel max-stability statements for independent maxima measureReal_maxLeEvent_frechet / _gumbel in AuditRepairs/ExtremeValueBridge.lean.",
-    "hypotheses_and_gaps": "Independent variables (iIndepFun) with a common value P(X_i <= x); n>0; atoms permitted. The minima/survival analog and the construction of measures with the Frechet/Gumbel distribution functions (T061) remain open.",
+    "target": "Prove CDF(max_i X_i)(x)=F(x)^n and minima survival analog. Delivered: independent-coordinate product formula for any measurable threshold set (AuditExtremes.measure_iInter_preimage), the max <= x, max < x, min > x and min >= x events with their product and p^n forms, and, for measurable coordinates with a common law nu, cdf (P.map (maxRV X)) x = (cdf nu x)^n (AuditExtremes.cdf_map_maxRV) and (P.map (minRV X)).real (Ioi x) = (nu.real (Ioi x))^n = (1 - cdf nu x)^n (AuditExtremes.measureReal_map_minRV_Ioi, _eq_one_sub_cdf) in AuditRepairs/ExtremeValueBridge.lean.",
+    "hypotheses_and_gaps": "Independent variables (iIndepFun), measurable coordinates, common law stated as equality of pushforward measures, n = card iota > 0 (Nonempty, Fintype), atoms permitted (strict/non-strict thresholds stated explicitly). Constructing specific EVT laws is T061, not part of this family.",
     "dependency_group": "CDF",
     "priority": "P1",
-    "status": "partial",
-    "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
+    "status": "discharged",
+    "states": [
+      "formula_proved",
+      "source_reviewed",
+      "discharged"
+    ],
+    "declarations": [
+      "AuditExtremes.maxLeEvent",
+      "AuditExtremes.minGtEvent",
+      "AuditExtremes.minGeEvent",
+      "AuditExtremes.maxLtEvent",
+      "AuditExtremes.maxRV",
+      "AuditExtremes.minRV",
+      "AuditExtremes.measure_iInter_preimage",
+      "AuditExtremes.measure_maxLeEvent",
+      "AuditExtremes.measure_minGtEvent",
+      "AuditExtremes.measure_minGeEvent",
+      "AuditExtremes.measure_maxLtEvent",
+      "AuditExtremes.measure_maxLeEvent_of_forall_eq",
+      "AuditExtremes.measure_minGtEvent_of_forall_eq",
+      "AuditExtremes.measureReal_maxLeEvent_of_forall_eq",
+      "AuditExtremes.measureReal_minGtEvent_of_forall_eq",
+      "AuditExtremes.measure_maxLeEvent_of_map_eq",
+      "AuditExtremes.measure_minGtEvent_of_map_eq",
+      "AuditExtremes.measurable_maxRV",
+      "AuditExtremes.measurable_minRV",
+      "AuditExtremes.cdf_map_maxRV",
+      "AuditExtremes.measureReal_map_minRV_Ioi",
+      "AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf"
+    ],
+    "discharged": true,
+    "completion": "All stated targets are met by the listed declarations (checked build, axiom closure within the allowlist, source correspondence reviewed, differences documented). Reopen if a child obligation is discovered."
   },
   {
     "id": "T061",
@@ -851,6 +1121,22 @@
     "dependency_group": "EVT",
     "priority": "P1",
     "status": "partial",
+    "states": [
+      "formula_proved",
+      "conditional_law_theorem"
+    ],
+    "declarations": [
+      "AuditTails.frechetFormula",
+      "AuditTails.frechetCDF",
+      "AuditTails.gumbelCDF",
+      "AuditTails.frechetFormula_zero",
+      "AuditTails.frechet_formula_maxstable",
+      "AuditTails.frechet_cdf_maxstable",
+      "AuditTails.gumbel_maxstable",
+      "AuditExtremes.measureReal_maxLeEvent_frechet",
+      "AuditExtremes.measureReal_maxLeEvent_gumbel"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -865,6 +1151,9 @@
     "dependency_group": "EVT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -879,6 +1168,9 @@
     "dependency_group": "EVT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -893,6 +1185,9 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -907,6 +1202,9 @@
     "dependency_group": "CLT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -921,6 +1219,9 @@
     "dependency_group": "DENS",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -935,6 +1236,9 @@
     "dependency_group": "CLT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -949,6 +1253,9 @@
     "dependency_group": "EST",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -963,6 +1270,9 @@
     "dependency_group": "EST",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -977,6 +1287,9 @@
     "dependency_group": "APP",
     "priority": "P3",
     "status": "empirical",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -991,6 +1304,9 @@
     "dependency_group": "MOM",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1005,6 +1321,9 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1019,6 +1338,9 @@
     "dependency_group": "CDF",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1033,6 +1355,9 @@
     "dependency_group": "EST",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1047,6 +1372,9 @@
     "dependency_group": "EST",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1061,6 +1389,9 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1075,6 +1406,9 @@
     "dependency_group": "RV",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1089,6 +1423,9 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1103,6 +1440,9 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1117,6 +1457,9 @@
     "dependency_group": "EST",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1131,6 +1474,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1145,6 +1491,9 @@
     "dependency_group": "EST",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1159,6 +1508,9 @@
     "dependency_group": "TAIL",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1173,6 +1525,9 @@
     "dependency_group": "APP",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1187,6 +1542,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1201,6 +1559,9 @@
     "dependency_group": "CALC",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1215,6 +1576,9 @@
     "dependency_group": "SDE",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1229,6 +1593,9 @@
     "dependency_group": "SDE",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1243,6 +1610,9 @@
     "dependency_group": "SDE",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1257,6 +1627,9 @@
     "dependency_group": "CDF",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1271,6 +1644,9 @@
     "dependency_group": "GINI",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1285,6 +1661,9 @@
     "dependency_group": "GINI",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1299,6 +1678,9 @@
     "dependency_group": "CLT",
     "priority": "P2",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1313,6 +1695,9 @@
     "dependency_group": "GINI",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1327,6 +1712,9 @@
     "dependency_group": "GINI",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1341,6 +1729,9 @@
     "dependency_group": "EST",
     "priority": "P2",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1355,6 +1746,9 @@
     "dependency_group": "GINI",
     "priority": "P2",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1369,6 +1763,9 @@
     "dependency_group": "GINI",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1383,6 +1780,9 @@
     "dependency_group": "GINI",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1397,6 +1797,9 @@
     "dependency_group": "GINI",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1411,6 +1814,9 @@
     "dependency_group": "GINI",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1425,6 +1831,9 @@
     "dependency_group": "GINI",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1439,6 +1848,9 @@
     "dependency_group": "CALC",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1453,6 +1865,9 @@
     "dependency_group": "MOM",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1467,6 +1882,9 @@
     "dependency_group": "DENS",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1481,6 +1899,9 @@
     "dependency_group": "APP",
     "priority": "P3",
     "status": "empirical",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1495,6 +1916,9 @@
     "dependency_group": "TAIL",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1509,6 +1933,9 @@
     "dependency_group": "EST",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1523,6 +1950,9 @@
     "dependency_group": "APP",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1537,6 +1967,9 @@
     "dependency_group": "APP",
     "priority": "P3",
     "status": "empirical",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1551,6 +1984,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1565,6 +2001,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1579,6 +2018,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1593,6 +2035,9 @@
     "dependency_group": "CLT",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1607,6 +2052,9 @@
     "dependency_group": "MOM",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1621,6 +2069,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1635,6 +2086,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1649,6 +2103,13 @@
     "dependency_group": "CALC",
     "priority": "P1",
     "status": "partial",
+    "states": [
+      "formula_proved"
+    ],
+    "declarations": [
+      "AuditTails.convexOn_rpow_neg_right"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1663,6 +2124,9 @@
     "dependency_group": "TAIL",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1677,6 +2141,9 @@
     "dependency_group": "RV",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1691,6 +2158,9 @@
     "dependency_group": "SUBEXP",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1705,6 +2175,9 @@
     "dependency_group": "CF",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1719,6 +2192,9 @@
     "dependency_group": "MOM",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1733,6 +2209,15 @@
     "dependency_group": "GAMMA",
     "priority": "P1",
     "status": "partial",
+    "states": [
+      "formula_proved",
+      "source_reviewed"
+    ],
+    "declarations": [
+      "AuditMoments.gamma_mixture_excess",
+      "AuditMoments.gamma_mixture_excess_pos"
+    ],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1747,6 +2232,9 @@
     "dependency_group": "MOM",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1761,6 +2249,9 @@
     "dependency_group": "EST",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1775,6 +2266,9 @@
     "dependency_group": "EST",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1789,6 +2283,9 @@
     "dependency_group": "CDF",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1803,6 +2300,9 @@
     "dependency_group": "EST",
     "priority": "P3",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1817,6 +2317,9 @@
     "dependency_group": "APP",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1831,6 +2334,9 @@
     "dependency_group": "RUIN",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1845,6 +2351,9 @@
     "dependency_group": "SDE",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1859,6 +2368,9 @@
     "dependency_group": "SDE",
     "priority": "P3",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1873,6 +2385,9 @@
     "dependency_group": "FIN",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1887,6 +2402,9 @@
     "dependency_group": "FIN",
     "priority": "P2",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1901,6 +2419,9 @@
     "dependency_group": "FIN",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1915,6 +2436,9 @@
     "dependency_group": "FIN",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1929,6 +2453,9 @@
     "dependency_group": "FIN",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1943,6 +2470,9 @@
     "dependency_group": "FIN",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1957,6 +2487,9 @@
     "dependency_group": "FIN",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1971,6 +2504,9 @@
     "dependency_group": "FIN",
     "priority": "P1",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1985,6 +2521,9 @@
     "dependency_group": "RV",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -1999,6 +2538,9 @@
     "dependency_group": "FIN",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2013,6 +2555,9 @@
     "dependency_group": "FIN",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2027,6 +2572,9 @@
     "dependency_group": "FIN",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2041,6 +2589,9 @@
     "dependency_group": "MOM",
     "priority": "P1",
     "status": "reuse",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2055,6 +2606,9 @@
     "dependency_group": "FIN",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2069,6 +2623,9 @@
     "dependency_group": "FIN",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2083,6 +2640,9 @@
     "dependency_group": "MULTI",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2097,6 +2657,9 @@
     "dependency_group": "FIN",
     "priority": "P3",
     "status": "model-needed",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2111,6 +2674,9 @@
     "dependency_group": "ENT",
     "priority": "P1",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2125,6 +2691,9 @@
     "dependency_group": "ENT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2139,6 +2708,9 @@
     "dependency_group": "CLT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2153,6 +2725,9 @@
     "dependency_group": "ENT",
     "priority": "P2",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2167,6 +2742,9 @@
     "dependency_group": "ENT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2181,6 +2759,9 @@
     "dependency_group": "ENT",
     "priority": "P0",
     "status": "source-check",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2195,6 +2776,9 @@
     "dependency_group": "ENT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
   {
@@ -2209,6 +2793,9 @@
     "dependency_group": "CLT",
     "priority": "P2",
     "status": "missing",
+    "states": [],
+    "declarations": [],
+    "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   }
 ]
