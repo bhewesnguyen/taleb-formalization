@@ -10,6 +10,7 @@ are neither zipped into the delivered package nor hashed into its `SHA256SUMS`. 
 | Handoff v0.2.0 (received input) | `02_handoff_v0.2.0/` | `Taleb_Lean_Implementation_Handoff.zip` (`8a8fb28a…57cab406`), companion `Taleb_Lean_Handoff_and_Formalization_Backlog.pdf` | `Taleb_Lean_Repairs/FABLE_REVIEW.md` §0–§11 (v0.2.1). |
 | Astra audit of v0.2.1 | `03_astra_on_v0.2.1/` | `Taleb_Fable_v0.2.1_Independent_Audit.{md,pdf}`, `Taleb_Fable_v0.2.1_Audit_Evidence.zip` | `FABLE_REVIEW.md` §12 (v0.2.2 corrective pass). |
 | Astra audit of v0.2.3 | `04_astra_on_v0.2.3/` | `Taleb_Fable_v0.2.3_Independent_Audit.pdf`, `Taleb_Proof_Progress_v0.2.3.md` (158-family ledger) | `FABLE_REVIEW.md` §14 (v0.2.4). |
+| Astra audit of v0.2.4 | `05_astra_on_v0.2.4/` | `Taleb_Fable_v0.2.4_Independent_Audit.pdf`, `Taleb_Proof_Progress_v0.2.4.md`, `Taleb_Fable_v0.2.4_Audit_and_Progress.zip` (audit evidence, sub-reviews, optional runner patch, T061 API note) | `FABLE_REVIEW.md` §15 (v0.2.5). |
 
 Source book (not committed, `.gitignore`d at the repository root): Taleb, *Statistical Consequences of
 Fat Tails*, arXiv:2001.10488v4, `2001.10488v4.pdf`, SHA-256
