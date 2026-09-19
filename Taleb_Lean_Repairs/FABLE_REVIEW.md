@@ -45,7 +45,7 @@ Executed (logs under `evidence/fable/`):
   `02_*.log`, `final/current_after_verify/`, `final/environment.md`,
   `final/declaration_inventory.md`).
 - Archive validation from a fresh extraction of the final ZIP. Because that log validates the
-  ZIP itself, it lives alongside the deliverables (`deliverables/archive_validation.log`), not
+  ZIP itself, it lives alongside the deliverables (`deliverables/v0.2.1/archive_validation.log`), not
   inside the archive; see `CHANGELOG_FABLE.md`.
 
 What Lean checked: the 69 declarations of §5 elaborate without `sorry`, with the stated axiom
@@ -267,7 +267,7 @@ Shared modules:
 ## 8. Repairs and justification
 
 Every change relative to the received package is listed in `CHANGELOG_FABLE.md` and in
-`deliverables/fable_changes.patch`. Nothing was introduced that bypasses proof checking; no
+`deliverables/v0.2.1/fable_changes.patch`. Nothing was introduced that bypasses proof checking; no
 `sorry`, `admit`, `axiom`, `unsafe`, `implemented_by`, `native_decide`, or new `set_option`
 that weakens checking.
 
@@ -457,7 +457,7 @@ domain-of-attraction statement (T011).
 16 aliases; no extra axioms; trust scan: 158 project constants (incl. 41 internal) all within
 allowlist; 81 public theorem/instance constants match the regex inventory`;
 `scripts/harness_regression.py` exit 0, 10/10 fixtures as expected; archive validated from a
-fresh extraction (`deliverables/archive_validation_v0.2.3.log`). Evidence:
+fresh extraction (`deliverables/v0.2.3/archive_validation_v0.2.3.log`). Evidence:
 `evidence/fable/v0.2.3/`.
 
 ### 13.5 Recommended next tasks (dependency-ordered)

@@ -1,0 +1,20 @@
+# Received artifacts, by round
+
+Third-party inputs to this project, kept **unchanged** and outside the Lean project so that they
+are neither zipped into the delivered package nor hashed into its `SHA256SUMS`. Verify with
+`cd audits && sha256sum -c --strict RECEIVED_ARTIFACTS.sha256`.
+
+| Round | Folder | Contents | Our response |
+|---|---|---|---|
+| Prior audit of the original 16 files | `01_prior_audit/` | `Taleb_Fat_Tails_Lean_Audit.pdf` (26 pp.), `Taleb_Lean_Checked_Repairs.zip` (v0.1 repair bundle) | Consumed by the v0.2.0 handoff; lineage only. |
+| Handoff v0.2.0 (received input) | `02_handoff_v0.2.0/` | `Taleb_Lean_Implementation_Handoff.zip` (`8a8fb28a…57cab406`), companion `Taleb_Lean_Handoff_and_Formalization_Backlog.pdf` | `Taleb_Lean_Repairs/FABLE_REVIEW.md` §0–§11 (v0.2.1). |
+| Astra audit of v0.2.1 | `03_astra_on_v0.2.1/` | `Taleb_Fable_v0.2.1_Independent_Audit.{md,pdf}`, `Taleb_Fable_v0.2.1_Audit_Evidence.zip` | `FABLE_REVIEW.md` §12 (v0.2.2 corrective pass). |
+| Astra audit of v0.2.3 | `04_astra_on_v0.2.3/` | `Taleb_Fable_v0.2.3_Independent_Audit.pdf`, `Taleb_Proof_Progress_v0.2.3.md` (158-family ledger) | `FABLE_REVIEW.md` §14 (v0.2.4). |
+
+Source book (not committed, `.gitignore`d at the repository root): Taleb, *Statistical Consequences of
+Fat Tails*, arXiv:2001.10488v4, `2001.10488v4.pdf`, SHA-256
+`758e18b7337840104db93296144d67cf5514bf2de128fe557dc84bc32a0ad567`, 523 PDF pages, printed page =
+PDF page − 14.
+
+Outgoing packages live in `../deliverables/vX.Y.Z/`; the project itself is `../Taleb_Lean_Repairs/`, and
+its `docs/AUDIT_HISTORY.md` lists the same rounds from inside the shipped package.
