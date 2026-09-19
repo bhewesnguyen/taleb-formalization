@@ -1,66 +1,30 @@
 # Fable review deliverables
 
-Review package for the independent audit of the Taleb Lean formalization handoff.
-Three iterations are kept: **v0.2.1** (received v0.2.0 → reviewed), **v0.2.2** (corrective pass
-requested by the independent audit `Taleb_Fable_v0.2.1_Independent_Audit.md`) and **v0.2.3** (first
-mathematics increment). The current deliverable is v0.2.3; start with `AUDIT_BRIEF_v0.2.3.md`.
+Outgoing packages for the independent audit loop of the Taleb Lean formalization handoff, one
+folder per version. The current deliverable is **v0.2.4**; start with
+`v0.2.4/AUDIT_BRIEF_v0.2.4.md`. Received third-party inputs (the handoff, the prior audit, the
+Astra audits) are kept unchanged under `../audits/`.
 
-## v0.2.3 (current)
+| Version | Folder | ZIP SHA-256 | What it is |
+|---|---|---|---|
+| **v0.2.4** (current) | `v0.2.4/` | `60f6bf6989d5c15f2f8c4afe0ce3444c347acde0589083b25aec495f32af98fa` | Second corrective pass (audit of v0.2.3: V1, R1, M1, L1, ledger states) and the first discharged backlog family (T060: independent minima and law-level `cdf(max) = F^n`, `P(min > x) = S^n`). Also contains `taleb-formalization_v0.2.4.bundle` (git history to the packaged tree `aa48417`), patches v0.2.0→v0.2.4 (117 files) and v0.2.3→v0.2.4 (39 files), `archive_validation_v0.2.4.log`, `AUDIT_BRIEF_v0.2.4.md`. |
+| v0.2.3 | `v0.2.3/` | `36155f3a2172d862a57c7a1d9bd4927f42c7b4b9da04c9332b52c1a094a23bf1` | First mathematics increment: two-term power tails (G18), Gaussian instantiation of the stable bridge (T046), independent maxima (T060 part). Audited by Astra → `../audits/04_astra_on_v0.2.3/`. |
+| v0.2.2 | `v0.2.2/` | `dbee243fcc98fc927e1eb12b4db52f9d2cfa74905261435264015fd2e45af62d` | Corrective pass after the Astra audit of v0.2.1 (trust scan of all constants, explicit checks, Lean-derived provenance, regression suite, G18 qualified, G19). |
+| v0.2.1 | `v0.2.1/` | `c492cc14c470f8cd3d237f884a4c3157195a11c1d5e56e62c52a818f9053008a` | Fable review of the received v0.2.0 handoff (baseline reproduction, harness hardening, G17/G18, two boundary diagnostics). Audited by Astra → `../audits/03_astra_on_v0.2.1/`. |
 
-| Deliverable | Location | Notes |
-|---|---|---|
-| Audit brief | `deliverables/AUDIT_BRIEF_v0.2.3.md` | What changed in v0.2.2 and v0.2.3, hashes, suggested audit focus, known limits. |
-| Review report | `Taleb_Lean_Repairs/FABLE_REVIEW.md` (also inside the ZIP) | §0–§11 review of v0.2.0→v0.2.1; §12 v0.2.2 corrective pass; **§13 v0.2.3 increment** with exact statements, sources, scope and next tasks. |
-| Changelog | `Taleb_Lean_Repairs/CHANGELOG_FABLE.md` (also inside the ZIP) | v0.2.2→v0.2.3, v0.2.1→v0.2.2, v0.2.0→v0.2.1. |
-| Final source ZIP | `deliverables/Taleb_Lean_Implementation_Handoff_v0.2.3_fable.zip` | 155 files; equals the git-tracked project files at `a5fe300`. |
-| ZIP checksum | `…_v0.2.3_fable.zip.sha256` | `36155f3a2172d862a57c7a1d9bd4927f42c7b4b9da04c9332b52c1a094a23bf1` |
-| Complete patch v0.2.0 → v0.2.3 | `deliverables/fable_changes_v0.2.3.patch` | 103 files; verified to apply to `f6b1007` and reproduce the packaged tree. |
-| Incremental patch v0.2.2 → v0.2.3 | `deliverables/fable_changes_v0.2.2_to_v0.2.3.patch` | 39 files. |
-| Archive validation log | `deliverables/archive_validation_v0.2.3.log` | Fresh extraction → manifest 154/154 → pinned dependency copy → clean `lake build` exit 0 (2736 jobs) → `verify.py` PASS (trust scan 158/158) → hashes identical. |
-| Regression record, raw logs, inventory, environment | inside the ZIP: `evidence/fable/v0.2.3/` | 10/10 fixtures; clean build; verify; declaration inventory with exact statements. |
+Each folder holds the ZIP, its `.sha256`, the full patch against the pristine v0.2.0 extraction
+(commit `f6b1007`), an incremental patch from the previous version, and the fresh-extraction
+validation log. The review report (`FABLE_REVIEW.md`), changelog (`CHANGELOG_FABLE.md`), audit
+history (`docs/AUDIT_HISTORY.md`) and all evidence are inside each ZIP under `Taleb_Lean_Repairs/`.
 
-### Final statuses (v0.2.3)
+## Final statuses (v0.2.4)
 
-- Final build: **passes** — clean `lake build` exit 0 (26 modules, 2736 jobs, no warnings); `verify.py` PASS 64/1/16 (81 checked); also from a fresh extraction.
-- Axiom checks: **all 158 project constants** (81 public theorem/instance, 16 defs, structure type, 19 Lean-generated, 41 internal) depend only on `propext`, `Classical.choice`, `Quot.sound`; no `sorryAx`; no project `axiom`.
-- Verifier regression: **10/10 fixtures** behave as expected.
-- Mathematics added (v0.2.3): corrected two-term power-tail exponent (G18); Gaussian law identified with the S1 expression at α = 2 and the conditional stable convolution theorem instantiated (`N(m,v)^{*n} = N(nm,nv)`); independent-maximum law and Fréchet/Gumbel max-stability for independent maxima. T029, T046, T060 → partial.
-- Unresolved: stable-law existence for α < 2 (T007), Cauchy identification, Fréchet/Gumbel measures and minima (T061/T060), domains of attraction (T011/T093), subexponentiality of concrete laws, positive/measurable RV and Karamata, Pareto moments, probabilistic Property 5.1 for nonnegative sums.
+- Final build: **passes** — clean `lake build` exit 0 (26 modules, 2741 jobs, no warnings); `verify.py` PASS 83/1/16 (100 checked); also from a fresh extraction.
+- Axiom checks: **all 189 project constants** (100 public theorem/instance, 21 defs, structure type, 19 Lean-generated, 48 internal) depend only on `propext`, `Classical.choice`, `Quot.sound`; no `sorryAx`; no project `axiom`; all 71 backlog-cited declarations exist.
+- Verifier regression: **12/12 fixtures** as expected, each from re-extracted sources and a pristine `.lake/build`, with the restored-tree hash checked and recorded.
+- Backlog: **1 discharged (T060)**, 10 partial, 4 reuse, 91 missing, 34 source-check, 15 model-needed, 3 empirical; delivery states recorded per family.
+- Unresolved: EVT measures (T061), stable-law existence for α < 2 (T007) and Cauchy identification (T046), probabilistic Property 5.1 for nonnegative sums (T029), domains of attraction (T011/T093), subexponentiality of concrete laws, positive/measurable RV and Karamata, Pareto moment integrals.
 
-## v0.2.2 (superseded by v0.2.3; kept for the audit trail)
-
-| Deliverable | Location | Notes |
-|---|---|---|
-| Review report | `Taleb_Lean_Repairs/FABLE_REVIEW.md` (also inside the ZIP) | §0–§11 review of v0.2.0→v0.2.1; **§12 addendum**: audit findings A1–A4/M1/M2, their reproduction, the repairs and the regression fixtures. |
-| Changelog | `Taleb_Lean_Repairs/CHANGELOG_FABLE.md` (also inside the ZIP) | v0.2.1→v0.2.2 section first, then v0.2.0→v0.2.1. Statement changes: none in either. |
-| Final source ZIP | `deliverables/Taleb_Lean_Implementation_Handoff_v0.2.2_fable.zip` | 140 files; equals the git-tracked project files; no `.lake/`, build outputs or bytecode caches. |
-| ZIP checksum | `…_v0.2.2_fable.zip.sha256` | `dbee243fcc98fc927e1eb12b4db52f9d2cfa74905261435264015fd2e45af62d` |
-| Complete patch v0.2.0 → v0.2.2 | `deliverables/fable_changes_v0.2.2.patch` | `git diff f6b1007 HEAD -- Taleb_Lean_Repairs/`, 85 files; verified to apply to the pristine extraction and reproduce the packaged tree. |
-| Incremental patch v0.2.1 → v0.2.2 | `deliverables/fable_changes_v0.2.1_to_v0.2.2.patch` | `git diff f247b17 HEAD -- Taleb_Lean_Repairs/`, 34 files. |
-| Archive validation log | `deliverables/archive_validation_v0.2.2.log` | Fresh extraction → manifest 139/139 → pinned dependency copy → clean `lake build` exit 0 → `verify.py` PASS (trust scan 137/137) → hashes identical to the working tree. |
-| Verifier regression record | inside the ZIP: `Taleb_Lean_Repairs/evidence/fable/v0.2.2/current_after_verify/harness_regression.{json,log}` and `03_harness_regression.log` | 10 fixtures, exact commands and subprocess exit codes; all behaved as expected. |
-| Raw logs, machine-readable results, inventory, environment | inside the ZIP: `evidence/fable/{received_current,baseline,final,v0.2.2}/`, `evidence/current/` | See `evidence/fable/README.md`. |
-| Received artifacts (unchanged) | repo root; hashes in `received/RECEIVED_ARTIFACTS.sha256` | Handoff ZIP and reports, prior audit, prior repair bundle, and the independent audit of v0.2.1 (`Taleb_Fable_v0.2.1_*`). The source book `2001.10488v4.pdf` is used locally and not committed. |
-
-### Final statuses (v0.2.2)
-
-- Baseline reproduction (v0.2.0): **reproduced** (unchanged from v0.2.1 review).
-- Final build: **passes** — clean `lake build` exit 0 (2643 jobs, no warnings); `verify.py` PASS 52/1/16 (69 checked); also from a fresh extraction of the ZIP.
-- Axiom checks: **all 137 project constants** (69 public theorem/instance, 13 defs, structure type, 19 Lean-generated, 35 internal/private) depend only on `propext`, `Classical.choice`, `Quot.sound`; no `sorryAx`; no project `axiom`.
-- Verifier regression: **10/10 fixtures** behave as expected (private `sorry` theorem/def, private axiom, structure-namespace theorem, `protected` theorem, wrong alias target in ordinary and `PYTHONOPTIMIZE=1` mode, orphan module, dirty dependency rejected; valid package accepted).
-- Source correspondence: unchanged for the sixteen entries; gates now G17, G18 (qualified: Property 5.1's printed scope is false by cancellation; valid for nonnegative summands), **G19** (p. 282 identifies regular variation with stability; false).
-- Unresolved mathematical obligations: unchanged in substance (stable-law existence T007, Gaussian/Cauchy identification T046, EVT measures/iid maxima T060/T011, subexponentiality of concrete laws T008/T024/T025, positive/measurable RV and Karamata T001/T002, Property 5.1 formula lemma and nonnegative-sum theorem T029, domain of attraction T093, moments/mixtures T005/T118/T124).
-
-## v0.2.1 (superseded, kept for the audit trail)
-
-| Deliverable | Location |
-|---|---|
-| ZIP | `deliverables/Taleb_Lean_Implementation_Handoff_v0.2.1_fable.zip`, checksum `c492cc14c470f8cd3d237f884a4c3157195a11c1d5e56e62c52a818f9053008a` (`.sha256` alongside) |
-| Patch v0.2.0 → v0.2.1 | `deliverables/fable_changes.patch` |
-| Archive validation | `deliverables/archive_validation.log` |
-
-Git history: `f6b1007` pristine extraction → `eff6e82` preservation → `307c651` baseline evidence →
-`a89acb0` v0.2.1 repairs → `b929536`/`d5e7f41`/`f247b17` v0.2.1 docs, manifest → `ca574fc`/`31b2644`
-v0.2.1 deliverables → `2f1328e` v0.2.2 corrective pass → `16224ec` harness scratch fix → `70207f6`
-v0.2.2 final evidence and manifest → `4171833` v0.2.2 deliverables → `0a12030` v0.2.3 mathematics increment →
-`a5fe300` v0.2.3 final evidence and manifest → this commit (v0.2.3 deliverables).
+Git history: `f6b1007` pristine extraction → … → `cf322a8` v0.2.3 deliverables → `3ddcead` repository
+reorganization (`audits/`, `deliverables/vX/`) → `1231b56` v0.2.4 corrective pass and T060 →
+`aa48417` v0.2.4 final evidence and manifest (the packaged tree) → this commit (v0.2.4 deliverables).
