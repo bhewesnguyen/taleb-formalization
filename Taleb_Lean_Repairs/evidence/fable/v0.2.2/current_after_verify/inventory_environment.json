@@ -1,0 +1,2326 @@
+{
+  "project_module_roots": [
+    "AuditRepairs",
+    "Proofs",
+    "AuditVerification"
+  ],
+  "lean_version": "4.24.0",
+  "internal_count": 35,
+  "imported_project_modules": [
+    "AuditRepairs",
+    "AuditRepairs.Foundations",
+    "AuditRepairs.ImplicitSetDiagnostic",
+    "AuditRepairs.ProbabilityBridge",
+    "AuditRepairs.RegularVariation",
+    "AuditRepairs.Stable",
+    "AuditRepairs.Tails",
+    "Proofs.Proof01_SlowlyVaryingLog",
+    "Proofs.Proof02_SlowlyVaryingConst",
+    "Proofs.Proof03_SlowlyVaryingOfTendsto",
+    "Proofs.Proof04_RegularlyVaryingMul",
+    "Proofs.Proof05_RegularlyVaryingRpow",
+    "Proofs.Proof06_RVIffSlowlyVarying",
+    "Proofs.Proof07_TailExponentPareto",
+    "Proofs.Proof08_SubexponentialTailExponent",
+    "Proofs.Proof09_ConvexOnRpowNeg",
+    "Proofs.Proof10_FrechetMaxstable",
+    "Proofs.Proof11_GumbelMaxstable",
+    "Proofs.Proof12_StableCharFnGaussian",
+    "Proofs.Proof13_GaussianStable",
+    "Proofs.Proof14_StableCharFnCauchy",
+    "Proofs.Proof15_CauchyStable",
+    "Proofs.Proof16_StableCharFnStable"
+  ],
+  "generated_count": 54,
+  "constants": [
+    {
+      "type": "∀ (scale m s : ℝ),\n  m ≠ 0 →\n    m ^ 2 - s ^ 2 ≠ 0 → scale * (1 + m / (m ^ 2 - s ^ 2)) - scale * (1 + 1 / m) = scale * s ^ 2 / (m * (m ^ 2 - s ^ 2))",
+      "name": "AuditMoments.gamma_mixture_excess",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditMoments.gamma_mixture_excess._simp_1_1",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditMoments.gamma_mixture_excess._simp_1_2",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditMoments.gamma_mixture_excess._simp_1_3",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditMoments.gamma_mixture_excess._simp_1_4",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditMoments.gamma_mixture_excess._simp_1_5",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditMoments.gamma_mixture_excess._simp_1_6",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditMoments.gamma_mixture_excess._simp_1_7",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {scale m s : ℝ}, 0 < scale → 0 < m → s ≠ 0 → 0 < m ^ 2 - s ^ 2 → 0 < scale * s ^ 2 / (m * (m ^ 2 - s ^ 2))",
+      "name": "AuditMoments.gamma_mixture_excess_pos",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "MeasureTheory.Measure ℝ → Prop",
+      "name": "AuditProbability.IsSubexponential",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditProbability.IsSubexponential._proof_1",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {μ : MeasureTheory.Measure ℝ} {α : ℝ},\n  AuditProbability.IsSubexponential μ →\n    AuditTails.HasFiniteTailExponent (AuditProbability.survival μ) α →\n      AuditTails.HasFiniteTailExponent (AuditProbability.survival (μ.conv μ)) α",
+      "name": "AuditProbability.IsSubexponential.finiteTailExponent",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (μ : MeasureTheory.Measure ℝ) [MeasureTheory.IsProbabilityMeasure μ] (n : ℕ) (t : ℝ),\n  MeasureTheory.charFun (AuditProbability.convolutionPower μ n) t = MeasureTheory.charFun μ t ^ n",
+      "name": "AuditProbability.charFun_convolutionPower",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "MeasureTheory.Measure ℝ → ℕ → MeasureTheory.Measure ℝ",
+      "name": "AuditProbability.convolutionPower",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditProbability.convolutionPower._sunfold",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "def",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditProbability.convolutionPower.eq_1",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditProbability.convolutionPower.eq_2",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditProbability.convolutionPower.match_1",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "def",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (μ : MeasureTheory.Measure ℝ) [MeasureTheory.IsProbabilityMeasure μ] (n : ℕ),\n  MeasureTheory.IsProbabilityMeasure (AuditProbability.convolutionPower μ n)",
+      "name": "AuditProbability.convolutionPower_probability",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": true,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] {P : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure P]\n  {X Y : Ω → ℝ},\n  AEMeasurable X P →\n    AEMeasurable Y P →\n      ProbabilityTheory.IndepFun X Y P →\n        MeasureTheory.Measure.map (fun ω => X ω + Y ω) P =\n          (MeasureTheory.Measure.map X P).conv (MeasureTheory.Measure.map Y P)",
+      "name": "AuditProbability.law_independent_sum",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {μ ν : MeasureTheory.Measure ℝ} [MeasureTheory.IsProbabilityMeasure μ] [MeasureTheory.IsProbabilityMeasure ν]\n  (p : StableAudit.StableParameters) (n : ℕ),\n  (∀ (t : ℝ), MeasureTheory.charFun μ t = StableAudit.stableS1Expr p.alpha p.beta p.location p.scale t) →\n    (∀ (t : ℝ),\n        MeasureTheory.charFun ν t =\n          StableAudit.stableS1Expr p.alpha p.beta (↑n * p.location) (↑n ^ (1 / p.alpha) * p.scale) t) →\n      AuditProbability.convolutionPower μ n = ν",
+      "name": "AuditProbability.stableS1_convolutionPower_eq",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "MeasureTheory.Measure ℝ → ℝ → ℝ",
+      "name": "AuditProbability.survival",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(ℝ → ℝ) → ℝ → Prop",
+      "name": "AuditRV.IsRegularlyVarying",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L M : ℝ → ℝ} {α : ℝ}, AuditRV.IsRegularlyVarying L α → L =ᶠ[Filter.atTop] M → AuditRV.IsRegularlyVarying M α",
+      "name": "AuditRV.IsRegularlyVarying.congr",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ} {α c : ℝ}, AuditRV.IsRegularlyVarying L α → c ≠ 0 → AuditRV.IsRegularlyVarying (fun x => c * L x) α",
+      "name": "AuditRV.IsRegularlyVarying.const_mul",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.IsRegularlyVarying.eq_1",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L₁ L₂ : ℝ → ℝ} {α₁ α₂ : ℝ},\n  AuditRV.IsRegularlyVarying L₁ α₁ →\n    AuditRV.IsRegularlyVarying L₂ α₂ → AuditRV.IsRegularlyVarying (fun x => L₁ x * L₂ x) (α₁ + α₂)",
+      "name": "AuditRV.IsRegularlyVarying.mul",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ} {α p : ℝ},\n  AuditRV.IsRegularlyVarying L α →\n    (∀ᶠ (x : ℝ) in Filter.atTop, 0 < L x) → AuditRV.IsRegularlyVarying (fun x => L x ^ p) (p * α)",
+      "name": "AuditRV.IsRegularlyVarying.rpow",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(ℝ → ℝ) → Prop",
+      "name": "AuditRV.IsSlowlyVarying",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.IsSlowlyVarying.eq_1",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L M : ℝ → ℝ}, AuditRV.IsSlowlyVarying L → AuditRV.IsSlowlyVarying M → AuditRV.IsSlowlyVarying fun x => L x * M x",
+      "name": "AuditRV.IsSlowlyVarying.mul",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ} {c : ℝ}, c ≠ 0 → Filter.Tendsto L Filter.atTop (nhds c) → AuditRV.IsSlowlyVarying L",
+      "name": "AuditRV.IsSlowlyVarying.of_tendsto_const",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ},\n  AuditRV.IsSlowlyVarying L →\n    (∀ᶠ (x : ℝ) in Filter.atTop, 0 < L x) → ∀ (p : ℝ), AuditRV.IsSlowlyVarying fun x => L x ^ p",
+      "name": "AuditRV.IsSlowlyVarying.rpow",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ} {α : ℝ}, AuditRV.IsRegularlyVarying L α ↔ AuditRV.IsSlowlyVarying fun x => L x / x ^ α",
+      "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying._simp_1_1",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying._simp_1_2",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying._simp_1_3",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying._simp_1_4",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying._simp_1_5",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying._simp_1_6",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditRV.isRegularlyVarying_iff_slowlyVarying._simp_1_7",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {c : ℝ}, c ≠ 0 → AuditRV.IsSlowlyVarying fun x => c",
+      "name": "AuditRV.isSlowlyVarying_const",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "AuditRV.IsSlowlyVarying Real.log",
+      "name": "AuditRV.isSlowlyVarying_log",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "AuditRV.IsSlowlyVarying fun x => -1",
+      "name": "AuditRV.isSlowlyVarying_neg_one",
+      "module": "AuditRepairs.RegularVariation",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (α : ℝ), AuditRV.IsRegularlyVarying (fun x => x ^ α) α",
+      "name": "AuditRV.regularlyVarying_power",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ}, AuditRV.IsRegularlyVarying L 0 ↔ AuditRV.IsSlowlyVarying L",
+      "name": "AuditRV.regularlyVarying_zero_iff",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(ℝ → ℝ) → ℝ → Prop",
+      "name": "AuditTails.HasFiniteTailExponent",
+      "module": "AuditRepairs.Tails",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {S : ℝ → ℝ} {α : ℝ}, AuditTails.HasFiniteTailExponent S α → AuditTails.tailExponentReal S = α",
+      "name": "AuditTails.HasFiniteTailExponent.liminf_eq",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {S : ℝ → ℝ} {α β : ℝ}, AuditTails.HasFiniteTailExponent S α → AuditTails.HasFiniteTailExponent S β → α = β",
+      "name": "AuditTails.HasFiniteTailExponent.unique",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {c : ℝ}, 0 < c → ConvexOn ℝ Set.univ fun α => c ^ (-α)",
+      "name": "AuditTails.convexOn_rpow_neg_right",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "ℝ → ℝ → ℝ",
+      "name": "AuditTails.frechetCDF",
+      "module": "AuditRepairs.Tails",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditTails.frechetCDF.eq_1",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "ℝ → ℝ → ℝ",
+      "name": "AuditTails.frechetFormula",
+      "module": "AuditRepairs.Tails",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditTails.frechetFormula.eq_1",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ}, ξ ≠ 0 → AuditTails.frechetFormula ξ 0 = 1",
+      "name": "AuditTails.frechetFormula_zero",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ}, 0 < ξ → ∀ (x : ℝ) (n : ℕ), 0 < n → AuditTails.frechetCDF ξ x ^ n = AuditTails.frechetCDF ξ (↑n ^ (-ξ) * x)",
+      "name": "AuditTails.frechet_cdf_maxstable",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {ξ : ℝ},\n  0 < ξ → ∀ {x : ℝ}, 0 < x → ∀ (n : ℕ), AuditTails.frechetFormula ξ x ^ n = AuditTails.frechetFormula ξ (↑n ^ (-ξ) * x)",
+      "name": "AuditTails.frechet_formula_maxstable",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "ℝ → ℝ",
+      "name": "AuditTails.gumbelCDF",
+      "module": "AuditRepairs.Tails",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditTails.gumbelCDF.eq_1",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {x : ℝ} (n : ℕ), 0 < n → AuditTails.gumbelCDF x ^ n = AuditTails.gumbelCDF (x - Real.log ↑n)",
+      "name": "AuditTails.gumbel_maxstable",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {C α : ℝ}, 0 < C → AuditTails.HasFiniteTailExponent (fun x => C * x ^ (-α)) α",
+      "name": "AuditTails.pareto_hasFiniteTailExponent",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {C α : ℝ}, 0 < C → Filter.Tendsto (fun x => -Real.log (C * x ^ (-α)) / Real.log x) Filter.atTop (nhds α)",
+      "name": "AuditTails.pareto_log_ratio_tendsto",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {C α p : ℝ}, 0 < C → 0 < p → AuditTails.HasFiniteTailExponent (fun y => C * (y ^ (1 / p)) ^ (-α)) (α / p)",
+      "name": "AuditTails.pareto_power_tail",
+      "module": "AuditRepairs.Foundations",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {f : ℝ → ℝ}, Filter.Tendsto f Filter.atTop Filter.atTop → Filter.liminf f Filter.atTop = 0",
+      "name": "AuditTails.real_liminf_of_tendsto_atTop",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditTails.real_liminf_of_tendsto_atTop._simp_1_1",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {S T : ℝ → ℝ} {α : ℝ},\n  Filter.Tendsto (fun x => T x / S x) Filter.atTop (nhds 2) →\n    Filter.Tendsto (fun x => -Real.log (S x) / Real.log x) Filter.atTop (nhds α) →\n      (∀ᶠ (x : ℝ) in Filter.atTop, T x ≠ 0) →\n        (∀ᶠ (x : ℝ) in Filter.atTop, 0 < S x) →\n          Filter.Tendsto (fun x => -Real.log (T x) / Real.log x) Filter.atTop (nhds α)",
+      "name": "AuditTails.subexponential_ratio_tailExponent",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(ℝ → ℝ) → ℝ",
+      "name": "AuditTails.tailExponentReal",
+      "module": "AuditRepairs.Tails",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "AuditTails.tailExponentReal.eq_1",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {C α : ℝ}, 0 < C → (AuditTails.tailExponentReal fun x => C * x ^ (-α)) = α",
+      "name": "AuditTails.tailExponentReal_pareto",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(AuditTails.tailExponentReal fun x => 0) = 0",
+      "name": "AuditTails.tailExponentReal_zero",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {S T : ℝ → ℝ} {α k : ℝ},\n  k ≠ 0 →\n    Filter.Tendsto (fun x => T x / S x) Filter.atTop (nhds k) →\n      Filter.Tendsto (fun x => -Real.log (S x) / Real.log x) Filter.atTop (nhds α) →\n        (∀ᶠ (x : ℝ) in Filter.atTop, T x ≠ 0) →\n          (∀ᶠ (x : ℝ) in Filter.atTop, S x ≠ 0) →\n            Filter.Tendsto (fun x => -Real.log (T x) / Real.log x) Filter.atTop (nhds α)",
+      "name": "AuditTails.tail_log_ratio_of_ratio_tendsto",
+      "module": "AuditRepairs.Tails",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "¬Convex ℝ {0, 2}",
+      "name": "Proof09Probe.pair_not_convex",
+      "module": "AuditRepairs.ImplicitSetDiagnostic",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {univ : Set ℝ} {c : ℝ}, 0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α)",
+      "name": "Proof09Probe.signature_probe",
+      "module": "AuditRepairs.ImplicitSetDiagnostic",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{univ : Set ℝ} → {c : ℝ} → 0 < c → Prop",
+      "name": "Proof09Probe.statement",
+      "module": "AuditRepairs.ImplicitSetDiagnostic",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "¬Proof09Probe.statement ⋯",
+      "name": "Proof09Probe.submitted_statement_counterexample",
+      "module": "AuditRepairs.ImplicitSetDiagnostic",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "Type",
+      "name": "StableAudit.StableParameters",
+      "module": "AuditRepairs.Stable",
+      "kind": "inductive",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "StableAudit.StableParameters._sizeOf_1",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "StableAudit.StableParameters._sizeOf_inst",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": true,
+      "isInstance": true,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "StableAudit.StableParameters → ℝ",
+      "name": "StableAudit.StableParameters.alpha",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "projection",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (self : StableAudit.StableParameters), self.alpha ≤ 2",
+      "name": "StableAudit.StableParameters.alpha_le_two",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "projection",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (self : StableAudit.StableParameters), 0 < self.alpha",
+      "name": "StableAudit.StableParameters.alpha_pos",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "projection",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "StableAudit.StableParameters → ℝ",
+      "name": "StableAudit.StableParameters.beta",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "projection",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (self : StableAudit.StableParameters), -1 ≤ self.beta ∧ self.beta ≤ 1",
+      "name": "StableAudit.StableParameters.beta_bounds",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "projection",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{motive : StableAudit.StableParameters → Sort u} →\n  (t : StableAudit.StableParameters) →\n    ((alpha beta location scale : ℝ) →\n        (alpha_pos : 0 < alpha) →\n          (alpha_le_two : alpha ≤ 2) →\n            (beta_bounds : -1 ≤ beta ∧ beta ≤ 1) →\n              (scale_nonneg : 0 ≤ scale) →\n                motive\n                  { alpha := alpha, beta := beta, location := location, scale := scale, alpha_pos := alpha_pos,\n                    alpha_le_two := alpha_le_two, beta_bounds := beta_bounds, scale_nonneg := scale_nonneg }) →\n      motive t",
+      "name": "StableAudit.StableParameters.casesOn",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "auxRecursor",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "StableAudit.StableParameters → ℕ",
+      "name": "StableAudit.StableParameters.ctorIdx",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "StableAudit.StableParameters → ℝ",
+      "name": "StableAudit.StableParameters.location",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "projection",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(alpha beta : ℝ) →\n  ℝ → (scale : ℝ) → 0 < alpha → alpha ≤ 2 → -1 ≤ beta ∧ beta ≤ 1 → 0 ≤ scale → StableAudit.StableParameters",
+      "name": "StableAudit.StableParameters.mk",
+      "module": "AuditRepairs.Stable",
+      "kind": "constructor",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "constructor",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "StableAudit.StableParameters.mk._flat_ctor",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {alpha beta location scale : ℝ} {alpha_pos : 0 < alpha} {alpha_le_two : alpha ≤ 2}\n  {beta_bounds : -1 ≤ beta ∧ beta ≤ 1} {scale_nonneg : 0 ≤ scale} {alpha_1 beta_1 location_1 scale_1 : ℝ}\n  {alpha_pos_1 : 0 < alpha_1} {alpha_le_two_1 : alpha_1 ≤ 2} {beta_bounds_1 : -1 ≤ beta_1 ∧ beta_1 ≤ 1}\n  {scale_nonneg_1 : 0 ≤ scale_1},\n  { alpha := alpha, beta := beta, location := location, scale := scale, alpha_pos := alpha_pos,\n        alpha_le_two := alpha_le_two, beta_bounds := beta_bounds, scale_nonneg := scale_nonneg } =\n      { alpha := alpha_1, beta := beta_1, location := location_1, scale := scale_1, alpha_pos := alpha_pos_1,\n        alpha_le_two := alpha_le_two_1, beta_bounds := beta_bounds_1, scale_nonneg := scale_nonneg_1 } →\n    alpha = alpha_1 ∧ beta = beta_1 ∧ location = location_1 ∧ scale = scale_1",
+      "name": "StableAudit.StableParameters.mk.inj",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (alpha beta location scale : ℝ) (alpha_pos : 0 < alpha) (alpha_le_two : alpha ≤ 2)\n  (beta_bounds : -1 ≤ beta ∧ beta ≤ 1) (scale_nonneg : 0 ≤ scale) (alpha_1 beta_1 location_1 scale_1 : ℝ)\n  (alpha_pos_1 : 0 < alpha_1) (alpha_le_two_1 : alpha_1 ≤ 2) (beta_bounds_1 : -1 ≤ beta_1 ∧ beta_1 ≤ 1)\n  (scale_nonneg_1 : 0 ≤ scale_1),\n  ({ alpha := alpha, beta := beta, location := location, scale := scale, alpha_pos := alpha_pos,\n        alpha_le_two := alpha_le_two, beta_bounds := beta_bounds, scale_nonneg := scale_nonneg } =\n      { alpha := alpha_1, beta := beta_1, location := location_1, scale := scale_1, alpha_pos := alpha_pos_1,\n        alpha_le_two := alpha_le_two_1, beta_bounds := beta_bounds_1, scale_nonneg := scale_nonneg_1 }) =\n    (alpha = alpha_1 ∧ beta = beta_1 ∧ location = location_1 ∧ scale = scale_1)",
+      "name": "StableAudit.StableParameters.mk.injEq",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "(P : Sort u) →\n  (alpha beta location scale : ℝ) →\n    (alpha_pos : 0 < alpha) →\n      (alpha_le_two : alpha ≤ 2) →\n        (beta_bounds : -1 ≤ beta ∧ beta ≤ 1) →\n          (scale_nonneg : 0 ≤ scale) →\n            (alpha' beta' location' scale' : ℝ) →\n              (alpha_pos' : 0 < alpha') →\n                (alpha_le_two' : alpha' ≤ 2) →\n                  (beta_bounds' : -1 ≤ beta' ∧ beta' ≤ 1) →\n                    (scale_nonneg' : 0 ≤ scale') →\n                      { alpha := alpha, beta := beta, location := location, scale := scale, alpha_pos := alpha_pos,\n                            alpha_le_two := alpha_le_two, beta_bounds := beta_bounds, scale_nonneg := scale_nonneg } =\n                          { alpha := alpha', beta := beta', location := location', scale := scale',\n                            alpha_pos := alpha_pos', alpha_le_two := alpha_le_two', beta_bounds := beta_bounds',\n                            scale_nonneg := scale_nonneg' } →\n                        (alpha = alpha' → beta = beta' → location = location' → scale = scale' → P) → P",
+      "name": "StableAudit.StableParameters.mk.noConfusion",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (alpha beta location scale : ℝ) (alpha_pos : 0 < alpha) (alpha_le_two : alpha ≤ 2)\n  (beta_bounds : -1 ≤ beta ∧ beta ≤ 1) (scale_nonneg : 0 ≤ scale),\n  SizeOf.sizeOf\n      { alpha := alpha, beta := beta, location := location, scale := scale, alpha_pos := alpha_pos,\n        alpha_le_two := alpha_le_two, beta_bounds := beta_bounds, scale_nonneg := scale_nonneg } =\n    1 + SizeOf.sizeOf alpha + SizeOf.sizeOf beta + SizeOf.sizeOf location + SizeOf.sizeOf scale +\n            SizeOf.sizeOf alpha_pos +\n          SizeOf.sizeOf alpha_le_two +\n        SizeOf.sizeOf beta_bounds +\n      SizeOf.sizeOf scale_nonneg",
+      "name": "StableAudit.StableParameters.mk.sizeOf_spec",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{P : Sort u} → {x1 x2 : StableAudit.StableParameters} → x1 = x2 → StableAudit.StableParameters.noConfusionType P x1 x2",
+      "name": "StableAudit.StableParameters.noConfusion",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "noConfusion",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "Sort u → StableAudit.StableParameters → StableAudit.StableParameters → Sort u",
+      "name": "StableAudit.StableParameters.noConfusionType",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{motive : StableAudit.StableParameters → Sort u} →\n  ((alpha beta location scale : ℝ) →\n      (alpha_pos : 0 < alpha) →\n        (alpha_le_two : alpha ≤ 2) →\n          (beta_bounds : -1 ≤ beta ∧ beta ≤ 1) →\n            (scale_nonneg : 0 ≤ scale) →\n              motive\n                { alpha := alpha, beta := beta, location := location, scale := scale, alpha_pos := alpha_pos,\n                  alpha_le_two := alpha_le_two, beta_bounds := beta_bounds, scale_nonneg := scale_nonneg }) →\n    (t : StableAudit.StableParameters) → motive t",
+      "name": "StableAudit.StableParameters.rec",
+      "module": "AuditRepairs.Stable",
+      "kind": "recursor",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "recursor",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "{motive : StableAudit.StableParameters → Sort u} →\n  (t : StableAudit.StableParameters) →\n    ((alpha beta location scale : ℝ) →\n        (alpha_pos : 0 < alpha) →\n          (alpha_le_two : alpha ≤ 2) →\n            (beta_bounds : -1 ≤ beta ∧ beta ≤ 1) →\n              (scale_nonneg : 0 ≤ scale) →\n                motive\n                  { alpha := alpha, beta := beta, location := location, scale := scale, alpha_pos := alpha_pos,\n                    alpha_le_two := alpha_le_two, beta_bounds := beta_bounds, scale_nonneg := scale_nonneg }) →\n      motive t",
+      "name": "StableAudit.StableParameters.recOn",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "auxRecursor",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "StableAudit.StableParameters → ℝ",
+      "name": "StableAudit.StableParameters.scale",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "projection",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ (self : StableAudit.StableParameters), 0 ≤ self.scale",
+      "name": "StableAudit.StableParameters.scale_nonneg",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "projection",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {σ t : ℝ}, 0 ≤ σ → StableAudit.stableExpr 1 0 0 σ t = Complex.exp { re := -(σ * |t|), im := 0 }",
+      "name": "StableAudit.cauchy_specialization",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {σ t : ℝ} (n : ℕ), Real.exp (-(σ * |t|)) ^ n = Real.exp (-(↑n * σ * |t|))",
+      "name": "StableAudit.cauchy_stable",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {σ t : ℝ} (n : ℕ), Real.exp (-(σ * |t|)) ^ n = Real.exp (-(↑n * σ * |t|))",
+      "name": "StableAudit.cauchy_stable_short",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {σ t : ℝ}, StableAudit.stableExpr 2 0 0 σ t = Complex.exp { re := -(σ * t) ^ 2, im := 0 }",
+      "name": "StableAudit.gaussian_specialization",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {β μ σ t : ℝ}, StableAudit.stableExpr 2 β μ σ t = Complex.exp { re := -(σ * t) ^ 2, im := μ * t }",
+      "name": "StableAudit.gaussian_specialization_general",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {σ t : ℝ} (n : ℕ), Real.exp (-(σ * t) ^ 2) ^ n = Real.exp (-(↑n ^ (1 / 2) * σ * t) ^ 2)",
+      "name": "StableAudit.gaussian_stable_real",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {σ t : ℝ} (n : ℕ), Real.exp (-(σ * t) ^ 2) ^ n = Real.exp (-(↑n ^ (1 / 2) * σ * t) ^ 2)",
+      "name": "StableAudit.gaussian_stable_real_short",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "ℝ → ℝ → ℝ → ℝ → ℝ → ℂ",
+      "name": "StableAudit.stableExpr",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "StableAudit.stableExpr._proof_1",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "StableAudit.stableExpr.eq_1",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {α β μ σ : ℝ} (n : ℕ) (t : ℝ),\n  0 < α → StableAudit.stableExpr α β μ σ t ^ n = StableAudit.stableExpr α β (↑n * μ) (↑n ^ (1 / α) * σ) t",
+      "name": "StableAudit.stableExpr_power",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "ℝ → ℝ → ℝ → ℝ → ℝ → ℂ",
+      "name": "StableAudit.stableS1Expr",
+      "module": "AuditRepairs.Stable",
+      "kind": "def",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "StableAudit.stableS1Expr.eq_1",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {α β μ σ : ℝ}, 0 < α → StableAudit.stableS1Expr α β μ σ 0 = 1",
+      "name": "StableAudit.stableS1Expr_at_zero",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {σ t : ℝ}, 0 ≤ σ → StableAudit.stableS1Expr 1 0 0 σ t = Complex.exp { re := -(σ * |t|), im := 0 }",
+      "name": "StableAudit.stableS1Expr_cauchy",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {β μ σ t : ℝ}, StableAudit.stableS1Expr 2 β μ σ t = Complex.exp { re := -(σ * t) ^ 2, im := μ * t }",
+      "name": "StableAudit.stableS1Expr_gaussian",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {α β μ σ : ℝ} (n : ℕ) (t : ℝ),\n  0 < α → StableAudit.stableS1Expr α β μ σ t ^ n = StableAudit.stableS1Expr α β (↑n * μ) (↑n ^ (1 / α) * σ) t",
+      "name": "StableAudit.stableS1Expr_power",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "∀ {β μ σ t : ℝ}, StableAudit.stableExpr 1 β μ σ t = Complex.exp { re := -|σ * t|, im := μ * t }",
+      "name": "StableAudit.submitted_alpha_one_ignores_skew",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "StableAudit.stableExpr 1 0 1 0 1 ≠ Complex.exp { re := -(1 * |1|), im := 0 }",
+      "name": "StableAudit.submitted_cauchy_counterexample",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "StableAudit.stableExpr 2 0 1 0 1 ≠ Complex.exp { re := -1 ^ 2, im := 0 }",
+      "name": "StableAudit.submitted_gaussian_counterexample",
+      "module": "AuditRepairs.Stable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": null
+    },
+    {
+      "type": "AuditRV.IsSlowlyVarying Real.log",
+      "name": "Taleb.Proof01.repaired",
+      "module": "Proofs.Proof01_SlowlyVaryingLog",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditRV.isSlowlyVarying_log"
+    },
+    {
+      "type": "∀ {c : ℝ}, c ≠ 0 → AuditRV.IsSlowlyVarying fun x => c",
+      "name": "Taleb.Proof02.repaired",
+      "module": "Proofs.Proof02_SlowlyVaryingConst",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditRV.isSlowlyVarying_const"
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ} {c : ℝ}, c ≠ 0 → Filter.Tendsto L Filter.atTop (nhds c) → AuditRV.IsSlowlyVarying L",
+      "name": "Taleb.Proof03.repaired",
+      "module": "Proofs.Proof03_SlowlyVaryingOfTendsto",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditRV.IsSlowlyVarying.of_tendsto_const"
+    },
+    {
+      "type": "∀ {L₁ L₂ : ℝ → ℝ} {α₁ α₂ : ℝ},\n  AuditRV.IsRegularlyVarying L₁ α₁ →\n    AuditRV.IsRegularlyVarying L₂ α₂ → AuditRV.IsRegularlyVarying (fun x => L₁ x * L₂ x) (α₁ + α₂)",
+      "name": "Taleb.Proof04.repaired",
+      "module": "Proofs.Proof04_RegularlyVaryingMul",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditRV.IsRegularlyVarying.mul"
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ} {α p : ℝ},\n  AuditRV.IsRegularlyVarying L α →\n    (∀ᶠ (x : ℝ) in Filter.atTop, 0 < L x) → AuditRV.IsRegularlyVarying (fun x => L x ^ p) (p * α)",
+      "name": "Taleb.Proof05.repaired",
+      "module": "Proofs.Proof05_RegularlyVaryingRpow",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditRV.IsRegularlyVarying.rpow"
+    },
+    {
+      "type": "∀ {L : ℝ → ℝ} {α : ℝ}, AuditRV.IsRegularlyVarying L α ↔ AuditRV.IsSlowlyVarying fun x => L x / x ^ α",
+      "name": "Taleb.Proof06.repaired",
+      "module": "Proofs.Proof06_RVIffSlowlyVarying",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditRV.isRegularlyVarying_iff_slowlyVarying"
+    },
+    {
+      "type": "∀ {C α : ℝ}, 0 < C → AuditTails.HasFiniteTailExponent (fun x => C * x ^ (-α)) α",
+      "name": "Taleb.Proof07.repaired",
+      "module": "Proofs.Proof07_TailExponentPareto",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditTails.pareto_hasFiniteTailExponent"
+    },
+    {
+      "type": "∀ {μ : MeasureTheory.Measure ℝ} {α : ℝ},\n  AuditProbability.IsSubexponential μ →\n    AuditTails.HasFiniteTailExponent (AuditProbability.survival μ) α →\n      AuditTails.HasFiniteTailExponent (AuditProbability.survival (μ.conv μ)) α",
+      "name": "Taleb.Proof08.repaired",
+      "module": "Proofs.Proof08_SubexponentialTailExponent",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditProbability.IsSubexponential.finiteTailExponent"
+    },
+    {
+      "type": "∀ {c : ℝ}, 0 < c → ConvexOn ℝ Set.univ fun α => c ^ (-α)",
+      "name": "Taleb.Proof09.repaired",
+      "module": "Proofs.Proof09_ConvexOnRpowNeg",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditTails.convexOn_rpow_neg_right"
+    },
+    {
+      "type": "∀ {ξ : ℝ}, 0 < ξ → ∀ (x : ℝ) (n : ℕ), 0 < n → AuditTails.frechetCDF ξ x ^ n = AuditTails.frechetCDF ξ (↑n ^ (-ξ) * x)",
+      "name": "Taleb.Proof10.repaired",
+      "module": "Proofs.Proof10_FrechetMaxstable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditTails.frechet_cdf_maxstable"
+    },
+    {
+      "type": "∀ {x : ℝ} (n : ℕ), 0 < n → AuditTails.gumbelCDF x ^ n = AuditTails.gumbelCDF (x - Real.log ↑n)",
+      "name": "Taleb.Proof11.repaired",
+      "module": "Proofs.Proof11_GumbelMaxstable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditTails.gumbel_maxstable"
+    },
+    {
+      "type": "∀ {β μ σ t : ℝ}, StableAudit.stableS1Expr 2 β μ σ t = Complex.exp { re := -(σ * t) ^ 2, im := μ * t }",
+      "name": "Taleb.Proof12.repaired",
+      "module": "Proofs.Proof12_StableCharFnGaussian",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "StableAudit.stableS1Expr_gaussian"
+    },
+    {
+      "type": "∀ {σ t : ℝ} (n : ℕ), Real.exp (-(σ * t) ^ 2) ^ n = Real.exp (-(↑n ^ (1 / 2) * σ * t) ^ 2)",
+      "name": "Taleb.Proof13.repaired",
+      "module": "Proofs.Proof13_GaussianStable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "StableAudit.gaussian_stable_real_short"
+    },
+    {
+      "type": "∀ {σ t : ℝ}, 0 ≤ σ → StableAudit.stableS1Expr 1 0 0 σ t = Complex.exp { re := -(σ * |t|), im := 0 }",
+      "name": "Taleb.Proof14.repaired",
+      "module": "Proofs.Proof14_StableCharFnCauchy",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "StableAudit.stableS1Expr_cauchy"
+    },
+    {
+      "type": "∀ {σ t : ℝ} (n : ℕ), Real.exp (-(σ * |t|)) ^ n = Real.exp (-(↑n * σ * |t|))",
+      "name": "Taleb.Proof15.repaired",
+      "module": "Proofs.Proof15_CauchyStable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "StableAudit.cauchy_stable_short"
+    },
+    {
+      "type": "∀ {μ ν : MeasureTheory.Measure ℝ} [MeasureTheory.IsProbabilityMeasure μ] [MeasureTheory.IsProbabilityMeasure ν]\n  (p : StableAudit.StableParameters) (n : ℕ),\n  (∀ (t : ℝ), MeasureTheory.charFun μ t = StableAudit.stableS1Expr p.alpha p.beta p.location p.scale t) →\n    (∀ (t : ℝ),\n        MeasureTheory.charFun ν t =\n          StableAudit.stableS1Expr p.alpha p.beta (↑n * p.location) (↑n ^ (1 / p.alpha) * p.scale) t) →\n      AuditProbability.convolutionPower μ n = ν",
+      "name": "Taleb.Proof16.repaired",
+      "module": "Proofs.Proof16_StableCharFnStable",
+      "kind": "theorem",
+      "isInternal": false,
+      "isInstance": false,
+      "hasDeclarationRange": true,
+      "generatedBy": "",
+      "generated": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "aliasOf": "AuditProbability.stableS1_convolutionPower_eq"
+    },
+    {
+      "type": "",
+      "name": "_private.AuditRepairs.ProbabilityBridge.0.AuditProbability.convolutionPower.match_1.eq_1",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "_private.AuditRepairs.ProbabilityBridge.0.AuditProbability.convolutionPower.match_1.eq_2",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "theorem",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [],
+      "aliasOf": null
+    },
+    {
+      "type": "",
+      "name": "_private.AuditRepairs.ProbabilityBridge.0.AuditProbability.convolutionPower.match_1.splitter",
+      "module": "AuditRepairs.ProbabilityBridge",
+      "kind": "def",
+      "isInternal": true,
+      "isInstance": false,
+      "hasDeclarationRange": false,
+      "generatedBy": "noDeclarationRange",
+      "generated": true,
+      "axioms": [],
+      "aliasOf": null
+    }
+  ],
+  "constant_count": 137,
+  "axiom_kind_constants": []
+}

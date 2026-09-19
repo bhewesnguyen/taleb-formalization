@@ -1,0 +1,8 @@
+# command: python3 scripts/verify.py
+# cwd: /home/jett/Documents/GitHub/taleb-formalization/Taleb_Lean_Repairs
+# start: 2026-09-19T01:25:46Z
+# git HEAD: 2f1328e1cbee8aef2e3f9c142d503482e7f72035
+PASS: 52 theorems, 1 instance, 16 aliases; no extra axioms; trust scan: 137 project constants (incl. 35 internal) all within allowlist; 69 public theorem/instance constants match the regex inventory
+# end: 2026-09-19T01:26:45Z
+# elapsed_seconds: 59
+# exit_code: 0

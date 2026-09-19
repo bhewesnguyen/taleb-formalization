@@ -1,0 +1,19 @@
+# command: python3 scripts/harness_regression.py
+# cwd: /home/jett/Documents/GitHub/taleb-formalization/Taleb_Lean_Repairs
+# start: 2026-09-19T01:39:37Z
+# git HEAD: 16224ec3546c0aba6d84dec435127010b4be574f
+# note: a previous attempt at 01:28Z was invalidated by two concurrently launched instances sharing one fixed scratch directory; the script now uses a unique directory per run.
+valid                            exit=0 status=PASS -> ok
+private_sorry_theorem            exit=1 status=FAIL -> ok
+private_sorry_def                exit=1 status=FAIL -> ok
+private_axiom                    exit=1 status=FAIL -> ok
+structure_namespace_theorem      exit=1 status=FAIL -> ok
+protected_theorem                exit=1 status=FAIL -> ok
+alias_map_mismatch               exit=1 status=FAIL -> ok
+alias_map_mismatch_optimized     exit=1 status=FAIL -> ok
+orphan_module                    exit=1 status=FAIL -> ok
+dirty_dependency                 exit=1 status=FAIL -> ok
+ALL FIXTURES BEHAVED AS EXPECTED
+# end: 2026-09-19T01:50:36Z
+# elapsed_seconds: 659
+# exit_code: 0
