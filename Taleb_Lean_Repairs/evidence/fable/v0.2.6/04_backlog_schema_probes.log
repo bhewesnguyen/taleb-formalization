@@ -1,0 +1,14 @@
+duplicate_id             rejected -> ok
+discharged_flag_false    rejected -> ok
+scope_not_string         rejected -> ok
+missing_row              rejected -> ok
+extra_field              rejected -> ok
+blank_title              rejected -> ok
+unknown_state            rejected -> ok
+unknown_status           rejected -> ok
+duplicate_declaration    rejected -> ok
+scope_without_states     rejected -> ok
+wrong_pdf_anchor         rejected -> ok
+discharged_flag_int      rejected -> ok
+unmodified ledger valid: True
+ALL PROBES BEHAVED AS EXPECTED
