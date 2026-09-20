@@ -571,21 +571,36 @@
     "pdf_anchor_page": 112,
     "source_anchor": "5.2.1",
     "title": "Tail of sums with unequal indices",
-    "target": "Prove the heavier regularly varying tail dominates a sum of nonnegative variables with positive weights (event-inclusion bounds, no independence needed). Delivered (v0.2.3): the formula-level two-term identity AuditTails.two_power_tail and its symmetric form AuditTails.two_power_tail_min (exponent min(alpha1, alpha2)) in AuditRepairs/Foundations.lean.",
+    "target": "Prove the heavier regularly varying tail dominates a sum of nonnegative variables with positive weights (event-inclusion bounds, no independence needed). Delivered (v0.2.3): the formula-level two-term identity AuditTails.two_power_tail and its symmetric form AuditTails.two_power_tail_min (exponent min(alpha1, alpha2)) in AuditRepairs/Foundations.lean. Delivered (v0.2.7, AuditRepairs/WeightedSums.lean): the random-variable statement in the finite log-tail-exponent interface: for pointwise nonnegative X, Y on a probability space, positive weights a, b and survival functions with exponents alpha, beta, the survival function of aX + bY has exponent min(alpha, beta) (AuditProbability.hasFiniteTailExponent_weightedSum), also for the pushforward laws with measurable coordinates (hasFiniteTailExponent_survival_map_weightedSum). Route: the event inclusions {X > t/a}, {Y > t/b} subset {aX + bY > t} subset {X > t/(2a)} union {Y > t/(2b)} and the analytic rules HasFiniteTailExponent.comp_const_mul (positive rescaling), .max and .add (exponent min) and .of_le_of_le (squeeze). No independence.",
     "hypotheses_and_gaps": "Nonnegative variables and positive weights are required: with signed dependent summands, X = E Z and Y = -2 E Z give 2X + Y = 0, so the unrestricted printed Property 5.1 is false (SOURCE_GATES G18). The displayed limit under Property 5.1 (p. 99) is printed without the minus sign; the delivered lemmas state the corrected version. The probabilistic statement about sums of random variables remains open.",
     "dependency_group": "SUBEXP",
     "priority": "P2",
     "status": "partial",
     "states": [
       "formula_proved",
+      "law_theorem",
       "source_reviewed"
     ],
     "declarations": [
       "AuditTails.two_power_tail",
-      "AuditTails.two_power_tail_min"
+      "AuditTails.two_power_tail_min",
+      "AuditTails.neg_log_div_log_antitone",
+      "AuditTails.HasFiniteTailExponent.comp_const_mul",
+      "AuditTails.log_add_le_log_two_add_max",
+      "AuditTails.log_max_of_pos",
+      "AuditTails.HasFiniteTailExponent.max",
+      "AuditTails.HasFiniteTailExponent.add",
+      "AuditTails.HasFiniteTailExponent.of_le_of_le",
+      "AuditProbability.survivalRV",
+      "AuditProbability.survivalRV_eq_survival_map",
+      "AuditProbability.weightedSum_event_lower_left",
+      "AuditProbability.weightedSum_event_lower_right",
+      "AuditProbability.weightedSum_event_upper",
+      "AuditProbability.hasFiniteTailExponent_weightedSum",
+      "AuditProbability.hasFiniteTailExponent_survival_map_weightedSum"
     ],
-    "delivery_scope": "Formula-level two-term power tails: exponent min(alpha1, alpha2) in the finite log-ratio interface. Not a statement about random variables.",
-    "remaining_obligations": "Finite log tail exponent of nonnegative weighted sums via event inclusions and a squeeze lemma (no independence needed). Exact convolution asymptotics belong to the subexponential workstream.",
+    "delivery_scope": "Formula-level two-term power tails (v0.2.3) and, since v0.2.7, the probabilistic statement for two pointwise nonnegative random variables with positive weights: the survival function of the weighted sum (and of its pushforward law, for measurable coordinates) has finite log-tail exponent min(alpha, beta), with no independence hypothesis, via event inclusions and reusable rescaling, max, sum and squeeze rules for HasFiniteTailExponent. Exponent equality only: the statement is about -log S(t)/log t.",
+    "remaining_obligations": "Finite-family extension (nonempty index, positive weights) and an almost-sure-nonnegativity variant. The regular-variation reading of the target (survival-ratio asymptotics S_Z ~ S_heavier, regular variation of the sum) is not implied by exponent equality and is not claimed. Exact convolution asymptotics belong to the subexponential workstream (T008).",
     "discharged": false,
     "completion": "Requires a source-accurate Lean statement, checked proof, and axiom review; source-check rows need mathematical repair first."
   },
@@ -1226,7 +1241,7 @@
       "AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf"
     ],
     "delivery_scope": "Generic probability-law theorems: the cdf of the maximum equals (cdf nu)^n and the survival of the minimum equals (nu(x, inf))^n = (1 - cdf nu x)^n for independent measurable coordinates with common law nu, plus event-level product and power identities for all four threshold conventions.",
-    "remaining_obligations": "None within the family. Named EVT laws are T061, the density derivative and domains of attraction are T062/T011.",
+    "remaining_obligations": "None within the family. Named EVT laws are T061 (discharged in v0.2.6). Domains of attraction are T011 (general formulation) and T062 (Frechet via regular variation, Gaussian/Gumbel normalisers). Density identifications of the EVT laws are supplemental obligation S002 (docs/SUPPLEMENTAL_OBLIGATIONS.md), not T062 as earlier text said.",
     "discharged": true,
     "completion": "All stated targets are met by the listed declarations (checked build, axiom closure within the allowlist, source correspondence reviewed, differences documented). Reopen if a child obligation is discovered."
   },
@@ -1238,7 +1253,7 @@
     "source_anchor": "9.1",
     "title": "GEV families as probability measures",
     "target": "Construct global Gumbel, Frechet and reverse-Weibull CDFs and prove validity. Delivered: the three standardised laws as probability measures on R built from their distribution functions through Stieltjes functions (Gumbel and Frechet xi > 0 in v0.2.5, reverse-Weibull alpha > 0 with upper endpoint 0 in v0.2.6), exact cdf identities, analytic max-stability of each formula, and the positive location/scale pushforward affineLaw nu mu sigma = nu.map (z -> mu + sigma z) with cdf (affineLaw nu mu sigma) x = cdf nu ((x - mu)/sigma), giving gumbelLaw, frechetLaw and reverseWeibullLaw with the book's G((x - b_n)/a_n) distribution functions and, for iid coordinates, the law of the maximum as an equality of measures: gumbelLaw (mu + sigma log n) sigma, frechetLaw xi mu (sigma n^xi), reverseWeibullLaw alpha mu (sigma n^(-1/alpha)) (AuditRepairs/ExtremeValueLaws.lean, AuditRepairs/ExtremeValueAffine.lean).",
-    "hypotheses_and_gaps": "Correct piecewise support; scale>0; shape domains; right continuity and endpoint limits. Delivered with: Frechet xi > 0 and reverse-Weibull alpha > 0 as explicit hypotheses, positive scale sigma > 0 for every location/scale statement (negative scale is out of scope), right-continuity proved pointwise (Frechet and reverse-Weibull are not globally continuous in the totalised rpow reading at the endpoint from one side, only right-continuous), endpoint limits 0 at -inf and 1 at +inf. The unified GEV parametrisation in xi with the xi -> 0 Gumbel limit is not stated; the three families are separate laws.",
+    "hypotheses_and_gaps": "Correct piecewise support; scale>0; shape domains; right continuity and endpoint limits. Delivered with: Frechet xi > 0 and reverse-Weibull alpha > 0 as explicit hypotheses, positive scale sigma > 0 for every location/scale statement (negative scale is out of scope), right-continuity and the endpoint limits 0 at -inf and 1 at +inf are proved and are exactly what the Stieltjes construction needs. The support-correct piecewise CDFs are in fact globally continuous for positive shape (Frechet tends to 0 from the right at its lower endpoint 0, reverse-Weibull to 1 from the left at its upper endpoint 0), and global continuity is also proved (AuditEVTLaws.continuous_frechetCDF, continuous_reverseWeibullCDF, v0.2.7); the totalised-power caveat 0^(-1/xi) = 0 concerns only the unguarded frechetFormula (frechetFormula_zero), not frechetCDF. Scale: affineLaw and its probability instances accept any real sigma, while the cdf rule and the maximum-law theorems require sigma > 0 (a negative scale reverses the inequalities and is not covered). The unified GEV parametrisation in xi with the xi -> 0 Gumbel limit is not stated (supplemental obligation S001, docs/SUPPLEMENTAL_OBLIGATIONS.md): the three families are separate laws.",
     "dependency_group": "EVT",
     "priority": "P1",
     "status": "discharged",
@@ -1277,6 +1292,8 @@
       "AuditEVTLaws.reverseWeibullCDF_continuousWithinAt_Ici",
       "AuditEVTLaws.reverseWeibullCDF_tendsto_atBot",
       "AuditEVTLaws.reverseWeibullCDF_tendsto_atTop",
+      "AuditEVTLaws.continuous_frechetCDF",
+      "AuditEVTLaws.continuous_reverseWeibullCDF",
       "AuditEVTLaws.reverseWeibullStieltjes",
       "AuditEVTLaws.reverseWeibullMeasure",
       "AuditEVTLaws.reverseWeibullMeasure_isProbabilityMeasure",
@@ -1298,7 +1315,7 @@
       "AuditEVTLaws.map_maxRV_reverseWeibullLaw"
     ],
     "delivery_scope": "All three standardised EVT laws (Gumbel, Frechet xi > 0, reverse-Weibull alpha > 0 with upper endpoint 0) as probability measures with exact cdf identities and max-stability instantiated for the constructed laws including product-space iid realizations. The positive affine pushforward API with its cdf rule, the three location/scale families with distribution functions G((x - mu)/sigma), and the law of the maximum of iid location/scale coordinates as an equality of probability measures with the parameter rules mu + sigma log n (Gumbel), sigma n^xi (Frechet), sigma n^(-1/alpha) (reverse-Weibull).",
-    "remaining_obligations": "None within the family as scoped (the three named families with location/scale). Outside it: the unified GEV form in xi with the Gumbel limit xi -> 0, densities (T062), and convergence of normalised maxima to these laws (domains of attraction, T011).",
+    "remaining_obligations": "None within the family as scoped (the three named families with location/scale). Outside it: the unified GEV form in xi with the Gumbel limit xi -> 0 (supplemental S001), density/withDensity identifications of the three laws (supplemental S002, which no numbered family covers), and convergence of normalised maxima to these laws (T011 for the general domain-of-attraction formulation, T062 for the Frechet case via regular variation and the Gaussian/Gumbel normalisers).",
     "discharged": true,
     "completion": "All stated targets are met by the listed declarations (checked build, axiom closure within the allowlist, source correspondence reviewed, differences documented). Reopen if a child obligation is discovered."
   },

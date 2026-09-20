@@ -19,7 +19,7 @@ Steps (2)–(3) answer audit finding R1 (fixture contamination through a reused 
 The real project is never mutated; only the record is written, by default to
 `evidence/current/harness_regression.json` and `.log`.
 
-Every fixture except the two positive controls (`valid`, `nested_imported_module`) must
+Every fixture except the three positive controls (`valid`, `nested_imported_module`, `namespace_section_theorem`) must
 produce exit code 1 and a FAIL record whose error message contains the expected phrase. The
 suite's own exit code is 0 only if every fixture behaved as expected. For the `sorry`
 fixtures the suite additionally runs `scripts/FableInventory.lean` alone on the mutated copy

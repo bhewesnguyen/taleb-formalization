@@ -7,6 +7,7 @@ import AuditRepairs.GaussianBridge
 import AuditRepairs.ExtremeValueBridge
 import AuditRepairs.ExtremeValueLaws
 import AuditRepairs.ExtremeValueAffine
+import AuditRepairs.WeightedSums
 import AuditRepairs.ImplicitSetDiagnostic
 import Proofs.Proof01_SlowlyVaryingLog
 import Proofs.Proof02_SlowlyVaryingConst

@@ -54,6 +54,7 @@ import AuditRepairs
 #print axioms AuditEVTLaws.neg_one_div_nonpos
 #print axioms AuditEVTLaws.frechetCDF_monotone
 #print axioms AuditEVTLaws.frechetCDF_continuousWithinAt_Ici
+#print axioms AuditEVTLaws.continuous_frechetCDF
 #print axioms AuditEVTLaws.frechetCDF_tendsto_atBot
 #print axioms AuditEVTLaws.frechetCDF_tendsto_atTop
 #print axioms AuditEVTLaws.frechetMeasure_isProbabilityMeasure
@@ -66,6 +67,7 @@ import AuditRepairs
 #print axioms AuditEVTLaws.reverseWeibullCDF_le_one
 #print axioms AuditEVTLaws.reverseWeibullCDF_monotone
 #print axioms AuditEVTLaws.reverseWeibullCDF_continuousWithinAt_Ici
+#print axioms AuditEVTLaws.continuous_reverseWeibullCDF
 #print axioms AuditEVTLaws.reverseWeibullCDF_tendsto_atTop
 #print axioms AuditEVTLaws.reverseWeibullCDF_tendsto_atBot
 #print axioms AuditEVTLaws.reverseWeibullMeasure_isProbabilityMeasure
@@ -133,6 +135,19 @@ import AuditRepairs
 #print axioms AuditTails.frechet_formula_maxstable
 #print axioms AuditTails.frechet_cdf_maxstable
 #print axioms AuditTails.gumbel_maxstable
+#print axioms AuditTails.neg_log_div_log_antitone
+#print axioms AuditTails.HasFiniteTailExponent.comp_const_mul
+#print axioms AuditTails.log_add_le_log_two_add_max
+#print axioms AuditTails.log_max_of_pos
+#print axioms AuditTails.HasFiniteTailExponent.max
+#print axioms AuditTails.HasFiniteTailExponent.add
+#print axioms AuditTails.HasFiniteTailExponent.of_le_of_le
+#print axioms AuditProbability.survivalRV_eq_survival_map
+#print axioms AuditProbability.weightedSum_event_lower_left
+#print axioms AuditProbability.weightedSum_event_lower_right
+#print axioms AuditProbability.weightedSum_event_upper
+#print axioms AuditProbability.hasFiniteTailExponent_weightedSum
+#print axioms AuditProbability.hasFiniteTailExponent_survival_map_weightedSum
 #print axioms Taleb.Proof01.repaired
 #print axioms Taleb.Proof02.repaired
 #print axioms Taleb.Proof03.repaired

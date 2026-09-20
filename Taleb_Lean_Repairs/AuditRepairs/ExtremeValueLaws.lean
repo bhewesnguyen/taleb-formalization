@@ -3,10 +3,11 @@ import Mathlib.MeasureTheory.Measure.Stieltjes
 import Mathlib.Probability.CDF
 
 /-!
-# Extreme-value laws as probability measures (backlog family T061, children 1–2)
+# Extreme-value laws as probability measures (backlog family T061, children 1–3)
 
-`AuditTails.gumbelCDF` and `AuditTails.frechetCDF ξ` are so far *formulas*. This
-module turns them into probability measures on `ℝ` by the Stieltjes route
+`AuditTails.gumbelCDF` and `AuditTails.frechetCDF ξ` are so far *formulas*; the
+reverse-Weibull distribution function `reverseWeibullCDF α` is introduced here. This
+module turns all three into probability measures on `ℝ` by the Stieltjes route
 recommended in the independent audit of v0.2.4: each distribution function is
 shown monotone and right-continuous (bundled as a `StieltjesFunction`), its
 Lebesgue–Stieltjes measure is taken, the endpoint limits `0` at `−∞` and `1` at
@@ -15,18 +16,28 @@ the identity `cdf (measure) = formula` (`cdf_measure_stieltjesFunction`).
 
 With the measures in hand, the generic law theorem `AuditExtremes.cdf_map_maxRV`
 is instantiated: for independent measurable coordinates with the constructed
-common law, the maximum has distribution function `gumbelCDF (x − log n)` resp.
-`frechetCDF ξ (n^{−ξ} x)`. This discharges the *CDF-realization premise* that
-`measureReal_maxLeEvent_gumbel` / `_frechet` carried since v0.2.3; the
-independence, measurability, common-law and positive-sample-size hypotheses are
-ordinary hypotheses of the random-variable statements and remain.
+common law, the maximum has distribution function `gumbelCDF (x − log n)`,
+`frechetCDF ξ (n^{−ξ} x)` resp. `reverseWeibullCDF α (n^{1/α} x)`. This discharges
+the *CDF-realization premise* that `measureReal_maxLeEvent_gumbel` / `_frechet`
+carried since v0.2.3; the independence, measurability, common-law and
+positive-sample-size hypotheses are ordinary hypotheses of the random-variable
+statements and remain.
+
+Continuity: right-continuity and the endpoint limits are what the Stieltjes
+construction needs and are proved first; the support-correct piecewise
+distribution functions are moreover globally continuous for positive shape
+(`continuous_frechetCDF`, `continuous_reverseWeibullCDF`, v0.2.7) — Fréchet
+tends to `0` from the right at its lower endpoint, reverse-Weibull to `1` from the
+left at its upper endpoint. The totalized-power caveat `0^{−1/ξ} = 0` concerns
+only the unguarded `AuditTails.frechetFormula` (`frechetFormula_zero`), not
+`frechetCDF`.
 
 Book anchor: Section 9.1, printed p. 173 (PDF p. 187) — Gumbel
 `exp(−exp(−(x−b_n)/a_n))`, Fréchet `0` for `x ≤ b_n` and `exp(−((x−b_n)/a_n)^{−α})`
-for `x > b_n` with `ξ = 1/α`; standardised here (`b_n = 0`, `a_n = 1`).
-
-Not done (remaining T061 children): the reverse-Weibull family and the
-location/scale wrappers `x ↦ μ + σ x` (`σ > 0`) for all three families.
+for `x > b_n` with `ξ = 1/α`, reverse-Weibull `exp(−(−(x−b_n)/a_n)^α)` for `x < b_n`
+and `1` for `x ≥ b_n`; standardised here (`b_n = 0`, `a_n = 1`). The location/scale
+families `G((x − b_n)/a_n)` and the laws of their iid maxima are in
+`AuditRepairs/ExtremeValueAffine.lean` (child 4).
 -/
 
 set_option autoImplicit false
@@ -172,6 +183,25 @@ theorem frechetCDF_continuousWithinAt_Ici (hξ : 0 < ξ) (x₀ : ℝ) :
         (Real.continuousAt_rpow_const x₀ (-1 / ξ) (Or.inl hpos.ne')).neg
     exact (hc.congr hev).continuousWithinAt
 
+/-- Global continuity for `0 < ξ` (not needed for the Stieltjes construction, which uses
+right-continuity only; recorded because the ledger states it). Left of `0` the function is
+identically `0`, so the only nontrivial point is the endpoint `0`, where left-continuity is
+trivial and right-continuity is `frechetCDF_continuousWithinAt_Ici`. -/
+theorem continuous_frechetCDF (hξ : 0 < ξ) : Continuous (AuditTails.frechetCDF ξ) := by
+  refine continuous_iff_continuousAt.mpr fun x₀ => ?_
+  refine continuousAt_iff_continuous_left_right.mpr ⟨?_, frechetCDF_continuousWithinAt_Ici hξ x₀⟩
+  rcases le_or_gt x₀ 0 with hle | hpos
+  · -- On `Iic x₀ ⊆ Iic 0` the function is identically `0`.
+    exact continuousWithinAt_const.congr (fun y hy => frechetCDF_of_nonpos (hy.trans hle))
+      (frechetCDF_of_nonpos hle)
+  · have hev : (fun y : ℝ => Real.exp (-(y ^ (-1 / ξ)))) =ᶠ[𝓝 x₀] AuditTails.frechetCDF ξ := by
+      filter_upwards [Ioi_mem_nhds hpos] with y hy
+      exact (frechetCDF_of_pos hy).symm
+    have hc : ContinuousAt (fun y : ℝ => Real.exp (-(y ^ (-1 / ξ)))) x₀ :=
+      Real.continuous_exp.continuousAt.comp
+        (Real.continuousAt_rpow_const x₀ (-1 / ξ) (Or.inl hpos.ne')).neg
+    exact (hc.congr hev).continuousWithinAt
+
 theorem frechetCDF_tendsto_atBot : Tendsto (AuditTails.frechetCDF ξ) atBot (𝓝 0) := by
   have hev : (fun _ : ℝ => (0 : ℝ)) =ᶠ[atBot] AuditTails.frechetCDF ξ := by
     filter_upwards [eventually_le_atBot (0 : ℝ)] with y hy
@@ -290,6 +320,31 @@ theorem reverseWeibullCDF_continuousWithinAt_Ici (x₀ : ℝ) :
     exact continuousWithinAt_const.congr (fun y hy => reverseWeibullCDF_of_nonneg (hnonneg.trans hy))
       (reverseWeibullCDF_of_nonneg hnonneg)
 
+/-- Global continuity for `0 < α`. Right-continuity is `reverseWeibullCDF_continuousWithinAt_Ici`;
+for left-continuity the only nontrivial point is the endpoint `0`, where on `Iic 0` the function
+agrees with the continuous `y ↦ exp(−(−y)^α)` (which takes the value `1` at `0` because `0^α = 0`). -/
+theorem continuous_reverseWeibullCDF (hα : 0 < α) : Continuous (reverseWeibullCDF α) := by
+  refine continuous_iff_continuousAt.mpr fun x₀ => ?_
+  refine continuousAt_iff_continuous_left_right.mpr ⟨?_, reverseWeibullCDF_continuousWithinAt_Ici x₀⟩
+  rcases le_or_gt x₀ 0 with hle | hpos
+  · have hc : ContinuousAt (fun y : ℝ => Real.exp (-((-y) ^ α))) x₀ :=
+      Real.continuous_exp.continuousAt.comp
+        ((Real.continuousAt_rpow_const (-x₀) α (Or.inr hα.le)).comp continuous_neg.continuousAt).neg
+    refine hc.continuousWithinAt.congr (fun y hy => ?_) ?_
+    · rcases lt_or_eq_of_le (hy.trans hle) with hlt | heq
+      · exact reverseWeibullCDF_of_neg hlt
+      · subst heq
+        simp [reverseWeibullCDF_of_nonneg le_rfl, Real.zero_rpow hα.ne']
+    · rcases lt_or_eq_of_le hle with hlt | heq
+      · exact reverseWeibullCDF_of_neg hlt
+      · subst heq
+        simp [reverseWeibullCDF_of_nonneg le_rfl, Real.zero_rpow hα.ne']
+  · -- On `Iic x₀` with `x₀ > 0` the function is eventually `1` near `x₀`.
+    have hev : (fun _ : ℝ => (1 : ℝ)) =ᶠ[𝓝 x₀] reverseWeibullCDF α := by
+      filter_upwards [Ioi_mem_nhds hpos] with y hy
+      exact (reverseWeibullCDF_of_nonneg hy.le).symm
+    exact (continuousAt_const.congr hev).continuousWithinAt
+
 theorem reverseWeibullCDF_tendsto_atTop : Tendsto (reverseWeibullCDF α) atTop (𝓝 1) := by
   have hev : (fun _ : ℝ => (1 : ℝ)) =ᶠ[atTop] reverseWeibullCDF α := by
     filter_upwards [eventually_ge_atTop (0 : ℝ)] with y hy
@@ -384,6 +439,8 @@ end AuditEVTLaws
 #print axioms AuditEVTLaws.cdf_frechetMeasure_apply
 #print axioms AuditEVTLaws.cdf_map_maxRV_frechet
 #print axioms AuditEVTLaws.cdf_map_maxRV_pi_frechet
+#print axioms AuditEVTLaws.continuous_frechetCDF
+#print axioms AuditEVTLaws.continuous_reverseWeibullCDF
 #print axioms AuditEVTLaws.reverseWeibullMeasure_isProbabilityMeasure
 #print axioms AuditEVTLaws.cdf_reverseWeibullMeasure_apply
 #print axioms AuditEVTLaws.reverseWeibullCDF_maxstable

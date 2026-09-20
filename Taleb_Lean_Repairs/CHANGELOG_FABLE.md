@@ -1,5 +1,90 @@
 # Changelog: Fable review
 
+## v0.2.6 → v0.2.7 (fifth corrective pass; probabilistic Property 5.1)
+
+Trigger: the independent audit of v0.2.6 (`Taleb_Fable_v0.2.6_Independent_Audit.pdf`, SHA-256
+`c9b5a23df58b0948…418e0f57`; ledger `Taleb_Proof_Progress_v0.2.6.md`, `a1f30b1cb099d5dd…876db7bb`;
+evidence ZIP `753f97098dd99a89…cf8a8dbd`). Details and a **correction history** of the false v0.2.6
+statements: `FABLE_REVIEW.md` §17.
+
+**Correction to this changelog.** The v0.2.6 section below says
+"`docs/FORMALIZATION_BACKLOG.json`, `.md` — Regenerated / synced (158/158)". The Markdown was *not*
+regenerated in v0.2.6; it shipped byte-identical to v0.2.5 (audit D026-1). The line is left in place
+and annotated rather than rewritten.
+
+### Mathematical statement changes
+
+No pre-existing theorem, definition, instance, alias or proof was modified. **Added** (all with closure
+`{propext, Classical.choice, Quot.sound}`):
+
+| Declaration | Kind | Content |
+|---|---|---|
+| `AuditEVTLaws.continuous_frechetCDF`, `continuous_reverseWeibullCDF` | theorems | global continuity of the guarded distribution functions for positive shape (`ExtremeValueLaws.lean`; audit D026-2 asked only for corrected prose — these make the corrected prose checkable). |
+| `AuditTails.neg_log_div_log_antitone` | theorem | for `1 < x`, `s ↦ −log s / log x` is antitone on positive arguments (the single place the log-denominator sign is handled). |
+| `AuditTails.HasFiniteTailExponent.comp_const_mul` | theorem | positive argument rescaling keeps the exponent. |
+| `AuditTails.log_add_le_log_two_add_max`, `log_max_of_pos` | theorems | pointwise log inequalities for positive arguments. |
+| `AuditTails.HasFiniteTailExponent.max`, `.add` | theorems | a maximum / a sum of two tails has exponent `min α β`. |
+| `AuditTails.HasFiniteTailExponent.of_le_of_le` | theorem | squeeze between two tails with the same exponent. |
+| `AuditProbability.survivalRV P X` | def | `t ↦ P.real {X > t}`, the survival function of a random variable. |
+| `AuditProbability.survivalRV_eq_survival_map` | theorem | equals the law-level `survival (P.map X)` for measurable `X`. |
+| `AuditProbability.weightedSum_event_lower_left`, `_lower_right`, `_upper` | theorems | the event inclusions `{X > t/a} ⊆ {aX+bY > t}`, `{Y > t/b} ⊆ …`, `{aX+bY > t} ⊆ {X > t/2a} ∪ {Y > t/2b}` (pure set statements). |
+| `AuditProbability.hasFiniteTailExponent_weightedSum` | theorem | **Property 5.1 for random variables**: nonnegative `X, Y`, `a, b > 0`, exponents `α, β` ⟹ the survival function of `aX + bY` has exponent `min α β`; no independence. |
+| `AuditProbability.hasFiniteTailExponent_survival_map_weightedSum` | theorem | the same for the pushforward laws with measurable coordinates. |
+
+Counts: 125 → **140 theorems**, 8 instances, 16 aliases (**164** checked); trust scan 270 → **296**
+constants (79 internal). Backlog: T029 gains
+`law_theorem` and 14 declarations (status stays `partial`: the family's target reads "regularly
+varying tail dominates", the stronger ratio statement); T060/T061 remaining texts corrected (D026-3);
+T061 hypotheses text corrected (D026-2); all other rows unchanged.
+
+### Changed files
+
+| File | Change |
+|---|---|
+| `AuditRepairs/WeightedSums.lean` | **New** (imports `AuditRepairs.ProbabilityBridge`). |
+| `AuditRepairs/ExtremeValueLaws.lean` | Module header rewritten (audit D026-1: it still called reverse-Weibull and location/scale "not done"; now children 1–3, pointing to `ExtremeValueAffine.lean` for child 4, with the continuity paragraph); two continuity theorems and their `#print axioms` lines added. Existing proofs untouched. |
+| `AuditRepairs.lean` | Imports `AuditRepairs.WeightedSums`. |
+| `AuditVerification.lean` | Regenerated: 164 `#print axioms` lines. |
+| `scripts/backlog_schema.py` | `render_markdown(rows)` and `MARKDOWN_PREAMBLE`: the single rendering of `docs/FORMALIZATION_BACKLOG.md` (reproduces the v0.2.5 file byte for byte from the v0.2.5 JSON). |
+| `scripts/rebuild_curated_inventory.py` | Writes **both** renderings from the validated rows. T029 row: `law_theorem`, declarations, target/scope/remaining. T061 hypotheses (D026-2), T060/T061 remaining (D026-3) corrected. |
+| `scripts/verify.py` | New check: the shipped Markdown ledger equals `render_markdown(JSON)` byte for byte (audit D026-1). |
+| `scripts/backlog_schema_probes.py` | +5 probes: Markdown equals rendering; stale Markdown status, stale Markdown scope, stale JSON scope, dropped JSON declaration are each detected. 18 probes. |
+| `scripts/harness_regression.py` | Docstring: three positive controls. |
+| `docs/FORMALIZATION_BACKLOG.json`, `.md` | Regenerated **together** (checked by `verify.py`): T029, T060, T061 texts. |
+| `docs/SUPPLEMENTAL_OBLIGATIONS.md` | **New** (audit D026-3): S001 unified GEV parametrisation and `ξ → 0` Gumbel limit; S002 densities/`withDensity` of the three EVT laws; routing reminders (T011/T062 targets; `frechetMeasure (1/α)` for Pareto tail `α`). |
+| `docs/AUDIT_HISTORY.md` | Round 6 (audit of v0.2.6) added. |
+| `README.md` | Version, counts (140/8/16, 164), module list, verifier/probe descriptions, routing in "What is still open". |
+| `FABLE_REVIEW.md` | §16.3 and §16.6 corrected with visible markers (D026-3); + §17 with the correction history. |
+| `lakefile.toml` | `version = "0.2.7"`. |
+| `SHA256SUMS`, `evidence/current/*`, `evidence/fable/v0.2.7/` | Regenerated / new evidence layer. |
+
+Repository (outside the package): `audits/07_astra_on_v0.2.6/` holds the received audit; a `git bundle`
+accompanies the v0.2.7 ZIP.
+
+Pins unchanged: `lean-toolchain`, `lake-manifest.json`, Mathlib `rev`.
+
+### Compatibility implications
+
+- Client code: none for existing declarations. New namespace members under `AuditTails`,
+  `AuditProbability`, `AuditEVTLaws` only.
+- Verification: `verify.py` now fails on a hand-edited `docs/FORMALIZATION_BACKLOG.md`; regenerate
+  with `python3 scripts/rebuild_curated_inventory.py`. Runtime unchanged (≈ 2–4 min).
+- Backlog JSON: schema unchanged.
+
+### Validation performed (v0.2.7)
+
+- `rm -rf .lake/build; lake build`: exit 0, no warnings.
+- `python3 scripts/verify.py`: exit 0, `PASS: 140 theorems, 8 instance, 16 aliases; no extra axioms; trust
+  scan: 296 project constants (incl. 79 internal) all within allowlist; 164 public theorem/instance
+  constants match the regex inventory`; ledger valid, Markdown equals rendering, all cited declarations present.
+- `python3 scripts/backlog_schema_probes.py`: exit 0, 18/18.
+- `python3 scripts/harness_regression.py`: exit 0, 14/14 fixtures as expected.
+- Documentation consistency: replacement map 16/16; backlog Markdown/JSON consistency is now a
+  verifier check, not a claim.
+- Final ZIP validated from a fresh extraction (`deliverables/v0.2.7/archive_validation_v0.2.7.log`).
+
+---
+
 ## v0.2.5 → v0.2.6 (fourth corrective pass; reverse-Weibull and location/scale laws; T061 discharged)
 
 Trigger: the independent audit of v0.2.5 (`Taleb_Fable_v0.2.5_Independent_Audit.pdf`, SHA-256
@@ -47,7 +132,7 @@ declarations, scope and remaining rewritten); all other rows unchanged.
 | `scripts/rebuild_curated_inventory.py` | Imports the shared validator and refuses to write a malformed ledger; local vocabularies removed. T061 row: status `discharged`, states, 24 new declarations, target/hypotheses "Delivered" text, scope and remaining. |
 | `scripts/verify.py` | Imports the shared validator in place of its private schema loop; docstring updated. **Discovery fix (self-found, H026-1):** the regex inventory kept a namespace-only stack and popped it at every `end`, including `end <Section>`; every declaration after a section end lost its namespace. Masked in v0.2.5 (nothing followed `end Frechet`), it surfaced immediately in v0.2.6 as a failed `AuditVerification` build — the intended fail-closed behaviour. Now one stack for namespaces and sections. Report fields unchanged. |
 | `scripts/harness_regression.py` | New fixtures `backlog_duplicate_id` (expected FAIL on `schema violations`) and `namespace_section_theorem` (positive control: a theorem after `end <Section>` inside a namespace must be discovered with its namespace); 14 fixtures. |
-| `docs/FORMALIZATION_BACKLOG.json`, `.md` | Regenerated / synced (158/158): T061 discharged. |
+| `docs/FORMALIZATION_BACKLOG.json`, `.md` | Regenerated / synced (158/158): T061 discharged. **Incorrect (audit of v0.2.6, D026-1): only the JSON was regenerated; the Markdown shipped byte-identical to v0.2.5. Repaired in v0.2.7.** |
 | `docs/REPLACEMENT_MAP.md`, `docs/replacement_map.json` | Rows 10, 11 (audit D025-2): "remains open" clauses rewritten as history; v0.2.6 location/scale laws noted. |
 | `docs/MATHLIB_AND_WORK_ORDER.md` | CDF row and slice 4: T061 done. |
 | `docs/AUDIT_HISTORY.md` | Round 5 (audit of v0.2.5) added; round-4 response names Gumbel **and** Fréchet (audit D025-2). |

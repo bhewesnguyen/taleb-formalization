@@ -735,8 +735,11 @@ pushforwards with `σ > 0` for all three families and their cdf transformation r
 what §16.2 delivers, plus the maximum-parameter rules the v0.2.5 auditor proposed as the natural
 follow-through. Documented differences from the book: the three families are separate laws — the
 unified GEV form in `ξ` with the `ξ → 0` Gumbel limit is not stated (it would be a fourth,
-distinct object); densities are T062 and domains of attraction (convergence of normalised maxima
-to these laws) are T011, both untouched. Status `discharged`; states
+distinct object); domains of attraction (convergence of normalised maxima to these laws) are T011
+and T062, both untouched. *(Corrected in v0.2.7, audit D026-3: this sentence originally routed
+densities to T062, whose target is the Fréchet/Gaussian convergence cases; densities are now
+supplemental obligation S002 in `docs/SUPPLEMENTAL_OBLIGATIONS.md`, and the unified GEV form is
+S001.)* Status `discharged`; states
 `formula_proved, conditional_law_theorem, law_theorem, actual_law_constructed, source_reviewed,
 discharged`; 45 credited declarations.
 
@@ -761,8 +764,101 @@ T118, T124), 4 reuse, 91 missing, 34 source-check, 15 model-needed, 3 empirical.
 2. **Exact Pareto slice against `paretoMeasure`**: survival, moments (finite iff `p < α`),
    divergence, threshold excess (Pareto is memoryless in the log scale), power pushforward
    (T005/T021/T028/T032). `affineLaw` now provides the location/scale layer for free.
-3. **Densities of the three EVT laws** (T062): `HasDerivAt` of the distribution functions away
-   from the endpoints and `withDensity` identifications — reuses the Stieltjes measures.
-4. **Domains of attraction, Fréchet case** (T011, first slice): normalised maxima of iid Pareto
-   coordinates converge in distribution to `frechetMeasure α` — the first convergence statement,
-   and the first genuine use of `cdf_map_maxRV` beyond exact max-stability.
+3. **Densities of the three EVT laws** (supplemental S002 — *corrected in v0.2.7; v0.2.6 wrote
+   "T062", which is the convergence family*): `HasDerivAt` of the distribution functions on the
+   open supports and `withDensity` identifications — reuses the Stieltjes measures.
+4. **Domains of attraction, Fréchet case** (T011 formulation, T062 case): normalised maxima
+   `M_n / (L n^{1/α})` of iid Pareto coordinates with lower endpoint `L` and tail exponent `α`
+   converge in distribution to `frechetMeasure (1/α)` (cdf `exp(−x^{−α})`) — *corrected in v0.2.7;
+   v0.2.6 wrote `frechetMeasure α`, the reciprocal of this project's shape parameter (audit
+   D026-3)* — the first convergence statement, and the first genuine use of `cdf_map_maxRV` beyond
+   exact max-stability.
+
+## 17. Addendum (v0.2.7): response to the independent audit of v0.2.6, and the probabilistic Property 5.1
+
+The fifth independent audit (`Taleb_Fable_v0.2.6_Independent_Audit.pdf`, SHA-256
+`c9b5a23d…418e0f57`; ledger `Taleb_Proof_Progress_v0.2.6.md`, `a1f30b1c…876db7bb`; evidence ZIP
+`753f9709…cf8a8dbd`; kept
+under `audits/07_astra_on_v0.2.6/`) accepted the reverse-Weibull and location/scale mathematics
+and the T061 discharge against its original three-family target, reproduced the build, verifier,
+schema probes and all 14 fixtures (three isolated invocations), and raised one medium and two
+low documentation findings. All are confirmed and repaired here. No pre-existing theorem, proof,
+definition or pin was modified.
+
+### 17.1 Correction history (what v0.2.6 said that was wrong)
+
+This section exists because two of the findings are statements *I* made that were false, not
+omissions, and the audit trail should say so plainly.
+
+| v0.2.6 statement | Where | Fact | v0.2.7 |
+|---|---|---|---|
+| "`docs/FORMALIZATION_BACKLOG.json`, `.md` — Regenerated / synced (158/158): T061 discharged." | `CHANGELOG_FABLE.md`, v0.2.6 "Changed files" | The Markdown was byte-identical to v0.2.5: T061 `partial`, 21 declarations, reverse-Weibull "remaining". The generator had only ever written the JSON; the Markdown was a separate hand step in v0.2.4/v0.2.5 that v0.2.6 skipped. The "synced" claim was written from intent, not from a check. | Both renderings are generated from the same validated rows by one call; `verify.py` fails unless the shipped Markdown equals the rendering byte for byte; probes cover a stale status/scope/declaration in either rendering (D026-1). |
+| "Fréchet and reverse-Weibull are not globally continuous in the totalised rpow reading at the endpoint from one side, only right-continuous." | T061 hypotheses text (generator row, JSON, §16.3 by implication) | False. With the guarded definitions both distribution functions are globally continuous for positive shape: `frechetCDF ξ x → 0 = frechetCDF ξ 0` as `x → 0⁺`, `reverseWeibullCDF α x → 1 = reverseWeibullCDF α 0` as `x → 0⁻`. The totalised-power defect (`0^{−1/ξ} = 0`) belongs to the unguarded `frechetFormula` only (`frechetFormula_zero`). | Text corrected at the source; global continuity is now also *proved* (`continuous_frechetCDF`, `continuous_reverseWeibullCDF`) so the corrected prose is a checked statement rather than an assertion (D026-2). Right-continuity and endpoint limits remain what the Stieltjes construction uses. |
+| "densities are T062" (§16.3, §16.6 item 3, T060/T061 remaining texts, v0.2.6 audit brief) | several | T062 targets "Frechet and Gaussian maximum domains" (regular-variation-to-Fréchet convergence, Gaussian/Gumbel normalisers) — a convergence family. No family covers densities. The routing was inherited from earlier audit guidance and repeated without reading the row. | `docs/SUPPLEMENTAL_OBLIGATIONS.md`: S001 unified GEV parametrisation with the `ξ → 0` Gumbel limit, S002 densities/`withDensity`; ledger texts and §16 corrected with visible markers; T011/T062 described by their actual targets (D026-3). |
+| "normalised maxima of iid Pareto coordinates converge in distribution to `frechetMeasure α`" (§16.6 item 4) | plan, not Lean | Reciprocal shape: this project's `frechetCDF ξ x = exp(−x^{−1/ξ})`, so a Pareto tail exponent `α` gives `frechetMeasure (1/α)` (cdf `exp(−x^{−α})`), normalisation `M_n/(L n^{1/α})`. Caught before it became a theorem statement. | §16.6 corrected with a marker; the routing reminder in `SUPPLEMENTAL_OBLIGATIONS.md` records the convention (D026-3). |
+
+Also folded in: the harness docstring now says three positive controls; "positive scale in every
+statement" made precise — `affineLaw` and its `IsProbabilityMeasure` instances accept any real
+`σ`, the cdf rule and the maximum-law theorems require `σ > 0`.
+
+### 17.2 Mathematics added: the probabilistic Property 5.1 (T029)
+
+`AuditRepairs/WeightedSums.lean`, new module (13 theorems, 1 def). Book: Property 5.1, §5.2.1,
+printed pp. 98–99. For pointwise nonnegative `X, Y : Ω → ℝ` on a probability space, positive
+weights `a, b`, and survival functions `survivalRV P X = fun t => P.real {X > t}` with finite
+log-tail exponents `α, β`:
+
+`hasFiniteTailExponent_weightedSum : HasFiniteTailExponent (survivalRV P (a X + b Y)) (min α β)`,
+
+with **no independence hypothesis**, and the same for the pushforward laws
+(`hasFiniteTailExponent_survival_map_weightedSum`, measurable coordinates, via
+`survivalRV_eq_survival_map`). Route: the event inclusions `{X > t/a} ⊆ {Z > t}`,
+`{Y > t/b} ⊆ {Z > t}` (nonnegativity of the other summand) and
+`{Z > t} ⊆ {X > t/2a} ∪ {Y > t/2b}` give `max(S_X(t/a), S_Y(t/b)) ≤ S_Z(t) ≤ S_X(t/2a) + S_Y(t/2b)`
+by monotonicity and subadditivity of `Measure.real` (no measurability needed for the
+inequalities). Four reusable analytic rules on `HasFiniteTailExponent` finish it:
+`comp_const_mul` (positive argument rescaling keeps the exponent, since `log(ct)/log t → 1`),
+`max` (exponent `min`, exactly: the ratio is the minimum of the ratios), `add` (exponent `min`:
+`max ≤ S₁+S₂ ≤ 2·max` and the constant disappears in the log ratio), and `of_le_of_le` (squeeze).
+The log-denominator sign is handled once (`neg_log_div_log_antitone`, stated for `1 < t`).
+
+Scope, precisely: this is **exponent equality** in the `−log S(t)/log t` interface. It does not
+give survival-ratio asymptotics `S_Z ~ S_heavier`, regular variation of the sum, or any
+convolution asymptotics (the `two_power_tail_min` formula result is an exact power-formula
+statement and was *not* used — the general analytic bridge was proved instead, as the auditor
+asked). The signed-cancellation counterexample (G18) remains the reason for the nonnegativity
+hypothesis. T029 stays **partial**: its target reads "regularly varying tail dominates", which
+is the stronger ratio statement; remaining are the finite-family extension, an
+almost-sure-nonnegativity variant, and that ratio reading (or a documented decision that the
+exponent reading is the family's scope). States gain `law_theorem`; 16 credited declarations.
+
+### 17.3 Verification summary (v0.2.7)
+
+Clean `lake build` exit 0; `scripts/verify.py` exit 0 — 140 theorems, 8 instances, 16 aliases
+(164 public declarations), trust scan of all 296 project constants (79 internal) within the allowlist, ledger
+valid under the shared validator **and** the Markdown ledger equal to its rendering, every cited
+declaration present; `scripts/backlog_schema_probes.py` 18/18 (clean ledger, 12 malformed
+ledgers, rendering consistency plus 4 rendering mutations); `scripts/harness_regression.py`
+14/14 fixtures; archive validated from a fresh extraction. Evidence: `evidence/fable/v0.2.7/`.
+
+### 17.4 Ledger after v0.2.7
+
+158 families: 2 discharged (T060, T061), 9 partial (T001, T007, T008, T029, T032, T046, T047,
+T118, T124), 4 reuse, 91 missing, 34 source-check, 15 model-needed, 3 empirical — counts
+unchanged; T029's substance increased (probabilistic statement delivered) without a status
+change. Supplemental register: S001, S002 open.
+
+### 17.5 Recommended next tasks (dependency-ordered)
+
+1. **Exact Pareto slice against `paretoMeasure`** (T005/T021/T028/T032, delivered slices only):
+   global cdf/survival for lower endpoint `L > 0` and shape `α > 0`; moments finite exactly for
+   `p < α` with value `α L^p/(α − p)`, divergence at and above `α` in an extended nonnegative
+   integral interface (never a totalised real integral as evidence of finiteness); threshold
+   excess; positive-power pushforward. `affineLaw` supplies the pushforward definition and
+   positive-scale cdf rule, not the integration arguments.
+2. **T029 finite-family extension** (nonempty index, positive weights; `Finset.sup'`/sum versions
+   of the `max`/`add` rules) and the almost-sure-nonnegativity variant.
+3. **Domains of attraction, Fréchet case** (T011 formulation, T062 case): `M_n/(L n^{1/α})` of iid
+   Pareto coordinates → `frechetMeasure (1/α)`.
+4. **S002** densities on the open supports and `withDensity` identifications; **S001** unified GEV
+   with the explicit reparametrisation of the endpoint coordinate.

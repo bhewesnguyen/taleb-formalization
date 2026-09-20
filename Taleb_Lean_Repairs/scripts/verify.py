@@ -19,8 +19,9 @@ Two layers of checking:
    theorem/instance constants (provenance decided by Lean's own bookkeeping, not by
    namespace) equal the regex set, each `Taleb.ProofNN.repaired` alias targets the
    declaration named in `docs/replacement_map.json`, the ledger `docs/FORMALIZATION_BACKLOG.json`
-   is well-formed (`scripts/backlog_schema.py`, shared with its generator) and every Lean
-   declaration it credits to a family exists in the environment.
+   is well-formed (`scripts/backlog_schema.py`, shared with its generator), the Markdown ledger is
+   its rendering byte for byte, and every Lean declaration it credits to a family exists in the
+   environment.
 
 Additional gates: the Lake build log must contain no `warning:`/`error:` line and no
 `sorry`; dependency checkouts must be at the manifest revisions with clean working
@@ -30,7 +31,7 @@ none is a Python `assert`, so `python3 -O` / `PYTHONOPTIMIZE` cannot disable the
 import hashlib,json,re,subprocess,sys,time
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-from backlog_schema import validate as validate_backlog   # shared with scripts/rebuild_curated_inventory.py
+from backlog_schema import validate as validate_backlog, render_markdown   # shared with scripts/rebuild_curated_inventory.py
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'evidence/current'; OUT.mkdir(parents=True,exist_ok=True)
 ALLOW={'propext','Classical.choice','Quot.sound'}
@@ -131,6 +132,8 @@ def main():
     backlog=json.loads((ROOT/'docs/FORMALIZATION_BACKLOG.json').read_text())
     schema=validate_backlog(backlog)
     check(not schema, 'docs/FORMALIZATION_BACKLOG.json schema violations: '+str(schema))
+    # The human-readable ledger is derived, not maintained by hand (audit D026-1: it shipped a release stale).
+    check((ROOT/'docs/FORMALIZATION_BACKLOG.md').read_text()==render_markdown(backlog), 'docs/FORMALIZATION_BACKLOG.md is not the rendering of docs/FORMALIZATION_BACKLOG.json (run scripts/rebuild_curated_inventory.py)')
     cited={(b['id'],d) for b in backlog for d in b.get('declarations',[])}
     dangling=sorted(f"{i}:{d}" for i,d in cited if d not in env_names)
     check(not dangling, 'docs/FORMALIZATION_BACKLOG.json cites declarations that do not exist in the environment: '+str(dangling))
