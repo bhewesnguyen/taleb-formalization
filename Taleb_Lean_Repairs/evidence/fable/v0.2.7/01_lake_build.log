@@ -1,4 +1,14 @@
-ℹ [1919/2363] Replayed AuditRepairs.RegularVariation
+ℹ [2714/2744] Built AuditRepairs.ImplicitSetDiagnostic (1.4s)
+info: AuditRepairs/ImplicitSetDiagnostic.lean:23:0: @signature_probe : ∀ {univ : Set ℝ} {c : ℝ},
+  0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α)
+info: AuditRepairs/ImplicitSetDiagnostic.lean:24:0: theorem Proof09Probe.signature_probe : ∀ {univ : Set ℝ} {c : ℝ},
+  0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α) :=
+fun {univ} {c} _hc h => h
+info: AuditRepairs/ImplicitSetDiagnostic.lean:30:0: @statement : {univ : Set ℝ} → {c : ℝ} → 0 < c → Prop
+info: AuditRepairs/ImplicitSetDiagnostic.lean:31:0: def Proof09Probe.statement : {univ : Set ℝ} → {c : ℝ} → 0 < c → Prop :=
+fun {univ} {c} _hc => ConvexOn ℝ univ fun α => c ^ (-α)
+info: AuditRepairs/ImplicitSetDiagnostic.lean:49:0: 'Proof09Probe.submitted_statement_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2715/2744] Built AuditRepairs.RegularVariation (2.5s)
 info: AuditRepairs/RegularVariation.lean:125:0: 'AuditRV.isSlowlyVarying_log' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/RegularVariation.lean:126:0: 'AuditRV.isSlowlyVarying_const' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/RegularVariation.lean:127:0: 'AuditRV.isSlowlyVarying_neg_one' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -6,7 +16,13 @@ info: AuditRepairs/RegularVariation.lean:128:0: 'AuditRV.IsSlowlyVarying.of_tend
 info: AuditRepairs/RegularVariation.lean:129:0: 'AuditRV.IsRegularlyVarying.mul' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/RegularVariation.lean:130:0: 'AuditRV.IsRegularlyVarying.rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/RegularVariation.lean:131:0: 'AuditRV.isRegularlyVarying_iff_slowlyVarying' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1920/2363] Replayed AuditRepairs.Tails
+✔ [2716/2744] Built Proofs.Proof01_SlowlyVaryingLog (1.2s)
+✔ [2717/2744] Built Proofs.Proof02_SlowlyVaryingConst (1.2s)
+✔ [2718/2744] Built Proofs.Proof03_SlowlyVaryingOfTendsto (1.2s)
+✔ [2719/2744] Built Proofs.Proof04_RegularlyVaryingMul (1.2s)
+✔ [2720/2744] Built Proofs.Proof05_RegularlyVaryingRpow (1.2s)
+✔ [2721/2744] Built Proofs.Proof06_RVIffSlowlyVarying (1.2s)
+ℹ [2722/2744] Built AuditRepairs.Tails (3.0s)
 info: AuditRepairs/Tails.lean:188:0: 'AuditTails.pareto_log_ratio_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Tails.lean:189:0: 'AuditTails.pareto_hasFiniteTailExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Tails.lean:190:0: 'AuditTails.tailExponentReal_pareto' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -19,7 +35,7 @@ info: AuditRepairs/Tails.lean:196:0: 'AuditTails.frechetFormula_zero' depends on
 info: AuditRepairs/Tails.lean:197:0: 'AuditTails.frechet_formula_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Tails.lean:198:0: 'AuditTails.frechet_cdf_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Tails.lean:199:0: 'AuditTails.gumbel_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1921/2363] Replayed AuditRepairs.Stable
+ℹ [2723/2744] Built AuditRepairs.Stable (4.3s)
 info: AuditRepairs/Stable.lean:203:0: 'StableAudit.gaussian_specialization' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Stable.lean:204:0: 'StableAudit.gaussian_specialization_general' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Stable.lean:205:0: 'StableAudit.submitted_gaussian_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -32,11 +48,19 @@ info: AuditRepairs/Stable.lean:211:0: 'StableAudit.cauchy_stable_short' depends 
 info: AuditRepairs/Stable.lean:212:0: 'StableAudit.stableExpr_power' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Stable.lean:213:0: 'StableAudit.submitted_alpha_one_ignores_skew' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/Stable.lean:214:0: 'StableAudit.stableS1Expr_power' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [2714/2744] Replayed AuditRepairs.GaussianBridge
-info: AuditRepairs/GaussianBridge.lean:110:0: 'AuditGaussian.charFun_gaussianReal_eq_stableS1Expr' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: AuditRepairs/GaussianBridge.lean:111:0: 'AuditGaussian.convolutionPower_gaussianReal_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: AuditRepairs/GaussianBridge.lean:112:0: 'AuditGaussian.convolutionPower_gaussianReal' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [2720/2744] Replayed AuditRepairs.ExtremeValueBridge
+✔ [2724/2744] Built Proofs.Proof07_TailExponentPareto (1.2s)
+✔ [2725/2744] Built Proofs.Proof09_ConvexOnRpowNeg (1.2s)
+✔ [2726/2744] Built Proofs.Proof10_FrechetMaxstable (1.1s)
+✔ [2727/2744] Built Proofs.Proof11_GumbelMaxstable (1.2s)
+✔ [2728/2744] Built AuditRepairs.Foundations (1.4s)
+✔ [2729/2744] Built Proofs.Proof14_StableCharFnCauchy (1.1s)
+✔ [2730/2744] Built Proofs.Proof15_CauchyStable (1.1s)
+✔ [2731/2744] Built Proofs.Proof12_StableCharFnGaussian (1.2s)
+✔ [2732/2744] Built Proofs.Proof13_GaussianStable (1.2s)
+✔ [2733/2744] Built AuditRepairs.ProbabilityBridge (1.5s)
+✔ [2734/2744] Built Proofs.Proof08_SubexponentialTailExponent (1.3s)
+✔ [2735/2744] Built Proofs.Proof16_StableCharFnStable (1.3s)
+ℹ [2736/2744] Built AuditRepairs.ExtremeValueBridge (4.5s)
 info: AuditRepairs/ExtremeValueBridge.lean:263:0: 'AuditExtremes.measure_maxLeEvent' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueBridge.lean:264:0: 'AuditExtremes.measure_maxLeEvent_of_forall_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueBridge.lean:265:0: 'AuditExtremes.measureReal_maxLeEvent_of_forall_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -47,7 +71,21 @@ info: AuditRepairs/ExtremeValueBridge.lean:269:0: 'AuditExtremes.measure_minGtEv
 info: AuditRepairs/ExtremeValueBridge.lean:270:0: 'AuditExtremes.cdf_map_maxRV' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueBridge.lean:271:0: 'AuditExtremes.measureReal_map_minRV_Ioi' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueBridge.lean:272:0: 'AuditExtremes.measureReal_map_minRV_Ioi_eq_one_sub_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [2721/2744] Replayed AuditRepairs.ExtremeValueLaws
+ℹ [2737/2744] Built AuditRepairs.WeightedSums (3.2s)
+info: AuditRepairs/WeightedSums.lean:242:0: 'AuditTails.HasFiniteTailExponent.comp_const_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/WeightedSums.lean:243:0: 'AuditTails.HasFiniteTailExponent.max' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/WeightedSums.lean:244:0: 'AuditTails.HasFiniteTailExponent.add' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/WeightedSums.lean:245:0: 'AuditTails.HasFiniteTailExponent.of_le_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/WeightedSums.lean:246:0: 'AuditProbability.survivalRV_eq_survival_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/WeightedSums.lean:247:0: 'AuditProbability.hasFiniteTailExponent_weightedSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/WeightedSums.lean:248:0: 'AuditProbability.hasFiniteTailExponent_survival_map_weightedSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [2738/2744] Built AuditRepairs.GaussianBridge (4.0s)
+info: AuditRepairs/GaussianBridge.lean:110:0: 'AuditGaussian.charFun_gaussianReal_eq_stableS1Expr' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/GaussianBridge.lean:111:0: 'AuditGaussian.convolutionPower_gaussianReal_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AuditRepairs/GaussianBridge.lean:112:0: 'AuditGaussian.convolutionPower_gaussianReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2739/2744] Built AuditRepairs.ExtremeValueLaws (7.2s)
 info: AuditRepairs/ExtremeValueLaws.lean:434:0: 'AuditEVTLaws.gumbelMeasure_isProbabilityMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueLaws.lean:435:0: 'AuditEVTLaws.cdf_gumbelMeasure_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueLaws.lean:436:0: 'AuditEVTLaws.cdf_map_maxRV_gumbel' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -63,7 +101,7 @@ info: AuditRepairs/ExtremeValueLaws.lean:445:0: 'AuditEVTLaws.cdf_reverseWeibull
 info: AuditRepairs/ExtremeValueLaws.lean:446:0: 'AuditEVTLaws.reverseWeibullCDF_maxstable' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueLaws.lean:447:0: 'AuditEVTLaws.cdf_map_maxRV_reverseWeibull' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueLaws.lean:448:0: 'AuditEVTLaws.cdf_map_maxRV_pi_reverseWeibull' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [2722/2744] Replayed AuditRepairs.ExtremeValueAffine
+ℹ [2740/2744] Built AuditRepairs.ExtremeValueAffine (4.6s)
 info: AuditRepairs/ExtremeValueAffine.lean:161:0: 'AuditEVTLaws.cdf_affineLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueAffine.lean:162:0: 'AuditEVTLaws.cdf_gumbelLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueAffine.lean:163:0: 'AuditEVTLaws.cdf_frechetLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -71,27 +109,8 @@ info: AuditRepairs/ExtremeValueAffine.lean:164:0: 'AuditEVTLaws.cdf_reverseWeibu
 info: AuditRepairs/ExtremeValueAffine.lean:165:0: 'AuditEVTLaws.map_maxRV_gumbelLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueAffine.lean:166:0: 'AuditEVTLaws.map_maxRV_frechetLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditRepairs/ExtremeValueAffine.lean:167:0: 'AuditEVTLaws.map_maxRV_reverseWeibullLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [2723/2744] Replayed AuditRepairs.WeightedSums
-info: AuditRepairs/WeightedSums.lean:242:0: 'AuditTails.HasFiniteTailExponent.comp_const_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: AuditRepairs/WeightedSums.lean:243:0: 'AuditTails.HasFiniteTailExponent.max' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: AuditRepairs/WeightedSums.lean:244:0: 'AuditTails.HasFiniteTailExponent.add' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: AuditRepairs/WeightedSums.lean:245:0: 'AuditTails.HasFiniteTailExponent.of_le_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: AuditRepairs/WeightedSums.lean:246:0: 'AuditProbability.survivalRV_eq_survival_map' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: AuditRepairs/WeightedSums.lean:247:0: 'AuditProbability.hasFiniteTailExponent_weightedSum' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: AuditRepairs/WeightedSums.lean:248:0: 'AuditProbability.hasFiniteTailExponent_survival_map_weightedSum' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-ℹ [2724/2744] Replayed AuditRepairs.ImplicitSetDiagnostic
-info: AuditRepairs/ImplicitSetDiagnostic.lean:23:0: @signature_probe : ∀ {univ : Set ℝ} {c : ℝ},
-  0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α)
-info: AuditRepairs/ImplicitSetDiagnostic.lean:24:0: theorem Proof09Probe.signature_probe : ∀ {univ : Set ℝ} {c : ℝ},
-  0 < c → (ConvexOn ℝ univ fun α => c ^ (-α)) → ConvexOn ℝ univ fun α => c ^ (-α) :=
-fun {univ} {c} _hc h => h
-info: AuditRepairs/ImplicitSetDiagnostic.lean:30:0: @statement : {univ : Set ℝ} → {c : ℝ} → 0 < c → Prop
-info: AuditRepairs/ImplicitSetDiagnostic.lean:31:0: def Proof09Probe.statement : {univ : Set ℝ} → {c : ℝ} → 0 < c → Prop :=
-fun {univ} {c} _hc => ConvexOn ℝ univ fun α => c ^ (-α)
-info: AuditRepairs/ImplicitSetDiagnostic.lean:49:0: 'Proof09Probe.submitted_statement_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [2743/2744] Replayed AuditVerification
+✔ [2741/2744] Built AuditRepairs (1.1s)
+ℹ [2743/2744] Built AuditVerification (44s)
 info: AuditVerification.lean:3:0: 'AuditEVTLaws.measurable_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditVerification.lean:4:0: 'AuditEVTLaws.affineLaw_isProbabilityMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditVerification.lean:5:0: 'AuditEVTLaws.affineLaw_zero_one' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -259,3 +278,8 @@ info: AuditVerification.lean:164:0: 'Taleb.Proof14.repaired' depends on axioms: 
 info: AuditVerification.lean:165:0: 'Taleb.Proof15.repaired' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: AuditVerification.lean:166:0: 'Taleb.Proof16.repaired' depends on axioms: [propext, Classical.choice, Quot.sound]
 Build completed successfully (2744 jobs).
+
+real	1m6.341s
+user	1m39.368s
+sys	0m11.011s
+build exit=0

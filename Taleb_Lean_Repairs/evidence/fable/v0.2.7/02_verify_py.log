@@ -1,0 +1,2 @@
+PASS: 140 theorems, 8 instance, 16 aliases; no extra axioms; trust scan: 296 project constants (incl. 79 internal) all within allowlist; 164 public theorem/instance constants match the regex inventory
+verify exit=0
