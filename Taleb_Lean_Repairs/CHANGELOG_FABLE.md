@@ -1,5 +1,87 @@
 # Changelog: Fable review
 
+## v0.2.5 → v0.2.6 (fourth corrective pass; reverse-Weibull and location/scale laws; T061 discharged)
+
+Trigger: the independent audit of v0.2.5 (`Taleb_Fable_v0.2.5_Independent_Audit.pdf`, SHA-256
+`011567eaec47a98dd994b21fdac45b282ff00a8eb10c9b48946548fb6d29bae4`; ledger `Taleb_Proof_Progress_v0.2.5.md`,
+`305c86a77b474eb81e80adc1a987363ca4228c1fffa292f59b551a308cd2e70a`; evidence ZIP
+`8f604b672f43071e6e29338443441a7ae091d021c2e7451f49eaad2c6a3d8cc5`). Details: `FABLE_REVIEW.md` §16.
+
+### Mathematical statement changes
+
+No pre-existing theorem, definition, instance, alias or proof was modified. **Added** (all with closure
+`{propext, Classical.choice, Quot.sound}`):
+
+| Declaration | Kind | Content |
+|---|---|---|
+| `AuditEVTLaws.reverseWeibullCDF α x` | def | `exp(−(−x)^α)` for `x < 0`, `1` for `x ≥ 0` (Type III, upper endpoint `0`; `ExtremeValueLaws.lean`). |
+| `AuditEVTLaws.reverseWeibullCDF_of_neg`, `_of_nonneg`, `_le_one`, `_monotone`, `_continuousWithinAt_Ici`, `_tendsto_atBot`, `_tendsto_atTop` | theorems | analytic properties for `0 < α` (right-continuity needs no hypothesis on `α`). |
+| `AuditEVTLaws.reverseWeibullStieltjes α hα`, `reverseWeibullMeasure α hα` | defs | Stieltjes function and measure. |
+| `AuditEVTLaws.reverseWeibullMeasure_isProbabilityMeasure` | instance | total mass one. |
+| `AuditEVTLaws.cdf_reverseWeibullMeasure`, `cdf_reverseWeibullMeasure_apply` | theorems | cdf identities. |
+| `AuditEVTLaws.reverseWeibullCDF_maxstable` | theorem | `W_α(x)^n = W_α(n^{1/α} x)` for every `n : ℕ`. |
+| `AuditEVTLaws.cdf_map_maxRV_reverseWeibull`, `cdf_map_maxRV_pi_reverseWeibull` | theorems | maximum of independent `reverseWeibullMeasure` coordinates has cdf `W_α(n^{1/α} x)`; product-space realization. |
+| `AuditEVTLaws.affineLaw ν μ σ` | def | `ν.map (fun z => μ + σ z)` (new module `ExtremeValueAffine.lean`). |
+| `AuditEVTLaws.measurable_affine`, `affineLaw_zero_one`, `affine_preimage_Iic`, `cdf_affineLaw` | theorems | measurability; `affineLaw ν 0 1 = ν`; for `σ > 0`, preimage of `Iic x` is `Iic ((x − μ)/σ)` and `cdf (affineLaw ν μ σ) x = cdf ν ((x − μ)/σ)`. |
+| `AuditEVTLaws.affineLaw_isProbabilityMeasure`, `gumbelLaw_isProbabilityMeasure`, `frechetLaw_isProbabilityMeasure`, `reverseWeibullLaw_isProbabilityMeasure` | instances | probability measures. |
+| `AuditEVTLaws.gumbelLaw μ σ`, `frechetLaw ξ hξ μ σ`, `reverseWeibullLaw α hα μ σ` | defs | the location/scale families. |
+| `AuditEVTLaws.cdf_gumbelLaw`, `cdf_frechetLaw`, `cdf_reverseWeibullLaw` | theorems | `G((x − μ)/σ)` distribution functions for `σ > 0`. |
+| `AuditEVTLaws.map_maxRV_gumbelLaw`, `map_maxRV_frechetLaw`, `map_maxRV_reverseWeibullLaw` | theorems | **equalities of laws**: the maximum of `n` independent location/scale coordinates is `gumbelLaw (μ + σ log n) σ`, `frechetLaw ξ μ (σ n^ξ)`, `reverseWeibullLaw α μ (σ n^{−1/α})`. |
+
+Counts: 103 → **125 theorems**, 3 → **8 instances**, 16 aliases (**149** checked); trust scan 216 → **270**
+constants (69 internal). Backlog: **T061
+discharged** (second closed family; states gain `law_theorem` and `discharged`, 45 credited
+declarations, scope and remaining rewritten); all other rows unchanged.
+
+### Changed files
+
+| File | Change |
+|---|---|
+| `AuditRepairs/ExtremeValueLaws.lean` | New section "Reverse-Weibull" appended after the Fréchet section; five `#print axioms` lines added. Existing content untouched. |
+| `AuditRepairs/ExtremeValueAffine.lean` | **New** (imports `AuditRepairs.ExtremeValueLaws`). |
+| `AuditRepairs/ExtremeValueBridge.lean` | Docstrings only (audit D025-1): strict and non-strict threshold events differ exactly on `{minRV X = x}` resp. `{maxRV X = x}`, not on `{∃ i, Xᵢ = x}`. |
+| `AuditRepairs.lean` | Imports `AuditRepairs.ExtremeValueAffine`. |
+| `AuditVerification.lean` | Regenerated: 149 `#print axioms` lines. |
+| `scripts/backlog_schema.py` | **New** (audit V025-L1): the single ledger validator — exact ID sequence `T001…T158`, typed fields, no unknown fields, nonblank text, fixed vocabularies, no duplicate states/declarations, status ⇔ state ⇔ Boolean agreement, delivery fields present together, PDF anchor offset. |
+| `scripts/backlog_schema_probes.py` | **New**: 12 malformed-ledger probes (the auditor's three and nine more) plus the clean ledger; writes `evidence/current/backlog_schema_probes.json`. |
+| `scripts/rebuild_curated_inventory.py` | Imports the shared validator and refuses to write a malformed ledger; local vocabularies removed. T061 row: status `discharged`, states, 24 new declarations, target/hypotheses "Delivered" text, scope and remaining. |
+| `scripts/verify.py` | Imports the shared validator in place of its private schema loop; docstring updated. **Discovery fix (self-found, H026-1):** the regex inventory kept a namespace-only stack and popped it at every `end`, including `end <Section>`; every declaration after a section end lost its namespace. Masked in v0.2.5 (nothing followed `end Frechet`), it surfaced immediately in v0.2.6 as a failed `AuditVerification` build — the intended fail-closed behaviour. Now one stack for namespaces and sections. Report fields unchanged. |
+| `scripts/harness_regression.py` | New fixtures `backlog_duplicate_id` (expected FAIL on `schema violations`) and `namespace_section_theorem` (positive control: a theorem after `end <Section>` inside a namespace must be discovered with its namespace); 14 fixtures. |
+| `docs/FORMALIZATION_BACKLOG.json`, `.md` | Regenerated / synced (158/158): T061 discharged. |
+| `docs/REPLACEMENT_MAP.md`, `docs/replacement_map.json` | Rows 10, 11 (audit D025-2): "remains open" clauses rewritten as history; v0.2.6 location/scale laws noted. |
+| `docs/MATHLIB_AND_WORK_ORDER.md` | CDF row and slice 4: T061 done. |
+| `docs/AUDIT_HISTORY.md` | Round 5 (audit of v0.2.5) added; round-4 response names Gumbel **and** Fréchet (audit D025-2). |
+| `README.md` | Version, counts (125/8/16, 149), module list, verifier/regression/probe descriptions, "What is still open". |
+| `FABLE_REVIEW.md` | §14.2 boundary-event wording corrected; + §16. |
+| `lakefile.toml` | `version = "0.2.6"`. |
+| `SHA256SUMS`, `evidence/current/*`, `evidence/fable/v0.2.6/` | Regenerated / new evidence layer. |
+
+Repository (outside the package): `audits/06_astra_on_v0.2.5/` holds the received audit; a `git bundle`
+accompanies the v0.2.6 ZIP.
+
+Pins unchanged: `lean-toolchain`, `lake-manifest.json`, Mathlib `rev`.
+
+### Compatibility implications
+
+- Client code: none for existing declarations. New namespace members under `AuditEVTLaws` only.
+- Verification: `verify.py` now imports `scripts/backlog_schema.py` (same directory; no new
+  third-party dependency). `harness_regression.py` runs 14 fixtures (≈ 25–35 min).
+- Backlog JSON: schema unchanged; enforcement stricter (a hand-edited ledger with duplicate IDs,
+  contradictory flags or non-string text now fails both the generator and the verifier).
+
+### Validation performed (v0.2.6)
+
+- `rm -rf .lake/build; lake build`: exit 0, no warnings.
+- `python3 scripts/verify.py`: exit 0, `PASS: 125 theorems, 8 instance, 16 aliases; no extra axioms; trust
+  scan: 270 project constants (incl. 69 internal) all within allowlist; 149 public theorem/instance
+  constants match the regex inventory`; ledger valid; all cited declarations present.
+- `python3 scripts/backlog_schema_probes.py`: exit 0, 13/13 (clean ledger + 12 probes).
+- `python3 scripts/harness_regression.py`: exit 0, 14/14 fixtures as expected.
+- Documentation consistency: replacement map 16/16, backlog 158/158.
+- Final ZIP validated from a fresh extraction (`deliverables/v0.2.6/archive_validation_v0.2.6.log`).
+
+---
+
 ## v0.2.4 → v0.2.5 (third corrective pass; Gumbel and Fréchet laws constructed)
 
 Trigger: the independent audit of v0.2.4 (`Taleb_Fable_v0.2.4_Independent_Audit.pdf`, SHA-256

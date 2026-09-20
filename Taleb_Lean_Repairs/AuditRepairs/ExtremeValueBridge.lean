@@ -46,8 +46,9 @@ theorem maxLeEvent_eq_iInter (X : ι → Ω → ℝ) (x : ℝ) :
 def minGtEvent (X : ι → Ω → ℝ) (x : ℝ) : Set Ω := {ω | ∀ i, x < X i ω}
 
 /-- Every coordinate is at least `x`: the minimum is `≥ x` (non-strict variant). The strict
-and non-strict events differ on the boundary event `{∃ i, Xᵢ = x}`; their probabilities differ
-by the boundary mass, which is zero for atomless laws. -/
+and non-strict events differ exactly on `{ω | minRV X ω = x}` (the minimum sits on the
+threshold); their probabilities differ by the mass of that event, which is zero for atomless
+coordinate laws. (The larger event `{∃ i, Xᵢ = x}` merely contains the difference.) -/
 def minGeEvent (X : ι → Ω → ℝ) (x : ℝ) : Set Ω := {ω | ∀ i, x ≤ X i ω}
 
 /-- Every coordinate is below `x` strictly: the maximum is `< x`. -/
@@ -140,9 +141,9 @@ Book §9.1, equation (9.1), printed p. 172 (PDF p. 186): `P(X_max ≤ x) = F(x)^
 independent variables with common distribution function `F`. The survival analogue for the
 minimum, `P(min > x) = S(x)^n` with `S = 1 − F`, is a proved companion of the book's "max (or
 minimum)" remark, not a displayed equation. Threshold conventions are stated explicitly
-(`Iic`/`Iio` for maxima, `Ioi`/`Ici` for minima); atoms are permitted, and strict/non-strict
-probabilities differ exactly by the boundary mass. The three EVT distribution forms are on
-printed p. 173 (PDF p. 187). -/
+(`Iic`/`Iio` for maxima, `Ioi`/`Ici` for minima); atoms are permitted, and the strict and
+non-strict probabilities differ exactly by the mass of `{maxRV X = x}` resp. `{minRV X = x}`.
+The three EVT distribution forms are on printed p. 173 (PDF p. 187). -/
 
 /-- Independent coordinates and any measurable `B ⊆ ℝ`: the probability that every
 coordinate lies in `B` is the product of the coordinate probabilities. Every threshold

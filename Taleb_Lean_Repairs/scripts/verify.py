@@ -18,8 +18,9 @@ Two layers of checking:
    subdirectories) is imported into the environment, the user-written public
    theorem/instance constants (provenance decided by Lean's own bookkeeping, not by
    namespace) equal the regex set, each `Taleb.ProofNN.repaired` alias targets the
-   declaration named in `docs/replacement_map.json`, and every Lean declaration that
-   `docs/FORMALIZATION_BACKLOG.json` credits to a family exists in the environment.
+   declaration named in `docs/replacement_map.json`, the ledger `docs/FORMALIZATION_BACKLOG.json`
+   is well-formed (`scripts/backlog_schema.py`, shared with its generator) and every Lean
+   declaration it credits to a family exists in the environment.
 
 Additional gates: the Lake build log must contain no `warning:`/`error:` line and no
 `sorry`; dependency checkouts must be at the manifest revisions with clean working
@@ -28,6 +29,8 @@ none is a Python `assert`, so `python3 -O` / `PYTHONOPTIMIZE` cannot disable the
 """
 import hashlib,json,re,subprocess,sys,time
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from backlog_schema import validate as validate_backlog   # shared with scripts/rebuild_curated_inventory.py
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'evidence/current'; OUT.mkdir(parents=True,exist_ok=True)
 ALLOW={'propext','Classical.choice','Quot.sound'}
@@ -56,12 +59,17 @@ def declarations():
     anything it misses."""
     result=[]
     for path in sorted((ROOT/'AuditRepairs').rglob('*.lean')):
-        namespaces=[]
+        # One stack for namespaces and sections: `end` closes whichever is innermost. Sections
+        # contribute no name component. (v0.2.6: a namespace-only stack popped the namespace at
+        # `end <Section>`, misnaming every declaration after a section end; masked in v0.2.5
+        # because none followed, caught by the failed AuditVerification build in v0.2.6.)
+        scopes=[]
         for line in path.read_text().splitlines():
-            if re.match(r'^namespace ',line): namespaces.append(line.split()[1])
-            elif re.match(r'^end\b',line) and namespaces: namespaces.pop()
+            if re.match(r'^namespace ',line): scopes.append(line.split()[1])
+            elif re.match(r'^(noncomputable )?section\b',line): scopes.append(None)
+            elif re.match(r'^end\b',line) and scopes: scopes.pop()
             m=re.match(r'^(theorem|lemma|instance)\s+(\S+)',line)
-            if m: result.append(dict(name='.'.join(namespaces+[m[2]]),kind=m[1],file=str(path.relative_to(ROOT))))
+            if m: result.append(dict(name='.'.join([n for n in scopes if n]+[m[2]]),kind=m[1],file=str(path.relative_to(ROOT))))
     result += [dict(name=f'Taleb.Proof{i:02}.repaired',kind='alias',file=str(f.relative_to(ROOT)))
                for i,f in enumerate(sorted((ROOT/'Proofs').glob('Proof*.lean')),1)]
     return result
@@ -117,22 +125,12 @@ def main():
     rmap={f"Taleb.Proof{m['proof']:02}.repaired":m['declaration'] for m in json.loads((ROOT/'docs/replacement_map.json').read_text())}
     aliases={r['name']:r['aliasOf'] for r in rows if r['aliasOf']}
     check(aliases==rmap, 'Alias targets differ from docs/replacement_map.json: '+str({k:(aliases.get(k),rmap.get(k)) for k in set(aliases)|set(rmap) if aliases.get(k)!=rmap.get(k)}))
-    # Backlog ledger: schema validity (mirrors scripts/rebuild_curated_inventory.py, audit of v0.2.4)
-    # and existence in the scanned environment of every credited Lean declaration.
+    # Backlog ledger: shape validated by the validator shared with the generator (audit V025-L1),
+    # then existence in the scanned environment of every credited Lean declaration.
     env_names={r['name'] for r in rows}
     backlog=json.loads((ROOT/'docs/FORMALIZATION_BACKLOG.json').read_text())
-    STATES={'formula_proved','conditional_law_theorem','law_theorem','actual_law_constructed','source_reviewed','discharged'}
-    STATUSES={'partial','reuse','missing','source-check','model-needed','empirical','discharged'}
-    schema=[]
-    for b in backlog:
-        st=set(b.get('states',[])); has=bool(b.get('declarations'))
-        if b['status'] not in STATUSES: schema.append(f"{b['id']}: unknown status {b['status']!r}")
-        if not st<=STATES: schema.append(f"{b['id']}: unknown states {sorted(st-STATES)}")
-        if (b['status']=='discharged')!=('discharged' in st): schema.append(f"{b['id']}: discharged status and state disagree")
-        if bool(st)!=has or bool(st)!=bool(b.get('delivery_scope')) or bool(st)!=bool(b.get('remaining_obligations')):
-            schema.append(f"{b['id']}: delivery states, declarations, delivery_scope and remaining_obligations must be present together")
+    schema=validate_backlog(backlog)
     check(not schema, 'docs/FORMALIZATION_BACKLOG.json schema violations: '+str(schema))
-    check(len(backlog)==158, f'docs/FORMALIZATION_BACKLOG.json has {len(backlog)} rows, expected 158')
     cited={(b['id'],d) for b in backlog for d in b.get('declarations',[])}
     dangling=sorted(f"{i}:{d}" for i,d in cited if d not in env_names)
     check(not dangling, 'docs/FORMALIZATION_BACKLOG.json cites declarations that do not exist in the environment: '+str(dangling))

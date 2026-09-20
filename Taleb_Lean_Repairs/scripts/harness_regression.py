@@ -83,6 +83,17 @@ def fx_nested_imported_module(c):
         "theorem nested_extra : IsSlowlyVarying Real.log := isSlowlyVarying_log\n\nend AuditRV\n")
     append(c/'AuditRepairs.lean',"import AuditRepairs.Nested.Extra\n")
     regenerate_audit_verification(c)
+def fx_namespace_section_theorem(c):
+    (c/'AuditRepairs/Nested').mkdir()
+    (c/'AuditRepairs/Nested/Sectioned.lean').write_text(
+        "set_option autoImplicit false\n\nnamespace AuditNested\n\nsection Inner\n\nvariable (n : Nat)\n\ntheorem inner_trivial : n = n := rfl\n\nend Inner\n\n"
+        "theorem after_section (n : Nat) : n + 0 = n := Nat.add_zero n\n\nend AuditNested\n")
+    append(c/'AuditRepairs.lean',"import AuditRepairs.Nested.Sectioned\n")
+    regenerate_audit_verification(c)
+def fx_backlog_duplicate_id(c):
+    p=c/'docs/FORMALIZATION_BACKLOG.json'; rows=json.loads(p.read_text())
+    rows[2]['id']='T002'                      # T003 replaced by a second T002 (audit V025-L1)
+    p.write_text(json.dumps(rows,indent=2,ensure_ascii=False)+'\n')
 def fx_dirty_dependency(c):
     append(c/'.lake/packages/Cli/README.md',"\n<!-- regression fixture: tracked dependency file modified -->\n")
 
@@ -109,6 +120,10 @@ FIXTURES=[
   fx_nested_orphan_module,'FAIL','not imported into the environment',{},None),
  ('nested_imported_module',"New nested module AuditRepairs/Nested/Extra.lean with a public theorem, imported from AuditRepairs.lean, AuditVerification.lean regenerated (positive control for recursive discovery).",
   fx_nested_imported_module,'PASS','',{},None),
+ ('namespace_section_theorem',"New nested module with a theorem placed after `end <Section>` inside a namespace, imported, AuditVerification.lean regenerated (positive control: discovery must not pop the namespace at a section end; a v0.2.5 defect).",
+  fx_namespace_section_theorem,'PASS',None,{},None),
+ ('backlog_duplicate_id',"docs/FORMALIZATION_BACKLOG.json with T003's id replaced by a second T002 (audit of v0.2.5, V025-L1: the ledger gate must reject duplicate/missing family IDs).",
+  fx_backlog_duplicate_id,'FAIL','schema violations',{},None),
  ('dirty_dependency',"Tracked file modified inside .lake/packages/Cli (dependency working tree not clean).",
   fx_dirty_dependency,'FAIL','working-tree modifications',{},None),
 ]

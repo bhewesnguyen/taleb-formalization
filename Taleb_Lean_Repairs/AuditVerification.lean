@@ -1,5 +1,19 @@
 import AuditRepairs
 
+#print axioms AuditEVTLaws.measurable_affine
+#print axioms AuditEVTLaws.affineLaw_isProbabilityMeasure
+#print axioms AuditEVTLaws.affineLaw_zero_one
+#print axioms AuditEVTLaws.affine_preimage_Iic
+#print axioms AuditEVTLaws.cdf_affineLaw
+#print axioms AuditEVTLaws.gumbelLaw_isProbabilityMeasure
+#print axioms AuditEVTLaws.frechetLaw_isProbabilityMeasure
+#print axioms AuditEVTLaws.reverseWeibullLaw_isProbabilityMeasure
+#print axioms AuditEVTLaws.cdf_gumbelLaw
+#print axioms AuditEVTLaws.cdf_frechetLaw
+#print axioms AuditEVTLaws.cdf_reverseWeibullLaw
+#print axioms AuditEVTLaws.map_maxRV_gumbelLaw
+#print axioms AuditEVTLaws.map_maxRV_frechetLaw
+#print axioms AuditEVTLaws.map_maxRV_reverseWeibullLaw
 #print axioms AuditExtremes.maxLeEvent_eq_iInter
 #print axioms AuditExtremes.minGtEvent_eq_iInter
 #print axioms AuditExtremes.minGeEvent_eq_iInter
@@ -47,6 +61,19 @@ import AuditRepairs
 #print axioms AuditEVTLaws.cdf_frechetMeasure_apply
 #print axioms AuditEVTLaws.cdf_map_maxRV_frechet
 #print axioms AuditEVTLaws.cdf_map_maxRV_pi_frechet
+#print axioms AuditEVTLaws.reverseWeibullCDF_of_neg
+#print axioms AuditEVTLaws.reverseWeibullCDF_of_nonneg
+#print axioms AuditEVTLaws.reverseWeibullCDF_le_one
+#print axioms AuditEVTLaws.reverseWeibullCDF_monotone
+#print axioms AuditEVTLaws.reverseWeibullCDF_continuousWithinAt_Ici
+#print axioms AuditEVTLaws.reverseWeibullCDF_tendsto_atTop
+#print axioms AuditEVTLaws.reverseWeibullCDF_tendsto_atBot
+#print axioms AuditEVTLaws.reverseWeibullMeasure_isProbabilityMeasure
+#print axioms AuditEVTLaws.cdf_reverseWeibullMeasure
+#print axioms AuditEVTLaws.cdf_reverseWeibullMeasure_apply
+#print axioms AuditEVTLaws.reverseWeibullCDF_maxstable
+#print axioms AuditEVTLaws.cdf_map_maxRV_reverseWeibull
+#print axioms AuditEVTLaws.cdf_map_maxRV_pi_reverseWeibull
 #print axioms AuditRV.regularlyVarying_zero_iff
 #print axioms AuditRV.regularlyVarying_power
 #print axioms AuditRV.IsRegularlyVarying.congr

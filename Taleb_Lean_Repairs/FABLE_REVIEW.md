@@ -521,9 +521,11 @@ the v0.2.4 text cited p. 173 for both.)
 - Events with explicit threshold conventions: `maxLeEvent` (`≤`, v0.2.3), `maxLtEvent` (`<`),
   `minGtEvent` (`>`, survival convention), `minGeEvent` (`≥`); their `⋂`-forms, product forms,
   and the `p ^ Fintype.card ι` / real `q ^ n` forms for the minimum (`measure_minGtEvent_of_forall_eq`,
-  `measureReal_minGtEvent_of_forall_eq`). Strict and non-strict versions differ on the boundary
-  event `{∃ i, Xᵢ = x}`, so their probabilities differ by the boundary mass (zero for atomless
-  laws); atoms are therefore handled, not excluded.
+  `measureReal_minGtEvent_of_forall_eq`). Strict and non-strict versions differ exactly on
+  `{maxRV X = x}` resp. `{minRV X = x}` (the extremum sits on the threshold), so their
+  probabilities differ by the mass of that event, zero for atomless coordinate laws; atoms are
+  therefore handled, not excluded. (v0.2.5 wrote `{∃ i, Xᵢ = x}`, which only contains the
+  difference; corrected on the v0.2.5 auditor's remark.)
 - Random variables `maxRV X := Finset.univ.sup' _ X`, `minRV X := Finset.univ.inf' _ X`
   (nonempty finite index), measurable when the coordinates are (`measurable_maxRV`,
   `measurable_minRV`; Mathlib has `Finset.measurable_sup'` but no `inf'` twin in the pinned
@@ -660,3 +662,107 @@ change, which is exactly the situation the new scope/remaining fields are for.
    squeeze lemma for `HasFiniteTailExponent`.
 3. **Exact Pareto slice against `paretoMeasure`** (unchanged): survival, moments, divergence,
    threshold excess, power pushforward (T005/T021/T028/T032).
+
+## 16. Addendum (v0.2.6): response to the independent audit of v0.2.5, and T061 closed
+
+The fourth independent audit (`Taleb_Fable_v0.2.5_Independent_Audit.pdf`, SHA-256
+`011567ea…29bae4`; ledger `Taleb_Proof_Progress_v0.2.5.md`, `305c86a7…cd2e70a`; evidence ZIP
+`8f604b67…a3d8cc5`; kept under `audits/06_astra_on_v0.2.5/`) accepted the Gumbel and Fréchet
+constructions with no mathematical finding, closed H1/H2 on a full relative-path run of the
+suite, matched the release identity, and raised one low-priority verifier gap and two
+documentation corrections. All are confirmed and repaired here, and the remaining T061 children
+are delivered. No pre-existing theorem, proof, definition or pin was modified.
+
+### 16.1 Audit findings and repairs
+
+| Finding | Confirmed | Repair |
+|---|---|---|
+| **V025-L1** the ledger gate accepted duplicate family IDs, a `discharged: false` on a discharged row, and a non-string `delivery_scope` | Yes (replayed the auditor's three mutations) | One validator, `scripts/backlog_schema.py`, is now imported by both the generator (`rebuild_curated_inventory.py` refuses to write a malformed ledger) and the verifier. It requires the ID sequence to be exactly `T001…T158` in order, every field present with its declared type (`bool` is not accepted as `int` or vice versa), no unknown fields, nonblank locator/title/target/hypotheses text, known unit/priority/status/state vocabularies, no duplicate states or declarations, `status = discharged` ⇔ `discharged ∈ states` ⇔ `discharged = true`, the four delivery fields present together, and `pdf_anchor_page = first printed page + 14`. `scripts/backlog_schema_probes.py` replays the auditor's three cases and nine more (missing row, extra field, blank title, unknown state/status, duplicate declaration, scope without states, wrong anchor, integer flag) in seconds; the regression suite gained an end-to-end fixture `backlog_duplicate_id`. |
+| **D025-1** "differ on the boundary event `{∃ i, Xᵢ = x}`": that set only *contains* the difference | Yes | The exact difference is `{minRV X = x}` (resp. `{maxRV X = x}`): the extremum sits on the threshold. §14.2, the module and definition docstrings in `ExtremeValueBridge.lean` corrected. |
+| **D025-2** stale "remains open" clauses for the EVT measures in `REPLACEMENT_MAP` rows 10/11 and a Gumbel-only round-4 line in `AUDIT_HISTORY.md` | Yes | Rows 10/11 reworded as history ("was open until v0.2.5", "constructed in v0.2.5", now extended to v0.2.6); round-4 response text names Gumbel and Fréchet. |
+| T061 lacked the `law_theorem` facet although `cdf_map_maxRV_gumbel`/`_frechet` are law theorems under ordinary hypotheses | Yes | Facet added (with the rest of the T061 update below). |
+| **H026-1 (self-found during this pass)**: the regex public-API discovery in `verify.py` popped its namespace stack at every `end`, including section ends, so every declaration after `end <Section>` inside a namespace was recorded unqualified | Yes — the first clean build of v0.2.6 failed in `AuditVerification.lean` with 22 `Unknown constant` errors, because the reverse-Weibull section and the affine module's sections are followed by further declarations (in v0.2.5 nothing followed `end Frechet`, so the defect was latent) | Discovery now keeps one stack for namespaces and sections (sections contribute no name component; `noncomputable section` handled). Positive-control fixture `namespace_section_theorem` added to the regression suite (14 fixtures). The failure mode was the designed fail-closed one — a misnamed declaration cannot be `#print axioms`-checked, so the build fails — but it would have blocked a release rather than passed a wrong one; recorded so the auditor can see the harness's own defect history. |
+
+### 16.2 Mathematics added: reverse-Weibull and location/scale (T061 children 3–4)
+
+`AuditRepairs/ExtremeValueLaws.lean`, new section (12 theorems, 1 instance). The standard
+reverse-Weibull (Type III) distribution function with shape `α > 0` and upper endpoint `0`,
+`reverseWeibullCDF α x = exp(−(−x)^α)` for `x < 0` and `1` for `x ≥ 0` (book §9.1, printed
+p. 173, with `ξ = −1/α`; not the right-supported Weibull lifetime law), is shown monotone
+(`rpow_le_rpow` on `0 < −y ≤ −x`), right-continuous everywhere (locally the smooth formula left
+of `0`, identically `1` on `[0, ∞)`; no hypothesis on `α` is needed for this part), with limits
+`0` at `−∞` (via `tendsto_rpow_atTop`) and `1` at `+∞`. It is bundled as `reverseWeibullStieltjes`,
+its Lebesgue–Stieltjes measure `reverseWeibullMeasure α hα` is a probability measure with
+`cdf (reverseWeibullMeasure α hα) x = reverseWeibullCDF α x`, and the analytic max-stability
+`W_α(x)^n = W_α(n^{1/α} x)` holds for **every** `n : ℕ` (for `n = 0` both sides are `1`, since
+`0^{1/α} = 0` and `W_α 0 = 1`), unlike the Fréchet identity which needs `0 < n`. The maximum law is
+instantiated (`cdf_map_maxRV_reverseWeibull`) and realized on the product space
+(`cdf_map_maxRV_pi_reverseWeibull`).
+
+`AuditRepairs/ExtremeValueAffine.lean`, new module (10 theorems, 4 instances). One positive affine
+pushforward serves all three families: `affineLaw ν μ σ := ν.map (fun z => μ + σ z)` is a
+probability measure whenever `ν` is (`affineLaw_isProbabilityMeasure`), `affineLaw ν 0 1 = ν`,
+and for `σ > 0` the preimage of `Iic x` is `Iic ((x − μ)/σ)` (`affine_preimage_Iic`, via
+`le_div_iff₀`), giving `cdf (affineLaw ν μ σ) x = cdf ν ((x − μ)/σ)` (`cdf_affineLaw`). The named
+families `gumbelLaw μ σ`, `frechetLaw ξ hξ μ σ`, `reverseWeibullLaw α hα μ σ` have the book's
+`G((x − b_n)/a_n)` distribution functions (`cdf_gumbelLaw`, `cdf_frechetLaw`,
+`cdf_reverseWeibullLaw`). The maximum of `n` independent coordinates with a location/scale law is
+again in the family, stated as an **equality of probability measures** through `Measure.eq_of_cdf`
+(so the result is not merely a cdf identity):
+
+| coordinates | maximum |
+|---|---|
+| `gumbelLaw μ σ` | `gumbelLaw (μ + σ log n) σ` (`map_maxRV_gumbelLaw`) |
+| `frechetLaw ξ μ σ`, `ξ > 0` | `frechetLaw ξ μ (σ n^ξ)` (`map_maxRV_frechetLaw`) |
+| `reverseWeibullLaw α μ σ`, `α > 0` | `reverseWeibullLaw α μ (σ n^{−1/α})` (`map_maxRV_reverseWeibullLaw`) |
+
+Positive scale is essential and explicit in every statement; a negative `σ` reverses the
+inequalities and is out of scope. `μ` is the lower endpoint for Fréchet and the upper endpoint for
+reverse-Weibull. Both modules elaborated without warnings; all 19 new `#print axioms` queries
+report the standard closure.
+
+### 16.3 T061 discharged (second closed family)
+
+Target: "Construct global Gumbel, Fréchet and reverse-Weibull CDFs and prove validity";
+hypotheses: "correct piecewise support; scale > 0; shape domains; right continuity and endpoint
+limits". Every clause is met by a checked declaration: the three families exist as probability
+measures with the stated supports (Gumbel on `ℝ`, Fréchet with endpoint `0` from above,
+reverse-Weibull with endpoint `0` from below), the shape domains `ξ > 0` and `α > 0` are explicit
+hypotheses, right-continuity and both endpoint limits are proved for each distribution function,
+and scale enters only through `σ > 0`. The scope the v0.2.5 ledger recorded as remaining
+("reverse-Weibull measure with the correct upper endpoint and shape convention, location/scale
+pushforwards with `σ > 0` for all three families and their cdf transformation rules") is exactly
+what §16.2 delivers, plus the maximum-parameter rules the v0.2.5 auditor proposed as the natural
+follow-through. Documented differences from the book: the three families are separate laws — the
+unified GEV form in `ξ` with the `ξ → 0` Gumbel limit is not stated (it would be a fourth,
+distinct object); densities are T062 and domains of attraction (convergence of normalised maxima
+to these laws) are T011, both untouched. Status `discharged`; states
+`formula_proved, conditional_law_theorem, law_theorem, actual_law_constructed, source_reviewed,
+discharged`; 45 credited declarations.
+
+### 16.4 Verification summary (v0.2.6)
+
+Clean `lake build` exit 0; `scripts/verify.py` exit 0 — 125 theorems, 8 instances, 16 aliases
+(149 public declarations), trust scan of all 270 project constants (69 internal) within the
+allowlist, ledger valid under the shared validator, every cited declaration present;
+`scripts/backlog_schema_probes.py` 13/13; `scripts/harness_regression.py` 14/14 fixtures; archive
+validated from a fresh extraction.
+Evidence: `evidence/fable/v0.2.6/`.
+
+### 16.5 Ledger after v0.2.6
+
+158 families: 2 discharged (T060, T061), 9 partial (T001, T007, T008, T029, T032, T046, T047,
+T118, T124), 4 reuse, 91 missing, 34 source-check, 15 model-needed, 3 empirical.
+
+### 16.6 Recommended next tasks (dependency-ordered)
+
+1. **T029, probabilistic half**: nonnegative weighted sums via event inclusions and a squeeze
+   lemma for `HasFiniteTailExponent`, reusing `two_power_tail_min`.
+2. **Exact Pareto slice against `paretoMeasure`**: survival, moments (finite iff `p < α`),
+   divergence, threshold excess (Pareto is memoryless in the log scale), power pushforward
+   (T005/T021/T028/T032). `affineLaw` now provides the location/scale layer for free.
+3. **Densities of the three EVT laws** (T062): `HasDerivAt` of the distribution functions away
+   from the endpoints and `withDensity` identifications — reuses the Stieltjes measures.
+4. **Domains of attraction, Fréchet case** (T011, first slice): normalised maxima of iid Pareto
+   coordinates converge in distribution to `frechetMeasure α` — the first convergence statement,
+   and the first genuine use of `cdf_map_maxRV` beyond exact max-stability.
