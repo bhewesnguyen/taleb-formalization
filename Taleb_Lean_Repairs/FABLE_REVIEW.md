@@ -941,3 +941,83 @@ T046, T047, T118, T124), 4 reuse, 90 missing, 33 source-check, 15 model-needed, 
 3. **T029 stronger child** (regular-variation dominance) as specified in 18.1, first for `α > 0`.
 4. **Domains of attraction, Fréchet case** (T011 formulation, T062 case): with the exact survival
    now available, `M_n/(L n^{1/α})` of iid Pareto coordinates → `frechetMeasure (1/α)`.
+
+## 19. Addendum (v0.2.9): response to the independent audit of v0.2.8, and the exact Pareto law, Stage B
+
+The seventh independent audit (`Taleb_Fable_v0.2.8_Independent_Audit.pdf`, SHA-256
+`0d71cf28…712d0945`; ledger `Taleb_Proof_Progress_v0.2.8.md`, `72594e2b…9c528989`; handoff
+`Taleb_Fable_v0.2.8_Review_Handoff.md`, `82771091…180eaba1`; evidence ZIP `3cbb8ee0…63500954`;
+kept under `audits/09_astra_on_v0.2.8/`) accepted Pareto Stage A with no defect, accepted both
+scope decisions flagged in the v0.2.8 brief (the all-real `p < α` moment statement; T028
+`source-check → partial`), reproduced build, verifier, 18 probes and 14 fixtures (three isolated
+shards) and additionally rejected a real CRLF-only Markdown mutation at the byte gate, and raised
+two low ledger findings. Both are confirmed and repaired here. No pre-existing theorem, proof,
+definition or pin was modified.
+
+### 19.1 Audit findings and repairs
+
+| Finding | Confirmed | Repair |
+|---|---|---|
+| **D028-1** T118 still said the Pareto `p`-th moment formula was not delivered and listed its identification as remaining, although `AuditPareto.integral_rpow_paretoMeasure` proves exactly the book's eq. (21.7), printed p. 382 (PDF 396) | Yes (checked against the PDF) | Cross-credited (147 citations over 142 declarations, no new theorem); facets `law_theorem`, `actual_law_constructed` scoped to the moment slice; anchor extended to (21.7); remaining = convexity of `m_p` in `α` and the integrated Jensen inequality; status stays `partial`. |
+| Book defect found by the auditor and verified: the second-derivative display under (21.7) reads `x₀^p · 2/(α−1)³`; the correct value is `m_p''(α) = 2p x₀^p/(α−p)³`, agreeing only at `p = 1` | Yes | `docs/SOURCE_GATES.md` **G20**; T118's specification carries the corrected derivative and the `p > 0` requirement (negative orders do not inherit convexity). |
+| **D028-2** T028's scope located `P(X > x) = Cx^{−α}` at printed p. 97; it is on p. 95 (PDF 109), p. 96 introduces `L(x)`, p. 97 has Definition 5.1 | Yes (I had attributed a grep hit across a four-page extraction without checking the page boundary) | Locator corrected at the generator row; density anchor p. 86 retained. |
+| Scoping remarks adopted: `actual_law_constructed` on T029 covers the realized Pareto *marginal* laws only (a joint space with coordinates of those laws is still assumed; pointwise nonnegativity is a premise, law equality would give it only a.e.); negative-order moments rely on `L > 0` and do not generalize to laws with mass near 0; `E(abs(X)^p)` is a raw moment, not the centered MAD | Yes | T029 and T021 scope texts extended verbatim. |
+| D027-3 evidence boundary: the `deliverables/README.md` annotation lives in the deliverables commit, outside the bundle by construction | Yes | `evidence/fable/v0.2.9/deliverables_index_at_packaging.md` is a copy of the index as of packaging time (so the v0.2.8 annotation is inspectable inside this package and bundle); the shipped v0.2.7 log is unchanged. |
+
+### 19.2 Mathematics added: the exact Pareto law, Stage B (`AuditRepairs/ParetoConditional.lean`, 21 theorems, 1 def)
+
+Against Mathlib's pinned `paretoMeasure L α` and the pinned conditioning API
+`ProbabilityTheory.cond μ s = (μ s)⁻¹ • μ.restrict s`, for `L > 0`, `α > 0`:
+
+* **Threshold law** (`cond_paretoMeasure_Ioi`): for `L ≤ K`,
+  `(paretoMeasure L α)[|Ioi K] = paretoMeasure K α` as an equality of probability measures
+  (`Measure.eq_of_cdf`; the cdf of the conditional law is `0` below `K`, `1 − (K/x)^α` from `K`
+  on — `cdf_cond_paretoMeasure`). `K = L` is included (`cond_paretoMeasure_Ioi_endpoint`): the
+  conditioning event has probability one because the law has no atom at `L`.
+* **Excess law** (`excessLaw L α K := affineLaw ((paretoMeasure L α)[|Ioi K]) (−K) 1`, reusing the
+  v0.2.6 pushforward): cdf `0` for `y < 0`, `1 − (K/(K+y))^α` for `y ≥ 0` (`cdf_excessLaw`); strict
+  survival `1` for `y < 0`, `(K/(K+y))^α` for `y ≥ 0`, value `1` at `y = 0` (`survival_excessLaw`,
+  `_zero`).
+* **Means**, kept distinct: `E[X | X > K] = αK/(α−1)` (`integral_id_cond_paretoMeasure`) and the mean
+  excess `E[X − K | X > K] = K/(α−1)` (`integral_id_excessLaw`) for `α > 1`; for `α ≤ 1` the
+  conditional first moment is `⊤` as an extended integral (`lintegral_id_cond_paretoMeasure_eq_top`).
+  These are Stage A moments because the conditional law *is* `Pareto(K, α)`.
+* **Power law** (`map_rpow_paretoMeasure`): for `q > 0`,
+  `(paretoMeasure L α).map (· ^ q) = paretoMeasure (L^q) (α/q)` as an equality of laws. The preimage
+  `{y | y^q ≤ x}` is intersected with the support `Ici L` (the part below `L` is null,
+  `paretoMeasure_apply_inter_Ici`), where `y ↦ y^q` is monotone with inverse `x^{1/q}`
+  (`preimage_rpow_Iic_inter_Ici`, `_eq_empty`); the totalized real power on negative bases never
+  enters. Corollary: `x^p` is integrable under the law of `X^q` iff `p < α/q`
+  (`integrable_rpow_map_rpow_paretoMeasure_iff`), the moment threshold of Property 5.2.
+
+Credited as exact-Pareto *slices* of **T005** (`missing → partial`; the general tail-integral
+identity (2.10), printed p. 18, is not proved) and **T032** (law slice added to the v0.2.1 formula
+slice; Property 5.2 for arbitrary laws remains). Not claimed: the general (2.10), conditional laws of
+other families, powers with `q ≤ 0`, the centered MAD/STD ratios of T021.
+
+### 19.3 Verification summary (v0.2.9)
+
+Clean `lake build` exit 0; `scripts/verify.py` exit 0 — 181 theorems, 8 instances, 16 aliases
+(205 public declarations), trust scan of all 361 project constants (101 internal) within the allowlist, ledger valid,
+Markdown byte-equal to its rendering, every cited declaration present;
+`scripts/backlog_schema_probes.py` 18/18; `scripts/harness_regression.py` 14/14; archive validated
+from a fresh extraction. Evidence: `evidence/fable/v0.2.9/`.
+
+### 19.4 Ledger after v0.2.9
+
+158 families: 2 discharged (T060, T061), 12 partial (T001, T005, T007, T008, T021, T028, T029,
+T032, T046, T047, T118, T124), 4 reuse, 89 missing, 33 source-check, 15 model-needed, 3 empirical.
+169 citations over 164 distinct declarations. Supplemental S001, S002 open. Source gates G01–G20.
+
+### 19.5 Recommended next tasks (dependency-ordered)
+
+1. **T021 centered ratios**: mean and variance of `Pareto(L, α)` from Stage A (`α > 2`), the centered
+   absolute deviation `E|X − E X|` (an absolute-deviation integral split at the mean), then the
+   STD/MD ratio (4.14).
+2. **T005 general identity (2.10)**: `∫_K^∞ x f = K P(X > K) + ∫_K^∞ P(X > x) dx` for nonnegative
+   `X` via Tonelli on extended integrals (layer-cake), with the Pareto case as the check.
+3. **T029 stronger child** (regular-variation dominance), first for `α > 0`.
+4. **T118 convexity**: `m_p` convex in `α` on `α > p` for `p > 0` with the corrected second
+   derivative (G20), then the integrated Jensen statement of Proposition 21.1.
+5. **Pareto → Fréchet domain of attraction** (T011 formulation, T062 case):
+   `M_n/(L n^{1/α}) → frechetMeasure (1/α)`.

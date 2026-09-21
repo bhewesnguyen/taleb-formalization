@@ -1,5 +1,76 @@
 # Changelog: Fable review
 
+## v0.2.8 → v0.2.9 (seventh corrective pass; exact Pareto law, Stage B)
+
+Trigger: the independent audit of v0.2.8 (`Taleb_Fable_v0.2.8_Independent_Audit.pdf`, SHA-256
+`0d71cf28…712d0945`; ledger `Taleb_Proof_Progress_v0.2.8.md`, `72594e2b…9c528989`; handoff
+`Taleb_Fable_v0.2.8_Review_Handoff.md`, `82771091…180eaba1`; evidence ZIP `3cbb8ee0…63500954`).
+Details: `FABLE_REVIEW.md` §19.
+
+### Mathematical statement changes
+
+No pre-existing theorem, definition, instance, alias or proof was modified. **Added** in the new module
+`AuditRepairs/ParetoConditional.lean` (all with closure `{propext, Classical.choice, Quot.sound}`), against
+Mathlib's pinned `paretoMeasure L α` (`L > 0`, `α > 0`) and `ProbabilityTheory.cond`:
+
+| Declaration | Kind | Content |
+|---|---|---|
+| `AuditPareto.paretoMeasure_Ioi`, `paretoMeasure_Ioi_ne_zero` | theorems | `μ (Ioi x) = ofReal ((L/x)^α)` for `x ≥ L`; nonzero for `x = K ≥ L`. |
+| `AuditPareto.isProbabilityMeasure_cond_paretoMeasure`, `cdf_cond_paretoMeasure` | theorems | the conditional law given `X > K` (`L ≤ K`) is a probability measure with cdf `0` below `K`, `1 − (K/x)^α` from `K` on. |
+| `AuditPareto.cond_paretoMeasure_Ioi`, `cond_paretoMeasure_Ioi_endpoint` | theorems | **threshold law** `(paretoMeasure L α)[|Ioi K] = paretoMeasure K α`; the `K = L` case. |
+| `AuditPareto.excessLaw L α K` | def | `affineLaw ((paretoMeasure L α)[|Ioi K]) (−K) 1`, the law of `X − K` given `X > K`. |
+| `AuditPareto.excessLaw_eq`, `isProbabilityMeasure_excessLaw`, `cdf_excessLaw`, `survival_excessLaw`, `survival_excessLaw_zero` | theorems | `= affineLaw (paretoMeasure K α) (−K) 1`; probability measure; cdf `1 − (K/(K+y))^α` and strict survival `(K/(K+y))^α` for `y ≥ 0` (`1` for `y < 0`; value `1` at `0`). |
+| `AuditPareto.integral_rpow_cond_paretoMeasure`, `integral_id_cond_paretoMeasure`, `integral_id_excessLaw`, `lintegral_id_cond_paretoMeasure_eq_top` | theorems | conditional moments are Stage A moments of `Pareto(K, α)`; `E[X | X > K] = αK/(α−1)` and mean excess `K/(α−1)` for `α > 1`; `⊤` for `α ≤ 1` as an extended integral. |
+| `AuditPareto.paretoMeasure_apply_inter_Ici`, `preimage_rpow_Iic_inter_Ici_eq_empty`, `preimage_rpow_Iic_inter_Ici`, `pareto_power_algebra` | theorems | support restriction `μ A = μ (A ∩ Ici L)`; the preimage of `Iic x` under `y ↦ y^q` on the support (empty below `L^q`, `[L, x^{1/q}]` from `L^q` on); `(L/x^{1/q})^α = (L^q/x)^{α/q}`. |
+| `AuditPareto.map_rpow_paretoMeasure` | theorem | **power law** `(paretoMeasure L α).map (· ^ q) = paretoMeasure (L^q) (α/q)` for `q > 0`, an equality of laws. |
+| `AuditPareto.integrable_rpow_map_rpow_paretoMeasure_iff` | theorem | `x^p` integrable under the law of `X^q` iff `p < α/q`. |
+
+Counts: 160 → **181 theorems**, 8 instances, 16 aliases (**205** checked); trust scan 321 → **361**
+constants (101 internal). Backlog: **T005** `missing → partial`
+(exact-Pareto conditional/excess slice), **T032** gains its law slice; **T118** cross-credits
+`integral_rpow_paretoMeasure` (audit D028-1); T028 locator (D028-2); T029/T021 scope notes; 169 citations over
+164 declarations.
+
+### Changed files
+
+| File | Change |
+|---|---|
+| `AuditRepairs/ParetoConditional.lean` | **New** (imports `AuditRepairs.ParetoLaw`, `AuditRepairs.ExtremeValueAffine`, `Mathlib.Probability.ConditionalProbability`). |
+| `AuditRepairs.lean` | Imports `AuditRepairs.ParetoConditional`. |
+| `AuditVerification.lean` | Regenerated: 205 `#print axioms` lines. |
+| `scripts/rebuild_curated_inventory.py` | T118 (D028-1: cross-credit, facets, anchor (21.7), corrected `m_p''`), T028 (D028-2 locator), T029 and T021 (auditor's scoping remarks), T005 and T032 (Stage B slices). |
+| `docs/FORMALIZATION_BACKLOG.json`, `.md` | Regenerated together (checked). |
+| `docs/SOURCE_GATES.md` | **G20**: the book's second-derivative display under (21.7) omits `p` and has `(α−1)³`. |
+| `docs/AUDIT_HISTORY.md` | Round 8 (audit of v0.2.8) added. |
+| `docs/MATHLIB_AND_WORK_ORDER.md` | Pareto row: Stage B done, next steps. |
+| `README.md` | Version, counts (181/8/16, 205), module list. |
+| `FABLE_REVIEW.md` | + §19. |
+| `lakefile.toml` | `version = "0.2.9"`. |
+| `SHA256SUMS`, `evidence/current/*`, `evidence/fable/v0.2.9/` | Regenerated / new evidence layer; `evidence/fable/v0.2.9/deliverables_index_at_packaging.md` copies the deliverables index so the D027-3 annotation is inspectable inside the package. |
+
+Repository (outside the package): `audits/09_astra_on_v0.2.8/` holds the received audit; `SCOPE_MEMO_v0.2.8.md` is a
+repository note (not a deliverable); a `git bundle` accompanies the v0.2.9 ZIP.
+
+Pins unchanged: `lean-toolchain`, `lake-manifest.json`, Mathlib `rev`.
+
+### Compatibility implications
+
+- Client code: none for existing declarations. `import AuditRepairs` now also brings in
+  `Mathlib.Probability.ConditionalProbability` (and its scoped notation `μ[|s]` under `open scoped ProbabilityTheory`).
+- Verification: unchanged gates; runtime ≈ 2–5 min.
+
+### Validation performed (v0.2.9)
+
+- `rm -rf .lake/build; lake build`: exit 0, no warnings.
+- `python3 scripts/verify.py`: exit 0, `PASS: 181 theorems, 8 instance, 16 aliases; no extra axioms; trust scan:
+  361 project constants (incl. 101 internal) all within allowlist; 205 public theorem/instance constants match the
+  regex inventory`; ledger valid, Markdown byte-equal to its rendering, all cited declarations present.
+- `python3 scripts/backlog_schema_probes.py`: exit 0, 18/18 (count read from the JSON record).
+- `python3 scripts/harness_regression.py`: exit 0, 14/14 fixtures as expected.
+- Final ZIP validated from a fresh extraction (`deliverables/v0.2.9/archive_validation_v0.2.9.log`).
+
+---
+
 ## v0.2.7 → v0.2.8 (sixth corrective pass; exact Pareto law, Stage A)
 
 Trigger: the independent audit of v0.2.7 (`Taleb_Fable_v0.2.7_Independent_Audit.pdf`, SHA-256

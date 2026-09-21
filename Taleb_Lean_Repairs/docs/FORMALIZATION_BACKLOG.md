@@ -52,11 +52,17 @@ Hypotheses and gaps: Independence; finite nonzero variance; distinguish iid and 
 
 ### T005 - Tail integral and excess identities
 
-**P1 / missing / TAIL**. Printed pp. 10;18;259; PDF anchor p. 24; source: 2.2.4;2.10;13.6.
+**P1 / partial / TAIL**. Printed pp. 10;18;259; PDF anchor p. 24; source: 2.2.4;2.10;13.6.
 
-Prove E[X 1_(X>K)] = K P(X>K) + integral_K^infinity P(X>x) dx; derive excess and conditional means.
+Prove E[X 1_(X>K)] = K P(X>K) + integral_K^infinity P(X>x) dx; derive excess and conditional means. Delivered (v0.2.9, exact-Pareto slice, AuditRepairs/ParetoConditional.lean): for Mathlib's paretoMeasure L alpha and a threshold L <= K, the conditional law above the threshold is again Pareto, cond (paretoMeasure L alpha) (Ioi K) = paretoMeasure K alpha, as an equality of probability measures using the pinned ProbabilityTheory.cond API (K = L included, since the law has no atom at L), the excess law of X - K given X > K (excessLaw, the conditional law pushed forward by x -> x - K) with cdf 1 - (K/(K+y))^alpha and strict survival (K/(K+y))^alpha for y >= 0 (value 1 at y = 0, 1 below 0), the conditional mean alpha K/(alpha - 1) and the mean excess K/(alpha - 1) for alpha > 1 (kept distinct), and divergence of the conditional first moment as an extended nonnegative integral for alpha <= 1.
 
-Hypotheses and gaps: Nonnegative X and K; Tonelli for extended integrals; finite first moment for real-valued identities; positive tail for conditioning.
+Hypotheses and gaps: Nonnegative X and K; Tonelli for extended integrals; finite first moment for real-valued identities; positive tail for conditioning. Delivered with: L > 0, alpha > 0, L <= K explicit (for K < L the conditional law is the original Pareto and is not stated). The general identity (2.10) for arbitrary nonnegative X is not proved.
+
+Delivered (law_theorem, actual_law_constructed, source_reviewed): `AuditPareto.paretoMeasure_Ioi`, `AuditPareto.paretoMeasure_Ioi_ne_zero`, `AuditPareto.isProbabilityMeasure_cond_paretoMeasure`, `AuditPareto.cdf_cond_paretoMeasure`, `AuditPareto.cond_paretoMeasure_Ioi`, `AuditPareto.cond_paretoMeasure_Ioi_endpoint`, `AuditPareto.excessLaw`, `AuditPareto.excessLaw_eq`, `AuditPareto.isProbabilityMeasure_excessLaw`, `AuditPareto.cdf_excessLaw`, `AuditPareto.survival_excessLaw`, `AuditPareto.survival_excessLaw_zero`, `AuditPareto.integral_rpow_cond_paretoMeasure`, `AuditPareto.integral_id_cond_paretoMeasure`, `AuditPareto.integral_id_excessLaw`, `AuditPareto.lintegral_id_cond_paretoMeasure_eq_top`.
+
+Delivery scope: Exact-Pareto conditional and excess laws as equalities of probability measures (threshold law, excess law with global cdf and strict survival), conditional mean and mean excess for alpha > 1, extended-integral divergence for alpha <= 1. Source: eq. (2.10) printed p. 18 (PDF 32) states the general tail integral identity for nonnegative X (proof displayed p. 260 / PDF 274). The delivered slice realizes its consequences for the Pareto law only.
+
+Remaining obligations: The general tail-integral identity (2.10), E[X 1_(X > K)] = K P(X > K) + integral_K^inf P(X > x) dx, for arbitrary nonnegative X via Tonelli on extended integrals, and the general conditional and excess mean formulas derived from it under a finite first moment. Conditional laws for other families.
 
 ### T006 - Kappa metric domain
 
@@ -200,7 +206,7 @@ Hypotheses and gaps: Probability measure; finite relevant moments; center the va
 
 Compute Gaussian, Student, and Pareto absolute moments and MAD/STD ratios. Delivered (v0.2.8, exact-Pareto slice, AuditRepairs/ParetoLaw.lean): for Mathlib's paretoMeasure L alpha (density alpha L^alpha x^(-alpha-1) on [L, inf), the book's p. 86 display) the p-th moment as an extended nonnegative integral equals alpha L^p/(alpha - p) for p < alpha and is +inf for p >= alpha (including p = alpha), Integrable (x^p) iff p < alpha, the real integral alpha L^p/(alpha - p) in the finite range (value 1 at p = 0), and equality of absolute and raw moments on the positive support.
 
-Hypotheses and gaps: Correct scale convention; Pareto alpha>2 for STD; moment-order restrictions. Delivered with: L > 0, alpha > 0, all real p in the finite range (negative orders included), finiteness read from the extended integral only.
+Hypotheses and gaps: Correct scale convention; Pareto alpha>2 for STD; moment-order restrictions. Delivered with: L > 0, alpha > 0, all real p in the finite range (negative orders included: L > 0 keeps the support away from the singularity of x^p at 0, and negative powers decay at infinity; this does not generalize to nonnegative laws with mass near 0), finiteness read from the extended integral only. The delivered absolute moment E(abs(X)^p) is a raw moment on the positive support, not the centered mean absolute deviation E(abs(X - E X)) that the MAD/STD ratios need.
 
 Delivered (law_theorem, actual_law_constructed, source_reviewed): `AuditPareto.momentLintegral`, `AuditPareto.momentLintegral_eq`, `AuditPareto.momentLintegral_of_lt`, `AuditPareto.momentLintegral_eq_top`, `AuditPareto.ae_nonneg_rpow_paretoMeasure`, `AuditPareto.integrable_rpow_paretoMeasure_iff`, `AuditPareto.integral_rpow_paretoMeasure`, `AuditPareto.integral_rpow_zero_paretoMeasure`, `AuditPareto.integral_abs_rpow_paretoMeasure`.
 
@@ -268,7 +274,7 @@ Hypotheses and gaps: q>=0; nonnegative law with regularly varying tail of index 
 
 Delivered (law_theorem, actual_law_constructed, source_reviewed): `AuditPareto.paretoMeasure_Iic_of_lt`, `AuditPareto.paretoMeasure_Iio_endpoint`, `AuditPareto.paretoMeasure_singleton_endpoint`, `AuditPareto.pareto_tail_algebra`, `AuditPareto.survival_paretoMeasure`, `AuditPareto.survival_paretoMeasure_of_le`, `AuditPareto.survival_paretoMeasure_endpoint`, `AuditPareto.cdf_paretoMeasure`, `AuditPareto.cdf_paretoMeasure_endpoint`, `AuditPareto.hasFiniteTailExponent_survival_paretoMeasure`, `AuditPareto.momentLintegral_of_lt`, `AuditPareto.momentLintegral_eq_top`, `AuditPareto.integrable_rpow_paretoMeasure_iff`.
 
-Delivery scope: Exact-Pareto slice: global survival and distribution functions of the pinned law with the endpoint values explicit, absence of an atom at L, tail exponent alpha of the actual survival, and the moment threshold with the boundary settled (infinite) for the exact law. Source: p. 97 (PDF 111) Paretian tail P(X > x) = C x^(-alpha), p. 86 for the density.
+Delivery scope: Exact-Pareto slice: global survival and distribution functions of the pinned law with the endpoint values explicit, absence of an atom at L, tail exponent alpha of the actual survival, and the moment threshold with the boundary settled (infinite) for the exact law. Source: p. 95 (PDF 109) for the exact constant-factor tail P(X > x) = C x^(-alpha) (p. 96 introduces the slowly varying factor, p. 97 Definition 5.1 of the class P and the exponent discussion), p. 86 (PDF 100) for the density.
 
 Remaining obligations: The general statement for nonnegative laws with regularly varying tails of index -alpha (finite for q < alpha, infinite for q > alpha) and its q = alpha boundary, which requires an integral test on the slowly varying factor (the statement-review gate is unchanged for that general case). Regular variation infrastructure (positive measurable convention, Karamata) is T001/T002.
 
@@ -282,7 +288,7 @@ Hypotheses and gaps: Nonnegative variables and positive weights are required: wi
 
 Delivered (formula_proved, conditional_law_theorem, law_theorem, actual_law_constructed, source_reviewed): `AuditTails.two_power_tail`, `AuditTails.two_power_tail_min`, `AuditTails.neg_log_div_log_antitone`, `AuditTails.HasFiniteTailExponent.comp_const_mul`, `AuditTails.log_add_le_log_two_add_max`, `AuditTails.log_max_of_pos`, `AuditTails.HasFiniteTailExponent.max`, `AuditTails.HasFiniteTailExponent.add`, `AuditTails.HasFiniteTailExponent.of_le_of_le`, `AuditProbability.survivalRV`, `AuditProbability.survivalRV_eq_survival_map`, `AuditProbability.weightedSum_event_lower_left`, `AuditProbability.weightedSum_event_lower_right`, `AuditProbability.weightedSum_event_upper`, `AuditProbability.hasFiniteTailExponent_weightedSum`, `AuditProbability.hasFiniteTailExponent_survival_map_weightedSum`, `AuditPareto.hasFiniteTailExponent_weightedSum_pareto`.
 
-Delivery scope: Formula-level two-term power tails (v0.2.3) and, since v0.2.7, the binary probabilistic statement (completed child): for two pointwise nonnegative random variables with positive weights whose survival functions have finite log-tail exponents alpha, beta, the survival function of the weighted sum (and of its pushforward law, for measurable coordinates) has exponent min(alpha, beta), with no independence hypothesis, via event inclusions and reusable rescaling, max, sum and squeeze rules for HasFiniteTailExponent. Facets: conditional_law_theorem for the two exponent theorems (their hypotheses assume the coordinate finite-exponent properties, per this ledger's vocabulary), law_theorem for AuditProbability.survivalRV_eq_survival_map alone (the event-tail function equals the pushforward-law tail under ordinary measurability). Exponent equality only: the statement is about -log S(t)/log t. Since v0.2.8 the theorem has a concrete instance (actual_law_constructed): coordinates with Mathlib Pareto laws paretoMeasure L1 alpha1, paretoMeasure L2 alpha2 give exponent min(alpha1, alpha2) for the law of the weighted sum (AuditPareto.hasFiniteTailExponent_weightedSum_pareto), because the actual Pareto survival function has exponent alpha (AuditPareto.hasFiniteTailExponent_survival_paretoMeasure).
+Delivery scope: Formula-level two-term power tails (v0.2.3) and, since v0.2.7, the binary probabilistic statement (completed child): for two pointwise nonnegative random variables with positive weights whose survival functions have finite log-tail exponents alpha, beta, the survival function of the weighted sum (and of its pushforward law, for measurable coordinates) has exponent min(alpha, beta), with no independence hypothesis, via event inclusions and reusable rescaling, max, sum and squeeze rules for HasFiniteTailExponent. Facets: conditional_law_theorem for the two exponent theorems (their hypotheses assume the coordinate finite-exponent properties, per this ledger's vocabulary), law_theorem for AuditProbability.survivalRV_eq_survival_map alone (the event-tail function equals the pushforward-law tail under ordinary measurability). Exponent equality only: the statement is about -log S(t)/log t. Since v0.2.8 the theorem has a concrete instance (actual_law_constructed): coordinates with Mathlib Pareto laws paretoMeasure L1 alpha1, paretoMeasure L2 alpha2 give exponent min(alpha1, alpha2) for the law of the weighted sum (AuditPareto.hasFiniteTailExponent_weightedSum_pareto), because the actual Pareto survival function has exponent alpha (AuditPareto.hasFiniteTailExponent_survival_paretoMeasure). The facet is scoped to the realized Pareto marginal laws: the theorem still assumes a joint probability space with measurable coordinates having those marginals (no product-space construction is exported), and pointwise nonnegativity is an explicit premise that law equality alone would give only almost everywhere.
 
 Remaining obligations: Stronger regular-variation child (the original target's reading, kept open deliberately): for measurable nonnegative X, Y on one probability space, a, b > 0, and eventually positive survival functions regularly varying with indices -alpha, -beta where 0 <= alpha < beta (a first version with 0 < alpha is acceptable), prove S_Z(t)/S_X(t/a) -> 1 and S_Z(t)/S_X(t) -> a^alpha for Z = aX + bY, via S_X(t/a) <= S_Z(t) <= S_X((1 - delta) t/a) + S_Y(delta t/b) and delta -> 0, no independence. Do not extend to equal-index dependent tails without new hypotheses (Y = X with Pareto index 2 gives S_(X+Y) = 4 t^(-2) against S_X + S_Y = 2 t^(-2)). Recorded follow-ups, not acceptance conditions of the delivered child: finite-family extension (nonempty index, positive weights), almost-sure-nonnegativity variant, extended-real exponent API for the source's informal infinite exponent. Exact convolution asymptotics belong to the subexponential workstream (T008).
 
@@ -306,15 +312,15 @@ Hypotheses and gaps: X>=0 regularly varying; independent Y>=0; E[Y^(alpha+epsilo
 
 **P1 / partial / TAIL**. Printed pp. 100; PDF anchor p. 114; source: Property 5.2;5.8.
 
-Bridge the checked analytic exponent alpha/p to the pushforward law of X^p.
+Bridge the checked analytic exponent alpha/p to the pushforward law of X^p. Delivered (v0.2.9, exact-Pareto law slice, AuditRepairs/ParetoConditional.lean): for q > 0, (paretoMeasure L alpha).map (x -> x^q) = paretoMeasure (L^q) (alpha/q) as an equality of probability measures, proved on the positive support (the totalized real power on negative bases never enters because the law has no mass below L), with the moment-threshold corollary that x^p is integrable under the law of X^q exactly when p < alpha/q.
 
-Hypotheses and gaps: X>=0; p>0; measurability; monotonic inverse; do not apply to arbitrary negative p or signed X.
+Hypotheses and gaps: X>=0; p>0; measurability; monotonic inverse; do not apply to arbitrary negative p or signed X. Delivered with: L > 0, alpha > 0, q > 0 (q <= 0 excluded). Book: Property 5.2 and (5.8), printed p. 100 (PDF 114): the tail exponent of X^p is alpha/p, consistent with the identified shape alpha/q.
 
-Delivered (formula_proved): `AuditTails.pareto_power_tail`.
+Delivered (formula_proved, law_theorem, actual_law_constructed, source_reviewed): `AuditTails.pareto_power_tail`, `AuditPareto.paretoMeasure_apply_inter_Ici`, `AuditPareto.preimage_rpow_Iic_inter_Ici_eq_empty`, `AuditPareto.preimage_rpow_Iic_inter_Ici`, `AuditPareto.pareto_power_algebra`, `AuditPareto.map_rpow_paretoMeasure`, `AuditPareto.integrable_rpow_map_rpow_paretoMeasure_iff`.
 
-Delivery scope: Analytic power-transform tail formula with exponent alpha/p.
+Delivery scope: Analytic power-transform tail formula with exponent alpha/p. Since v0.2.9 also the exact-Pareto law identification: the pushforward of Pareto(L, alpha) under x -> x^q (q > 0) is Pareto(L^q, alpha/q), as an equality of measures, plus the moment-threshold corollary p < alpha/q. Source: Property 5.2, printed p. 100 (PDF 114).
 
-Remaining obligations: Measurable pushforward under x -> x^p for nonnegative x and p > 0, the inverse-event identity and identification of the transformed law.
+Remaining obligations: The general statement of Property 5.2 for an arbitrary law with tail exponent alpha (finite log-tail exponent or regularly varying survival): the law of X^p has exponent alpha/p for p > 0, via the inverse-event argument on a positive support, and the density transformation (5.8) under the stated regularity. Negative p and signed X remain excluded.
 
 ### T033 - Bell shape, interpolation, and log-Pareto
 
@@ -1070,17 +1076,17 @@ Hypotheses and gaps: Fixed scale/support conventions; kernel measurability; mome
 
 ### T118 - Moment convexity in Pareto exponent
 
-**P1 / partial / CALC**. Printed pp. 381; PDF anchor p. 395; source: Proposition 21.1.
+**P1 / partial / CALC**. Printed pp. 381-382; PDF anchor p. 395; source: Proposition 21.1;(21.7).
 
-Prove m_p(alpha)=scale^p*alpha/(alpha-p) is convex on alpha>p and apply Jensen.
+Prove m_p(alpha)=scale^p*alpha/(alpha-p) is convex on alpha>p and apply Jensen. Delivered (v0.2.8, credited v0.2.9): the moment identification m_p(alpha) = L^p alpha/(alpha - p) for the actual pinned law paretoMeasure L alpha, L > 0, alpha > 0, p < alpha (AuditPareto.integral_rpow_paretoMeasure, the book's eq. (21.7) on p. 382), and the tail-kernel convexity alpha -> c^(-alpha) (v0.2.1).
 
-Hypotheses and gaps: p>0; common positive scale; random alpha>p; integrable mixing or extended expectation.
+Hypotheses and gaps: p>0; common positive scale; random alpha>p; integrable mixing or extended expectation. Source correction (v0.2.9, audit of v0.2.8): the second-derivative display below (21.7) on p. 382 reads x0^p * 2/(alpha - 1)^3; the correct value is m_p''(alpha) = 2 p L^p/(alpha - p)^3 for alpha > p, agreeing with the display only at p = 1 (SOURCE_GATES G20). Convexity in alpha needs p > 0 (negative orders do not inherit it).
 
-Delivered (formula_proved): `AuditTails.convexOn_rpow_neg_right`.
+Delivered (formula_proved, law_theorem, actual_law_constructed): `AuditTails.convexOn_rpow_neg_right`, `AuditPareto.integral_rpow_paretoMeasure`.
 
-Delivery scope: Prerequisite only: convexity of alpha -> c^(-alpha), the tail kernel. Not the Pareto pth-moment formula, its convexity in alpha, or an integrated Jensen inequality.
+Delivery scope: Two delivered components: convexity of the tail kernel alpha -> c^(-alpha) (formula_proved), and the identification of the moment function m_p(alpha) = L^p alpha/(alpha - p) for the actual Pareto law with L > 0, alpha > 0, p < alpha (law_theorem, actual_law_constructed, credited from the T021 slice). Neither facet asserts convexity of m_p in alpha.
 
-Remaining obligations: Identify E[X^p] = scale^p alpha/(alpha - p) for alpha > p, prove its convexity in alpha, and justify Jensen with the mixing support and integrability assumptions.
+Remaining obligations: Convexity of alpha -> m_p(alpha) on alpha > p for p > 0 with a common positive scale (second derivative 2 p L^p/(alpha - p)^3, correcting the book's display), and the integrated Jensen inequality for a random exponent supported in alpha > p with the mixing integrability or extended-expectation conditions made explicit.
 
 ### T119 - Mixed expected shortfall
 
