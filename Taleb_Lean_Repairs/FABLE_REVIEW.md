@@ -862,3 +862,82 @@ change. Supplemental register: S001, S002 open.
    Pareto coordinates → `frechetMeasure (1/α)`.
 4. **S002** densities on the open supports and `withDensity` identifications; **S001** unified GEV
    with the explicit reparametrisation of the endpoint coordinate.
+
+## 18. Addendum (v0.2.8): response to the independent audit of v0.2.7, and the exact Pareto law
+
+The sixth independent audit (`Taleb_Fable_v0.2.7_Independent_Audit.pdf`, SHA-256
+`6180c5ca…90b0c5c8`; ledger `Taleb_Proof_Progress_v0.2.7.md`, `e7e7cbdf…9c255160`; handoff
+`Taleb_Fable_v0.2.7_Review_Handoff.md`, `56b58e16…6a151c17`; evidence ZIP `279619cc…8263ac93`;
+kept under `audits/08_astra_on_v0.2.7/`) accepted the weighted-sum and continuity mathematics
+with no repair requested, reproduced the build, verifier, 18 probes and 14 fixtures (three
+isolated shards) and additionally rejected a hand-mutated shipped Markdown ledger through the
+real verifier, and raised three low documentation findings. All are confirmed and repaired here.
+No pre-existing theorem, proof, definition or pin was modified.
+
+### 18.1 Audit findings and repairs
+
+| Finding | Confirmed | Repair |
+|---|---|---|
+| **T029 scope ruling**: keep `partial`; the delivered binary exponent theorem is a completed child; the inherited "regularly varying tail dominates" reading is a stronger separate child (the auditor's counterexample `S(t) = t^{−α} e^{ε sin log t}` has exponent `α` but `S(e^π t)/S(t)` oscillates, so exponent equality does not imply regular variation) | Yes | Adopted as stated. The stronger child is now named precisely in T029's remaining text: for measurable nonnegative `X, Y`, `a, b > 0`, RV survival functions with indices `−α, −β`, `0 ≤ α < β`: `S_Z(t)/S_X(t/a) → 1` and `S_Z(t)/S_X(t) → a^α`, via `S_X(t/a) ≤ S_Z(t) ≤ S_X((1−δ)t/a) + S_Y(δt/b)`, `δ → 0`; with the warning not to extend to equal-index dependent tails (`Y = X`, Pareto index 2: `S_{X+Y} = 4t^{−2}` vs `S_X + S_Y = 2t^{−2}`). |
+| **D027-1** stale sentence "The probabilistic statement about sums of random variables remains open" in the generator row and both renderings (stale *meaning* shared by both copies — what the rendering gate cannot catch); facets: the exponent theorems assume the coordinate finite-exponent premises, so by this ledger's own vocabulary they are `conditional_law_theorem`; `law_theorem` is supported by `survivalRV_eq_survival_map` alone | Yes | Sentence replaced by the delivered scope and the named stronger child; facets now `formula_proved, conditional_law_theorem, law_theorem, actual_law_constructed, source_reviewed`, each with its supporting declarations named in the scope text (`actual_law_constructed` is new in v0.2.8 and is earned by the concrete Pareto instance below, not by the theorem quantifying over arbitrary laws). |
+| **D027-2** S001 as written substituted `ξ = 0` into `exp(−(1+ξx)^{−1/ξ})`, which Lean totalizes to the constant `e^{−1}`; source pages were 173–174 | Yes (checked against the book PDF: the kernel `G(x) ∝ exp(−(1+ξx)^{−1/ξ})` follows eq. (9.2) on printed p. 172; the `ξ → 0` limit and the three named forms are on p. 173) | S001 rewritten with an explicit `G_0 = gumbelCDF` branch, off-support conventions (`0` for `ξ > 0`, `1` for `ξ < 0`), pages 172–173 / PDF 186–187, and the coordinate table `ξ > 0 ↦ frechetLaw ξ (−1/ξ) (1/ξ)`, `ξ < 0 ↦ reverseWeibullLaw (−1/ξ) (−1/ξ) (−1/ξ)`, `ξ = 0 ↦ gumbelLaw 0 1`, endpoint `e = m − s/ξ` in general. |
+| **D027-3** `archive_validation_v0.2.7.log` step 7 says "17 probes ok"; there are 18 results (the `grep` counted `-> ok` lines and missed the clean-ledger control line) | Yes | The v0.2.7 log is left as shipped and annotated in `deliverables/README.md`; the v0.2.8 validation reads the count from the machine-readable `backlog_schema_probes.json`. |
+| The rendering gate compared newline-normalised text (`read_text()`), so "byte for byte" overstated it | Yes (auditor's remark) | `verify.py` and the probes now compare raw bytes (`read_bytes()` against the UTF-8 encoding of the rendering). |
+
+### 18.2 Mathematics added: the exact Pareto law, Stage A (`AuditRepairs/ParetoLaw.lean`, 20 theorems, 1 def)
+
+Against **Mathlib's pinned** `paretoMeasure L α = volume.withDensity (paretoPDF L α)` (density
+`α L^α x^{−(α+1)}` on `[L, ∞)`, the book's p. 86 display), for `L > 0`, `α > 0`:
+
+* Support: `paretoMeasure L α (Iic x) = 0` for `x < L` (`paretoMeasure_Iic_of_lt`), `(Iio L) = 0`,
+  no atom at `L` (`paretoMeasure_singleton_endpoint`, absolute continuity).
+* Strict survival `P(X > x) = 1` for `x < L`, `(L/x)^α` for `x ≥ L`, value `1` at `x = L`
+  (`survival_paretoMeasure`, `_of_le`, `_endpoint`); cdf `0` for `x < L`, `1 − (L/x)^α` for `x ≥ L`,
+  value `0` at `x = L` (`cdf_paretoMeasure`, `_endpoint`). Route: `withDensity_apply` on `Ioi x`,
+  `integral_Ioi_rpow_of_lt`, and `1 − S` for the cdf through `measureReal_compl`.
+* Moments as **extended nonnegative integrals**: `momentLintegral L α p := ∫⁻ x, ofReal (x^p)`
+  reduces to `∫⁻ x in Ioi L, ofReal (α L^α x^{p−α−1})` (`momentLintegral_eq`; the endpoint is a
+  null set); equals `ofReal (α L^p/(α − p))` for `p < α` (`momentLintegral_of_lt`) and `⊤` for
+  `α ≤ p` including the boundary `p = α` (`momentLintegral_eq_top`, from
+  `integrableOn_Ioi_rpow_iff` and `hasFiniteIntegral_iff_ofReal`).
+* Real moments only inside the integrable range: `Integrable (x^p) ↔ p < α`
+  (`integrable_rpow_paretoMeasure_iff`), `∫ x^p = α L^p/(α − p)` (`integral_rpow_paretoMeasure`),
+  `= 1` at `p = 0`, and absolute moments agree (`integral_abs_rpow_paretoMeasure`). A totalized real
+  integral is never used as evidence of finiteness; finiteness is read from the extended integral.
+* The actual survival function has finite log-tail exponent `α`
+  (`hasFiniteTailExponent_survival_paretoMeasure`), hence **the first concrete instance of Property
+  5.1**: coordinates with laws `Pareto(L₁, α₁)`, `Pareto(L₂, α₂)` give exponent `min α₁ α₂` for the
+  law of the weighted sum (`hasFiniteTailExponent_weightedSum_pareto`), no independence.
+
+Exactly as scoped by the auditor: these are the exact-Pareto *slices* of T021 (moments) and T028
+(survival/cdf, moment threshold with the boundary settled for the exact law), both moved from
+`missing`/`source-check` to `partial`; neither family is closed (Gaussian/Student moments and
+MAD/STD ratios for T021; the general regularly varying statement with its `q = α` boundary gate for
+T028). Stage B (conditional/excess law `𝓛(X | X > K) = Pareto(K, α)`, positive-power pushforward
+`Pareto(L, α).map (x^q) = Pareto(L^q, α/q)`) is the next child; nothing of it is claimed.
+
+### 18.3 Verification summary (v0.2.8)
+
+Clean `lake build` exit 0; `scripts/verify.py` exit 0 — 160 theorems, 8 instances, 16 aliases
+(184 public declarations), trust scan of all 321 project constants (83 internal) within the allowlist, ledger valid,
+Markdown equal to its rendering (raw bytes), every cited declaration present;
+`scripts/backlog_schema_probes.py` 18/18; `scripts/harness_regression.py` 14/14; archive validated
+from a fresh extraction. Evidence: `evidence/fable/v0.2.8/`.
+
+### 18.4 Ledger after v0.2.8
+
+158 families: 2 discharged (T060, T061), 11 partial (T001, T007, T008, T021, T028, T029, T032,
+T046, T047, T118, T124), 4 reuse, 90 missing, 33 source-check, 15 model-needed, 3 empirical.
+146 citations over 142 distinct declarations. Supplemental S001, S002 open.
+
+### 18.5 Recommended next tasks (dependency-ordered)
+
+1. **Pareto Stage B**: conditional law above a threshold `K ≥ L` (`𝓛(X | X > K) = Pareto(K, α)`,
+   excess survival `(K/(K+y))^α`, conditional mean `αK/(α−1)` for `α > 1`, T005 slice) and the
+   positive-power pushforward `Pareto(L, α).map (· ^ q) = Pareto(L^q, α/q)` (T032 slice, law
+   identification not the formula-only exponent).
+2. **T021 ratios**: mean and variance from the delivered moments (`α > 1`, `α > 2`), then the
+   Pareto STD/MD ratio (4.14).
+3. **T029 stronger child** (regular-variation dominance) as specified in 18.1, first for `α > 0`.
+4. **Domains of attraction, Fréchet case** (T011 formulation, T062 case): with the exact survival
+   now available, `M_n/(L n^{1/α})` of iid Pareto coordinates → `frechetMeasure (1/α)`.

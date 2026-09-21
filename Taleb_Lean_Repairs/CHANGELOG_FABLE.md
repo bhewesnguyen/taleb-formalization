@@ -1,5 +1,80 @@
 # Changelog: Fable review
 
+## v0.2.7 → v0.2.8 (sixth corrective pass; exact Pareto law, Stage A)
+
+Trigger: the independent audit of v0.2.7 (`Taleb_Fable_v0.2.7_Independent_Audit.pdf`, SHA-256
+`6180c5ca…90b0c5c8`; ledger `Taleb_Proof_Progress_v0.2.7.md`, `e7e7cbdf…9c255160`; handoff
+`Taleb_Fable_v0.2.7_Review_Handoff.md`, `56b58e16…6a151c17`; evidence ZIP `279619cc…8263ac93`).
+Details: `FABLE_REVIEW.md` §18.
+
+### Mathematical statement changes
+
+No pre-existing theorem, definition, instance, alias or proof was modified. **Added** in the new module
+`AuditRepairs/ParetoLaw.lean` (all with closure `{propext, Classical.choice, Quot.sound}`), against
+Mathlib's pinned `ProbabilityTheory.paretoMeasure L α` (no parallel Pareto measure):
+
+| Declaration | Kind | Content (`L > 0`, `α > 0` unless stated) |
+|---|---|---|
+| `AuditPareto.paretoMeasure_Iic_of_lt`, `paretoMeasure_Iio_endpoint`, `paretoMeasure_singleton_endpoint`, `measurable_paretoPDF` | theorems | no mass below the endpoint, no atom at `L` (no positivity hypotheses needed), measurability of the `ℝ≥0∞` density. |
+| `AuditPareto.pareto_tail_algebra` | theorem | `α L^α · (−x^{−α}/(−α)) = (L/x)^α` for `x > 0`. |
+| `AuditPareto.survival_paretoMeasure`, `survival_paretoMeasure_of_le`, `survival_paretoMeasure_endpoint` | theorems | strict survival `1` below `L`, `(L/x)^α` from `L` on; value `1` at `x = L`. |
+| `AuditPareto.cdf_paretoMeasure`, `cdf_paretoMeasure_endpoint` | theorems | cdf `0` below `L`, `1 − (L/x)^α` from `L` on; value `0` at `x = L`. |
+| `AuditPareto.momentLintegral L α p` | def | `∫⁻ x, ENNReal.ofReal (x^p) ∂(paretoMeasure L α)`. |
+| `AuditPareto.momentLintegral_eq`, `momentLintegral_of_lt`, `momentLintegral_eq_top` | theorems | reduction to `∫⁻ x in Ioi L, ofReal (α L^α x^{p−α−1})`; `= ofReal (α L^p/(α−p))` for `p < α`; `= ⊤` for `α ≤ p` (boundary included). |
+| `AuditPareto.ae_nonneg_rpow_paretoMeasure`, `integrable_rpow_paretoMeasure_iff`, `integral_rpow_paretoMeasure`, `integral_rpow_zero_paretoMeasure`, `integral_abs_rpow_paretoMeasure` | theorems | `x^p ≥ 0` a.e.; `Integrable (x^p) ↔ p < α`; `∫ x^p = α L^p/(α−p)` for `p < α`; `= 1` at `p = 0`; absolute moments equal raw moments. |
+| `AuditPareto.hasFiniteTailExponent_survival_paretoMeasure` | theorem | the actual survival function has finite log-tail exponent `α`. |
+| `AuditPareto.hasFiniteTailExponent_weightedSum_pareto` | theorem | Property 5.1 instantiated: Pareto-distributed nonnegative coordinates, positive weights ⟹ the law of the weighted sum has survival exponent `min α₁ α₂`; no independence. |
+
+Counts: 140 → **160 theorems**, 8 instances, 16 aliases (**184** checked); trust scan 296 → **321**
+constants (83 internal). Backlog: **T021** `missing → partial`
+and **T028** `source-check → partial` (exact-Pareto slices; the general targets and T028's statement-review
+gate for the regularly varying `q = α` boundary stay open); **T029** gains `actual_law_constructed` (the
+Pareto instance) and the corrected texts of D027-1; 146 citations over 142 declarations.
+
+### Changed files
+
+| File | Change |
+|---|---|
+| `AuditRepairs/ParetoLaw.lean` | **New** (imports `AuditRepairs.WeightedSums`, `Mathlib.Probability.Distributions.Pareto`, `Mathlib.Analysis.SpecialFunctions.ImproperIntegrals`). |
+| `AuditRepairs.lean` | Imports `AuditRepairs.ParetoLaw`. |
+| `AuditVerification.lean` | Regenerated: 184 `#print axioms` lines. |
+| `scripts/rebuild_curated_inventory.py` | T029 row: stale "remains open" sentence replaced (audit D027-1), facets `conditional_law_theorem` + `law_theorem` (credited to `survivalRV_eq_survival_map`) + `actual_law_constructed` (Pareto instance), the stronger regular-variation child named precisely. T021, T028 rows: exact-Pareto slices, status `partial`. |
+| `scripts/verify.py`, `scripts/backlog_schema_probes.py` | Rendering gate compares raw bytes (`read_bytes()`), not newline-normalised text. |
+| `docs/FORMALIZATION_BACKLOG.json`, `.md` | Regenerated together (checked). |
+| `docs/SUPPLEMENTAL_OBLIGATIONS.md` | S001 (audit D027-2): explicit `G_0 = gumbelCDF` branch, off-support conventions, source pp. 172–173 / PDF 186–187 (checked against the book), coordinate table and endpoint `e = m − s/ξ`. |
+| `docs/SOURCE_GATES.md` | G18 resolution note extended: concrete Pareto instance. |
+| `docs/MATHLIB_AND_WORK_ORDER.md` | Pareto row updated. |
+| `docs/AUDIT_HISTORY.md` | Round 7 (audit of v0.2.7) added. |
+| `README.md` | Version, counts (160/8/16, 184), module list, "What is still open". |
+| `FABLE_REVIEW.md` | + §18. |
+| `lakefile.toml` | `version = "0.2.8"`. |
+| `SHA256SUMS`, `evidence/current/*`, `evidence/fable/v0.2.8/` | Regenerated / new evidence layer. |
+
+Repository (outside the package): `audits/08_astra_on_v0.2.7/` holds the received audit; `deliverables/README.md`
+annotates the v0.2.7 validation log's probe count (17 → 18, audit D027-3) without rewriting the shipped log; a
+`git bundle` accompanies the v0.2.8 ZIP.
+
+Pins unchanged: `lean-toolchain`, `lake-manifest.json`, Mathlib `rev`.
+
+### Compatibility implications
+
+- Client code: none for existing declarations. New namespace `AuditPareto`. `import AuditRepairs` now also
+  brings in `Mathlib.Probability.Distributions.Pareto` and `Mathlib.Analysis.SpecialFunctions.ImproperIntegrals`.
+- Verification: a CRLF-converted `docs/FORMALIZATION_BACKLOG.md` now fails the rendering gate (previously
+  accepted after newline normalisation). Runtime unchanged (≈ 2–4 min).
+
+### Validation performed (v0.2.8)
+
+- `rm -rf .lake/build; lake build`: exit 0, no warnings.
+- `python3 scripts/verify.py`: exit 0, `PASS: 160 theorems, 8 instance, 16 aliases; no extra axioms; trust scan:
+  321 project constants (incl. 83 internal) all within allowlist; 184 public theorem/instance constants match the
+  regex inventory`; ledger valid, Markdown equals rendering (bytes), all cited declarations present.
+- `python3 scripts/backlog_schema_probes.py`: exit 0, 18/18 (count read from the JSON record).
+- `python3 scripts/harness_regression.py`: exit 0, 14/14 fixtures as expected.
+- Final ZIP validated from a fresh extraction (`deliverables/v0.2.8/archive_validation_v0.2.8.log`).
+
+---
+
 ## v0.2.6 → v0.2.7 (fifth corrective pass; probabilistic Property 5.1)
 
 Trigger: the independent audit of v0.2.6 (`Taleb_Fable_v0.2.6_Independent_Audit.pdf`, SHA-256

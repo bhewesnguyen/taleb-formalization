@@ -133,7 +133,7 @@ def main():
     schema=validate_backlog(backlog)
     check(not schema, 'docs/FORMALIZATION_BACKLOG.json schema violations: '+str(schema))
     # The human-readable ledger is derived, not maintained by hand (audit D026-1: it shipped a release stale).
-    check((ROOT/'docs/FORMALIZATION_BACKLOG.md').read_text()==render_markdown(backlog), 'docs/FORMALIZATION_BACKLOG.md is not the rendering of docs/FORMALIZATION_BACKLOG.json (run scripts/rebuild_curated_inventory.py)')
+    check((ROOT/'docs/FORMALIZATION_BACKLOG.md').read_bytes()==render_markdown(backlog).encode('utf-8'), 'docs/FORMALIZATION_BACKLOG.md is not the rendering of docs/FORMALIZATION_BACKLOG.json (run scripts/rebuild_curated_inventory.py)')
     cited={(b['id'],d) for b in backlog for d in b.get('declarations',[])}
     dangling=sorted(f"{i}:{d}" for i,d in cited if d not in env_names)
     check(not dangling, 'docs/FORMALIZATION_BACKLOG.json cites declarations that do not exist in the environment: '+str(dangling))

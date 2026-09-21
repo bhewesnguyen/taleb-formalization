@@ -20,7 +20,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from backlog_schema import validate, render_markdown
 
 def load(): return json.loads((ROOT/'docs/FORMALIZATION_BACKLOG.json').read_text())
-def load_md(): return (ROOT/'docs/FORMALIZATION_BACKLOG.md').read_text()
+def load_md(): return (ROOT/'docs/FORMALIZATION_BACKLOG.md').read_bytes().decode('utf-8')  # raw bytes: CRLF would not be normalised away
 
 # Rendering-consistency probes (audit of v0.2.6, D026-1): the shipped Markdown must be the rendering
 # of the JSON, and a stale status, scope or declaration list in either rendering must be detected.
