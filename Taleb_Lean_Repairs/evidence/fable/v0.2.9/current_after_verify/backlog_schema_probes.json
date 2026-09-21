@@ -1,0 +1,132 @@
+{
+  "all_probes_behaved_as_expected": true,
+  "results": [
+    {
+      "probe": "unmodified_ledger",
+      "violations": [],
+      "expected": "none",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "duplicate_id",
+      "violations": [
+        "ids must be exactly T001..T158 in order (got 158 rows; duplicates ['T002']; missing ['T003']; unexpected [])"
+      ],
+      "expected_fragment": "ids must be exactly",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "discharged_flag_false",
+      "violations": [
+        "T060: status, states and the discharged flag disagree"
+      ],
+      "expected_fragment": "disagree",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "scope_not_string",
+      "violations": [
+        "T001: field delivery_scope has type int, expected str"
+      ],
+      "expected_fragment": "expected str",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "missing_row",
+      "violations": [
+        "ids must be exactly T001..T158 in order (got 157 rows; duplicates []; missing ['T158']; unexpected [])"
+      ],
+      "expected_fragment": "ids must be exactly",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "extra_field",
+      "violations": [
+        "T001: unexpected field note"
+      ],
+      "expected_fragment": "unexpected field",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "blank_title",
+      "violations": [
+        "T006: field title is blank"
+      ],
+      "expected_fragment": "is blank",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "unknown_state",
+      "violations": [
+        "T001: unknown states ['proved_everything']"
+      ],
+      "expected_fragment": "unknown states",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "unknown_status",
+      "violations": [
+        "T002: unknown status 'done'"
+      ],
+      "expected_fragment": "unknown status",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "duplicate_declaration",
+      "violations": [
+        "T001: declarations has duplicates"
+      ],
+      "expected_fragment": "has duplicates",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "scope_without_states",
+      "violations": [
+        "T002: states, declarations, delivery_scope and remaining_obligations must be present together"
+      ],
+      "expected_fragment": "present together",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "wrong_pdf_anchor",
+      "violations": [
+        "T001: pdf_anchor_page 99 != first printed page 9 + 14"
+      ],
+      "expected_fragment": "pdf_anchor_page",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "discharged_flag_int",
+      "violations": [
+        "T060: field discharged has type int, expected bool"
+      ],
+      "expected_fragment": "expected bool",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "markdown_is_rendering_of_json",
+      "expected": "equal",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "markdown_stale_status",
+      "expected": "rendering mismatch detected",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "markdown_stale_scope",
+      "expected": "rendering mismatch detected",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "json_stale_scope",
+      "expected": "rendering mismatch detected",
+      "behaved_as_expected": true
+    },
+    {
+      "probe": "json_dropped_declaration",
+      "expected": "rendering mismatch detected",
+      "behaved_as_expected": true
+    }
+  ]
+}
