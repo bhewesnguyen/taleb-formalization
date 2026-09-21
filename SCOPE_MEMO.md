@@ -88,7 +88,7 @@ Common thread: everything done sits in the layer of **distribution facts where t
 | Missing in Mathlib | Files matching | Blocks |
 |---|---|---|
 | Central limit theorem (any form) | 0 | T004, T158, Gaussian normalisers in T062, most of the CLT group |
-| Cauchy distribution (as a defined law) | 3 | T046 (Cauchy half), Cauchy-based rows |
+| Cauchy distribution (as a defined law) | 0 | T046 (Cauchy half), Cauchy-based rows |
 | Student t distribution | 0 | T021 (Student moments), Student-based rows |
 | Karamata / slowly-varying theory | 0 | T002, T026, T027, general T011/T028, RV group beyond ratios |
 | Bochner's theorem / Lévy–Khintchine (a law from a characteristic function) | 0 | T007 (α < 2), T093, T047 |

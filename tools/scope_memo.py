@@ -46,7 +46,7 @@ INFRA_BLOCKED_SUPPORTED={'T007':'stable-law existence for α < 2 (Bochner / Lév
 # Infrastructure scan of the pinned Mathlib: (label, regex, families/groups it blocks). Matched case-sensitively.
 GAPS=[
  ('Central limit theorem (any form)',r'centralLimit|CentralLimit|central_limit_theorem','T004, T158, Gaussian normalisers in T062, most of the CLT group'),
- ('Cauchy distribution (as a defined law)',r'cauchyPDF|cauchyMeasure|def cauchy','T046 (Cauchy half), Cauchy-based rows'),
+ ('Cauchy distribution (as a defined law)',r'cauchyPDF|cauchyMeasure|cauchyReal|Distributions/Cauchy','T046 (Cauchy half), Cauchy-based rows'),
  ('Student t distribution',r'studentT|studentPDF|tDistribution','T021 (Student moments), Student-based rows'),
  ('Karamata / slowly-varying theory',r'Karamata|SlowlyVarying|slowlyVarying|RegularlyVarying','T002, T026, T027, general T011/T028, RV group beyond ratios'),
  ("Bochner's theorem / Lévy–Khintchine (a law from a characteristic function)",r"Bochner's theorem|LevyKhintchine|Lévy–Khintchine|Lévy-Khintchine",'T007 (α < 2), T093, T047'),
