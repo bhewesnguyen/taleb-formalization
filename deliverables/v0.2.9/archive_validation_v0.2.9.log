@@ -1,0 +1,45 @@
+# Archive validation from a fresh extraction (Fable review, v0.2.9)
+# date: 2026-09-21T04:35:57Z
+# archive: deliverables/v0.2.9/Taleb_Lean_Implementation_Handoff_v0.2.9_fable.zip
+# archive sha256: abbea690e34bfde5799b8384b727e834d6a319f25cdda52c851c61eca602b77e
+# repository commit of the packaged tree: 382faa0cfb13ccc8f5586ef89b903c2874aeddd6
+
+## step 1: unzip into empty directory
+unzip exit=0 ; files: 255 ; no .lake in extraction: yes
+
+## step 2: sha256sum -c SHA256SUMS inside the extraction
+exit=0 ; OK lines: 254 ; non-OK: 0
+
+## step 3: reuse the pinned dependency checkouts and Mathlib cache (copy of .lake/packages; no project build outputs copied)
+project .lake/build present after copy: no
+dependency mathlib: f897ebcf72cd16f89ab4577d0c826cd14afaafc7 OK clean
+dependency plausible: dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805 OK clean
+dependency LeanSearchClient: 99657ad92e23804e279f77ea6dbdeebaa1317b98 OK clean
+dependency importGraph: d768126816be17600904726ca7976b185786e6b9 OK clean
+dependency proofwidgets: 556caed0eadb7901e068131d1be208dd907d07a2 OK clean
+dependency aesop: 725ac8cd67acd70a7beaf47c3725e23484c1ef50 OK clean
+dependency Qq: dea6a3361fa36d5a13f87333dc506ada582e025c OK clean
+dependency batteries: 8da40b72fece29b7d3fe3d768bac4c8910ce9bee OK clean
+dependency Cli: 91c18fa62838ad0ab7384c03c9684d99d306e1da OK clean
+
+## step 4: lake build (fresh project, no prior build outputs)
+lake build exit=0 elapsed=103s ; Built: 31 ; Replayed: 0 ; warnings: 0 ; errors: 0 ; last line: Build completed successfully (2747 jobs).
+
+## step 5: python3 scripts/verify.py (fresh extraction)
+verify.py exit=0 elapsed=181s ; output: PASS: 181 theorems, 8 instance, 16 aliases; no extra axioms; trust scan: 361 project constants (incl. 101 internal) all within allowlist; 205 public theorem/instance constants match the regex inventory
+
+## step 6: compare fresh results with the working tree and the shipped manifest
+fresh status: PASS | counts: 181 8 16 205
+source_sha256 identical to working tree: True
+axioms identical to working tree: True
+dependency_commits identical to working tree: True
+environment_inventory identical to working tree: True
+all .lean hashes match shipped SHA256SUMS: True
+fresh trust scan: constants 361 internal 101 | all within allowlist: True
+
+## step 7: python3 scripts/backlog_schema_probes.py (fresh extraction; count read from the JSON record)
+probes: 18 results, 18 behaved as expected, all: True
+probes exit=0 ; ALL PROBES BEHAVED AS EXPECTED
+
+## step 8: cleanup
+fresh extraction directory removed after validation. The 14-fixture harness_regression.py record for the packaged tree is inside the archive under evidence/fable/v0.2.9/.
