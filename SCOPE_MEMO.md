@@ -1,6 +1,6 @@
 # Scope memo: how far the Taleb formalization has come, and how far it has to go
 
-Rendered 21 September 2026 by `tools/scope_memo.py` for **v0.2.10** (release in progress; last packaged tree `382faa0`).
+Rendered 21 September 2026 by `tools/scope_memo.py` for **v0.2.10** (packaged tree `03b7764`, ZIP SHA-256 `64a241c8…0c747c`).
 Every number below is computed from the ledger, the committed evidence layers and the pinned Mathlib checkout; the
 judgment sections (§5 tiers, §6 projection, §8 next steps) are hand-maintained in the script and cross-checked against the
 data. Personal working reference for the project owner; not part of any audited package. Refresh with `python3 tools/scope_memo.py`;
@@ -51,9 +51,9 @@ Status × priority:
 | v0.2.7 | 2026-09-20 | 140 | 164 | 2 | 9 | 11 | Property 5.1 for random variables (T029 binary child), global continuity of the EVT cdfs |
 | v0.2.8 | 2026-09-20 | 160 | 184 | 2 | 11 | 13 | exact Pareto law, Stage A: survival/cdf, moments, extended-integral divergence, tail exponent (T021/T028 slices) |
 | v0.2.9 | 2026-09-20 | 181 | 205 | 2 | 12 | 14 | exact Pareto law, Stage B: threshold law via `cond`, excess law, means, positive-power law (T005/T032 slices) |
-| v0.2.10 (this pass, not yet a release commit) | 2026-09-21 | 201 | 225 | 2 | 12 | 14 | centered Pareto moments: mean, centered MAD through the threshold law, variance via Mathlib `variance`, STD/MAD ratio (4.14) (T021 slice) |
+| v0.2.10 | 2026-09-21 | 201 | 225 | 2 | 12 | 14 | centered Pareto moments: mean, centered MAD through the threshold law, variance via Mathlib `variance`, STD/MAD ratio (4.14) (T021 slice) |
 
-Rule of thumb from this history: one release ≈ one substantive family child (15–25 theorems) plus an audit-response cycle. 2 families closed in 9 releases; the closed ones were among the most tractable (see §4).
+Rule of thumb from this history: one release ≈ one substantive family child (15–25 theorems) plus an audit-response cycle. 2 families closed in 10 releases; the closed ones were among the most tractable (see §4).
 
 ---
 
