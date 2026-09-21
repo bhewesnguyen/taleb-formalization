@@ -10,6 +10,7 @@ import AuditRepairs.ExtremeValueAffine
 import AuditRepairs.WeightedSums
 import AuditRepairs.ParetoLaw
 import AuditRepairs.ParetoConditional
+import AuditRepairs.ParetoMoments
 import AuditRepairs.ImplicitSetDiagnostic
 import Proofs.Proof01_SlowlyVaryingLog
 import Proofs.Proof02_SlowlyVaryingConst

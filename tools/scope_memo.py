@@ -31,6 +31,7 @@ SUBSTANCE={  # one line per release: what the release actually bought
  'v0.2.7':'Property 5.1 for random variables (T029 binary child), global continuity of the EVT cdfs',
  'v0.2.8':'exact Pareto law, Stage A: survival/cdf, moments, extended-integral divergence, tail exponent (T021/T028 slices)',
  'v0.2.9':'exact Pareto law, Stage B: threshold law via `cond`, excess law, means, positive-power law (T005/T032 slices)',
+ 'v0.2.10':'centered Pareto moments: mean, centered MAD through the threshold law, variance via Mathlib `variance`, STD/MAD ratio (4.14) (T021 slice)',
 }
 # Effort tiers for P1 families that have no Lean support yet. A = contained, current infrastructure
 # suffices; B = medium, needs a definition layer first; C = statement-review gate first.
@@ -59,7 +60,6 @@ PRESENT=[('Gaussian law',r'gaussianReal'),('Pareto law',r'paretoMeasure'),('Gamm
  ('independence (`iIndepFun`)',r'iIndepFun'),('characteristic functions (uniqueness)',r'ext_of_charFun'),('conditioning (`cond`)',r'def cond \(s : Set'),
  ('strong law of large numbers',r'strong_law_ae'),('mgf / cgf',r'\bcgf\b')]
 NEXT=[  # dependency-ordered, revised each release
- '**T021 centered ratios**: mean and variance of `Pareto(L, α)` from Stage A (`α > 2`), the centered absolute deviation `E|X − E X|` (split at the mean), then the STD/MD ratio (4.14).',
  '**T005 general identity (2.10)**: `∫_K^∞ x f = K P(X > K) + ∫_K^∞ P(X > x) dx` for nonnegative `X` via Tonelli (layer-cake), with the Pareto case as the check.',
  '**T029 stronger child** (regular-variation dominance, `δ`-split route), first for `α > 0`.',
  '**T118 convexity**: `m_p` convex in `α` on `α > p` for `p > 0` with the corrected second derivative (G20), then the integrated Jensen statement of Proposition 21.1.',
@@ -77,6 +77,7 @@ PROCESS_NOTES=[
 REVISIONS=[
  ('v0.2.8','20 Sep 2026','initial memo (`SCOPE_MEMO_v0.2.8.md`, hand-written from the ledger).'),
  ('v0.2.9','21 Sep 2026','memo made a generated document (`tools/scope_memo.py`, renamed to `SCOPE_MEMO.md`); Stage B added; T005 → partial; G20; release table now computed from the evidence layers.'),
+ ('v0.2.10','21 Sep 2026','tracked in git and, from this release, copied into the package evidence for the auditor (`evidence/fable/vX/scope_memo_at_packaging.md`); §4a states the scan method and its limits after the v0.2.9 audit declined to adopt the memo\'s infrastructure-absence claims as facts; T021 centered slice added to §2/§3.'),
 ]
 
 # ---------------------------------------------------------------- data
@@ -126,7 +127,9 @@ def render():
     if shafile: sha=shafile.read_text().split()[0]
     L=[]; A=L.append
     A(f"# Scope memo: how far the Taleb formalization has come, and how far it has to go")
-    A(""); A(f"Rendered {today} by `tools/scope_memo.py` for **v{version}** (packaged tree `{packaged}`"+(f", ZIP SHA-256 `{sha[:8]}…{sha[-6:]}`" if sha else "")+").")
+    current_is_release=f'v{version}' in [v for v,_,_ in rel]
+    tree_note=(f"packaged tree `{packaged}`"+(f", ZIP SHA-256 `{sha[:8]}…{sha[-6:]}`" if sha else "")) if current_is_release else f"release in progress; last packaged tree `{packaged}`"
+    A(""); A(f"Rendered {today} by `tools/scope_memo.py` for **v{version}** ({tree_note}).")
     A("Every number below is computed from the ledger, the committed evidence layers and the pinned Mathlib checkout; the")
     A("judgment sections (§5 tiers, §6 projection, §8 next steps) are hand-maintained in the script and cross-checked against the")
     A("data. Personal working reference for the project owner; not part of any audited package. Refresh with `python3 tools/scope_memo.py`;")
@@ -158,6 +161,11 @@ def render():
         c=counts_at(h); sub=SUBSTANCE.get(v)
         if sub is None: missing_sub.append(v); sub='**(no substance line — add to SUBSTANCE)**'
         A(f"| {v} | {d} | {c['theorems']} | {c['checked']} | {c['discharged']} | {c['partial'] or '—'} | {c['supported'] or '—'} | {sub} |")
+    if f'v{version}' not in [v for v,_,_ in rel]:
+        # The release in progress: counts from the current verifier record and ledger, not yet a committed evidence layer.
+        sub=SUBSTANCE.get(f'v{version}')
+        if sub is None: missing_sub.append(f'v{version}'); sub='**(no substance line — add to SUBSTANCE)**'
+        A(f"| v{version} (this pass, not yet a release commit) | {datetime.date.today().isoformat()} | {ver['theorem_count']} | {ver['checked_declarations']} | {len(disc)} | {st['partial']} | {len(sup)} | {sub} |")
     A(""); A(f"Rule of thumb from this history: one release ≈ one substantive family child (15–25 theorems) plus an audit-response cycle. "
       f"{len(disc)} families closed in {len(rel)} releases; the closed ones were among the most tractable (see §4).")
     # 3. supported
@@ -174,6 +182,11 @@ def render():
     A(""); A("---"); A(""); A("## 4. What remains, by kind"); A("")
     A(f"### 4a. Infrastructure the pinned Mathlib does or does not have (scan of the checkout, {today})"); A("")
     hits=mathlib_scan()
+    A("Method and limits: every `.lean` file under the pinned checkout's `Mathlib/` is searched for the case-sensitive patterns listed in")
+    A("`GAPS`/`PRESENT` in `tools/scope_memo.py`. \"0 files\" means no file matches those patterns — a strong indication, not a proof, that")
+    A("the theory is absent (a false negative is possible if Mathlib names it unexpectedly), and a positive count is only evidence that")
+    A("*something* with that name exists, not that it has the form the family needs. Family attributions in the third column are judgment.")
+    A("")
     if hits is None: A("_(pinned Mathlib checkout not present; scan skipped)_")
     else:
         A("| Missing in Mathlib | Files matching | Blocks |"); A("|---|---|---|")

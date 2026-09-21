@@ -1021,3 +1021,78 @@ T032, T046, T047, T118, T124), 4 reuse, 89 missing, 33 source-check, 15 model-ne
    derivative (G20), then the integrated Jensen statement of Proposition 21.1.
 5. **Pareto → Fréchet domain of attraction** (T011 formulation, T062 case):
    `M_n/(L n^{1/α}) → frechetMeasure (1/α)`.
+
+## 20. Addendum (v0.2.10): response to the independent audit of v0.2.9, and the centered Pareto ratios
+
+The eighth independent audit (`Taleb_Fable_v0.2.9_Independent_Audit.pdf`, SHA-256
+`3a6ee12d…5b530507`; ledger `Taleb_Proof_Progress_v0.2.9.md`, `b6de60e7…dc27cbd5`; handoff
+`Taleb_Fable_v0.2.9_Review_Handoff.md`, `7c153d60…1b1dd635`; evidence ZIP `c6f992fb…d5ec654d`;
+kept under `audits/10_astra_on_v0.2.9/`) accepted Pareto Stage B with no proof defect, inspected
+the four power-law helper lemmas individually and found the support restriction "substantive and
+correctly used", reproduced build, verifier, 18 probes and 14 fixtures on a **fresh official
+toolchain** (SHA-verified Lean 4.24.0 archive, freshly fetched pinned dependencies), and raised one
+low wording finding plus an optional refinement. Both are confirmed and repaired here. No
+pre-existing theorem, proof, definition or pin was modified.
+
+### 20.1 Audit findings and repairs
+
+| Finding | Confirmed | Repair |
+|---|---|---|
+| **D029-1** the brief, changelog and T005 `delivery_scope` said "extended-integral divergence for `α ≤ 1`" without naming the moment; only `lintegral_id_cond_paretoMeasure_eq_top` (the conditional **raw first** moment) is exported, no divergence theorem for `excessLaw` | Yes | Texts now read "for `0 < α ≤ 1`, the conditional raw first moment diverges as an extended nonnegative integral (no separate divergence theorem for the excess law is exported)". No count or status change. |
+| **G20 wording** "agrees only at `p = 1`" is too strong: for a fixed negative order the two expressions can coincide accidentally at one `α` (`L = 1, p = −1/8, α = 1/4` gives `−128/27` for both — checked) | Yes | G20 and T118 now say "as an identity in `α`, only for `p = 1`", with the example recorded. |
+| The repository-only scope memo: its forecasts and infrastructure-absence claims "not adopted as established facts" | Agreed — that is the right stance toward a judgment document | The memo is now a generated document (`tools/scope_memo.py`) whose numbers are computed from the ledger, evidence layers and a pattern scan of the pinned Mathlib, with the scan's method and limits stated and the judgment sections labelled; a copy is included in `evidence/fable/v0.2.10/scope_memo_at_packaging.md` for review, at the owner's request. |
+
+### 20.2 Mathematics added: centered Pareto moments and the STD/MAD ratio (`AuditRepairs/ParetoMoments.lean`, 20 theorems, 4 defs)
+
+Against Mathlib's pinned `paretoMeasure L α` (`L > 0`), reusing Stage A and Stage B:
+
+* **Mean** `m = αL/(α−1)` for `α > 1` (`integral_id_paretoMeasure`), with `L < m` (`lt_paretoMean`).
+* **Centered mean absolute deviation** (`integral_abs_sub_mean_paretoMeasure`):
+  `∫ |x − m| dν = 2L(α−1)^{α−2}/α^{α−1}` for `α > 1`. Route, as the auditor proposed: `|t| = 2 max t 0 − t`
+  and `∫ (x − m) = 0` give `MAD = 2 ∫ max (x−m) 0`; the positive part is the indicator integral over
+  `Ioi m`, which is `ν(Ioi m) · ∫ (x − m) d(ν[|Ioi m])` because `ν[|A] = (ν A)⁻¹ • ν.restrict A`
+  (`setIntegral_eq_measureReal_mul_integral_cond`, via `integral_smul_measure`); Stage B at `K = m`
+  (legitimate since `m > L`) gives `∫ (x − m) d(ν[|Ioi m]) = m/(α−1)` and Stage A gives
+  `ν.real (Ioi m) = (L/m)^α`; the exponent algebra `2(L/m)^α m/(α−1) = 2L(α−1)^{α−2}/α^{α−1}` is
+  `paretoMAD_algebra`. No new density integral was computed. `MAD > 0` (`paretoMAD_pos`).
+* **Variance** for `α > 2` (`variance_id_paretoMeasure`): `Var[id; ν] = αL²/((α−1)²(α−2))` through
+  Mathlib's `variance` and `variance_eq_sub`, with `MemLp id 2 ν` from Stage A's second raw moment
+  (`memLp_two_iff_integrable_sq`). **Standard deviation** `L/(α−1)·√(α/(α−2))` (`paretoStd_eq`), the
+  book's display on p. 86.
+* **STD/MAD ratio** (`paretoStd_div_paretoMAD`): `α^{α−1/2}/(2√(α−2)(α−1)^{α−1})` for `α > 2` — the
+  book's (4.14) `1/(2√(α−2)(α−1)^{α−1}α^{1/2−α})` in inverted form.
+* Sanity values at `L = 1, α = 3`: mean `3/2`, variance `3/4`, MAD `4/9` (the ratio `9√3/8` follows
+  from the formula and is not separately exported).
+
+Credited as the centered-Pareto slice of **T021**, which stays `partial` (Gaussian and Student
+moments and the general MAD/STD comparisons of §4.4 remain). Not claimed: any divergent-variance
+statement (Mathlib's real `variance` is `evariance.toReal`; nothing is stated outside `α > 2`), the
+median absolute deviation, or anything for other families.
+
+### 20.3 Verification summary (v0.2.10)
+
+Clean `lake build` exit 0; `scripts/verify.py` exit 0 — 201 theorems, 8 instances, 16 aliases
+(225 public declarations), trust scan of all 390 project constants (106 internal) within the allowlist, ledger valid,
+Markdown byte-equal to its rendering, every cited declaration present;
+`scripts/backlog_schema_probes.py` 18/18; `scripts/harness_regression.py` 14/14; archive validated
+from a fresh extraction. Evidence: `evidence/fable/v0.2.10/`.
+
+### 20.4 Ledger after v0.2.10
+
+158 families: 2 discharged (T060, T061), 12 partial (T001, T005, T007, T008, T021, T028, T029,
+T032, T046, T047, T118, T124), 4 reuse, 89 missing, 33 source-check, 15 model-needed, 3 empirical —
+counts unchanged; T021's substance increased. 191 citations over 186 distinct declarations.
+Supplemental S001, S002 open. Source gates G01–G20.
+
+### 20.5 Recommended next tasks (dependency-ordered)
+
+1. **T005 general identity (2.10)**: `∫⁻_A ofReal X = ofReal K · P(A) + ∫⁻_{t>K} P(X>t)` and
+   `∫⁻ ofReal (X−K)⁺ = ∫⁻_{t>K} P(X>t)` as extended integrals via `lintegral_eq_lintegral_meas_lt`
+   (layer-cake), then the finite real version under `Integrable X` with
+   `Integrable.integral_eq_integral_meas_lt`, and the conditional mean/excess formulas for `P(A) > 0`.
+2. **T029 stronger child** (regular-variation dominance, `δ`-split route), first for `α > 0`.
+3. **T118 convexity**: `m_p` convex in `α` on `α > p` for `p > 0` (corrected second derivative, G20),
+   then the integrated Jensen statement of Proposition 21.1.
+4. **Pareto → Fréchet domain of attraction** (T011 formulation, T062 case):
+   `M_n/(L n^{1/α}) → frechetMeasure (1/α)`.
+5. **T044** probability integral transform and **T030** products of Paretos — Tier A openers.

@@ -1,6 +1,6 @@
 # Scope memo: how far the Taleb formalization has come, and how far it has to go
 
-Rendered 21 September 2026 by `tools/scope_memo.py` for **v0.2.9** (packaged tree `382faa0`, ZIP SHA-256 `abbea690…02b77e`).
+Rendered 21 September 2026 by `tools/scope_memo.py` for **v0.2.10** (release in progress; last packaged tree `382faa0`).
 Every number below is computed from the ledger, the committed evidence layers and the pinned Mathlib checkout; the
 judgment sections (§5 tiers, §6 projection, §8 next steps) are hand-maintained in the script and cross-checked against the
 data. Personal working reference for the project owner; not part of any audited package. Refresh with `python3 tools/scope_memo.py`;
@@ -18,7 +18,7 @@ The ledger has 158 obligation families of very unequal size, so no single percen
 | 140 formal-proof families (158 minus 15 `model-needed` and 3 `empirical`, which are modelling/data tasks, not theorems) | **2** (1.4 %) | **14** (10 %) | 126 |
 | 58 **P1** families — the "contained, reusable" mathematical core | **2** (3.4 %) | **10** (17 %) | 48 |
 
-Declarations checked by the verifier: 205 (181 theorems, 8 instances, 16 aliases); trust scan 361 project constants (101 internal), all within the allowlist. Citations: 169 family/declaration pairs over 164 distinct names. These are inventory counts, not progress percentages.
+Declarations checked by the verifier: 225 (201 theorems, 8 instances, 16 aliases); trust scan 390 project constants (106 internal), all within the allowlist. Citations: 191 family/declaration pairs over 186 distinct names. These are inventory counts, not progress percentages.
 
 Status distribution: 2 discharged · 12 partial · 4 reuse · 89 missing · 33 source-check · 15 model-needed · 3 empirical.
 
@@ -51,6 +51,7 @@ Status × priority:
 | v0.2.7 | 2026-09-20 | 140 | 164 | 2 | 9 | 11 | Property 5.1 for random variables (T029 binary child), global continuity of the EVT cdfs |
 | v0.2.8 | 2026-09-20 | 160 | 184 | 2 | 11 | 13 | exact Pareto law, Stage A: survival/cdf, moments, extended-integral divergence, tail exponent (T021/T028 slices) |
 | v0.2.9 | 2026-09-20 | 181 | 205 | 2 | 12 | 14 | exact Pareto law, Stage B: threshold law via `cond`, excess law, means, positive-power law (T005/T032 slices) |
+| v0.2.10 (this pass, not yet a release commit) | 2026-09-21 | 201 | 225 | 2 | 12 | 14 | centered Pareto moments: mean, centered MAD through the threshold law, variance via Mathlib `variance`, STD/MAD ratio (4.14) (T021 slice) |
 
 Rule of thumb from this history: one release ≈ one substantive family child (15–25 theorems) plus an audit-response cycle. 2 families closed in 9 releases; the closed ones were among the most tractable (see §4).
 
@@ -61,10 +62,10 @@ Rule of thumb from this history: one release ≈ one substantive family child (1
 | Family | Status | Group | Delivered (scope, first sentence) | Still open (first sentence) |
 |---|---|---|---|---|
 | T001 Regular variation API | partial | RV | Ratio-only slowly/regularly varying predicates with closure lemmas, examples (log, constants, real powers) and the RV-iff-normalised-SV equivalence. | Positive measurable convention and its relationship to the ratio predicates. |
-| T005 Tail integral and excess identities | partial | TAIL | Exact-Pareto conditional and excess laws as equalities of probability measures (threshold law, excess law with global cdf and strict survival), conditional mean and mean excess for alpha > 1, extended-integral divergence for alpha <= 1. | The general tail-integral identity (2.10), E[X 1_(X > K)] = K P(X > K) + integral_K^inf P(X > x) dx, for arbitrary nonnegative X via Tonelli on extended integrals, and the general conditional and excess mean formulas derived from it under a finite first moment. |
+| T005 Tail integral and excess identities | partial | TAIL | Exact-Pareto conditional and excess laws as equalities of probability measures (threshold law, excess law with global cdf and strict survival), conditional mean and mean excess for alpha > 1, and, for 0 < alpha <= 1, divergence of the conditional raw first moment as an extended nonnegative integral (AuditPareto.lintegral_id_cond_paretoMeasure_eq_top: no separate divergence theorem for the excess law is exported). | The general tail-integral identity (2.10), E[X 1_(X > K)] = K P(X > K) + integral_K^inf P(X > x) dx, for arbitrary nonnegative X via Tonelli on extended integrals, and the general conditional and excess mean formulas derived from it under a finite first moment. |
 | T007 Stable law existence | partial | CF | Gaussian slice only: Mathlib's gaussianReal mu (2 sigma^2) realizes stableS1Expr 2 beta mu sigma, zero scale included. | Existence of a probability law with the S1 characteristic function for every 0 < alpha < 2, including alpha = 1 with beta != 0, and the zero-scale Dirac case for those alpha. |
 | T008 Subexponential law API | partial | SUBEXP | Definition of the nonnegative self-convolution class and preservation of a finite tail exponent under that hypothesis. | Any concrete subexponential law, the equivalent n-fold tail characterizations, equivalence with the standard definition, and whether subexponential laws must have a finite exponent. |
-| T021 Distribution-specific absolute moments | partial | MOM | Exact-Pareto raw and absolute moments against the pinned Mathlib law: finite exactly for p < alpha with value alpha L^p/(alpha - p), divergent (extended integral = top) for p >= alpha including the boundary, integrability equivalence, zeroth moment 1. | Gaussian and Student absolute moments, the MAD/STD ratios of 4.4.2-4.4.4 including the Pareto ratio (4.14) (mean and variance from the delivered moments, then the ratio algebra), and the scale conventions of each family. |
+| T021 Distribution-specific absolute moments | partial | MOM | Exact-Pareto raw and absolute moments against the pinned Mathlib law: finite exactly for p < alpha with value alpha L^p/(alpha - p), divergent (extended integral = top) for p >= alpha including the boundary, integrability equivalence, zeroth moment 1. | Gaussian and Student absolute moments and their MAD/STD ratios (4.4.2-4.4.3), the general MAD/STD comparison across families, and the scale conventions of each family. |
 | T028 Tail moment threshold | partial | MOM | Exact-Pareto slice: global survival and distribution functions of the pinned law with the endpoint values explicit, absence of an atom at L, tail exponent alpha of the actual survival, and the moment threshold with the boundary settled (infinite) for the exact law. | The general statement for nonnegative laws with regularly varying tails of index -alpha (finite for q < alpha, infinite for q > alpha) and its q = alpha boundary, which requires an integral test on the slowly varying factor (the statement-review gate is unchanged for that general case). |
 | T029 Tail of sums with unequal indices | partial | SUBEXP | Formula-level two-term power tails (v0.2.3) and, since v0.2.7, the binary probabilistic statement (completed child): for two pointwise nonnegative random variables with positive weights whose survival functions have finite log-tail exponents alpha, beta, the survival function of the weighted sum (and of its pushforward law, for measurable coordinates) has exponent min(alpha, beta), with no independence hypothesis, via event inclusions and reusable rescaling, max, sum and squeeze rules for HasFiniteTailExponent. | Stronger regular-variation child (the original target's reading, kept open deliberately): for measurable nonnegative X, Y on one probability space, a, b > 0, and eventually positive survival functions regularly varying with indices -alpha, -beta where 0 <= alpha < beta (a first version with 0 < alpha is acceptable), prove S_Z(t)/S_X(t/a) -> 1 and S_Z(t)/S_X(t) -> a^alpha for Z = aX + bY, via S_X(t/a) <= S_Z(t) <= S_X((1 - delta) t/a) + S_Y(delta t/b) and delta -> 0, no independence. |
 | T032 Power transformation of a law | partial | TAIL | Analytic power-transform tail formula with exponent alpha/p. | The general statement of Property 5.2 for an arbitrary law with tail exponent alpha (finite log-tail exponent or regularly varying survival): the law of X^p has exponent alpha/p for p > 0, via the inverse-event argument on a positive support, and the density transformation (5.8) under the stated regularity. |
@@ -84,6 +85,11 @@ Common thread: everything done sits in the layer of **distribution facts where t
 ## 4. What remains, by kind
 
 ### 4a. Infrastructure the pinned Mathlib does or does not have (scan of the checkout, 21 September 2026)
+
+Method and limits: every `.lean` file under the pinned checkout's `Mathlib/` is searched for the case-sensitive patterns listed in
+`GAPS`/`PRESENT` in `tools/scope_memo.py`. "0 files" means no file matches those patterns — a strong indication, not a proof, that
+the theory is absent (a false negative is possible if Mathlib names it unexpectedly), and a positive count is only evidence that
+*something* with that name exists, not that it has the form the family needs. Family attributions in the third column are judgment.
 
 | Missing in Mathlib | Files matching | Blocks |
 |---|---|---|
@@ -181,13 +187,12 @@ Reporting rule: report progress against the **P1 core** (closed / touched / 58),
 
 ## 8. Sensible next milestones (dependency-ordered)
 
-1. **T021 centered ratios**: mean and variance of `Pareto(L, α)` from Stage A (`α > 2`), the centered absolute deviation `E|X − E X|` (split at the mean), then the STD/MD ratio (4.14).
-2. **T005 general identity (2.10)**: `∫_K^∞ x f = K P(X > K) + ∫_K^∞ P(X > x) dx` for nonnegative `X` via Tonelli (layer-cake), with the Pareto case as the check.
-3. **T029 stronger child** (regular-variation dominance, `δ`-split route), first for `α > 0`.
-4. **T118 convexity**: `m_p` convex in `α` on `α > p` for `p > 0` with the corrected second derivative (G20), then the integrated Jensen statement of Proposition 21.1.
-5. **Pareto → Fréchet domain of attraction** (T011 formulation, T062 case): `M_n/(L n^{1/α}) → frechetMeasure (1/α)` — the first convergence theorem.
-6. Then the Tier A sweep in chapter order (2 → 4 → 5 → 8); T030 (products of Paretos) and T044 (probability integral transform) are natural early picks.
-7. Separately from cadence work: decide whether any §4a infrastructure item is worth building here (CLT is the highest-leverage; Bochner the hardest).
+1. **T005 general identity (2.10)**: `∫_K^∞ x f = K P(X > K) + ∫_K^∞ P(X > x) dx` for nonnegative `X` via Tonelli (layer-cake), with the Pareto case as the check.
+2. **T029 stronger child** (regular-variation dominance, `δ`-split route), first for `α > 0`.
+3. **T118 convexity**: `m_p` convex in `α` on `α > p` for `p > 0` with the corrected second derivative (G20), then the integrated Jensen statement of Proposition 21.1.
+4. **Pareto → Fréchet domain of attraction** (T011 formulation, T062 case): `M_n/(L n^{1/α}) → frechetMeasure (1/α)` — the first convergence theorem.
+5. Then the Tier A sweep in chapter order (2 → 4 → 5 → 8); T030 (products of Paretos) and T044 (probability integral transform) are natural early picks.
+6. Separately from cadence work: decide whether any §4a infrastructure item is worth building here (CLT is the highest-leverage; Bochner the hardest).
 
 ---
 
@@ -207,3 +212,4 @@ Reporting rule: report progress against the **P1 core** (closed / touched / 58),
 |---|---|---|
 | v0.2.8 | 20 Sep 2026 | initial memo (`SCOPE_MEMO_v0.2.8.md`, hand-written from the ledger). |
 | v0.2.9 | 21 Sep 2026 | memo made a generated document (`tools/scope_memo.py`, renamed to `SCOPE_MEMO.md`); Stage B added; T005 → partial; G20; release table now computed from the evidence layers. |
+| v0.2.10 | 21 Sep 2026 | tracked in git and, from this release, copied into the package evidence for the auditor (`evidence/fable/vX/scope_memo_at_packaging.md`); §4a states the scan method and its limits after the v0.2.9 audit declined to adopt the memo's infrastructure-absence claims as facts; T021 centered slice added to §2/§3. |
